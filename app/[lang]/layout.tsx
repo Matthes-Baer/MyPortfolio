@@ -1,9 +1,14 @@
-import "../globals.css";
-import { Inter } from "next/font/google";
+import "./globals.css";
+import { Quicksand } from "next/font/google";
 import type { INormalLayoutProps } from "@/utils/interfaces";
 import { ResolvingMetadata, Metadata } from "next";
+import Link from "next/link";
+import { NextRequest } from "next/server";
+import { cookies, headers } from "next/headers";
+import { usePathname } from "next/navigation";
+import Layout_switchLanguageButton from "@/components/layout_switchLanguageButton";
 
-const inter = Inter({ subsets: ["latin"] });
+const quicksand = Quicksand({ subsets: ["latin"] });
 
 export async function generateMetadata(
   props: INormalLayoutProps,
@@ -25,9 +30,30 @@ export async function generateMetadata(
 }
 
 export default function RootLayout(props: INormalLayoutProps) {
+  let lang = props.params.lang;
+
   return (
     <html lang={props.params.lang}>
-      <body className={inter.className}>{props.children}</body>
+      <body className={quicksand.className}>
+        <div>
+          <div>
+            <Link href={`/${lang}`}>Home</Link>
+          </div>
+          <div>
+            <Link href={`/${lang}/timeline`}>timeline</Link>
+          </div>
+          {lang === "de" ? (
+            <Layout_switchLanguageButton languages={["de", "en"]}>
+              <span>Auf Englisch wechseln</span>
+            </Layout_switchLanguageButton>
+          ) : (
+            <Layout_switchLanguageButton languages={["en", "de"]}>
+              <div>Switch to German</div>
+            </Layout_switchLanguageButton>
+          )}
+        </div>
+        {props.children}
+      </body>
     </html>
   );
 }

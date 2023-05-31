@@ -1,8 +1,11 @@
+import { INormalPageProps } from "@/utils/interfaces";
 import { headers } from "next/headers";
+import Link from "next/link";
 
-export default function Timeline(params: { lang: String }) {
-  const headersList = headers();
-  console.log(headersList, params.lang);
-
-  return <div>Hello World!</div>;
+export default function Timeline(props: INormalPageProps) {
+  return (
+    <div>
+      <Link href="/">Get back</Link>
+    </div>
+  );
 }
