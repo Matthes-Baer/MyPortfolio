@@ -2,11 +2,8 @@ import "./globals.css";
 import { Quicksand } from "next/font/google";
 import type { INormalLayoutProps } from "@/utils/interfaces";
 import { ResolvingMetadata, Metadata } from "next";
-import Link from "next/link";
-import { NextRequest } from "next/server";
-import { cookies, headers } from "next/headers";
-import { usePathname } from "next/navigation";
-import Layout_switchLanguageButton from "@/components/layout_switchLanguageButton";
+import Switch_language_link_comp from "@/components/layout/switch_language_link_comp";
+import Switch_route_link_comp from "@/components/layout/switch_route_link_comp";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -36,20 +33,32 @@ export default function RootLayout(props: INormalLayoutProps) {
     <html lang={props.params.lang}>
       <body className={quicksand.className}>
         <div>
-          <div>
-            <Link href={`/${lang}`}>Home</Link>
-          </div>
-          <div>
-            <Link href={`/${lang}/timeline`}>timeline</Link>
-          </div>
           {lang === "de" ? (
-            <Layout_switchLanguageButton languages={["de", "en"]}>
-              <span>Auf Englisch wechseln</span>
-            </Layout_switchLanguageButton>
+            <div>
+              <Switch_route_link_comp url={`/${lang}/`} slug="">
+                <span>Startseite</span>
+              </Switch_route_link_comp>
+
+              <Switch_route_link_comp url={`/${lang}/timeline`} slug="timeline">
+                <span>Zeitleiste</span>
+              </Switch_route_link_comp>
+              <Switch_language_link_comp languages={["de", "en"]}>
+                <span>Auf Englisch wechseln</span>
+              </Switch_language_link_comp>
+            </div>
           ) : (
-            <Layout_switchLanguageButton languages={["en", "de"]}>
-              <div>Switch to German</div>
-            </Layout_switchLanguageButton>
+            <div>
+              <Switch_route_link_comp url={`/${lang}/`} slug="">
+                <span>Home</span>
+              </Switch_route_link_comp>
+
+              <Switch_route_link_comp url={`/${lang}/timeline`} slug="timeline">
+                <span>Timeline</span>
+              </Switch_route_link_comp>
+              <Switch_language_link_comp languages={["en", "de"]}>
+                <div>Switch to German</div>
+              </Switch_language_link_comp>
+            </div>
           )}
         </div>
         {props.children}

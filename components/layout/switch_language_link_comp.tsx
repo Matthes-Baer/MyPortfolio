@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export default function Layout_switchLanguageButton(props: {
+export default function Switch_language_link_comp(props: {
   children: React.ReactNode;
   languages: Array<string>;
 }) {

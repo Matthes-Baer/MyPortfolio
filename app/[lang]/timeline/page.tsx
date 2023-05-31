@@ -3,9 +3,5 @@ import { headers } from "next/headers";
 import Link from "next/link";
 
 export default function Timeline(props: INormalPageProps) {
-  return (
-    <div>
-      <Link href="/">Get back</Link>
-    </div>
-  );
+  return <div>Timeline</div>;
 }

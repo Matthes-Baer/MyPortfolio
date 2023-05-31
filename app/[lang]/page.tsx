@@ -15,7 +15,6 @@ export default function Home(props: INormalPageProps) {
       <ul>
         <li>To-do:</li>
         <li>Weitere Extra Files anschauen (loading.tsx)</li>
-        <li>Eigene Google Font implementieren</li>
         <li>
           Tailwind Config anfänglich bearbeiten mit Farbpalette - muss
           vermutlich öfters überarbeitet werden anfangs
