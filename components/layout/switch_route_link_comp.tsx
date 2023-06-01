@@ -10,6 +10,7 @@ export default function Switch_route_link_comp(props: {
 }) {
   const segment = useSelectedLayoutSegment() || "";
   let isActive = props.slug === segment;
+  console.log(props.slug, segment);
 
   return (
     <div>

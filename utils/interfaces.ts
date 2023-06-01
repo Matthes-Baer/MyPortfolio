@@ -6,7 +6,7 @@ export interface INormalPageProps {
   params: ILanguageParams;
 }
 
-export interface INormalLayoutProps {
+export interface IRootLayoutProps {
   children: React.ReactNode;
   params: ILanguageParams;
 }
