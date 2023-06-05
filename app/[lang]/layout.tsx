@@ -1,39 +1,40 @@
 import "./globals.css";
 import { Quicksand } from "next/font/google";
-import type { IRootLayoutProps } from "@/utils/interfaces";
+import type { IMetadata, IRootLayoutProps } from "@/utils/interfaces";
 import { ResolvingMetadata, Metadata } from "next";
-import Switch_language_link_comp from "@/components/layout/switch_language_link_comp";
-import Switch_route_link_comp from "@/components/layout/switch_route_link_comp";
 import { cookies } from "next/headers";
-import Reset_Language_Button_Comp from "@/components/layout/reset_language_button_comp";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
+import { NextFont } from "next/dist/compiled/@next/font";
 
-const quicksand = Quicksand({ subsets: ["latin"] });
+const quicksand: NextFont = Quicksand({ subsets: ["latin"] });
+
+const german_metadata: IMetadata = {
+  title: "Dies ist der deutsche Titel",
+  description: "Dies ist die deutsche Beschreibung.",
+};
+
+const english_metadata: IMetadata = {
+  title: "This is the English title",
+  description: "This is the English description.",
+};
 
 export async function generateMetadata(
   props: IRootLayoutProps,
   parent?: ResolvingMetadata
 ): Promise<Metadata> {
-  const lang = props.params.lang;
+  const lang: string = props.params.lang;
 
-  if (lang === "en") {
-    return {
-      title: "This is the English title",
-      description: "This is the English description.",
-    };
+  if (lang === "de") {
+    return german_metadata;
   } else {
-    return {
-      title: "Dies ist der deutsche Titel",
-      description: "Dies ist die deutsche Beschreibung.",
-    };
+    return english_metadata;
   }
 }
 
-export default function RootLayout(props: IRootLayoutProps) {
-  let cookies_store = cookies();
-  let language_cookie = cookies_store.get("language_cookie")?.value;
-  let lang = props.params.lang;
+export default function RootLayout(props: IRootLayoutProps): JSX.Element {
+  let cookies_store: ReadonlyRequestCookies = cookies();
+  let language_cookie: string | undefined =
+    cookies_store.get("language_cookie")?.value;
 
   return (
     <html lang={language_cookie || props.params.lang}>

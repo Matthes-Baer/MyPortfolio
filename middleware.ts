@@ -13,7 +13,6 @@ function getLocale() {
 }
 
 export async function middleware(request: NextRequest) {
-  // Check if there is any supported locale in the pathname
   const pathname: string = request.nextUrl.pathname;
   const locale: string = getLocale();
   const language_cookie_bool: boolean = request.cookies.has("language_cookie");
@@ -26,14 +25,14 @@ export async function middleware(request: NextRequest) {
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
+  //? Check if no language_parameter is available in the URL.
   if (pathnameIsMissingLocale) {
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
     return NextResponse.redirect(
       new URL(`/${language_cookie_value || locale}/${pathname}`, request.url)
     );
   }
 
+  //? Handling ways which otherwise would break the application.
   if (
     !language_cookie_bool ||
     (language_cookie_bool && language_cookie_value != current_language_path)

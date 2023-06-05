@@ -1,13 +1,14 @@
+import { IResponse } from "@/utils/interfaces";
+import { get_expiration_date } from "@/utils/util_functions";
+import { ResponseCookies } from "next/dist/compiled/@edge-runtime/cookies";
 import { cookies } from "next/headers";
 import { NextRequest } from "next/server";
 
-export async function POST(request: NextRequest) {
-  const res = await request.json();
+export async function POST(request: NextRequest): Promise<ResponseCookies> {
+  const res: IResponse = await request.json();
+  const expiration_date = get_expiration_date();
 
-  const oneYearInSeconds = 365 * 24 * 60 * 60;
-  const expirationDate = new Date(Date.now() + oneYearInSeconds * 1000);
-
-  return cookies().set("language_cookie", res.value, {
-    expires: expirationDate,
+  return cookies().set(res.name, res.value, {
+    expires: expiration_date,
   });
 }

@@ -41,7 +41,7 @@ export default function RootLayout(props: IRootLayoutProps) {
       <Link href={`/${lang}`}>
         {language_cookie == "en" ? (
           <span>
-            Please use the configured langauge changer in main when changing the
+            Please use the configured language changer in main when changing the
             language
           </span>
         ) : (
