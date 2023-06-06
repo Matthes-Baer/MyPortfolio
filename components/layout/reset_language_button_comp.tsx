@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function ResetLanguageButtonComp() {
+export default function RESET_LANGUAGE_BUTTON_COMP() {
   const reset_language_cookie = async () => {
     try {
       const response = await fetch("/api/POST_reset_cookie", {
