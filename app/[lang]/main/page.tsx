@@ -1,12 +1,18 @@
-import Reset_Language_Button_Comp from "@/components/layout/reset_language_button_comp";
+import ResetLanguageButtonComp from "@/components/layout/ResetLanguageButtonComp";
+
 import type { INormalPageProps } from "@/utils/interfaces";
+
 import { Suspense } from "react";
+import Loading from "../loading";
 
 export default function Main(props: INormalPageProps) {
   return (
     <Suspense fallback={"Currently Loading..."}>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <Reset_Language_Button_Comp cookie_name="language_cookie" />
+        <Suspense fallback={<Loading />}>
+          <ResetLanguageButtonComp />
+        </Suspense>
+
         <div>Main</div>
         <ul>
           <li>Notizen:</li>

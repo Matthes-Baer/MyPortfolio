@@ -5,7 +5,7 @@ import { ResolvingMetadata, Metadata } from "next";
 import Switch_language_link_comp from "@/components/layout/switch_language_link_comp";
 import Switch_route_link_comp from "@/components/layout/switch_route_link_comp";
 import { cookies } from "next/headers";
-import Reset_Language_Button_Comp from "@/components/layout/reset_language_button_comp";
+import Reset_Language_Button_Comp from "@/components/layout/ResetLanguageButtonComp";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
