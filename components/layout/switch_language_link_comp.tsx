@@ -1,8 +1,10 @@
 "use client";
 
+import Loading from "@/app/[lang]/loading";
 import { useRouter } from "next/navigation";
+import { Suspense } from "react";
 
-export default function Switch_language_link_comp(props: {
+export default function SWITCH_LANGUAGE_LINK_COMP(props: {
   children: React.ReactNode;
   cookie_name: string;
   language: string;
@@ -31,8 +33,10 @@ export default function Switch_language_link_comp(props: {
   };
 
   return (
-    <div>
-      <button onClick={fetch_function}>{props.children}</button>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div>
+        <button onClick={fetch_function}>{props.children}</button>
+      </div>
+    </Suspense>
   );
 }

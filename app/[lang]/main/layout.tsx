@@ -2,12 +2,11 @@ import "../globals.css";
 import { Quicksand } from "next/font/google";
 import type { IRootLayoutProps } from "@/utils/interfaces";
 import { ResolvingMetadata, Metadata } from "next";
-import Switch_language_link_comp from "@/components/layout/switch_language_link_comp";
-import Switch_route_link_comp from "@/components/layout/switch_route_link_comp";
 import { cookies } from "next/headers";
-import Reset_Language_Button_Comp from "@/components/layout/ResetLanguageButtonComp";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import SWITCH_ROUTE_LINK_COMP from "@/components/layout/switch_route_link_comp";
+import { Suspense } from "react";
+import Loading from "../loading";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -36,7 +35,6 @@ export default function RootLayout(props: IRootLayoutProps) {
   let lang = props.params.lang;
 
   if (language_cookie != lang) {
-    console.log(language_cookie, lang);
     return (
       <Link href={`/${lang}`}>
         {language_cookie == "en" ? (
@@ -53,34 +51,36 @@ export default function RootLayout(props: IRootLayoutProps) {
 
   return (
     <div>
-      {language_cookie == "de" ? (
-        <div>
-          <Switch_route_link_comp url={`/${lang}/main`} slug="">
-            <span>Startseite</span>
-          </Switch_route_link_comp>
+      <Suspense fallback={<Loading />}>
+        {language_cookie == "de" ? (
+          <div>
+            <SWITCH_ROUTE_LINK_COMP url={`/${lang}/main`} slug="">
+              <span>Startseite</span>
+            </SWITCH_ROUTE_LINK_COMP>
 
-          <Switch_route_link_comp
-            url={`/${lang}/main/timeline`}
-            slug="timeline"
-          >
-            <span>Zeitleiste</span>
-          </Switch_route_link_comp>
-        </div>
-      ) : (
-        <div>
-          <Switch_route_link_comp url={`/${lang}/main`} slug="">
-            <span>Home</span>
-          </Switch_route_link_comp>
+            <SWITCH_ROUTE_LINK_COMP
+              url={`/${lang}/main/timeline`}
+              slug="timeline"
+            >
+              <span>Zeitleiste</span>
+            </SWITCH_ROUTE_LINK_COMP>
+          </div>
+        ) : (
+          <div>
+            <SWITCH_ROUTE_LINK_COMP url={`/${lang}/main`} slug="">
+              <span>Home</span>
+            </SWITCH_ROUTE_LINK_COMP>
 
-          <Switch_route_link_comp
-            url={`/${lang}/main/timeline`}
-            slug="timeline"
-          >
-            <span>Timeline</span>
-          </Switch_route_link_comp>
-        </div>
-      )}
-      {props.children}
+            <SWITCH_ROUTE_LINK_COMP
+              url={`/${lang}/main/timeline`}
+              slug="timeline"
+            >
+              <span>Timeline</span>
+            </SWITCH_ROUTE_LINK_COMP>
+          </div>
+        )}
+        {props.children}
+      </Suspense>
     </div>
   );
 }

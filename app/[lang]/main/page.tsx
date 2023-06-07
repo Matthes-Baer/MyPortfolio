@@ -6,11 +6,9 @@ import RESET_LANGUAGE_BUTTON_COMP from "@/components/layout/reset_language_butto
 
 export default function Main(props: INormalPageProps) {
   return (
-    <Suspense fallback={"Currently Loading..."}>
+    <Suspense fallback={<Loading />}>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <Suspense fallback={<Loading />}>
-          <RESET_LANGUAGE_BUTTON_COMP />
-        </Suspense>
+        <RESET_LANGUAGE_BUTTON_COMP />
 
         <div>Main</div>
         <ul>

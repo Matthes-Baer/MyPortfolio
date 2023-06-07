@@ -1,9 +1,11 @@
 "use client";
 
+import Loading from "@/app/[lang]/loading";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
+import { Suspense } from "react";
 
-export default function Switch_route_link_comp(props: {
+export default function SWITCH_ROUTE_LINK_COMP(props: {
   children: React.ReactNode;
   url: string;
   slug: string;
@@ -13,13 +15,15 @@ export default function Switch_route_link_comp(props: {
   console.log(props.slug, segment);
 
   return (
-    <div>
-      <Link
-        href={props.url}
-        style={{ fontWeight: isActive ? "bold" : "normal" }}
-      >
-        {props.children}
-      </Link>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div>
+        <Link
+          href={props.url}
+          style={{ fontWeight: isActive ? "bold" : "normal" }}
+        >
+          {props.children}
+        </Link>
+      </div>
+    </Suspense>
   );
 }

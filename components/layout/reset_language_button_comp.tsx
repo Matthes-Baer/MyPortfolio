@@ -1,6 +1,8 @@
 "use client";
 
+import Loading from "@/app/[lang]/loading";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function RESET_LANGUAGE_BUTTON_COMP() {
   const reset_language_cookie = async () => {
@@ -19,8 +21,10 @@ export default function RESET_LANGUAGE_BUTTON_COMP() {
   };
 
   return (
-    <div onClick={reset_language_cookie}>
-      <Link href={"/en"}>Sprache ändern</Link>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div onClick={reset_language_cookie}>
+        <Link href={"/en"}>Sprache ändern</Link>
+      </div>
+    </Suspense>
   );
 }
