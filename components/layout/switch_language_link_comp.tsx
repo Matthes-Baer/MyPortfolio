@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { Suspense, useState } from "react";
 import Image from "next/image";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
+import gsap from "gsap";
 
 interface IImage_Props {
   src: string;
@@ -19,7 +20,6 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
   cookie_name: string;
   language: string;
 }) {
-  const [clicked, set_clicked] = useState<boolean>(false);
   const router: AppRouterInstance = useRouter();
   const image_props: IImage_Props =
     props.language === "de"
@@ -33,7 +33,9 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
         };
 
   const fetch_function: () => Promise<void> = async (): Promise<void> => {
-    set_clicked(true);
+    // just demonstrating that it works
+    // gsap.to(".move_it", { rotation: 360, x: 100, duration: 1 });
+
     try {
       const res = await fetch("/api/POST_change_language_cookie", {
         method: "POST",
@@ -52,14 +54,13 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
     }
 
     router.push(`/${props.language}/main`);
-    return set_clicked(false);
   };
 
   return (
     <Suspense fallback={<Loading />}>
       <button
         onClick={fetch_function}
-        className="flex flex-col items-center p-5 bg-warm_terracotta  rounded-lg hover:bg-burnt_sienna"
+        className="move_it flex flex-col items-center p-5 bg-warm_terracotta  rounded-lg hover:bg-burnt_sienna"
       >
         <Image
           src={image_props.src}
@@ -69,7 +70,6 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
         />
         <div className="text-5xl p-5">{props.children}</div>
       </button>
-      <div className="absolute"> {clicked ? <Loading /> : null}</div>
     </Suspense>
   );
 }

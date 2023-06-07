@@ -40,7 +40,6 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
   return (
     <html lang={language_cookie || props.params.lang}>
       <body className={quicksand.className}>{props.children}</body>
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js" />
     </html>
   );
 }
