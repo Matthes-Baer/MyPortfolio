@@ -39,17 +39,37 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
   }, []);
 
   return (
-    <div className="text-5xl bg-deep_burgundy text-center">
-      <span>
-        {props.language === "de"
-          ? "Ich bin ein Frontend-Webentwickler und"
-          : "I am a front-end web developer and"}
-      </span>
+    <div>
+      <div className="text-5xl bg-deep_burgundy text-center">
+        <span>
+          {props.language === "de"
+            ? "Ich bin ein Frontend-Webentwickler und"
+            : "I am a front-end web developer and"}
+        </span>
 
-      <div className="inline-flex items-center">
-        <div className="w-[300px] flex justify-center">{age.toFixed(8)}</div>
+        <div className="inline-flex items-center">
+          <div className="w-[300px] flex justify-center">{age.toFixed(8)}</div>
+        </div>
+        <span>{props.language === "de" ? "Jahre alt." : "years old."}</span>
       </div>
-      <span>{props.language === "de" ? "Jahre alt." : "years old."}</span>
+      <div className="text-4xl bg-deep_burgundy text-center">
+        <span>
+          {props.language === "de"
+            ? "Ich fokussiere mich täglich seit"
+            : "I focus on software development every day for"}
+        </span>
+
+        <div className="inline-flex items-center">
+          <div className="w-[260px] flex justify-center">
+            {studyStart.toFixed(8)}
+          </div>
+        </div>
+        <span>
+          {props.language === "de"
+            ? "Jahren auf Software-Entwicklung."
+            : "years."}
+        </span>
+      </div>
     </div>
   );
 };

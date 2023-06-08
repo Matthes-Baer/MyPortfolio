@@ -23,7 +23,7 @@ export default function Main(props: INormalPageProps) {
 
         <ul>
           <li>To-do:</li>
-
+          <li>Bei Main Page weitermachen mit Styling von age und studystart Zeiten </li>
           <li>Suspense-, fallback- und loading-Kram einbauen</li>
           <li>Weitere Extra Files anschauen (loading.tsx, ...)</li>
         </ul> */}
