@@ -38,14 +38,12 @@ export default function RootLayout(props: IRootLayoutProps) {
   if (language_cookie != lang) {
     return (
       <Link href={`/${lang}`}>
-        {language_cookie == "en" ? (
-          <span>
-            Please use the configured language changer in main when changing the
-            language
-          </span>
-        ) : (
-          <span>Bitte verwende den Language Picker zum Ändern der Sprache</span>
-        )}
+        <span>
+          {" "}
+          {language_cookie === "en"
+            ? "Please use the configured language changer in main when changing the language"
+            : "Bitte verwende den Language Picker zum Ändern der Sprache"}
+        </span>
       </Link>
     );
   }
