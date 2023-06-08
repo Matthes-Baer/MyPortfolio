@@ -3,8 +3,13 @@
 import Loading from "@/app/[lang]/loading";
 import Link from "next/link";
 import { Suspense } from "react";
+import Image from "next/image";
+import IMAGES from "@/utils/import_images";
 
 export default function RESET_LANGUAGE_BUTTON_COMP() {
+  const german_image = IMAGES.flag_german;
+  const english_image = IMAGES.flag_english;
+
   const reset_language_cookie = async () => {
     try {
       const response = await fetch("/api/POST_reset_cookie", {
@@ -22,9 +27,22 @@ export default function RESET_LANGUAGE_BUTTON_COMP() {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div onClick={reset_language_cookie}>
-        <Link href={"/en"}>Sprache ändern</Link>
-      </div>
+      <Link href={"/en"} onClick={reset_language_cookie}>
+        <div className="flex">
+          <Image
+            src={english_image.src}
+            alt={english_image.alt}
+            width={25}
+            height={25}
+          />
+          <Image
+            src={german_image.src}
+            alt={german_image.alt}
+            width={25}
+            height={25}
+          />
+        </div>
+      </Link>
     </Suspense>
   );
 }

@@ -8,8 +8,6 @@ export default function Main(props: INormalPageProps) {
   return (
     <Suspense fallback={<Loading />}>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <RESET_LANGUAGE_BUTTON_COMP />
-
         <div>Main</div>
         <ul>
           <li>Notizen:</li>

@@ -20,3 +20,8 @@ export interface IMetadata {
   title: string;
   description: string;
 }
+
+export interface IImage_Props {
+  src: string;
+  alt: string;
+}

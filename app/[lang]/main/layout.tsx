@@ -7,6 +7,7 @@ import Link from "next/link";
 import SWITCH_ROUTE_LINK_COMP from "@/components/layout/switch_route_link_comp";
 import { Suspense } from "react";
 import Loading from "../loading";
+import RESET_LANGUAGE_BUTTON_COMP from "@/components/layout/reset_language_button_comp";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -50,35 +51,31 @@ export default function RootLayout(props: IRootLayoutProps) {
   }
 
   return (
-    <div>
+    <div className="bg-basalt_gray_stone">
       <Suspense fallback={<Loading />}>
-        {language_cookie == "de" ? (
+        <div className="flex justify-between h-32 p-4 text-xl bg-gradient-to-t from-basalt_gray_stone to-forest_green">
           <div>
-            <SWITCH_ROUTE_LINK_COMP url={`/${lang}/main`} slug="">
-              <span>Startseite</span>
-            </SWITCH_ROUTE_LINK_COMP>
-
-            <SWITCH_ROUTE_LINK_COMP
-              url={`/${lang}/main/timeline`}
-              slug="timeline"
-            >
-              <span>Zeitleiste</span>
-            </SWITCH_ROUTE_LINK_COMP>
+            <RESET_LANGUAGE_BUTTON_COMP />
           </div>
-        ) : (
           <div>
-            <SWITCH_ROUTE_LINK_COMP url={`/${lang}/main`} slug="">
-              <span>Home</span>
-            </SWITCH_ROUTE_LINK_COMP>
+            <div className="flex justify-end">
+              <SWITCH_ROUTE_LINK_COMP url={`/${lang}/main`} slug="">
+                <div className="mr-5">
+                  {language_cookie === "de" ? "Startseite" : "Home"}
+                </div>
+              </SWITCH_ROUTE_LINK_COMP>
 
-            <SWITCH_ROUTE_LINK_COMP
-              url={`/${lang}/main/timeline`}
-              slug="timeline"
-            >
-              <span>Timeline</span>
-            </SWITCH_ROUTE_LINK_COMP>
+              <SWITCH_ROUTE_LINK_COMP
+                url={`/${lang}/main/timeline`}
+                slug="timeline"
+              >
+                <div className="mr-2">
+                  {language_cookie === "de" ? "Zeitleiste" : "Timeline"}
+                </div>
+              </SWITCH_ROUTE_LINK_COMP>
+            </div>
           </div>
-        )}
+        </div>
         {props.children}
       </Suspense>
     </div>
