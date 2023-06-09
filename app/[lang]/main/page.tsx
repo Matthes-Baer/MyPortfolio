@@ -6,6 +6,7 @@ import AGE_AND_EXPERIENCE_COMP from "@/components/main/age_and_experience_comp";
 import { cookies } from "next/headers";
 import fantasy_branch from "public/main_images/fantasy_branch.png";
 import fantasy_table from "public/main_images/fantasy_table.png";
+import fantasy_stool from "public/main_images/fantasy_stool.png";
 
 import Image from "next/image";
 
@@ -27,11 +28,12 @@ export default function Main(props: INormalPageProps) {
             position: "absolute",
             top: 0,
             left: -125,
+            zIndex: 50,
           }}
         />
-        {/* 
-        brick structure für zweiten Part mit project tiles
-        <div className="absolute w-full" style={{ left: 0, top: 400 }}>
+
+        <div className="w-full h-[600px] bg-gradient-to-b from-sky-100 to-sky-900"></div>
+        {/* <div className="absolute w-full" style={{ left: 0, top: 250 }}>
           <div className="flex">
             <div className="bg-[#252525] h-40 w-2/12 border-t-[1px] border-white"></div>
             <div className="bg-[#252525] h-40 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
@@ -76,13 +78,6 @@ export default function Main(props: INormalPageProps) {
           </div>
         </div> */}
 
-        <Image
-          src={fantasy_table}
-          alt="test"
-          width={1000}
-          height={1000}
-          style={{ zIndex: 500 }}
-        />
         {/* <ul>
           <li>Notizen:</li>
           <li>

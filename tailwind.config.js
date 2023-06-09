@@ -20,6 +20,7 @@ module.exports = {
       burnt_sienna: "#ba613d",
       rustic_red: "#9d4d3e",
       deep_burgundy: "#5f1821",
+      sky: { 100: "#a0d8ef", 900: "#2980b9" },
     },
     extend: {
       backgroundImage: {
