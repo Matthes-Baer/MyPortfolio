@@ -52,7 +52,7 @@ export default function RootLayout(props: IRootLayoutProps) {
     <div className="bg-basalt_gray_stone">
       <Suspense fallback={<Loading />}>
         <div className="flex justify-between h-32 p-4 text-xl bg-gradient-to-t from-basalt_gray_stone to-forest_green">
-          <div>
+          <div className="z-50">
             <RESET_LANGUAGE_BUTTON_COMP />
           </div>
           <div>

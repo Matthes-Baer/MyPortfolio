@@ -4,6 +4,9 @@ import { Suspense } from "react";
 import Loading from "../loading";
 import AGE_AND_EXPERIENCE_COMP from "@/components/main/age_and_experience_comp";
 import { cookies } from "next/headers";
+import fantasy_branch from "public/main_images/fantasy_branch.png";
+
+import Image from "next/image";
 
 export default function Main(props: INormalPageProps) {
   const cookie_store = cookies();
@@ -11,8 +14,45 @@ export default function Main(props: INormalPageProps) {
 
   return (
     <Suspense fallback={<Loading />}>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <main className="flex min-h-screen flex-col">
         <AGE_AND_EXPERIENCE_COMP language={language} />
+        <Image
+          src={fantasy_branch}
+          alt="test"
+          width={500}
+          height={100}
+          style={{
+            transform: "rotate(135deg)",
+            position: "absolute",
+            top: 0,
+            left: -125,
+          }}
+        />
+        <div className="flex">
+          <div className="bg-[#252525] h-20 w-2/12 border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+        </div>
+        <div className="flex">
+          <div className="bg-[#252525] h-20 w-1/12 border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-1/12 border-l-[1px] border-t-[1px] border-white"></div>
+        </div>
+        <div className="flex">
+          <div className="bg-[#252525] h-20 w-2/12 border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+          <div className="bg-[#252525] h-20 w-2/12 border-l-[1px] border-t-[1px] border-white"></div>
+        </div>
         {/* <ul>
           <li>Notizen:</li>
           <li>
