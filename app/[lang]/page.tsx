@@ -14,18 +14,13 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           <div>English</div>
         </SWITCH_LANGUAGE_LINK_COMP>
         <ul>
-          <li>Aufräumen</li>
           <li>
-            Weitere Bilder einfügen bei main page - ggf. bei Parallax einbinden
-            (Blätter, Vögel, Wolken, Pflanzen, Bäume, Person die geht (per
-            Parallax))
+            Aufräumen (file structure, weitere components für mehr Überblick
+            (main page (age & experience part)), TypeScript vervollständigen)
           </li>
           <li>Kartenrücken herausfinden</li>
           <li>Kartenvorderseite herausfinden</li>
-          <li>
-            Styling überlegen für Age und Experience Comp (per absolute mit ins
-            Bild nehmen oder drunter lassen?)
-          </li>
+          <li>Styling überlegen für Age und Experience Comp</li>
         </ul>
       </Suspense>
     </main>

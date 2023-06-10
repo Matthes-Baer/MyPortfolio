@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      basalt_gray_stone: "#424242",
+      basalt_gray_stone: "#252525",
       dark_gray_stone: "#555555",
       soft_green: "#b5d6ab",
       warm_terracotta: "#cc7832",
