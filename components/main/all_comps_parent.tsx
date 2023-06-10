@@ -42,9 +42,11 @@ const ALL_PARENTS_COMP = (props: { language: string }) => {
       style={{ top: -150 }}
     >
       <PARALLAX_IMAGES />
-      <AGE_AND_EXPERIENCE_COMP language={props.language} />
+      <div className="z-10">
+        <AGE_AND_EXPERIENCE_COMP language={props.language} />
 
-      <div className="w-full h-[600px] bg-gradient-to-b from-sky-100 to-sky-900"></div>
+        <div className="w-full h-[600px] bg-gradient-to-b from-sky-100 to-sky-900"></div>
+      </div>
     </main>
   );
 };

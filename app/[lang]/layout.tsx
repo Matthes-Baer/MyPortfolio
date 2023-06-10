@@ -5,7 +5,6 @@ import { ResolvingMetadata, Metadata } from "next";
 import { cookies } from "next/headers";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { NextFont } from "next/dist/compiled/@next/font";
-import Script from "next/script";
 
 const quicksand: NextFont = Quicksand({ subsets: ["latin"] });
 
@@ -39,7 +38,9 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
 
   return (
     <html lang={language_cookie || props.params.lang}>
-      <body className={quicksand.className}>{props.children}</body>
+      <body className={quicksand.className} style={{ overflowX: "hidden" }}>
+        {props.children}
+      </body>
     </html>
   );
 }
