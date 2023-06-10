@@ -16,10 +16,16 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
         <ul>
           <li>Aufräumen</li>
           <li>
-            Weitere Bilder (siehe Discord) einfügen bei main page - ggf. bei
-            Parallax einbinden
+            Weitere Bilder einfügen bei main page - ggf. bei Parallax einbinden
+            (Blätter, Vögel, Wolken, Pflanzen, Bäume, Person die geht (per
+            Parallax))
           </li>
-          <li>Styling überlegen für Age und Experience Comp</li>
+          <li>Kartenrücken herausfinden</li>
+          <li>Kartenvorderseite herausfinden</li>
+          <li>
+            Styling überlegen für Age und Experience Comp (per absolute mit ins
+            Bild nehmen oder drunter lassen?)
+          </li>
         </ul>
       </Suspense>
     </main>

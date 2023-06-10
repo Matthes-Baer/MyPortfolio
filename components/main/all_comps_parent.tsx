@@ -37,7 +37,10 @@ const ALL_PARENTS_COMP = (props: { language: string }) => {
   if (isLoading) return <Loading />;
 
   return (
-    <main className="flex min-h-screen flex-col">
+    <main
+      className="flex min-h-screen w-full flex-col absolute"
+      style={{ top: -150 }}
+    >
       <PARALLAX_IMAGES />
       <AGE_AND_EXPERIENCE_COMP language={props.language} />
 

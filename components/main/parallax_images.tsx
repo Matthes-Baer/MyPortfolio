@@ -4,10 +4,10 @@ import Image from "next/image";
 import fantasy_branch from "public/main_images/fantasy_branch.png";
 import fantasy_cloud from "public/main_images/fantasy_cloud.png";
 import fantasy_background from "public/main_images/fantasy_background.png";
+import fantasy_nature_border_two from "public/main_images/fantasy_nature_border_two.png";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { headers } from "next/headers";
 
 const PARALLAX_IMAGES = () => {
   const containerRef = useRef(null);
@@ -48,11 +48,7 @@ const PARALLAX_IMAGES = () => {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="absolute w-full"
-      style={{ top: 0, left: 0 }}
-    >
+    <div ref={containerRef} className="relative w-full">
       <Image
         src={fantasy_background}
         alt="test"
