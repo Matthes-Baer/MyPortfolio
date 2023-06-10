@@ -39,8 +39,8 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
   }, []);
 
   return (
-    <div>
-      <div className="text-5xl bg-deep_burgundy text-center">
+    <div className="z-10">
+      <div className="text-5xl bg-deep_burgundy text-center z-10">
         <span>
           {props.language === "de"
             ? "Ich bin ein Frontend-Webentwickler und"

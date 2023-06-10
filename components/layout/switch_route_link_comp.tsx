@@ -16,7 +16,7 @@ export default function SWITCH_ROUTE_LINK_COMP(props: {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div>
+      <div className="z-10">
         <Link
           href={props.url}
           style={{ fontWeight: isActive ? "bold" : "normal" }}
