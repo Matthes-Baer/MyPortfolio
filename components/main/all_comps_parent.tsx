@@ -4,6 +4,7 @@ import AGE_AND_EXPERIENCE_COMP from "./age_and_experience_comp";
 import { useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
 import PARALLAX_IMAGES from "./parallax_images";
+import PROJECT_TILES_PARENT from "./project_tiles_parent";
 
 const ALL_PARENTS_COMP = (props: { language: string }) => {
   const [isLoading, setLoading] = useState(false);
@@ -42,9 +43,8 @@ const ALL_PARENTS_COMP = (props: { language: string }) => {
       style={{ top: -150 }}
     >
       <PARALLAX_IMAGES />
-      <div className="z-10">
-        <AGE_AND_EXPERIENCE_COMP language={props.language} />
-      </div>
+      <AGE_AND_EXPERIENCE_COMP language={props.language} />
+      <PROJECT_TILES_PARENT />
     </main>
   );
 };

@@ -153,7 +153,7 @@ const PARALLAX_IMAGES = () => {
           left: "-30%",
           width: "50%",
           height: "100%",
-          zIndex: 5,
+          zIndex: 11,
           transform: "rotateY(180deg)",
           opacity: 0.85,
         }}
@@ -172,6 +172,7 @@ const PARALLAX_IMAGES = () => {
           width: "40%",
           height: "80%",
           opacity: 0.85,
+          zIndex: 11,
         }}
         ref={fantasy_tree_red_ref}
       />

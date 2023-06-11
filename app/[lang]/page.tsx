@@ -20,7 +20,15 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           </li>
           <li>Kartenrücken herausfinden</li>
           <li>Kartenvorderseite herausfinden</li>
-          <li>Styling überlegen für Age und Experience Comp</li>
+          <li>
+            Styling überlegen für Age und Experience Comp - gsap.fromTo
+            implementieren, derzeit buggt es mit gsap.from
+          </li>
+          <li>
+            Styling für unteren Part überlegen - kein Bild als Hintergrund, weil
+            man das nicht so gut in der Höhe anpassen kann, wenn mehrere Project
+            Tiles dazukommen.
+          </li>
         </ul>
       </Suspense>
     </main>
