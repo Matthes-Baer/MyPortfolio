@@ -17,7 +17,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 //! Bei jedem Bild Alt hinzufügen, weitere wichtige props?
 
-const PARALLAX_IMAGES = () => {
+const UPPER_PART_INCLUDING_PARALLAX = () => {
   const container_ref = useRef(null);
   const fantasy_tree_green_ref = useRef(null);
   const fantasy_tree_red_ref = useRef(null);
@@ -99,17 +99,6 @@ const PARALLAX_IMAGES = () => {
             scrub: true,
           },
         });
-
-        // gsap.to(fantasy_merchant, {
-        //   xPercent: 50,
-        //   yPercent: -40,
-        //   scrollTrigger: {
-        //     trigger: container,
-        //     start: "top top",
-        //     end: "bottom top",
-        //     scrub: true,
-        //   },
-        // });
       },
     });
   }, []);
@@ -259,4 +248,4 @@ const PARALLAX_IMAGES = () => {
   );
 };
 
-export default PARALLAX_IMAGES;
+export default UPPER_PART_INCLUDING_PARALLAX;

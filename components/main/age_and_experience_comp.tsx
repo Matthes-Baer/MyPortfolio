@@ -2,7 +2,14 @@
 
 import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import {
+  Dispatch,
+  MutableRefObject,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import gsap from "gsap";
 import cake_icon from "public/main_images/cake_icon.png";
 import computer_icon from "public/main_images/computer_icon.png";
@@ -10,16 +17,43 @@ import computer_icon from "public/main_images/computer_icon.png";
 const AGE_AND_EXPERIENCE_COMP = (props: {
   language: RequestCookie | string;
 }) => {
-  const [current_slide, set_current_slide] = useState<string>("age");
-  const age_slide_ref = useRef(null);
-  const experience_slide_ref = useRef(null);
-  const line_from_age_ref = useRef(null);
-  const circle_from_age_ref = useRef(null);
-  const [is_age_button_disabled, set_age_is_button_disabled] = useState(false);
-  const [is_experience_button_disabled, set_is_experience_button_disabled] =
-    useState(false);
+  //* Used for the GSAP animations
+  const age_slide_ref: MutableRefObject<null> = useRef<null>(null);
+  const experience_slide_ref: MutableRefObject<null> = useRef<null>(null);
+  const line_from_age_ref: MutableRefObject<null> = useRef<null>(null);
+  const circle_from_age_ref: MutableRefObject<null> = useRef<null>(null);
 
-  //* Adjust timeout timing to gsap animation timing if gsap animations are edited
+  //* Required to prevent bugging due to spam-/fast-clicking
+  const [is_age_button_disabled, set_age_is_button_disabled]: [
+    boolean,
+    Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
+  const [is_experience_button_disabled, set_is_experience_button_disabled]: [
+    boolean,
+    Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
+
+  //* States for age & experience
+  const [age, set_age]: [number, Dispatch<SetStateAction<number>>] =
+    useState<number>(
+      (new Date().getTime() - new Date("1998-05-03").getTime()) *
+        3.1709791983765 *
+        10 ** -11
+    );
+  const [experience, set_experience]: [
+    number,
+    Dispatch<SetStateAction<number>>
+  ] = useState<number>(
+    (new Date().getTime() - new Date("2021-10-01").getTime()) *
+      3.1709791983765 *
+      10 ** -11
+  );
+  const [current_slide, set_current_slide]: [
+    string,
+    Dispatch<SetStateAction<string>>
+  ] = useState<string>("age");
+
+  //* Adjust the timeout timing to GSAP animation's timing if GSAP animations are edited
   const slide_changer_handler = (slide: string) => {
     if (slide === "age" && !is_age_button_disabled) {
       set_age_is_button_disabled(true);
@@ -41,19 +75,8 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
     }
   };
 
-  const [age, setAge] = useState(
-    (new Date().getTime() - new Date("1998-05-03").getTime()) *
-      3.1709791983765 *
-      10 ** -11
-  );
-
-  const [studyStart, setStudyStart] = useState(
-    (new Date().getTime() - new Date("2021-10-01").getTime()) *
-      3.1709791983765 *
-      10 ** -11
-  );
-
   useEffect(() => {
+    //* GSAP animations for age & experience icons and associated elements
     if (current_slide === "age") {
       gsap.fromTo(
         age_slide_ref.current,
@@ -104,14 +127,15 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
       );
     }
 
-    const interval = setInterval(() => {
-      setAge(
+    //* Updating age and experience states
+    const interval: NodeJS.Timer = setInterval(() => {
+      set_age(
         (new Date().getTime() - new Date("1998-05-03").getTime()) *
           3.1709791983765 *
           10 ** -11
       );
 
-      setStudyStart(
+      set_experience(
         (new Date().getTime() - new Date("2021-10-01").getTime()) *
           3.1709791983765 *
           10 ** -11
@@ -185,9 +209,6 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
             disabled={is_age_button_disabled}
           >
             <Image src={computer_icon} height={250} width={250} alt="Test" />
-            {/* Change Slide - vielleicht mit Icons für age und experience arbeiten,
-        falls das funktioniert? Am besten auch mit zwei Buttons arbeiten, damit
-        es klarer ist, das man klicken kann */}
           </button>
         </div>
       </div>
@@ -208,7 +229,7 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
                 : "Software Development Experience (in years)"}
             </div>
 
-            <div className="">{studyStart.toFixed(8)}</div>
+            <div className="">{experience.toFixed(8)}</div>
           </div>
         )}
       </div>

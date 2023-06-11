@@ -3,10 +3,10 @@
 import AGE_AND_EXPERIENCE_COMP from "./age_and_experience_comp";
 import { useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
-import PARALLAX_IMAGES from "./parallax_images";
+import UPPER_PART_INCLUDING_PARALLAX from "./upper_part_including_parallax";
 import PROJECT_TILES_PARENT from "./project_tiles_parent";
 
-const ALL_PARENTS_COMP = (props: { language: string }) => {
+const ALL_MAIN_PARENTS_COMP = (props: { language: string }) => {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -42,11 +42,11 @@ const ALL_PARENTS_COMP = (props: { language: string }) => {
       className="flex min-h-screen w-full flex-col absolute"
       style={{ top: -150 }}
     >
-      <PARALLAX_IMAGES />
+      <UPPER_PART_INCLUDING_PARALLAX />
       <AGE_AND_EXPERIENCE_COMP language={props.language} />
       <PROJECT_TILES_PARENT />
     </main>
   );
 };
 
-export default ALL_PARENTS_COMP;
+export default ALL_MAIN_PARENTS_COMP;
