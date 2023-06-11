@@ -17,7 +17,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 //! Bei jedem Bild Alt hinzufügen, weitere wichtige props?
 
-const UPPER_PART_INCLUDING_PARALLAX = () => {
+const PARALLAX_IMAGES_COMP = () => {
   const container_ref = useRef(null);
   const fantasy_tree_green_ref = useRef(null);
   const fantasy_tree_red_ref = useRef(null);
@@ -248,4 +248,4 @@ const UPPER_PART_INCLUDING_PARALLAX = () => {
   );
 };
 
-export default UPPER_PART_INCLUDING_PARALLAX;
+export default PARALLAX_IMAGES_COMP;

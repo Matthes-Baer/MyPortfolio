@@ -1,9 +1,9 @@
 "use client";
 
-import AGE_AND_EXPERIENCE_COMP from "./age_and_experience_comp";
+import AGE_AND_EXPERIENCE_COMP from "./middle_part_including_age_and_experience/age_and_experience_comp";
 import { useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
-import UPPER_PART_INCLUDING_PARALLAX from "./upper_part_including_parallax";
+import PARALLAX_IMAGES_COMP from "./upper_part_including_parallax/parallax_images_comp";
 import PROJECT_TILES_PARENT from "./project_tiles_parent";
 
 const ALL_MAIN_PARENTS_COMP = (props: { language: string }) => {
@@ -42,7 +42,7 @@ const ALL_MAIN_PARENTS_COMP = (props: { language: string }) => {
       className="flex min-h-screen w-full flex-col absolute"
       style={{ top: -150 }}
     >
-      <UPPER_PART_INCLUDING_PARALLAX />
+      <PARALLAX_IMAGES_COMP />
       <AGE_AND_EXPERIENCE_COMP language={props.language} />
       <PROJECT_TILES_PARENT />
     </main>
