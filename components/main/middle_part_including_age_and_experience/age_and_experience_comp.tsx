@@ -152,17 +152,21 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
 
   return (
     <div
-      className="bg-dark_gray_stone border-warm_terracotta relative"
+      className="bg-dark_gray_stone border-warm_terracotta relative w-full"
       style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
     >
       <BACKGROUND_STYLING_COMP />
       <div className="flex w-full justify-evenly pt-5 pb-5">
         <div
-          className="w-[10%] h-[10%] p-2 flex bg-[white] border-4 border-warm_terracotta shadow-2xl relative"
+          className="relative w-[10%] h-[10%] p-2 flex"
           style={{ borderRadius: "50%" }}
         >
           <div
-            className="absolute h-[2px] w-[100%] bg-sky-100 z-20"
+            className="absolute top-0 left-0 w-full h-full p-2 flex bg-[white] border-4 border-warm_terracotta shadow-2xl z-20"
+            style={{ borderRadius: "50%" }}
+          ></div>
+          <div
+            className="absolute h-[2px] w-[100%] bg-sky-100 z-10"
             style={{
               left: "100%",
               top: "50%",
@@ -172,7 +176,7 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
           ></div>
           <div>
             <div
-              className="absolute h-[25%] bg-[transparent] border-4 border-[white] z-20"
+              className="absolute h-[25%] bg-[transparent] border-4 border-[white] z-10"
               style={{
                 left: "150%",
                 top: "50%",
@@ -182,7 +186,7 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
               }}
             ></div>
             <div
-              className="absolute h-[50%] bg-dark_gray_stone border-4 border-dark_gray_stone z-20"
+              className="absolute h-[50%] bg-dark_gray_stone border-4 border-dark_gray_stone z-10"
               style={{
                 left: "145%",
                 top: "50%",
@@ -196,44 +200,48 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
 
           <button
             onClick={() => slide_changer_handler("age")}
-            className=""
             disabled={is_experience_button_disabled}
+            className="z-30"
           >
             <Image src={cake_icon} height={250} width={250} alt="Test" />
           </button>
         </div>
 
         <div
-          className="w-[10%] h-[10%] p-2 flex bg-[white] border-4 border-warm_terracotta shadow-2xl"
+          className="relative w-[10%] h-[10%] p-2 flex"
           style={{ borderRadius: "50%" }}
         >
+          <div
+            className="absolute top-0 left-0 w-full h-full p-2 flex bg-[white] border-4 border-warm_terracotta shadow-2xl z-20"
+            style={{ borderRadius: "50%" }}
+          ></div>
           <button
             onClick={() => slide_changer_handler("experience")}
-            className=""
+            className="z-30"
             disabled={is_age_button_disabled}
           >
             <Image src={computer_icon} height={250} width={250} alt="Test" />
           </button>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center text-5xl p-4 text-center w-9/12 mx-auto">
         {current_slide === "age" ? (
-          <div className="" ref={age_slide_ref}>
+          <div ref={age_slide_ref}>
             <div>
               {props.language === "de" ? "Alter (in Jahren)" : "Age (in years)"}
             </div>
 
-            <div className="">{age.toFixed(8)}</div>
+            <div className="p-5">{age.toFixed(8)}</div>
           </div>
         ) : (
-          <div className="" ref={experience_slide_ref}>
+          <div ref={experience_slide_ref}>
             <div>
               {props.language === "de"
-                ? "Erfahrung in Software-Entwicklung (in Jahren)"
+                ? "Software-Entwicklungs-Erfahrung (in Jahren)"
                 : "Software Development Experience (in years)"}
             </div>
 
-            <div className="">{experience.toFixed(8)}</div>
+            <div className="p-5">{experience.toFixed(8)}</div>
           </div>
         )}
       </div>

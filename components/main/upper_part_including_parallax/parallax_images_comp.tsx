@@ -142,9 +142,8 @@ const PARALLAX_IMAGES_COMP = () => {
           left: "-30%",
           width: "50%",
           height: "100%",
-          zIndex: 11,
+          zIndex: 1,
           transform: "rotateY(180deg)",
-          opacity: 0.85,
         }}
         ref={fantasy_tree_green_ref}
       />
