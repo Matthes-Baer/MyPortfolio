@@ -13,6 +13,7 @@ import {
 import gsap from "gsap";
 import cake_icon from "public/main_images/cake_icon.png";
 import computer_icon from "public/main_images/computer_icon.png";
+import BACKGROUND_STYLING_COMP from "./background_styling_comp";
 
 const AGE_AND_EXPERIENCE_COMP = (props: {
   language: RequestCookie | string;
@@ -54,10 +55,12 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
   ] = useState<string>("age");
 
   //* Adjust the timeout timing to GSAP animation's timing if GSAP animations are edited
-  const slide_changer_handler = (slide: string) => {
+  const slide_changer_handler: (a: string) => (() => void) | undefined = (
+    slide: string
+  ): (() => void) | undefined => {
     if (slide === "age" && !is_age_button_disabled) {
       set_age_is_button_disabled(true);
-      const timeout = setTimeout(() => {
+      const timeout: NodeJS.Timeout = setTimeout(() => {
         set_age_is_button_disabled(false);
       }, 1000);
 
@@ -66,7 +69,7 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
       return () => clearTimeout(timeout);
     } else if (slide === "experience" && !is_experience_button_disabled) {
       set_is_experience_button_disabled(true);
-      const timeout = setTimeout(() => {
+      const timeout: NodeJS.Timer = setTimeout(() => {
         set_is_experience_button_disabled(false);
       }, 1000);
 
@@ -149,9 +152,10 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
 
   return (
     <div
-      className="bg-dark_gray_stone  border-warm_terracotta"
+      className="bg-dark_gray_stone border-warm_terracotta relative"
       style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
     >
+      <BACKGROUND_STYLING_COMP />
       <div className="flex w-full justify-evenly pt-5 pb-5">
         <div
           className="w-[10%] h-[10%] p-2 flex bg-[white] border-4 border-warm_terracotta shadow-2xl relative"
