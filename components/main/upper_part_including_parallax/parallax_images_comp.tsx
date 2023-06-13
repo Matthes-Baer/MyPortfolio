@@ -14,6 +14,7 @@ import fantasy_house from "public/main_images/fantasy_house.png";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CARDS_COMP from "./cards_comp";
 
 //! Bei jedem Bild Alt hinzufügen, weitere wichtige props?
 
@@ -105,6 +106,7 @@ const PARALLAX_IMAGES_COMP = () => {
 
   return (
     <div ref={container_ref} className="relative w-full">
+      <CARDS_COMP />
       <Image
         src={fantasy_background}
         alt="test"
