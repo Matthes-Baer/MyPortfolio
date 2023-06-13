@@ -25,3 +25,8 @@ export interface IImage_Props {
   src: string;
   alt: string;
 }
+
+export interface ICard {
+  card_index: number;
+  value: string;
+}

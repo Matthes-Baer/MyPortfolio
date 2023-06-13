@@ -112,7 +112,12 @@ const PARALLAX_IMAGES_COMP = () => {
         alt="test"
         width={1000}
         height={1000}
-        style={{ zIndex: -1, width: "100%", height: "100%" }}
+        style={{
+          zIndex: -1,
+          width: "100%",
+          height: "100%",
+          minHeight: "800px",
+        }}
       />
 
       <Image
