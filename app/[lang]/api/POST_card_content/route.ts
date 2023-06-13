@@ -1,11 +1,12 @@
 import { connect_to_database } from "@/utils/mongoDB_connect";
 import { NextResponse } from "next/server";
+import { Db } from "mongodb";
 
 interface IBody {
   card_idx: number;
 }
 
-export async function POST(request: Request) {
+export async function POST(request: Request, response: NextResponse) {
   let client;
 
   try {
@@ -15,7 +16,7 @@ export async function POST(request: Request) {
     return;
   }
 
-  let db = client.db("cards");
+  let db: Db = client.db("cards");
 
   try {
     //? Not request.body to get the body but request.json()
@@ -28,6 +29,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json(res);
   } catch (error) {
+    client.close();
     console.log(error);
+    return;
   }
 }

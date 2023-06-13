@@ -9,23 +9,22 @@ import three_birds from "public/main_images/three_birds.png";
 import two_birds from "public/main_images/two_birds.png";
 import fantasy_merchant from "public/main_images/fantasy_merchant.png";
 import fantasy_dog from "public/main_images/fantasy_dog.png";
-import fantasy_house from "public/main_images/fantasy_house.png";
 
-import { useEffect, useRef } from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CARDS_COMP from "./cards_comp";
 
 //! Bei jedem Bild Alt hinzufügen, weitere wichtige props?
 
-const PARALLAX_IMAGES_COMP = () => {
-  const container_ref = useRef(null);
-  const fantasy_tree_green_ref = useRef(null);
-  const fantasy_tree_red_ref = useRef(null);
-  const fantasy_branch_ref = useRef(null);
-  const three_birds_ref = useRef(null);
-  const two_birds_ref = useRef(null);
-  const fantasy_merchant_ref = useRef(null);
+const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
+  const container_ref: MutableRefObject<null> = useRef<null>(null);
+  const fantasy_tree_green_ref: MutableRefObject<null> = useRef<null>(null);
+  const fantasy_tree_red_ref: MutableRefObject<null> = useRef<null>(null);
+  const fantasy_branch_ref: MutableRefObject<null> = useRef<null>(null);
+  const three_birds_ref: MutableRefObject<null> = useRef<null>(null);
+  const two_birds_ref: MutableRefObject<null> = useRef<null>(null);
+  const fantasy_merchant_ref: MutableRefObject<null> = useRef<null>(null);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -233,21 +232,6 @@ const PARALLAX_IMAGES_COMP = () => {
           width: "4%",
           height: "8%",
           opacity: 0.9,
-        }}
-      />
-
-      <Image
-        src={fantasy_house}
-        alt="test"
-        width={500}
-        height={500}
-        style={{
-          position: "absolute",
-          top: "65%",
-          right: "48%",
-          width: "4.5%",
-          height: "9%",
-          opacity: 0.68,
         }}
       />
     </div>

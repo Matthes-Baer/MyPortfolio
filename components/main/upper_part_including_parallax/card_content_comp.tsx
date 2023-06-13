@@ -1,4 +1,4 @@
-const CARD_CONTENT_COMP = () => {
+const CARD_CONTENT_COMP: () => JSX.Element = (): JSX.Element => {
   return <div>Test</div>;
 };
 

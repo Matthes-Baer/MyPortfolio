@@ -12,7 +12,6 @@ export default function SWITCH_ROUTE_LINK_COMP(props: {
 }) {
   const segment = useSelectedLayoutSegment() || "";
   let isActive = props.slug === segment;
-  console.log(props.slug, segment);
 
   return (
     <Suspense fallback={<Loading />}>

@@ -4,7 +4,7 @@ import card_back from "public/main_images/card_back.png";
 import { useState } from "react";
 import type { ICard } from "@/utils/interfaces";
 
-const CARDS_COMP = (): JSX.Element => {
+const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
   const [opened_cards, set_opened_cards] = useState<Array<ICard>>([]);
   const [card_idx_count, set_card_idx_count] = useState<number>(1);
 
