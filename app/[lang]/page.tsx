@@ -18,8 +18,11 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             Aufräumen (file structure, weitere components für mehr Überblick
             (main page (age & experience part)), TypeScript vervollständigen)
           </li>
-          <li>Kartenrücken herausfinden</li>
-          <li>Kartenvorderseite herausfinden</li>
+          <li>
+            Für cards_comp opened_cards bilder file erstellen / und
+            dementsprechend per map Images importieren / card_content file mit
+            aktueller card bearbeiten
+          </li>
           <li>
             Styling überlegen für Age und Experience Comp - gsap.fromTo
             implementieren, derzeit buggt es mit gsap.from
