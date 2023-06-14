@@ -6,7 +6,7 @@ import { Suspense, useState } from "react";
 import Image from "next/image";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 import gsap from "gsap";
-import IMAGES from "@/utils/import_images";
+import { FLAG_IMAGES } from "@/utils/import_images";
 import { IImage_Props } from "@/utils/interfaces";
 
 export default function SWITCH_LANGUAGE_LINK_COMP(props: {
@@ -16,7 +16,9 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
 }) {
   const router: AppRouterInstance = useRouter();
   const image_props: IImage_Props =
-    props.language === "de" ? IMAGES.flag_german : IMAGES.flag_english;
+    props.language === "de"
+      ? FLAG_IMAGES.flag_german
+      : FLAG_IMAGES.flag_english;
 
   const fetch_function: () => Promise<void> = async (): Promise<void> => {
     // just demonstrating that it works

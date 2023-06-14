@@ -4,7 +4,7 @@ interface IImages {
   [key: string]: IImage_Props;
 }
 
-const IMAGES: IImages = {
+export const FLAG_IMAGES: IImages = {
   flag_german: {
     src: require("public/flag_images/flag_german.png"),
     alt: "A flag representing the German language",
@@ -15,4 +15,9 @@ const IMAGES: IImages = {
   },
 };
 
-export default IMAGES;
+export const CARD_IMAGES: IImages = {
+  typescript: {
+    src: require("public/main_images/card_icons/icon_typescript.png"),
+    alt: "An icon representing TypeScript",
+  },
+};

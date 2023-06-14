@@ -4,11 +4,11 @@ import Loading from "@/app/[lang]/loading";
 import Link from "next/link";
 import { Suspense } from "react";
 import Image from "next/image";
-import IMAGES from "@/utils/import_images";
+import { FLAG_IMAGES } from "@/utils/import_images";
 
 export default function RESET_LANGUAGE_BUTTON_COMP() {
-  const german_image = IMAGES.flag_german;
-  const english_image = IMAGES.flag_english;
+  const german_image = FLAG_IMAGES.flag_german;
+  const english_image = FLAG_IMAGES.flag_english;
 
   const reset_language_cookie = async () => {
     try {
