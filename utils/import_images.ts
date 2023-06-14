@@ -16,7 +16,11 @@ export const FLAG_IMAGES: IImages = {
 };
 
 export const CARD_IMAGES: IImages = {
-  typescript: {
+  JavaScript: {
+    src: require("public/main_images/card_icons/icon_javascript.png"),
+    alt: "An icon representing JavaScript",
+  },
+  TypeScript: {
     src: require("public/main_images/card_icons/icon_typescript.png"),
     alt: "An icon representing TypeScript",
   },
