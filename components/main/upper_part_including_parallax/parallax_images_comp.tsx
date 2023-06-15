@@ -179,7 +179,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         style={{
           position: "absolute",
           top: "30%",
-          left: "25%",
+          left: "45%",
           transform: "translate(-50%, -50%)",
           width: "10%",
           height: "20%",
@@ -196,7 +196,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         style={{
           position: "absolute",
           top: "35%",
-          right: "35%",
+          right: "5%",
           width: "10%",
           height: "20%",
           opacity: 0.9,

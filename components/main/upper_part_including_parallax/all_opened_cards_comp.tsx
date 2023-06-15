@@ -1,10 +1,39 @@
-import { ICard } from "@/utils/interfaces";
+"use client";
 
-const ALL_OPENED_CARDS_COMP = (props: { all_opened_cards: ICard[] }) => {
+import { ICard } from "@/utils/interfaces";
+import { gsap } from "gsap";
+import { MutableRefObject, useEffect, useRef } from "react";
+import SINGLE_OPENED_CARD_CONTENT_COMP from "./single_opened_card_content_comp";
+
+const ALL_OPENED_CARDS_COMP: (props: {
+  all_opened_cards: ICard[];
+}) => JSX.Element = (props: { all_opened_cards: ICard[] }): JSX.Element => {
+  const container_ref: MutableRefObject<null> = useRef<null>(null);
+
+  useEffect(() => {
+    const container = container_ref.current;
+
+    gsap.fromTo(
+      container,
+      {
+        opacity: 0,
+      },
+      { opacity: 1, duration: 1, ease: "power2.out" }
+    );
+  }, []);
+
   return (
-    <div className="flex w-6/12 mx-auto justify-center flex-wrap">
+    <div
+      className="absolute flex w-6/12 mx-auto justify-center flex-wrap bg-[gray]"
+      style={{
+        left: "50%",
+        bottom: "-20%",
+        transform: "translate(-50%, 0)",
+      }}
+      ref={container_ref}
+    >
       {props.all_opened_cards.map((card: ICard) => (
-        <div key={card.card_index}>{card.value}</div>
+        <SINGLE_OPENED_CARD_CONTENT_COMP card={card} key={card.card_index} />
       ))}
     </div>
   );
