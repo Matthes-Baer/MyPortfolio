@@ -30,4 +30,5 @@ export interface ICard {
   card_index: number;
   name: string;
   description: string;
+  stars: number;
 }

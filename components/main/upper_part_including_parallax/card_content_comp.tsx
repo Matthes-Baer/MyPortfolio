@@ -1,9 +1,8 @@
-"use client";
-
 import Loading from "@/app/[lang]/loading";
 import { ICard } from "@/utils/interfaces";
-import { MutableRefObject, Suspense, useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { Suspense } from "react";
+import Image from "next/image";
+import star from "public/main_images/star.png";
 
 const CARD_CONTENT_COMP: (props: {
   opened_card: ICard;
@@ -18,7 +17,21 @@ const CARD_CONTENT_COMP: (props: {
           transform: "translate(-50%, -50%)",
         }}
       >
-        {" "}
+        <div className="flex w-12/12 h-2/12 mx-auto bg-[pink]">
+          {Array.from(
+            { length: props.opened_card.stars },
+            (_, index: number) => (
+              <Image
+                key={index}
+                src={star}
+                alt={"A star icon representing the experience for this skill"}
+                width={50}
+                height={50}
+              />
+            )
+          )}
+        </div>
+
         {props.opened_card.name}
       </div>
     </Suspense>

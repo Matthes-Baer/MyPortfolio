@@ -36,15 +36,13 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
   const moving_card_ref: MutableRefObject<null> = useRef<null>(null);
 
   const fetch_stuff = useCallback(async () => {
-    const moving_card = moving_card_ref.current;
-    const moving_card_timeline = gsap.timeline();
-
+    let fetch_button_disable_timeout: NodeJS.Timeout;
     set_fetch_button_disabled(true);
-    const fetch_button_disable_timeout = setTimeout(() => {
-      set_fetch_button_disabled(false);
-    }, 2000);
 
     const animate_card = () => {
+      const moving_card = moving_card_ref.current;
+      const moving_card_timeline = gsap.timeline();
+
       moving_card_timeline.to(moving_card, {
         xPercent: 150,
         duration: 2,
@@ -78,17 +76,22 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ card_idx: current_card_idx_count }),
       });
-
       data = await res.json();
 
       if (!res.ok) {
         throw new Error();
       }
+
+      fetch_button_disable_timeout = setTimeout(() => {
+        set_fetch_button_disabled(false);
+      }, 2000);
+
       gsap.fromTo(
         container,
         { opacity: 0 },
         { opacity: 1, duration: 0.5, ease: "easeInOut" }
       );
+
       set_opened_cards((cards_array: Array<ICard>) => [...cards_array, data]);
       set_current_card_idx_count((count) => count + 1);
     } catch (error) {
@@ -110,7 +113,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
               className="w-full h-full"
               onClick={fetch_stuff}
               disabled={
-                (current_card_idx_count > 2 ? true : false) ||
+                (current_card_idx_count > 3 ? true : false) ||
                 fetch_button_disabled
               }
             >

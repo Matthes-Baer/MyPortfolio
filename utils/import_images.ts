@@ -24,4 +24,8 @@ export const CARD_IMAGES: IImages = {
     src: require("public/main_images/card_icons/icon_typescript.png"),
     alt: "An icon representing TypeScript",
   },
+  C_Sharp: {
+    src: require("public/main_images/card_icons/icon_C-Sharp.png"),
+    alt: "An icon representing C#",
+  },
 };
