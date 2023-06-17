@@ -18,18 +18,16 @@ const CARD_CONTENT_COMP: (props: {
         }}
       >
         <div className="flex w-12/12 h-2/12 mx-auto bg-[pink]">
-          {Array.from(
-            { length: props.opened_card.stars },
-            (_, index: number) => (
-              <Image
-                key={index}
-                src={star}
-                alt={"A star icon representing the experience for this skill"}
-                width={50}
-                height={50}
-              />
-            )
-          )}
+          {Array.from({ length: 3 }, (_, index: number) => (
+            <Image
+              key={index}
+              src={star}
+              alt={`A star icon representing the experience for my ${props.opened_card.name} skill`}
+              width={50}
+              height={50}
+              style={{ opacity: props.opened_card.stars > index ? 1 : 0.25 }}
+            />
+          ))}
         </div>
 
         {props.opened_card.name}
