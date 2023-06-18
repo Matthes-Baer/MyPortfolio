@@ -17,6 +17,8 @@ import CARDS_COMP from "./cards_comp";
 
 //! Bei jedem Bild Alt hinzufügen, weitere wichtige props?
 
+gsap.registerPlugin(ScrollTrigger);
+
 const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   const container_ref: MutableRefObject<null> = useRef<null>(null);
   const fantasy_tree_green_ref: MutableRefObject<null> = useRef<null>(null);
@@ -25,8 +27,6 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   const three_birds_ref: MutableRefObject<null> = useRef<null>(null);
   const two_birds_ref: MutableRefObject<null> = useRef<null>(null);
   const fantasy_merchant_ref: MutableRefObject<null> = useRef<null>(null);
-
-  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     const container = container_ref.current;

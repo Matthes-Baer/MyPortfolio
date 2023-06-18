@@ -4,9 +4,12 @@ import AGE_AND_EXPERIENCE_COMP from "./middle_part_including_age_and_experience/
 import { useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
 import PARALLAX_IMAGES_COMP from "./upper_part_including_parallax/parallax_images_comp";
-import PROJECT_TILES_PARENT from "./project_tiles_parent";
+import PROJECT_TILES_PARENT from "./lower_part_including_projects/project_tiles_parent";
 
-const ALL_MAIN_PARENTS_COMP = (props: { language: string }) => {
+const ALL_MAIN_PARENTS_COMP = (props: {
+  language: string;
+  project_data: any;
+}) => {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -44,7 +47,7 @@ const ALL_MAIN_PARENTS_COMP = (props: { language: string }) => {
     >
       <PARALLAX_IMAGES_COMP />
       <AGE_AND_EXPERIENCE_COMP language={props.language} />
-      <PROJECT_TILES_PARENT />
+      <PROJECT_TILES_PARENT project_data={props.project_data} />
     </main>
   );
 };

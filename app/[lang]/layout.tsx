@@ -41,7 +41,10 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
 
   return (
     <html lang={language_cookie || props.params.lang}>
-      <body className={medievalSharp.className} style={{ overflowX: "hidden" }}>
+      <body
+        className={`${medievalSharp.className} text-[white] bg-dark_gray_stone`}
+        style={{ overflowX: "hidden" }}
+      >
         {props.children}
       </body>
     </html>

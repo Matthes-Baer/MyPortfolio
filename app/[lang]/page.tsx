@@ -16,15 +16,17 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
         <ul>
           <li>
             Aufräumen (file structure, weitere components für mehr Überblick
-            (main page (age & experience part)), TypeScript vervollständigen)
+            (main page (age & experience part, project tiles part, fetch für
+            project tiles, ...)), TypeScript vervollständigen)
           </li>
           <li>
             Bei Parallax lieber mit top property arbeiten statt xPercent und
             yPercent(?)
           </li>
           <li>
-            Bei Cards content: Bei erstem Fetch fade-in-Effekt nicht ganz
-            perfekt?
+            Für Project Tiles: Infos von MongoDB in der Page fetchen und dann
+            runterrreichen anstatt es im client component zu fetchen (?) -
+            müsste man testen, ob das funktioniert
           </li>
           <li>
             Für cards_comp opened_cards bilder file erstellen / und

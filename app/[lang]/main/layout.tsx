@@ -1,5 +1,4 @@
 import "../globals.css";
-import { Quicksand } from "next/font/google";
 import type { IRootLayoutProps } from "@/utils/interfaces";
 import { ResolvingMetadata, Metadata } from "next";
 import { cookies } from "next/headers";
@@ -8,8 +7,6 @@ import SWITCH_ROUTE_LINK_COMP from "@/components/layout/switch_route_link_comp";
 import { Suspense } from "react";
 import Loading from "../loading";
 import RESET_LANGUAGE_BUTTON_COMP from "@/components/layout/reset_language_button_comp";
-
-const quicksand = Quicksand({ subsets: ["latin"] });
 
 export async function generateMetadata(
   props: IRootLayoutProps,
@@ -49,9 +46,9 @@ export default function RootLayout(props: IRootLayoutProps) {
   }
 
   return (
-    <div className="bg-basalt_gray_stone relative">
+    <div className="relative">
       <Suspense fallback={<Loading />}>
-        <div className="flex justify-between h-32 p-4 text-xl bg-gradient-to-t from-basalt_gray_stone to-forest_green">
+        <div className="flex justify-between h-32 p-4 text-xl">
           <div style={{ zIndex: 9001 }}>
             <RESET_LANGUAGE_BUTTON_COMP />
           </div>
