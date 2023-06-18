@@ -32,6 +32,16 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             man das nicht so gut in der Höhe anpassen kann, wenn mehrere Project
             Tiles dazukommen.
           </li>
+          <li>
+            animation duration times aneinander anpassen wenn sie
+            zusammengehören
+          </li>
+          <li>
+            Mobile/Tablet View (ab ca. 1000px und weniger) bearbeiten -
+            wahrscheinlich muss viel gekürzt werden: Karten weg und lediglich
+            mit Klick die opened cards Liste aufrufen; siehe Figma-Planung für
+            window screen size checker logic
+          </li>
         </ul>
       </Suspense>
     </main>

@@ -2,16 +2,16 @@
 
 - ger:
 -- description: JavaScript ist eine vielseitige Programmiersprache, mit der dynamische und interaktive Elemente auf Webseiten erstellt werden können.
--- my_description: JavaScript in Verbindung mit TypeScript bildet die Grundlage meiner wichtigsten Software-Projekte, während die Bearbeitung von Coding-Herausforderungen auf Plattformen wie CodinGame und Codewars JavaScript als meine vorherrschende Programmiersprache weiter festigt.
+-- my_description: JavaScript in Verbindung mit TypeScript bildet die Grundlage meiner wichtigsten Software-Projekte.
 
 - en:
 -- description: JavaScript is a versatile programming language used for creating dynamic and interactive elements on webpages.
--- my_description: JavaScript, coupled with TypeScript, serves as the foundation of my primary software development endeavors, while my affinity for tackling coding challenges on platforms like CodinGame and Codewars further solidifies JavaScript as my predominant programming language.
+-- my_description: JavaScript, coupled with TypeScript, serves as the foundation of most of my software development projects.
 
 
 | TypeScript:
 - ger:
--- description: TypeScript ist ein strongly-typed Superset von JavaScript, das den Entwicklungsprozess durch statische Typüberprüfung und zusätzliche Funktionen zur Erstellung robuster und skalierbarer Anwendungen verbessert.
+-- description: TypeScript ist ein stark typisiertes JavaScript-Superset, das den Entwicklungsprozess durch statische Typüberprüfung und zusätzliche Funktionen zur Robustheit und Skalierbarkeit von Anwendungen verbessert.
 -- my_description: Nachdem ich den Wert der vorteilhaften Eigenschaften von TypeScript bei der Förderung von Codestruktur, Lesbarkeit und Sauberkeit erkannt habe, habe ich dieses Superset nach meinen ersten Schritten mit JavaScript schnell angenommen und TypeScript aufgrund seiner klaren Typstruktur und der allgemeinen Vorteile gegenüber reinem JavaScript konsequent für meine Software-Projekte bevorzugt.
 
 - en:
