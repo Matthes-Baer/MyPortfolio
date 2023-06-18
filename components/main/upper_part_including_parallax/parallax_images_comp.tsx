@@ -40,11 +40,11 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
     ScrollTrigger.matchMedia({
       "(min-width: 768px)": () => {
         gsap.to(fantasy_branch, {
-          yPercent: 100,
+          top: "25%",
           scrollTrigger: {
             trigger: container,
-            start: "top top",
-            end: "bottom top",
+            start: "top",
+            end: "bottom",
             scrub: true,
           },
         });
@@ -101,6 +101,8 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         });
       },
     });
+
+    ScrollTrigger.refresh();
   }, []);
 
   return (
@@ -129,7 +131,6 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           position: "absolute",
           top: "10%",
           left: "-4%",
-          zIndex: 1,
           width: "25%",
           height: "25%",
           opacity: 0.9,

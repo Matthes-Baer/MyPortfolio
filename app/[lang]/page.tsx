@@ -19,6 +19,14 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             (main page (age & experience part)), TypeScript vervollständigen)
           </li>
           <li>
+            Bei Parallax lieber mit top property arbeiten statt xPercent und
+            yPercent(?)
+          </li>
+          <li>
+            Bei Cards content: Bei erstem Fetch fade-in-Effekt nicht ganz
+            perfekt?
+          </li>
+          <li>
             Für cards_comp opened_cards bilder file erstellen / und
             dementsprechend per map Images importieren / card_content file mit
             aktueller card bearbeiten
