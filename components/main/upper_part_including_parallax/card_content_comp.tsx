@@ -36,7 +36,7 @@ const CARD_CONTENT_COMP: (props: {
           <div className="flex items-end h-full w-8/12 flex-col">
             <div className="h-8/12 text-xl">{props.opened_card.name}</div>
             <div className="flex h-4/12">
-              {Array.from({ length: 3 }, (_, index: number) => (
+              {Array.from({ length: 5 }, (_, index: number) => (
                 <Image
                   key={index}
                   src={star}

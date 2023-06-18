@@ -1,20 +1,16 @@
 | JavaScript:
-
-- ger:
--- description: JavaScript ist eine vielseitige Programmiersprache, mit der dynamische und interaktive Elemente auf Webseiten erstellt werden können.
--- my_description: JavaScript in Verbindung mit TypeScript bildet die Grundlage meiner wichtigsten Software-Projekte.
-
-- en:
--- description: JavaScript is a versatile programming language used for creating dynamic and interactive elements on webpages.
--- my_description: JavaScript, coupled with TypeScript, serves as the foundation of most of my software development projects.
+- ger: JavaScript ist eine vielseitige Programmiersprache, mit der dynamische und interaktive Elemente auf Webseiten erstellt werden können.
+- en: JavaScript is a versatile programming language used for creating dynamic and interactive elements on webpages.
 
 
 | TypeScript:
-- ger:
--- description: TypeScript ist ein stark typisiertes JavaScript-Superset, das den Entwicklungsprozess durch statische Typüberprüfung und zusätzliche Funktionen zur Robustheit und Skalierbarkeit von Anwendungen verbessert.
--- my_description: Nachdem ich den Wert der vorteilhaften Eigenschaften von TypeScript bei der Förderung von Codestruktur, Lesbarkeit und Sauberkeit erkannt habe, habe ich dieses Superset nach meinen ersten Schritten mit JavaScript schnell angenommen und TypeScript aufgrund seiner klaren Typstruktur und der allgemeinen Vorteile gegenüber reinem JavaScript konsequent für meine Software-Projekte bevorzugt.
+- ger: TypeScript ist ein stark typisiertes JavaScript-Superset, das den Entwicklungsprozess mittels mehrerer Funktionen verbessert.
+- en: TypeScript is a strongly-typed superset of JavaScript that enhances the development process with various features.
 
-- en:
--- description: TypeScript is a strongly-typed superset of JavaScript that enhances the development process by providing static type checking and additional features to build robust and scalable applications.
--- my_description: Having recognized the value of TypeScript's beneficial features in promoting code structure, readability, and cleanliness, I swiftly embraced this superset following my initial foray into JavaScript, consistently favoring TypeScript for my software development endeavors due to its clear type structure and overall advantages over pure JavaScript.
+| HTML:
+- ger: HTML ist eine Auszeichnungssprache, die zur Erstellung und Strukturierung von Webseiten verwendet wird.
+- en: HTML is a markup language used for creating and structuring web pages.
 
+| CSS/SCSS:
+- ger: CSS ist eine Stylesheet-Sprache zur Beschreibung der visuellen Darstellung. SCSS ist ein Superset von CSS.
+- en: CSS is a style sheet language used to describe the visual presentation of HTML or XML documents. SCSS is a superset of CSS.
