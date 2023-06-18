@@ -43,7 +43,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           top: "25%",
           scrollTrigger: {
             trigger: container,
-            start: "top",
+            start: "125",
             end: "bottom",
             scrub: true,
           },
@@ -53,7 +53,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           yPercent: 7.5,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "125",
             end: "bottom top",
             scrub: true,
           },
@@ -63,7 +63,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           yPercent: 10,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "125",
             end: "bottom top",
             scrub: true,
           },
@@ -73,7 +73,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           xPercent: 20,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "125",
             end: "bottom top",
             scrub: true,
           },
@@ -83,7 +83,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           xPercent: -15,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "125",
             end: "bottom top",
             scrub: true,
           },
@@ -94,14 +94,13 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           yPercent: -40,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "125",
             end: "bottom top",
             scrub: true,
           },
         });
       },
     });
-
     ScrollTrigger.refresh();
   }, []);
 
