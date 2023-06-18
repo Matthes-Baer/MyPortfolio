@@ -24,7 +24,7 @@ const ALL_OPENED_CARDS_COMP: (props: {
 
   return (
     <div
-      className="absolute flex w-6/12 mx-auto justify-center flex-wrap bg-[gray]"
+      className="absolute flex flex-wrap w-8/12 mx-auto justify-center p-5"
       style={{
         left: "50%",
         bottom: "-20%",

@@ -25,9 +25,10 @@ const SINGLE_OPENED_CARD_CONTENT_COMP: (props: {
     <Image
       src={CARD_IMAGES[props.card.name].src}
       alt={CARD_IMAGES[props.card.name].alt}
-      height={100}
-      width={100}
+      height={50}
+      width={50}
       ref={image_ref}
+      className="m-1 shadow rounded"
     />
   );
 };

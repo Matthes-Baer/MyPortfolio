@@ -42,6 +42,12 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             mit Klick die opened cards Liste aufrufen; siehe Figma-Planung für
             window screen size checker logic
           </li>
+          <li>
+            Derzeit findet Layout shifting statt wenn man von einer Route auf
+            die Startseite wechselst - eventuell muss man mit den Startwerten
+            der Parallax-Bilder etwas anpassen / alternativ: manuellen
+            Ladescreen integrieren mit timeout loader
+          </li>
         </ul>
       </Suspense>
     </main>

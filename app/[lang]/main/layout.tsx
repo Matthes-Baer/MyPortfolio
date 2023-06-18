@@ -52,10 +52,10 @@ export default function RootLayout(props: IRootLayoutProps) {
     <div className="bg-basalt_gray_stone relative">
       <Suspense fallback={<Loading />}>
         <div className="flex justify-between h-32 p-4 text-xl bg-gradient-to-t from-basalt_gray_stone to-forest_green">
-          <div className="z-50">
+          <div style={{ zIndex: 9001 }}>
             <RESET_LANGUAGE_BUTTON_COMP />
           </div>
-          <div>
+          <div style={{ zIndex: 9001 }}>
             <div className="flex justify-end">
               <SWITCH_ROUTE_LINK_COMP url={`/${lang}/main`} slug="">
                 <div className="mr-5">
