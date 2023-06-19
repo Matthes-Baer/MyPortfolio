@@ -2,7 +2,6 @@
 - ger: JavaScript ist eine vielseitige Programmiersprache, mit der dynamische und interaktive Elemente auf Webseiten erstellt werden können.
 - en: JavaScript is a versatile programming language used for creating dynamic and interactive elements on webpages.
 
-
 | TypeScript:
 - ger: TypeScript ist ein stark typisiertes JavaScript-Superset, das den Entwicklungsprozess mittels mehrerer Funktionen verbessert.
 - en: TypeScript is a strongly-typed superset of JavaScript that enhances the development process with various features.
@@ -24,5 +23,85 @@
 - en: Next.js is a popular React full-stack framework that enables server-side rendering, among other features.
 
 | MongdoDB:
+- ger: MongoDB ist ein NoSQL-Datenbanksystem, das unter anderem eine hohe Skalierbarkeit für umfangreiche Anwendungen bereitstellt.
+- en: MongoDB is a NoSQL database system that provides high scalability, among other features, for large-scale applications.
+
+| Three.js:
+- ger: Three.js ist eine JavaScript-Bibliothek zum Rendern von 3D-Grafiken im Browser. In React.js wird sie mit React Three Fiber verwendet.
+- en: Three.js is a JavaScript library that is used to render 3D graphics in the browser. In React.js, it's used with React Three Fiber.
+
+| Redux (+ Toolkit):
+- ger: Redux ist ein State-Container, der dabei hilft, den State der Anwendung in einem zentralen Speicher zu verwalten.
+- en: Redux is a predictable state container for JavaScript applications that helps manage the application's state in a centralized store.
+
+| TailwindCSS:
+- ger: 
+- en: 
+
+| Bootstrap:
+- ger: 
+- en: 
+
+| Jest:
+- ger: 
+- en: 
+
+| Git:
+- ger: 
+- en: 
+
+| C_Sharp:
+- ger: 
+- en: 
+
+| PHP:
+- ger: 
+- en: 
+
+| React Native:
+- ger: 
+- en: 
+
+| Svelte:
+- ger: 
+- en: 
+
+| Express.js:
+- ger: 
+- en: 
+
+| Vue.js:
+- ger: 
+- en: 
+
+| Firebase:
+- ger: 
+- en: 
+
+| Figma:
+- ger: 
+- en: 
+
+| Python:
+- ger: 
+- en: 
+
+| Blender:
+- ger: 
+- en: 
+
+| GraphQL:
+- ger: 
+- en: 
+
+| jQuery:
+- ger: 
+- en: 
+
+| Solidity:
+- ger: 
+- en: 
+
+| Haskell:
 - ger: 
 - en: 
