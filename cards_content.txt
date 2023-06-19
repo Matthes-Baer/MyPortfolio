@@ -14,3 +14,15 @@
 | CSS/SCSS:
 - ger: CSS ist eine Stylesheet-Sprache zur Beschreibung der visuellen Darstellung. SCSS ist ein Superset von CSS.
 - en: CSS is a style sheet language used to describe the visual presentation of HTML or XML documents. SCSS is a superset of CSS.
+
+| React.js:
+- ger: React.js ist eine beliebte JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen und wird oftmals mit anderen JavaScript-Bibliotheken verwendet.
+- en: React.js is a popular JavaScript library for building user interfaces. It usually gets combined with many other JavaScript libraries.
+
+| Next.js:
+- ger: Next.js ist ein beliebtes React-Full-Stack-Framework, das unter anderem serverseitiges Rendering ermöglicht.
+- en: Next.js is a popular React full-stack framework that enables server-side rendering, among other features.
+
+| MongdoDB:
+- ger: 
+- en: 

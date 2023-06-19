@@ -1,5 +1,6 @@
 "use client";
 
+import { connect_to_database } from "@/utils/mongoDB_connect";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
