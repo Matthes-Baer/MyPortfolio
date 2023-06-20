@@ -16,13 +16,13 @@ export async function POST(request: Request, response: NextResponse) {
     return;
   }
 
-  let db: Db = client.db("cards");
+  let db: Db = client.db("main_db");
 
   try {
     //? Not request.body to get the body but request.json()
     const body: IBody = await request.json();
     let res = await db
-      .collection("cards_content")
+      .collection("cards")
       .findOne({ card_index: body.card_idx });
 
     client.close();

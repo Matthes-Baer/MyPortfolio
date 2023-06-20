@@ -1,12 +1,15 @@
 import "./globals.css";
-import { Quicksand } from "next/font/google";
+import { Quicksand, MedievalSharp, Cinzel } from "next/font/google";
 import type { IMetadata, IRootLayoutProps } from "@/utils/interfaces";
 import { ResolvingMetadata, Metadata } from "next";
 import { cookies } from "next/headers";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { NextFont } from "next/dist/compiled/@next/font";
 
-const quicksand: NextFont = Quicksand({ subsets: ["latin"] });
+const medievalSharp: NextFont = MedievalSharp({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const german_metadata: IMetadata = {
   title: "Dies ist der deutsche Titel",
@@ -38,7 +41,10 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
 
   return (
     <html lang={language_cookie || props.params.lang}>
-      <body className={quicksand.className} style={{ overflowX: "hidden" }}>
+      <body
+        className={`${medievalSharp.className} text-[white] bg-dark_gray_stone`}
+        style={{ overflowX: "hidden" }}
+      >
         {props.children}
       </body>
     </html>

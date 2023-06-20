@@ -17,6 +17,8 @@ import CARDS_COMP from "./cards_comp";
 
 //! Bei jedem Bild Alt hinzufügen, weitere wichtige props?
 
+gsap.registerPlugin(ScrollTrigger);
+
 const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   const container_ref: MutableRefObject<null> = useRef<null>(null);
   const fantasy_tree_green_ref: MutableRefObject<null> = useRef<null>(null);
@@ -25,8 +27,6 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   const three_birds_ref: MutableRefObject<null> = useRef<null>(null);
   const two_birds_ref: MutableRefObject<null> = useRef<null>(null);
   const fantasy_merchant_ref: MutableRefObject<null> = useRef<null>(null);
-
-  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     const container = container_ref.current;
@@ -40,11 +40,11 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
     ScrollTrigger.matchMedia({
       "(min-width: 768px)": () => {
         gsap.to(fantasy_branch, {
-          yPercent: 100,
+          top: "25%",
           scrollTrigger: {
             trigger: container,
-            start: "top top",
-            end: "bottom top",
+            start: "50",
+            end: "bottom",
             scrub: true,
           },
         });
@@ -53,7 +53,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           yPercent: 7.5,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "50",
             end: "bottom top",
             scrub: true,
           },
@@ -63,7 +63,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           yPercent: 10,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "50",
             end: "bottom top",
             scrub: true,
           },
@@ -73,7 +73,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           xPercent: 20,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "50",
             end: "bottom top",
             scrub: true,
           },
@@ -83,7 +83,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           xPercent: -15,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "50",
             end: "bottom top",
             scrub: true,
           },
@@ -94,13 +94,14 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           yPercent: -40,
           scrollTrigger: {
             trigger: container,
-            start: "top top",
+            start: "50",
             end: "bottom top",
             scrub: true,
           },
         });
       },
     });
+    ScrollTrigger.refresh();
   }, []);
 
   return (
@@ -129,7 +130,6 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           position: "absolute",
           top: "10%",
           left: "-4%",
-          zIndex: 1,
           width: "25%",
           height: "25%",
           opacity: 0.9,

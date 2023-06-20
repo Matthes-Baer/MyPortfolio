@@ -16,7 +16,26 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
         <ul>
           <li>
             Aufräumen (file structure, weitere components für mehr Überblick
-            (main page (age & experience part)), TypeScript vervollständigen)
+            (main page (age & experience part, project tiles part, fetch für
+            project tiles, ...)), TypeScript vervollständigen)
+          </li>
+          <li>
+            Alle Cards nochmal durchgehen und ggf. da, wo noch Platz wäre, Text
+            hinzufügen? Bspw. bei Vue.js
+          </li>
+          <li>
+            Bezüglich responsive design: Bei all_opened_cards und der textbox
+            etc. könnte man vielleicht mit einer noch kleineren/angepassteren
+            Mobile-Größe arbeiten (state als Objekt mit screen sizes) (?)
+          </li>
+          <li>
+            Bei Parallax lieber mit top property arbeiten statt xPercent und
+            yPercent(?)
+          </li>
+          <li>
+            Für Project Tiles: Infos von MongoDB in der Page fetchen und dann
+            runterrreichen anstatt es im client component zu fetchen (?) -
+            müsste man testen, ob das funktioniert
           </li>
           <li>
             Für cards_comp opened_cards bilder file erstellen / und
@@ -41,6 +60,12 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             wahrscheinlich muss viel gekürzt werden: Karten weg und lediglich
             mit Klick die opened cards Liste aufrufen; siehe Figma-Planung für
             window screen size checker logic
+          </li>
+          <li>
+            Derzeit findet Layout shifting statt wenn man von einer Route auf
+            die Startseite wechselst - eventuell muss man mit den Startwerten
+            der Parallax-Bilder etwas anpassen / alternativ: manuellen
+            Ladescreen integrieren mit timeout loader
           </li>
         </ul>
       </Suspense>

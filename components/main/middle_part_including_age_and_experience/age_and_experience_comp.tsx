@@ -186,7 +186,7 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
               }}
             ></div>
             <div
-              className="absolute h-[50%] bg-dark_gray_stone border-4 border-dark_gray_stone z-10"
+              className="absolute h-[50%] bg-[pink] border-4 border-dark_gray_stone z-10"
               style={{
                 left: "145%",
                 top: "50%",
