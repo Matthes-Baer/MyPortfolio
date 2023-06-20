@@ -1,6 +1,6 @@
 | JavaScript:
-- ger: JavaScript ist eine vielseitige Programmiersprache, mit der dynamische und interaktive Elemente auf Webseiten erstellt werden können.
-- en: JavaScript is a versatile programming language used for creating dynamic and interactive elements on webpages.
+- ger: JavaScript ist eine vielseitige Programmiersprache für interaktive Webseiten.
+- en: JavaScript is a versatile programming language for interactive web pages.
 
 | TypeScript:
 - ger: TypeScript ist ein stark typisiertes JavaScript-Superset, das den Entwicklungsprozess mittels mehrerer Funktionen verbessert.
@@ -15,8 +15,8 @@
 - en: CSS is a style sheet language used to describe the visual presentation of HTML or XML documents. SCSS is a superset of CSS.
 
 | React.js:
-- ger: React.js ist eine beliebte JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen und wird oftmals mit anderen JavaScript-Bibliotheken verwendet.
-- en: React.js is a popular JavaScript library for building user interfaces. It usually gets combined with many other JavaScript libraries.
+- ger: React.js ist eine beliebte JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen.
+- en: React.js is a popular JavaScript library for creating user interfaces.
 
 | Next.js:
 - ger: Next.js ist ein beliebtes React-Full-Stack-Framework, das unter anderem serverseitiges Rendering ermöglicht.
@@ -34,74 +34,74 @@
 - ger: Redux ist ein State-Container, der dabei hilft, den State der Anwendung in einem zentralen Speicher zu verwalten.
 - en: Redux is a predictable state container for JavaScript applications that helps manage the application's state in a centralized store.
 
-| TailwindCSS:
-- ger: 
-- en: 
+| Tailwind CSS:
+- ger: Tailwind CSS ist ein minimales CSS-Framework mit sofort einsetzbaren Utility-Klassen.
+- en: Tailwind CSS is a minimal CSS framework with ready-to-use utility classes.
 
 | Bootstrap:
-- ger: 
-- en: 
+- ger: Bootstrap ist ein rationalisiertes Webentwicklungs-Framework mit vorgefertigten Komponenten.
+- en: Bootstrap is a streamlined web development framework with pre-designed components.
 
 | Jest:
-- ger: 
-- en: 
+- ger: Jest ist ein JavaScript-Test-Framework, das das Schreiben und Ausführen von Tests für JavaScript-Code vereinfacht.
+- en: Jest is a JavaScript testing framework designed to make it easy to write and execute tests for JavaScript code.
 
 | Git:
-- ger: 
-- en: 
+- ger: Git ist ein Versionskontrollsystem, mit dem Entwickler Änderungen an ihren Code-Repositories effizient verfolgen und verwalten können.
+- en: Git is a distributed version control system that enables developers to track and manage changes to their code repositories efficiently.
 
 | C_Sharp:
-- ger: 
-- en: 
+- ger: C# ist eine objektorientierte Programmiersprache, die für die Erstellung von Anwendungen auf dem .NET-Framework weit verbreitet ist.
+- en: C# is a object-oriented programming language, widely used for building a variety of applications on the .NET framework.
 
 | PHP:
-- ger: 
-- en: 
+- ger: PHP ist eine serverseitige Skriptsprache, die speziell für die Webentwicklung entwickelt wurde und in HTML-Code eingebettet werden kann.
+- en: PHP is a server-side scripting language that is specifically designed for web development and can be embedded into HTML code.
 
 | React Native:
-- ger: 
-- en: 
+- ger: React Native ist ein Framework zur Erstellung mobiler Anwendungen mit JavaScript und React.
+- en: React Native is a framework for building mobile applications using JavaScript and React.
 
 | Svelte:
-- ger: 
-- en: 
+- ger: Svelte ist ein JavaScript-Framework, das Komponenten zum Zeitpunkt der Erstellung kompiliert, was zu effizienten Webanwendungen führt.
+- en: Svelte is a lightweight JavaScript framework that compiles components at build time, resulting in highly efficient and fast web applications.
 
-| Express.js:
-- ger: 
-- en: 
+| Node.js (+ Express.js):
+- ger: Node.js ist eine JavaScript-Laufzeitumgebung für Server und Kommandozeilen. Express.js ist ein Framework für Node.js.
+- en: Node.js is a JavaScript runtime for server-side and command-line applications. Express.js is a framework for Node.js.
 
 | Vue.js:
-- ger: 
-- en: 
+- ger: Vue.js ist ein progressives JavaScript-Framework für flexible UI-Entwicklung.
+- en: Vue.js is a progressive JavaScript framework for flexible UI development.
 
 | Firebase:
-- ger: 
-- en: 
+- ger: Firebase ist die umfassende Backend-Plattform von Google für die Entwicklung von Web- und Mobilanwendungen.
+- en: Firebase is Google's comprehensive backend platform for web and mobile app development.
 
 | Figma:
-- ger: 
-- en: 
+- ger: Figma ist ein Cloud-basiertes kollaboratives Design-Tool für UI/UX und visuelles Design.
+- en: Figma is a cloud-based collaborative design tool for UI/UX and visual design.
 
 | Python:
-- ger: 
-- en: 
+- ger: Python ist eine vielseitige und benutzerfreundliche High-Level-Programmiersprache mit breitem Anwendungsspektrum.
+- en: Python is a versatile and user-friendly high-level programming language with broad applications.
 
 | Blender:
-- ger: 
-- en: 
+- ger: Blender ist ein Open-Source-3D-Entwicklungsprogramm für Animationen und visuelle Effekte.
+- en: Blender is an open-source 3D creation suite for animations and visual effects.
 
 | GraphQL:
-- ger: 
-- en: 
+- ger: GraphQL ist eine flexible Query-Sprache und Laufzeitumgebung für die effiziente Abfrage und Bearbeitung von API-Daten.
+- en: GraphQL is a flexible query language and runtime for efficient API data fetching and manipulation.
 
 | jQuery:
-- ger: 
-- en: 
+- ger: jQuery ist eine funktionsreiche JavaScript-Bibliothek für die vereinfachte Webentwicklung.
+- en: jQuery is a feature-rich JavaScript library for simplified web development.
 
 | Solidity:
-- ger: 
-- en: 
+- ger: Solidity ist eine Programmiersprache zur Erstellung von Ethereum Smart Contracts und dezentralen Anwendungen (dApps).
+- en: Solidity is a programming language for creating Ethereum smart contracts and decentralized applications (dApps).
 
 | Haskell:
-- ger: 
-- en: 
+- ger: Haskell ist eine funktionale Programmiersprache mit starkem Typsystem und Fokus auf reine Funktionen für robuste und zuverlässige Software.
+- en: Haskell is a functional programming language with a strong type system and focus on pure functions for robust and reliable software.
