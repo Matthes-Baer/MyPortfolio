@@ -28,7 +28,7 @@ const SINGLE_OPENED_CARD_CONTENT_COMP: (props: {
       height={50}
       width={50}
       ref={image_ref}
-      className="m-1 shadow rounded"
+      className="m-1 rounded"
     />
   );
 };

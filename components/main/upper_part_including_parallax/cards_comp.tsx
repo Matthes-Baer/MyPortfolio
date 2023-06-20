@@ -175,7 +175,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
           <button
             onClick={fetch_stuff}
             disabled={
-              (current_card_idx_count > 2 ? true : false) ||
+              (current_card_idx_count > 9 ? true : false) ||
               fetch_button_disabled
             }
             className="bg-dark_gray_stone p-5 rounded text-sm"
@@ -200,7 +200,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
                 className="w-full h-full"
                 onClick={fetch_stuff}
                 disabled={
-                  (current_card_idx_count > 2 ? true : false) ||
+                  (current_card_idx_count > 9 ? true : false) ||
                   fetch_button_disabled
                 }
               >
