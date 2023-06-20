@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 const PROJECT_TILES_PARENT = (props: { project_data: any }) => {
   const elements = props.project_data;
   const elements_ref = useRef<(HTMLElement | null)[]>([]);
-  console.log(elements);
 
   useEffect(() => {
     elements_ref.current = elements_ref.current.slice(0, elements.length);

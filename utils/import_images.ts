@@ -28,7 +28,7 @@ export const CARD_IMAGES: IImages = {
     src: require("public/main_images/card_icons/icon_php.png"),
     alt: "An icon representing PHP",
   },
-  C_Sharp: {
+  "C#": {
     src: require("public/main_images/card_icons/icon_C-Sharp.png"),
     alt: "An icon representing C#",
   },
@@ -48,8 +48,80 @@ export const CARD_IMAGES: IImages = {
     src: require("public/main_images/card_icons/icon_html.png"),
     alt: "An icon representing HTML",
   },
-  CSS_SCSS: {
+  "CSS/SCSS": {
     src: require("public/main_images/card_icons/icon_css.png"),
     alt: "An icon representing CSS & SCSS",
+  },
+  "Tailwind CSS": {
+    src: require("public/main_images/card_icons/icon_tailwindcss.png"),
+    alt: "An icon representing Tailwind CSS",
+  },
+  Bootstrap: {
+    src: require("public/main_images/card_icons/icon_bootstrap.png"),
+    alt: "An icon representing Bootstrap",
+  },
+  "React.js": {
+    src: require("public/main_images/card_icons/icon_reactjs.png"),
+    alt: "An icon representing React.js",
+  },
+  "Next.js": {
+    src: require("public/main_images/card_icons/icon_nextjs.png"),
+    alt: "An icon representing Next.js",
+  },
+  "React Native": {
+    src: require("public/main_images/card_icons/icon_reactnative.png"),
+    alt: "An icon representing React Native",
+  },
+  Svelte: {
+    src: require("public/main_images/card_icons/icon_svelte.png"),
+    alt: "An icon representing Svelte",
+  },
+  "Vue.js": {
+    src: require("public/main_images/card_icons/icon_vuejs.png"),
+    alt: "An icon representing Vue.js",
+  },
+  MongoDB: {
+    src: require("public/main_images/card_icons/icon_mongodb.png"),
+    alt: "An icon representing MongoDB",
+  },
+  Firebase: {
+    src: require("public/main_images/card_icons/icon_firebase.png"),
+    alt: "An icon representing Firebase",
+  },
+  "Three.js": {
+    src: require("public/main_images/card_icons/icon_threejs.png"),
+    alt: "An icon representing Three.js",
+  },
+  Redux: {
+    src: require("public/main_images/card_icons/icon_redux.png"),
+    alt: "An icon representing Redux",
+  },
+  jQuery: {
+    src: require("public/main_images/card_icons/icon_jquery.png"),
+    alt: "An icon representing jQuery",
+  },
+  "Node.js": {
+    src: require("public/main_images/card_icons/icon_nodejs.png"),
+    alt: "An icon representing Node.js",
+  },
+  GraphQL: {
+    src: require("public/main_images/card_icons/icon_graphql.png"),
+    alt: "An icon representing GraphQL",
+  },
+  Jest: {
+    src: require("public/main_images/card_icons/icon_jest.png"),
+    alt: "An icon representing Jest",
+  },
+  Git: {
+    src: require("public/main_images/card_icons/icon_git.png"),
+    alt: "An icon representing Git",
+  },
+  Figma: {
+    src: require("public/main_images/card_icons/icon_figma.png"),
+    alt: "An icon representing Figma",
+  },
+  Blender: {
+    src: require("public/main_images/card_icons/icon_blender.png"),
+    alt: "An icon representing Blender",
   },
 };

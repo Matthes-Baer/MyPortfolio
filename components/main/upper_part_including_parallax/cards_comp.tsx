@@ -48,6 +48,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
   const front_card_image_ref: MutableRefObject<null> = useRef<null>(null);
   const moving_card_ref: MutableRefObject<null> = useRef<null>(null);
   const start_info_text_ref: MutableRefObject<null> = useRef<null>(null);
+  const cards_amount = 27;
 
   useEffect(() => {
     const handle_screen_resize = () => {
@@ -175,32 +176,41 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
           <button
             onClick={fetch_stuff}
             disabled={
-              (current_card_idx_count > 9 ? true : false) ||
+              (current_card_idx_count > cards_amount ? true : false) ||
               fetch_button_disabled
             }
             className="bg-dark_gray_stone p-5 rounded text-sm"
             style={{
               position: "absolute",
-              top: "50%",
+              top: "15%",
               left: "50%",
-              transform: "translate(-50%, -50%)",
+              transform: "translate(-50%, 0)",
               zIndex: 9000,
             }}
           >
-            {lang === "en"
-              ? "Click to reveal a skill. Improved user experience with a desktop screen size."
-              : "Klicke, um eine Fähigkeit aufzudecken. Ich empfehle, ein Gerät mit größerem Bildschirm für diese Website zu nutzen."}
+            <div>
+              {lang === "en"
+                ? "Click to reveal a skill. Improved user experience with a desktop screen size."
+                : "Klicke, um eine Fähigkeit aufzudecken. Ich empfehle, ein Gerät mit größerem Bildschirm für diese Website zu nutzen."}
+            </div>
+            <div>Cards Left: {cards_amount - current_card_idx_count + 1}</div>
           </button>
         )}
 
         <div className="flex justify-evenly items-center">
           {!is_mobile ? (
             <div className="relative">
+              <div
+                className="absolute text-[red] text-3xl"
+                style={{ top: 0, left: "50%", transform: "translate(-50%, 0)" }}
+              >
+                Cards Left: {cards_amount - current_card_idx_count + 1}
+              </div>
               <button
                 className="w-full h-full"
                 onClick={fetch_stuff}
                 disabled={
-                  (current_card_idx_count > 9 ? true : false) ||
+                  (current_card_idx_count > cards_amount ? true : false) ||
                   fetch_button_disabled
                 }
               >

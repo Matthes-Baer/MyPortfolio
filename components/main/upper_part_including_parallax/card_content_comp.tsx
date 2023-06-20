@@ -13,12 +13,6 @@ const CARD_CONTENT_COMP: (props: {
   opened_card: ICard;
 }) => JSX.Element = (props: { opened_card: ICard }): JSX.Element => {
   const lang: string = useParams().lang;
-  const card_name: string =
-    props.opened_card.name === "C_Sharp"
-      ? "C#"
-      : props.opened_card.name === "CSS_SCSS"
-      ? "CSS/SCSS"
-      : props.opened_card.name;
 
   return (
     <Suspense fallback={<Loading />}>
@@ -40,13 +34,13 @@ const CARD_CONTENT_COMP: (props: {
             />
           </div>
           <div className="flex items-end h-full w-8/12 flex-col">
-            <div className="h-8/12 text-xl">{card_name}</div>
+            <div className="h-8/12 text-xl">{props.opened_card.name}</div>
             <div className="flex h-4/12">
               {Array.from({ length: 5 }, (_, index: number) => (
                 <Image
                   key={index}
                   src={star}
-                  alt={`A star icon representing the experience for my ${card_name} skill`}
+                  alt={`A star icon representing the experience for my ${props.opened_card.name} skill`}
                   width={25}
                   height={25}
                   style={{

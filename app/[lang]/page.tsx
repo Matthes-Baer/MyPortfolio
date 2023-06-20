@@ -20,6 +20,15 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             project tiles, ...)), TypeScript vervollständigen)
           </li>
           <li>
+            Alle Cards nochmal durchgehen und ggf. da, wo noch Platz wäre, Text
+            hinzufügen? Bspw. bei Vue.js
+          </li>
+          <li>
+            Bezüglich responsive design: Bei all_opened_cards und der textbox
+            etc. könnte man vielleicht mit einer noch kleineren/angepassteren
+            Mobile-Größe arbeiten (state als Objekt mit screen sizes) (?)
+          </li>
+          <li>
             Bei Parallax lieber mit top property arbeiten statt xPercent und
             yPercent(?)
           </li>
