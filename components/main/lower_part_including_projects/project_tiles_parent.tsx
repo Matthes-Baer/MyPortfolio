@@ -138,7 +138,7 @@ const PROJECT_TILES_PARENT = (props: { project_data: any }) => {
 
               {/* Mit oder ohne .via. */}
               {index % 2 === 0 ? (
-                <div className="absolute top-0 left-0  bg-gradient-to-r from-dark_gray_stone via-dark_gray_stone to-[transparent] z-10"></div>
+                <div className="absolute top-0 left-0 w-1/4 h-full bg-gradient-to-r from-dark_gray_stone via-dark_gray_stone to-[transparent] z-10"></div>
               ) : (
                 <div className="absolute top-0 right-0 w-1/4 h-[400px] bg-gradient-to-l from-dark_gray_stone via-dark_gray_stone to-[transparent] z-10"></div>
               )}
