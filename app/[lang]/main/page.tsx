@@ -41,7 +41,7 @@ export default async function Main(props: INormalPageProps) {
 
   return (
     <Suspense fallback={<Loading />}>
-      <ALL_MAIN_PARENTS_COMP language={language} project_data={project_data} />
+      <ALL_MAIN_PARENTS_COMP project_data={project_data} />
     </Suspense>
   );
 }
