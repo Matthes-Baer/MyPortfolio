@@ -46,14 +46,7 @@ const ALL_OPENED_CARDS_COMP: (props: {
 
   return (
     <div
-      className="absolute flex flex-wrap rounded mx-auto justify-center p-5 bg-[rgba(25,25,25,0.4)]"
-      style={{
-        left: "50%",
-        bottom: "-25%",
-        transform: "translate(-50%, 0)",
-        maxWidth: is_mobile ? "90%" : "75%",
-        width: is_mobile ? "90%" : "auto",
-      }}
+      className="absolute left-1/2 -bottom-1/4 -translate-x-1/2 max-w-full w-full sm:w-auto sm:max-w-9/12 flex flex-wrap rounded mx-auto justify-center p-5 bg-[rgba(25,25,25,0.4)]"
       ref={container_ref}
     >
       {props.all_opened_cards.map((card: ICard) => (

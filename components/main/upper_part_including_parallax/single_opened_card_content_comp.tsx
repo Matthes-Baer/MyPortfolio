@@ -1,6 +1,6 @@
 "use client";
 
-import { CARD_IMAGES } from "@/utils/import_images";
+import { TECHSTACK_IMAGES } from "@/utils/import_images";
 import { ICard } from "@/utils/interfaces";
 import Image from "next/image";
 import { MutableRefObject, useEffect, useRef } from "react";
@@ -24,8 +24,8 @@ const SINGLE_OPENED_CARD_CONTENT_COMP: (props: {
 
   return (
     <Image
-      src={CARD_IMAGES[props.card.name].src}
-      alt={CARD_IMAGES[props.card.name].alt}
+      src={TECHSTACK_IMAGES[props.card.name].src}
+      alt={TECHSTACK_IMAGES[props.card.name].alt}
       height={props.mobile ? 30 : 35}
       width={props.mobile ? 30 : 35}
       ref={image_ref}

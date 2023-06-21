@@ -150,21 +150,11 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div
-        className="absolute w-full z-50"
-        style={{ top: "50%", left: 0, transform: "translate(0, -50%)" }}
-      >
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full z-50">
         {!is_mobile ? (
           !first_fetch && (
             <div
-              className="bg-dark_gray_stone p-5 rounded text-sm text-center"
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                zIndex: 9000,
-              }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9000] bg-dark_gray_stone p-5 rounded text-sm text-center"
               ref={start_info_text_ref}
             >
               {lang === "en"
@@ -179,14 +169,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
               (current_card_idx_count > cards_amount ? true : false) ||
               fetch_button_disabled
             }
-            className="bg-dark_gray_stone p-5 rounded text-sm"
-            style={{
-              position: "absolute",
-              top: "15%",
-              left: "50%",
-              transform: "translate(-50%, 0)",
-              zIndex: 9000,
-            }}
+            className="absolute top-[15%] left-1/2 -translate-x-1/2 bg-dark_gray_stone p-5 rounded text-sm"
           >
             <div>
               {lang === "en"
@@ -200,10 +183,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
         <div className="flex justify-evenly items-center">
           {!is_mobile ? (
             <div className="relative">
-              <div
-                className="absolute text-[red] text-3xl"
-                style={{ top: 0, left: "50%", transform: "translate(-50%, 0)" }}
-              >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 text-[red] text-3xl">
                 Cards Left: {cards_amount - current_card_idx_count + 1}
               </div>
               <button
@@ -221,9 +201,8 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
                 height={500}
                 width={500}
                 alt="Test"
-                className="absolute top-0 left-0"
+                className="absolute top-0 left-0 z-[-1]"
                 ref={moving_card_ref}
-                style={{ zIndex: -1 }}
               />
             </div>
           ) : null}
@@ -243,7 +222,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
               height={500}
               width={500}
               alt="Test"
-              style={{ opacity: 0 }}
+              className="opacity-0"
               ref={front_card_image_ref}
             />
           </div>

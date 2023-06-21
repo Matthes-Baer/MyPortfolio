@@ -2,6 +2,19 @@ interface ILanguageParams {
   lang: string;
 }
 
+interface IImage_Props {
+  src: string;
+  alt: string;
+}
+
+export interface IImages {
+  [key: string]: IImage_Props;
+}
+
+export interface IProjects {
+  [key: string]: IImage_Props[];
+}
+
 export interface INormalPageProps {
   params: ILanguageParams;
 }
@@ -21,14 +34,17 @@ export interface IMetadata {
   description: string;
 }
 
-export interface IImage_Props {
-  src: string;
-  alt: string;
-}
-
 export interface ICard {
   card_index: number;
   name: string;
   stars: number;
   description: { en: string; de: string };
+}
+
+export interface IProject {
+  project_key: string;
+  name: string;
+  techstack: string[];
+  links: { project: string; github: string };
+  description: string;
 }

@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import Image from "next/image";
 import star from "public/main_images/star.png";
 import { useParams } from "next/navigation";
-import { CARD_IMAGES } from "@/utils/import_images";
+import { TECHSTACK_IMAGES } from "@/utils/import_images";
 import { SupportedLanguages } from "@/utils/types";
 
 const CARD_CONTENT_COMP: (props: {
@@ -16,19 +16,12 @@ const CARD_CONTENT_COMP: (props: {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div
-        className="absolute w-6/12 h-[55%] z-20 p-5 text-dark_gray_stone"
-        style={{
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6/12 h-[55%] z-20 p-5 text-dark_gray_stone">
         <div className="flex justify-evenly w-full h-3/12 p-2">
           <div className="flex items-center w-4/12 border-r-2 border-dark_gray_stone">
             <Image
-              src={CARD_IMAGES[props.opened_card.name].src}
-              alt={CARD_IMAGES[props.opened_card.name].alt}
+              src={TECHSTACK_IMAGES[props.opened_card.name].src}
+              alt={TECHSTACK_IMAGES[props.opened_card.name].alt}
               height={45}
               width={45}
             />

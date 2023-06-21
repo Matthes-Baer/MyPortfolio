@@ -112,12 +112,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt="test"
         width={1000}
         height={1000}
-        style={{
-          zIndex: -1,
-          width: "100%",
-          height: "100%",
-          minHeight: "800px",
-        }}
+        className="z-[-1] w-full h-full min-h-[800px]"
       />
 
       <Image
@@ -125,15 +120,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt="test"
         width={500}
         height={100}
-        style={{
-          transform: "rotate(135deg)",
-          position: "absolute",
-          top: "10%",
-          left: "-4%",
-          width: "25%",
-          height: "25%",
-          opacity: 0.9,
-        }}
+        className="absolute top-[10%] -left-[4%] opacity-90 w-1/4 h-1/4 rotate-[135deg]"
         ref={fantasy_branch_ref}
       />
 
@@ -142,15 +129,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt="test"
         width={1000}
         height={1000}
-        style={{
-          position: "absolute",
-          bottom: "-60%",
-          left: "-30%",
-          width: "50%",
-          height: "100%",
-          zIndex: 1,
-          transform: "rotateY(180deg)",
-        }}
+        className="absolute -bottom-[60%] -left-[30%] w-1/2 h-full z-[1] rotate-y-180"
         ref={fantasy_tree_green_ref}
       />
 
@@ -159,15 +138,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt="test"
         width={1000}
         height={1000}
-        style={{
-          position: "absolute",
-          bottom: "-25%",
-          right: "-25%",
-          width: "40%",
-          height: "80%",
-          opacity: 0.85,
-          zIndex: 11,
-        }}
+        className="absolute -bottom-1/4 -right-1/4 w-2/5 h-4/5 opacity-85 z-[11]"
         ref={fantasy_tree_red_ref}
       />
 
@@ -176,15 +147,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt="test"
         width={500}
         height={500}
-        style={{
-          position: "absolute",
-          top: "30%",
-          left: "45%",
-          transform: "translate(-50%, -50%)",
-          width: "10%",
-          height: "20%",
-          opacity: 0.9,
-        }}
+        className="absolute top-[30%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-[10%] h-1/5 opacity-90"
         ref={three_birds_ref}
       />
 
@@ -193,14 +156,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt="test"
         width={500}
         height={500}
-        style={{
-          position: "absolute",
-          top: "35%",
-          right: "5%",
-          width: "10%",
-          height: "20%",
-          opacity: 0.9,
-        }}
+        className="absolute top-[35%] right-[5%] w-[10%] h-1/5 opacity-90"
         ref={two_birds_ref}
       />
 
@@ -209,14 +165,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt="test"
         width={500}
         height={500}
-        style={{
-          position: "absolute",
-          bottom: "15%",
-          right: "32.5%",
-          width: "4%",
-          height: "8%",
-          opacity: 0.9,
-        }}
+        className="absolute bottom-[15%] right-[32.5%] w-[4%] h-[8%] opacity-90"
         ref={fantasy_merchant_ref}
       />
 
@@ -225,14 +174,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt="test"
         width={500}
         height={500}
-        style={{
-          position: "absolute",
-          bottom: "15%",
-          right: "25%",
-          width: "4%",
-          height: "8%",
-          opacity: 0.9,
-        }}
+        className="absolute bottom-[15%] right-[25%] w-[4%] h-[8%] opacity-90"
       />
     </div>
   );

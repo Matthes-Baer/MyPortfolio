@@ -1,8 +1,4 @@
-import { IImage_Props } from "./interfaces";
-
-interface IImages {
-  [key: string]: IImage_Props;
-}
+import { IImages, IProjects } from "./interfaces";
 
 export const FLAG_IMAGES: IImages = {
   flag_german: {
@@ -15,7 +11,7 @@ export const FLAG_IMAGES: IImages = {
   },
 };
 
-export const CARD_IMAGES: IImages = {
+export const TECHSTACK_IMAGES: IImages = {
   JavaScript: {
     src: require("public/main_images/card_icons/icon_javascript.png"),
     alt: "An icon representing JavaScript",
@@ -124,4 +120,21 @@ export const CARD_IMAGES: IImages = {
     src: require("public/main_images/card_icons/icon_blender.png"),
     alt: "An icon representing Blender",
   },
+};
+
+export const PROJECT_IMAGES: IProjects = {
+  no_framework_project: [
+    {
+      src: require("public/main_images/card_icons/icon_blender.png"),
+      alt: "test",
+    },
+    {
+      src: require("public/main_images/card_icons/icon_figma.png"),
+      alt: "test",
+    },
+    {
+      src: require("public/main_images/card_icons/icon_jquery.png"),
+      alt: "test",
+    },
+  ],
 };
