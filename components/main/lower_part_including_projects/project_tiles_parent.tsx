@@ -48,7 +48,7 @@ const PROJECT_TILES_PARENT = (props: { project_data: any }) => {
   }, [elements]);
 
   return (
-    <div className="relative bg-dark_gray_stone w-full min-h-screen z-20 border-t-4 border-[white]">
+    <div className="relative bg-dark_gray_stone w-full min-h-screen z-20 border-t-2 border-card_yellow">
       <div style={{ display: "flex", flexDirection: "column" }}>
         {elements &&
           elements.map((element: any, index: number) => (

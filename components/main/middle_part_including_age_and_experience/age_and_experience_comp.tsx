@@ -80,6 +80,7 @@ const AGE_AND_EXPERIENCE_COMP = () => {
   };
 
   useEffect(() => {
+    //* GSAP animations for age & experience icons and associated elements
     const age_circle_timeline = gsap.timeline({ repeat: -1, paused: true });
     const experience_circle_timeline = gsap.timeline({
       repeat: -1,
@@ -88,19 +89,16 @@ const AGE_AND_EXPERIENCE_COMP = () => {
 
     age_circle_timeline.to(circle_from_age_ref.current, {
       rotate: "+=360deg",
-      opacity: 1,
-      duration: 4,
+      duration: 8,
       ease: "linear",
     });
 
     experience_circle_timeline.to(circle_from_experience_ref.current, {
       rotate: "+=360deg",
-      opacity: 1,
-      duration: 4,
+      duration: 8,
       ease: "linear",
     });
 
-    //* GSAP animations for age & experience icons and associated elements
     if (current_slide === "age") {
       age_circle_timeline.play();
       experience_circle_timeline.pause();
@@ -168,11 +166,16 @@ const AGE_AND_EXPERIENCE_COMP = () => {
           <button
             onClick={() => slide_changer_handler("age")}
             disabled={is_age_button_disabled || current_slide === "age"}
-            className="relative w-full p-2 bg-[white] shadow z-20 rounded-[50%]"
+            className="relative w-full p-2 bg-[white] shadow z-20 rounded-[50%] opacity-90"
           >
             <Image src={cake_icon} height={250} width={250} alt="Test" />
             <div
-              className="absolute top-0 left-0 w-full h-full rounded-[50%] border-2 border-r-[red] bg-[transparent]"
+              className="absolute w-[110%] h-[110%] rounded-[50%] border-2 border-[transparent] border-r-card_yellow bg-[transparent]"
+              style={{
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
               ref={circle_from_age_ref}
             ></div>
           </button>
@@ -184,17 +187,27 @@ const AGE_AND_EXPERIENCE_COMP = () => {
             disabled={
               is_experience_button_disabled || current_slide === "experience"
             }
-            className="w-full p-2 bg-[white] shadow z-20 rounded-[50%]"
+            className="relative w-full p-2 bg-[white] shadow z-20 rounded-[50%] opacity-90"
           >
             <Image src={computer_icon} height={250} width={250} alt="Test" />
             <div
-              className="absolute top-0 left-0 w-full h-full rounded-[50%] border-2 border-r-[red]"
+              className="absolute w-[110%] h-[110%] rounded-[50%] border-2 border-[transparent] border-l-card_yellow bg-[transparent]"
+              style={{
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
               ref={circle_from_experience_ref}
             ></div>
           </button>
         </div>
       </div>
-      <div className="flex justify-center text-5xl p-4 text-center w-9/12 mx-auto">
+      <div
+        className="flex justify-center p-4 text-center w-9/12 mx-auto"
+        style={{
+          fontSize: "calc(8px + 1.75vw)",
+        }}
+      >
         {current_slide === "age" ? (
           <div ref={age_slide_ref}>
             <div>
