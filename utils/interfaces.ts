@@ -1,3 +1,5 @@
+import { ObjectId } from "mongodb";
+
 interface ILanguageParams {
   lang: string;
 }
@@ -43,8 +45,8 @@ export interface ICard {
 
 export interface IProject {
   project_key: string;
-  name: string;
+  name: { en: string; de: string };
   techstack: string[];
   links: { project: string; github: string };
-  description: string;
+  description: { en: string; de: string };
 }

@@ -122,6 +122,7 @@ export const TECHSTACK_IMAGES: IImages = {
   },
 };
 
+//? For the bigger images
 export const PROJECT_IMAGES: IProjects = {
   no_framework_project: [
     {
