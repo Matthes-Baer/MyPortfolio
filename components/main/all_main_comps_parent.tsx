@@ -6,10 +6,7 @@ import Loading from "@/app/[lang]/loading";
 import PARALLAX_IMAGES_COMP from "./upper_part_including_parallax/parallax_images_comp";
 import PROJECT_TILES_PARENT from "./lower_part_including_projects/project_tiles_parent";
 
-const ALL_MAIN_PARENTS_COMP = (props: {
-  language: string;
-  project_data: any;
-}) => {
+const ALL_MAIN_PARENTS_COMP = (props: { project_data: any }) => {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -46,7 +43,7 @@ const ALL_MAIN_PARENTS_COMP = (props: {
       style={{ top: -150 }}
     >
       <PARALLAX_IMAGES_COMP />
-      <AGE_AND_EXPERIENCE_COMP language={props.language} />
+      <AGE_AND_EXPERIENCE_COMP />
       <PROJECT_TILES_PARENT project_data={props.project_data} />
     </main>
   );

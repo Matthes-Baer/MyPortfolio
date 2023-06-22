@@ -14,18 +14,17 @@ import gsap from "gsap";
 import cake_icon from "public/main_images/cake_icon.png";
 import computer_icon from "public/main_images/computer_icon.png";
 import BACKGROUND_STYLING_COMP from "./background_styling_comp";
+import { useParams } from "next/navigation";
 
-const AGE_AND_EXPERIENCE_COMP = (props: {
-  language: RequestCookie | string;
-}) => {
+const AGE_AND_EXPERIENCE_COMP = () => {
   //* Used for the GSAP animations
   const age_slide_ref: MutableRefObject<null> = useRef<null>(null);
   const experience_slide_ref: MutableRefObject<null> = useRef<null>(null);
-  const line_from_age_ref: MutableRefObject<null> = useRef<null>(null);
+  const circle_from_experience_ref: MutableRefObject<null> = useRef<null>(null);
   const circle_from_age_ref: MutableRefObject<null> = useRef<null>(null);
 
   //* Required to prevent bugging due to spam-/fast-clicking
-  const [is_age_button_disabled, set_age_is_button_disabled]: [
+  const [is_age_button_disabled, set_is_age_button_disabled]: [
     boolean,
     Dispatch<SetStateAction<boolean>>
   ] = useState<boolean>(false);
@@ -54,23 +53,25 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
     Dispatch<SetStateAction<string>>
   ] = useState<string>("age");
 
+  const language: string = useParams().lang;
+
   //* Adjust the timeout timing to GSAP animation's timing if GSAP animations are edited
   const slide_changer_handler: (a: string) => (() => void) | undefined = (
     slide: string
   ): (() => void) | undefined => {
     if (slide === "age" && !is_age_button_disabled) {
-      set_age_is_button_disabled(true);
+      set_is_experience_button_disabled(true);
       const timeout: NodeJS.Timeout = setTimeout(() => {
-        set_age_is_button_disabled(false);
+        set_is_experience_button_disabled(false);
       }, 1000);
 
       set_current_slide("age");
 
       return () => clearTimeout(timeout);
     } else if (slide === "experience" && !is_experience_button_disabled) {
-      set_is_experience_button_disabled(true);
+      set_is_age_button_disabled(true);
       const timeout: NodeJS.Timer = setTimeout(() => {
-        set_is_experience_button_disabled(false);
+        set_is_age_button_disabled(false);
       }, 1000);
 
       set_current_slide("experience");
@@ -80,7 +81,28 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
 
   useEffect(() => {
     //* GSAP animations for age & experience icons and associated elements
+    const age_circle_timeline = gsap.timeline({ repeat: -1, paused: true });
+    const experience_circle_timeline = gsap.timeline({
+      repeat: -1,
+      paused: true,
+    });
+
+    age_circle_timeline.to(circle_from_age_ref.current, {
+      rotate: "+=360deg",
+      duration: 8,
+      ease: "linear",
+    });
+
+    experience_circle_timeline.to(circle_from_experience_ref.current, {
+      rotate: "+=360deg",
+      duration: 8,
+      ease: "linear",
+    });
+
     if (current_slide === "age") {
+      age_circle_timeline.play();
+      experience_circle_timeline.pause();
+
       gsap.fromTo(
         age_slide_ref.current,
         { opacity: 0, x: -100 },
@@ -91,32 +113,9 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
           ease: "power2.out",
         }
       );
-
-      gsap.to(line_from_age_ref.current, {
-        width: "100%",
-        duration: 0.5,
-        ease: "power2.out",
-        onComplete: function () {
-          gsap.to(circle_from_age_ref.current, {
-            x: 100,
-            duration: 0.5,
-            ease: "power2.out",
-          });
-        },
-      });
     } else if (current_slide === "experience") {
-      gsap.to(circle_from_age_ref.current, {
-        x: 0,
-        duration: 0.5,
-        ease: "power2.out",
-        onComplete: function () {
-          gsap.to(line_from_age_ref.current, {
-            width: "0%",
-            duration: 0.5,
-            ease: "power2.out",
-          });
-        },
-      });
+      age_circle_timeline.pause();
+      experience_circle_timeline.play();
 
       gsap.fromTo(
         experience_slide_ref.current,
@@ -130,6 +129,13 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
       );
     }
 
+    return () => {
+      age_circle_timeline.kill();
+      experience_circle_timeline.kill();
+    };
+  }, [current_slide]);
+
+  useEffect(() => {
     //* Updating age and experience states
     const interval: NodeJS.Timer = setInterval(() => {
       set_age(
@@ -148,87 +154,64 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
     return () => {
       clearInterval(interval);
     };
-  }, [current_slide]);
+  }, []);
 
   return (
     <div
-      className="bg-dark_gray_stone border-warm_terracotta relative w-full"
+      className="relative w-full bg-dark_gray_stone border-warm_terracotta"
       style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
     >
-      <BACKGROUND_STYLING_COMP />
-      <div className="flex w-full justify-evenly pt-5 pb-5">
-        <div
-          className="relative w-[10%] h-[10%] p-2 flex"
-          style={{ borderRadius: "50%" }}
-        >
-          <div
-            className="absolute top-0 left-0 w-full h-full p-2 flex bg-[white] border-4 border-warm_terracotta shadow-2xl z-20"
-            style={{ borderRadius: "50%" }}
-          ></div>
-          <div
-            className="absolute h-[2px] w-[100%] bg-sky-100 z-10"
-            style={{
-              left: "100%",
-              top: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-            ref={line_from_age_ref}
-          ></div>
-          <div>
+      <div className="flex justify-evenly pt-5">
+        <div className="relative w-[10%]">
+          <button
+            onClick={() => slide_changer_handler("age")}
+            disabled={is_age_button_disabled || current_slide === "age"}
+            className="relative w-full p-2 bg-[white] shadow z-20 rounded-[50%] opacity-90"
+          >
+            <Image src={cake_icon} height={250} width={250} alt="Test" />
             <div
-              className="absolute h-[25%] bg-[transparent] border-4 border-[white] z-10"
+              className="absolute w-[110%] h-[110%] rounded-[50%] border-2 border-[transparent] border-r-card_yellow bg-[transparent]"
               style={{
-                left: "150%",
                 top: "50%",
-                transform: "translate(0%, -50%)",
-                borderRadius: "50%",
-                width: "25%",
-              }}
-            ></div>
-            <div
-              className="absolute h-[50%] bg-[pink] border-4 border-dark_gray_stone z-10"
-              style={{
-                left: "145%",
-                top: "50%",
-                transform: "translate(0%, -50%)",
-                borderRadius: "50%",
-                width: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
               }}
               ref={circle_from_age_ref}
             ></div>
-          </div>
-
-          <button
-            onClick={() => slide_changer_handler("age")}
-            disabled={is_experience_button_disabled}
-            className="z-30"
-          >
-            <Image src={cake_icon} height={250} width={250} alt="Test" />
           </button>
         </div>
 
-        <div
-          className="relative w-[10%] h-[10%] p-2 flex"
-          style={{ borderRadius: "50%" }}
-        >
-          <div
-            className="absolute top-0 left-0 w-full h-full p-2 flex bg-[white] border-4 border-warm_terracotta shadow-2xl z-20"
-            style={{ borderRadius: "50%" }}
-          ></div>
+        <div className="relative w-[10%]" style={{ borderRadius: "50%" }}>
           <button
             onClick={() => slide_changer_handler("experience")}
-            className="z-30"
-            disabled={is_age_button_disabled}
+            disabled={
+              is_experience_button_disabled || current_slide === "experience"
+            }
+            className="relative w-full p-2 bg-[white] shadow z-20 rounded-[50%] opacity-90"
           >
             <Image src={computer_icon} height={250} width={250} alt="Test" />
+            <div
+              className="absolute w-[110%] h-[110%] rounded-[50%] border-2 border-[transparent] border-l-card_yellow bg-[transparent]"
+              style={{
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+              ref={circle_from_experience_ref}
+            ></div>
           </button>
         </div>
       </div>
-      <div className="flex justify-center text-5xl p-4 text-center w-9/12 mx-auto">
+      <div
+        className="flex justify-center p-4 text-center w-9/12 mx-auto"
+        style={{
+          fontSize: "calc(8px + 1.75vw)",
+        }}
+      >
         {current_slide === "age" ? (
           <div ref={age_slide_ref}>
             <div>
-              {props.language === "de" ? "Alter (in Jahren)" : "Age (in years)"}
+              {language === "de" ? "Alter (in Jahren)" : "Age (in years)"}
             </div>
 
             <div className="p-5">{age.toFixed(8)}</div>
@@ -236,7 +219,7 @@ const AGE_AND_EXPERIENCE_COMP = (props: {
         ) : (
           <div ref={experience_slide_ref}>
             <div>
-              {props.language === "de"
+              {language === "de"
                 ? "Software-Entwicklungs-Erfahrung (in Jahren)"
                 : "Software Development Experience (in years)"}
             </div>

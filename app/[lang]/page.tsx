@@ -17,7 +17,8 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           <li>
             Aufräumen (file structure, weitere components für mehr Überblick
             (main page (age & experience part, project tiles part, fetch für
-            project tiles, ...)), TypeScript vervollständigen)
+            project tiles, ...)), TypeScript vervollständigen, Tailwind CSS
+            überall anwenden)
           </li>
           <li>
             Alle Cards nochmal durchgehen und ggf. da, wo noch Platz wäre, Text
