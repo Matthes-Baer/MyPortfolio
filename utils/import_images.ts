@@ -126,15 +126,15 @@ export const TECHSTACK_IMAGES: IImages = {
 export const PROJECT_IMAGES: IProjects = {
   no_framework_project: [
     {
-      src: require("public/main_images/card_icons/icon_blender.png"),
+      src: require("public/main_images/project_images/no_framework_project_first_pic.png"),
       alt: "test",
     },
     {
-      src: require("public/main_images/card_icons/icon_figma.png"),
+      src: require("public/main_images/project_images/no_framework_project_second_pic.png"),
       alt: "test",
     },
     {
-      src: require("public/main_images/card_icons/icon_jquery.png"),
+      src: require("public/main_images/project_images/no_framework_project_third_pic.png"),
       alt: "test",
     },
   ],

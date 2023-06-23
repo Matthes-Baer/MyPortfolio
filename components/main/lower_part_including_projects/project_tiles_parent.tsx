@@ -1,12 +1,16 @@
 "use client";
 
 //! Styling weiter anpassen für Project Tile
+//! Aria-Label für project svg link image
+//! Task Tour neuer Vercel-Upload für aktuelle URL mit richtigem Namen
+//! Link-Images richtig stylen
 //! ggf. weiter TypeScript/Namen/Struktur dieser file optimieren
 //! Bilder zum ersten Projekt erstellen und einfügen in file
 //! Nächstes Projekt einfügen
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import github_icon from "public/main_images/github_icon.png";
 
 import {
   Dispatch,
@@ -21,6 +25,7 @@ import Image from "next/image";
 import { PROJECT_IMAGES, TECHSTACK_IMAGES } from "@/utils/import_images";
 import { IProject } from "@/utils/interfaces";
 import { useParams } from "next/navigation";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,7 +57,7 @@ const PROJECT_TILES_PARENT: (props: {
                   { x: 0 },
                   {
                     x: index % 2 === 0 ? "50%" : "-50%",
-                    duration: 1,
+                    duration: 2,
                     scrollTrigger: {
                       trigger: element,
                       start: "-=250",
@@ -99,9 +104,48 @@ const PROJECT_TILES_PARENT: (props: {
                     (projects_ref.current[idx] = el)
                   }
                 >
-                  <div className="text-2xl p-3">
-                    Projekt: {project.name[language as "en" | "de"]}
+                  <div className="flex items-center">
+                    <div className="text-2xl p-3">
+                      Projekt: {project.name[language as "en" | "de"]}
+                    </div>
+                    <div className="flex items-center">
+                      {project.links.project && (
+                        <div>
+                          <Link href={project.links.project}>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth="1.5"
+                              stroke="currentColor"
+                              className="w-6 h-6"
+                              aria-label={`Placeholder`}
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                              />
+                            </svg>
+                          </Link>
+                        </div>
+                      )}
+                      {project.links.github && (
+                        <div>
+                          <Link href={project.links.github}>
+                            <Image
+                              src={github_icon}
+                              alt="Test"
+                              width={20}
+                              height={20}
+                              className="bg-[white] rounded-[50%]"
+                            />
+                          </Link>
+                        </div>
+                      )}
+                    </div>
                   </div>
+
                   <div className="flex p-3 mt-2">
                     {project.techstack.map(
                       (techstack_item: string, idx: number) => (
@@ -119,12 +163,12 @@ const PROJECT_TILES_PARENT: (props: {
                   <div className="p-3">
                     {project.description[language as "en" | "de"]}
                   </div>
-                  <div className="relative bg-[red] w-1/2 mx-auto">
+                  <div className="relative bg-[transparent] w-1/2 mx-auto">
                     <Image
                       src={PROJECT_IMAGES[project.project_key][current_idx].src}
                       alt="test"
-                      height={200}
-                      width={200}
+                      height={700}
+                      width={700}
                       className=""
                       ref={slider_ref}
                     />
@@ -132,7 +176,7 @@ const PROJECT_TILES_PARENT: (props: {
                     {current_idx <
                       PROJECT_IMAGES[project.project_key].length - 1 && (
                       <button
-                        className="absolute top-1/2 right-0 -translate-y-1/2 z-10 bg-transparent border-none"
+                        className="absolute top-1/2 right-0 -translate-y-1/2 z-10 p-2 mr-2 bg-dark_gray_stone border border-card_yellow hover:opacity-70 transition-opacity rounded-[50%] shadow-md"
                         onClick={() =>
                           set_current_idx((idx: number) => (idx += 1))
                         }
@@ -156,7 +200,7 @@ const PROJECT_TILES_PARENT: (props: {
 
                     {current_idx > 0 && (
                       <button
-                        className="absolute top-1/2 left-0 -translate-y-1/2 z-10 bg-transparent border-none"
+                        className="absolute top-1/2 left-0 -translate-y-1/2 z-10 p-2 ml-2 bg-dark_gray_stone border border-card_yellow hover:opacity-70 transition-opacity rounded-[50%] shadow-md"
                         onClick={() =>
                           set_current_idx((idx: number) => (idx -= 1))
                         }
