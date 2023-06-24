@@ -44,6 +44,7 @@ export interface ICard {
 }
 
 export interface IProject {
+  filter_id: number;
   project_key: string;
   name: { en: string; de: string };
   techstack: string[];
