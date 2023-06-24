@@ -124,6 +124,20 @@ export const TECHSTACK_IMAGES: IImages = {
 
 //? For the bigger images
 export const PROJECT_IMAGES: IProjects = {
+  task_tour: [
+    {
+      src: require("public/main_images/card_icons/icon_blender.png"),
+      alt: "test",
+    },
+    {
+      src: require("public/main_images/card_icons/icon_blender.png"),
+      alt: "test",
+    },
+    {
+      src: require("public/main_images/card_icons/icon_blender.png"),
+      alt: "test",
+    },
+  ],
   no_framework_project: [
     {
       src: require("public/main_images/project_images/no_framework_project_first_pic.png"),

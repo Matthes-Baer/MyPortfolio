@@ -22,7 +22,8 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           </li>
           <li>
             Alle Alt-Texte bei den Bildern sowohl für Englisch als auch Deutsch
-            auslegen - Beim Implementieren dann jeweils richtig anwählen
+            auslegen - Beim Implementieren dann jeweils richtig anwählen -
+            SupportedLanguages Type verwenden
           </li>
           <li>
             Alle Cards nochmal durchgehen und ggf. da, wo noch Platz wäre, Text

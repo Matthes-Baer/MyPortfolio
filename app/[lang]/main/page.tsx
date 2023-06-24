@@ -21,7 +21,9 @@ export async function get_projects() {
 
   try {
     const res_array: IProject[] = [];
-    (await db.collection("projects").find({}).toArray()).forEach((element) => {
+    (
+      await db.collection("projects").find({}).sort({ filter_id: 1 }).toArray()
+    ).forEach((element) => {
       const { _id, ...project_data } = element;
       res_array.push(project_data as IProject);
     });
