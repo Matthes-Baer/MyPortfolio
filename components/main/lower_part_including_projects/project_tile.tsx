@@ -115,6 +115,7 @@ const PROJECT_TILE: (props: {
           height={700}
           width={700}
           ref={slider_ref}
+          className="w-full h-full mx-auto"
         />
 
         {current_idx < PROJECT_IMAGES[props.project.project_key].length - 1 && (
