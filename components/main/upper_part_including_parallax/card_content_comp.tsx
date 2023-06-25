@@ -12,7 +12,7 @@ import { SupportedLanguages } from "@/utils/types";
 const CARD_CONTENT_COMP: (props: {
   opened_card: ICard;
 }) => JSX.Element = (props: { opened_card: ICard }): JSX.Element => {
-  const lang: string = useParams().lang;
+  const language: string = useParams().lang;
 
   return (
     <Suspense fallback={<Loading />}>
@@ -21,7 +21,11 @@ const CARD_CONTENT_COMP: (props: {
           <div className="flex items-center w-4/12 border-r-2 border-dark_gray_stone">
             <Image
               src={TECHSTACK_IMAGES[props.opened_card.name].src}
-              alt={TECHSTACK_IMAGES[props.opened_card.name].alt}
+              alt={
+                TECHSTACK_IMAGES[props.opened_card.name].alt[
+                  language as SupportedLanguages
+                ]
+              }
               height={45}
               width={45}
             />
@@ -33,7 +37,11 @@ const CARD_CONTENT_COMP: (props: {
                 <Image
                   key={index}
                   src={star}
-                  alt={`A star icon representing the experience for my ${props.opened_card.name} skill`}
+                  alt={
+                    language === "de"
+                      ? `Ein Sternsymbol, das die Erfahrung mit ${props.opened_card.name} darstellt`
+                      : `A star icon representing the experience for my ${props.opened_card.name} skill`
+                  }
                   width={25}
                   height={25}
                   style={{
@@ -45,7 +53,7 @@ const CARD_CONTENT_COMP: (props: {
           </div>
         </div>
         <div className="w-full h-5/12 p-2">
-          {props.opened_card.description[lang as SupportedLanguages]}
+          {props.opened_card.description[language as SupportedLanguages]}
         </div>
       </div>
     </Suspense>

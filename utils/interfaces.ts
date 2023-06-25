@@ -4,9 +4,9 @@ interface ILanguageParams {
   lang: string;
 }
 
-interface IImage_Props {
+export interface IImage_Props {
   src: string;
-  alt: string;
+  alt: { en: string; de: string };
 }
 
 export interface IImages {

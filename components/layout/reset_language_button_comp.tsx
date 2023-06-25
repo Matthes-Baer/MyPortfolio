@@ -5,10 +5,11 @@ import Link from "next/link";
 import { Suspense } from "react";
 import Image from "next/image";
 import { FLAG_IMAGES } from "@/utils/import_images";
+import { useParams } from "next/navigation";
+import { SupportedLanguages } from "@/utils/types";
 
 export default function RESET_LANGUAGE_BUTTON_COMP() {
-  const german_image = FLAG_IMAGES.flag_german;
-  const english_image = FLAG_IMAGES.flag_english;
+  const language = useParams().lang;
 
   const reset_language_cookie = async () => {
     try {
@@ -30,14 +31,14 @@ export default function RESET_LANGUAGE_BUTTON_COMP() {
       <Link href={"/en"} onClick={reset_language_cookie}>
         <div className="flex">
           <Image
-            src={english_image.src}
-            alt={english_image.alt}
+            src={FLAG_IMAGES.flag_english.src}
+            alt={FLAG_IMAGES.flag_english.alt[language as SupportedLanguages]}
             width={25}
             height={25}
           />
           <Image
-            src={german_image.src}
-            alt={german_image.alt}
+            src={FLAG_IMAGES.flag_german.src}
+            alt={FLAG_IMAGES.flag_german.alt[language as SupportedLanguages]}
             width={25}
             height={25}
           />

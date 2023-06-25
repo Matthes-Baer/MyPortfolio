@@ -40,11 +40,11 @@ const PROJECT_TILES_PARENT: (props: {
                   { x: 0 },
                   {
                     x: index % 2 === 0 ? "50%" : "-50%",
-                    duration: 2,
+                    duration: 1,
                     scrollTrigger: {
                       trigger: element,
-                      start: "-=250",
-                      end: "+=200",
+                      start: "-=500",
+                      end: "+=500",
                       scrub: true,
                     },
                   }
@@ -65,7 +65,7 @@ const PROJECT_TILES_PARENT: (props: {
 
   return (
     <div className="relative bg-dark_gray_stone w-full min-h-screen z-20 border-t-2 border-card_yellow">
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-5 mb-[50px]">
         {props.project_data &&
           props.project_data.map((project: IProject, idx: number) => (
             <div key={project.project_key} className="relative mb-10">

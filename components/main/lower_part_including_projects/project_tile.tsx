@@ -17,6 +17,8 @@ import {
 } from "react";
 import { useParams } from "next/navigation";
 import { gsap } from "gsap";
+import { SupportedLanguages } from "@/utils/types";
+import { useRouter } from "next/navigation";
 
 const PROJECT_TILE: (props: {
   project: IProject;
@@ -25,6 +27,8 @@ const PROJECT_TILE: (props: {
   project: IProject;
   idx: number;
 }): JSX.Element => {
+  const router = useRouter();
+
   const [current_idx, set_current_idx]: [
     number,
     Dispatch<SetStateAction<number>>
@@ -45,7 +49,7 @@ const PROJECT_TILE: (props: {
   }, [current_idx]);
 
   return (
-    <div>
+    <div className="mb-5 mt-5">
       <div className="flex items-center">
         <div className="text-2xl p-3">
           Projekt: {props.project.name[language as "en" | "de"]}
@@ -77,7 +81,7 @@ const PROJECT_TILE: (props: {
               <Link href={props.project.links.github}>
                 <Image
                   src={github_icon}
-                  alt="Test"
+                  alt={language === "de" ? "GitHub-Icon" : "GitHub icon"}
                   width={20}
                   height={20}
                   className="bg-[white] rounded-[50%]"
@@ -96,7 +100,11 @@ const PROJECT_TILE: (props: {
               <Image
                 key={idx}
                 src={TECHSTACK_IMAGES[techstack_item].src}
-                alt={TECHSTACK_IMAGES[techstack_item].alt}
+                alt={
+                  TECHSTACK_IMAGES[techstack_item].alt[
+                    language as SupportedLanguages
+                  ]
+                }
                 height={35}
                 width={35}
                 className="m-1"
@@ -108,14 +116,22 @@ const PROJECT_TILE: (props: {
       <div className="p-3">
         {props.project.description[language as "en" | "de"]}
       </div>
-      <div className="relative bg-[transparent] w-1/2 mx-auto">
+      <div className="relative bg-[transparent] w-1/2 mx-auto min-w-[250px]">
         <Image
           src={PROJECT_IMAGES[props.project.project_key][current_idx].src}
-          alt="test"
+          alt={
+            PROJECT_IMAGES[props.project.project_key][current_idx].alt[
+              language as SupportedLanguages
+            ]
+          }
           height={700}
           width={700}
           ref={slider_ref}
-          className="w-full h-full mx-auto"
+          className={
+            props.project.project_key === "Divid"
+              ? "w-1/2 h-[400px] mx-auto min-w-[250px]"
+              : "w-full"
+          }
         />
 
         {current_idx < PROJECT_IMAGES[props.project.project_key].length - 1 && (

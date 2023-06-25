@@ -1,7 +1,7 @@
 import type { INormalPageProps } from "@/utils/interfaces";
 import { Suspense } from "react";
 import Loading from "./loading";
-import SWITCH_LANGUAGE_LINK_COMP from "@/components/layout/switch_language_link_comp";
+import SWITCH_LANGUAGE_LINK_COMP from "@/components/switch_language_link_comp";
 
 export default function Language_Picker(props: INormalPageProps): JSX.Element {
   return (
@@ -19,6 +19,11 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             (main page (age & experience part, project tiles part, fetch für
             project tiles, ...)), TypeScript vervollständigen, Tailwind CSS
             überall anwenden)
+          </li>
+          <li>
+            Überall einmal durchgehen wegen alts für Images / wegen language
+            statt lang bei useParams / wegen genereller Struktur - quasi
+            Aufräumdienst
           </li>
           <li>
             Alle Alt-Texte bei den Bildern sowohl für Englisch als auch Deutsch
