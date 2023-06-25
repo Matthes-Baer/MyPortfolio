@@ -2,12 +2,12 @@
 
 import Loading from "@/app/[lang]/loading";
 import { useRouter } from "next/navigation";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import Image from "next/image";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
-import gsap from "gsap";
 import { FLAG_IMAGES } from "@/utils/import_images";
 import { IImage_Props } from "@/utils/interfaces";
+import { SupportedLanguages } from "@/utils/types";
 
 export default function SWITCH_LANGUAGE_LINK_COMP(props: {
   children: React.ReactNode;
@@ -21,9 +21,6 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
       : FLAG_IMAGES.flag_english;
 
   const fetch_function: () => Promise<void> = async (): Promise<void> => {
-    // just demonstrating that it works
-    // gsap.to(".move_it", { rotation: 360, x: 100, duration: 1 });
-
     try {
       const res = await fetch("/api/POST_change_language_cookie", {
         method: "POST",
@@ -54,7 +51,7 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
           src={image_props.src}
           width={250}
           height={250}
-          alt={image_props.alt}
+          alt={image_props.alt[props.language as SupportedLanguages]}
         />
         <div className="text-5xl p-5">{props.children}</div>
       </button>

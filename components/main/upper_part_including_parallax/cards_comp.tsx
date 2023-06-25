@@ -21,7 +21,7 @@ import Loading from "@/app/[lang]/loading";
 import { useParams } from "next/navigation";
 
 const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
-  const lang: string = useParams().lang;
+  const language: string = useParams().lang;
 
   const [current_card_idx_count, set_current_card_idx_count]: [
     number,
@@ -157,7 +157,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9000] bg-dark_gray_stone p-5 rounded text-sm text-center"
               ref={start_info_text_ref}
             >
-              {lang === "en"
+              {language === "en"
                 ? "Click on the left card to reveal skill cards."
                 : "Klicke auf die linke Karte, um Skill-Karten aufzudecken."}
             </div>
@@ -172,7 +172,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
             className="absolute top-[15%] left-1/2 -translate-x-1/2 bg-dark_gray_stone p-5 rounded text-sm"
           >
             <div>
-              {lang === "en"
+              {language === "en"
                 ? "Click to reveal a skill. Improved user experience with a desktop screen size."
                 : "Klicke, um eine Fähigkeit aufzudecken. Ich empfehle, ein Gerät mit größerem Bildschirm für diese Website zu nutzen."}
             </div>
