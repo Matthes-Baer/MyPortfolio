@@ -18,7 +18,6 @@ import {
 import { useParams } from "next/navigation";
 import { gsap } from "gsap";
 import { SupportedLanguages } from "@/utils/types";
-import { useRouter } from "next/navigation";
 
 const PROJECT_TILE: (props: {
   project: IProject;
@@ -27,8 +26,6 @@ const PROJECT_TILE: (props: {
   project: IProject;
   idx: number;
 }): JSX.Element => {
-  const router = useRouter();
-
   const [current_idx, set_current_idx]: [
     number,
     Dispatch<SetStateAction<number>>
@@ -44,7 +41,7 @@ const PROJECT_TILE: (props: {
     tl.fromTo(
       slider,
       { opacity: 0 },
-      { opacity: 1, duration: 1, ease: "linear" }
+      { opacity: 1, duration: 3, ease: "easeInOut" }
     );
   }, [current_idx]);
 
@@ -57,7 +54,7 @@ const PROJECT_TILE: (props: {
         <div className="flex items-center">
           {props.project.links.project && (
             <div>
-              <Link href={props.project.links.project}>
+              <Link href={props.project.links.project} target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -78,7 +75,7 @@ const PROJECT_TILE: (props: {
           )}
           {props.project.links.github && (
             <div>
-              <Link href={props.project.links.github}>
+              <Link href={props.project.links.github} target="_blank">
                 <Image
                   src={github_icon}
                   alt={language === "de" ? "GitHub-Icon" : "GitHub icon"}
@@ -113,10 +110,13 @@ const PROJECT_TILE: (props: {
           )}
         </div>
       </div>
-      <div className="p-3">
-        {props.project.description[language as "en" | "de"]}
+      <div className="p-3" style={{ whiteSpace: "pre-line" }}>
+        {props.project.description[language as "en" | "de"].replaceAll(
+          "\\n",
+          "\n"
+        )}
       </div>
-      <div className="relative bg-[transparent] w-1/2 mx-auto min-w-[250px]">
+      <div className="relative bg-[transparent] w-1/2 lg:w-2/3 mx-auto min-w-[250px]">
         <Image
           src={PROJECT_IMAGES[props.project.project_key][current_idx].src}
           alt={
@@ -124,13 +124,13 @@ const PROJECT_TILE: (props: {
               language as SupportedLanguages
             ]
           }
-          height={700}
-          width={700}
+          height={500}
+          width={500}
           ref={slider_ref}
           className={
-            props.project.project_key === "Divid"
-              ? "w-1/2 h-[400px] mx-auto min-w-[250px]"
-              : "w-full"
+            props.project.project_key === "divid"
+              ? "w-1/3 h-[400px] mx-auto min-w-[250px]"
+              : "w-full h-[165px] sm:h-[200px] md:h-[250px] lg:h-[225px] xl:h-[250px] 2xl:h-[300px]"
           }
         />
 

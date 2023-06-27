@@ -43,8 +43,8 @@ const PROJECT_TILES_PARENT: (props: {
                     duration: 1,
                     scrollTrigger: {
                       trigger: element,
-                      start: "-=500",
-                      end: "+=500",
+                      start: "-=500px top",
+                      end: "-=250px top",
                       scrub: true,
                     },
                   }
