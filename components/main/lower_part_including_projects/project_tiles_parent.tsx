@@ -16,6 +16,7 @@ import { MutableRefObject, useEffect, useRef } from "react";
 
 import { IProject } from "@/utils/interfaces";
 import PROJECT_TILE from "./project_tile";
+import { useParams } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,7 @@ const PROJECT_TILES_PARENT: (props: {
   const projects_ref: MutableRefObject<(HTMLElement | null)[]> = useRef<
     (HTMLElement | null)[]
   >([]);
+  const language: string = useParams().lang;
 
   useEffect(() => {
     projects_ref.current = [...projects_ref.current];
@@ -43,8 +45,8 @@ const PROJECT_TILES_PARENT: (props: {
                     duration: 1,
                     scrollTrigger: {
                       trigger: element,
-                      start: "-=500",
-                      end: "+=500",
+                      start: "-=500px top",
+                      end: "-=250px top",
                       scrub: true,
                     },
                   }
@@ -64,13 +66,26 @@ const PROJECT_TILES_PARENT: (props: {
   }, [props.project_data]);
 
   return (
-    <div className="relative bg-dark_gray_stone w-full min-h-screen z-20 border-t-2 border-card_yellow">
-      <div className="flex flex-col mt-5 mb-[50px]">
+    <section className="relative bg-dark_gray_stone w-full min-h-screen z-20 border-t-2 border-card_yellow">
+      <div className="mx-auto mt-5 mb-5">
+        {language === "de" ? (
+          <div className="flex flex-col items-center text-[white]">
+            <h1 className="text-2xl">Projekte</h1>
+            <span>(exkl. der Portfolio-Wesbite)</span>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center text-[white]">
+            <h1 className="text-[50px]">Projects</h1>
+            <span>(excl. the portfolio website)</span>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-col mb-[50px]">
         {props.project_data &&
           props.project_data.map((project: IProject, idx: number) => (
             <div key={project.project_key} className="relative mb-10">
               <div
-                className="flex flex-col w-full lg:w-1/2 text-[white] border-0 lg:border-r-2 lg:border-r-[white] lg:border-l-2 lg:border-l-[white]"
+                className="flex flex-col w-full lg:w-1/2 text-[white] border-0"
                 style={
                   idx % 2 === 0
                     ? { marginLeft: 0, marginRight: "auto" }
@@ -92,7 +107,7 @@ const PROJECT_TILES_PARENT: (props: {
             </div>
           ))}
       </div>
-    </div>
+    </section>
   );
 };
 

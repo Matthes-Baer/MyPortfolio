@@ -78,6 +78,14 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             der Parallax-Bilder etwas anpassen / alternativ: manuellen
             Ladescreen integrieren mit timeout loader
           </li>
+          <li>
+            Bei Vue.js-Projekt Rechtschreibung checken und Texte verbessern per
+            ChatGPT? / Current Nutrition values - nutrition sollte
+            kleingeschrieben werden, das dazugehörige Project Image müsste dann
+            auch neu erstellt werden --- ähnliche Prozedur für Svelte und React
+            Native Projekt? Bei React Native Projekt vielleicht noch mehr Bilder
+            hinzufügen (die volle Game instruction bspw.)?
+          </li>
         </ul>
       </Suspense>
     </main>
