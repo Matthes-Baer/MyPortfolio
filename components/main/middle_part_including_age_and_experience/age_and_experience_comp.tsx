@@ -1,6 +1,5 @@
 "use client";
 
-import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import Image from "next/image";
 import {
   Dispatch,
@@ -13,7 +12,6 @@ import {
 import gsap from "gsap";
 import cake_icon from "public/main_images/cake_icon.png";
 import computer_icon from "public/main_images/computer_icon.png";
-import BACKGROUND_STYLING_COMP from "./background_styling_comp";
 import { useParams } from "next/navigation";
 
 const AGE_AND_EXPERIENCE_COMP = () => {
