@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
-import INFORMATION from "./information";
+import INFORMATION from "./information_part";
 import TIMELINE_PART from "./timeline_part";
 
 const ALL_TIMELINE_PARENTS_COMP = () => {
