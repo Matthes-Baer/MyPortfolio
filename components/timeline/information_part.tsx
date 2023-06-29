@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 
-const INFORMATION: () => JSX.Element = (): JSX.Element => {
+const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
 
   const scroll_down = () => {
@@ -56,4 +56,4 @@ const INFORMATION: () => JSX.Element = (): JSX.Element => {
   );
 };
 
-export default INFORMATION;
+export default INFORMATION_PART;
