@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
-import FIRST_PART_INSTRUCTION from "./first_part_instruction";
+import INFORMATION from "./information";
+import TIMELINE_PART from "./timeline_part";
 
 const ALL_TIMELINE_PARENTS_COMP = () => {
   const [isLoading, setLoading] = useState(false);
@@ -37,8 +38,13 @@ const ALL_TIMELINE_PARENTS_COMP = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <main className="flex min-h-screen w-full flex-col">
-      <FIRST_PART_INSTRUCTION />
+    <main className="">
+      <section>
+        <INFORMATION />
+      </section>
+      <section>
+        <TIMELINE_PART />
+      </section>
     </main>
   );
 };
