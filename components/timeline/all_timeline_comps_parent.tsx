@@ -1,12 +1,10 @@
 "use client";
 
-import AGE_AND_EXPERIENCE_COMP from "./middle_part_including_age_and_experience/age_and_experience_comp";
 import { useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
-import PARALLAX_IMAGES_COMP from "./upper_part_including_parallax/parallax_images_comp";
-import PROJECT_TILES_PARENT from "./lower_part_including_projects/project_tiles_parent";
+import FIRST_PART_INSTRUCTION from "./first_part_instruction";
 
-const ALL_MAIN_PARENTS_COMP = (props: { project_data: any }) => {
+const ALL_TIMELINE_PARENTS_COMP = () => {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -39,15 +37,10 @@ const ALL_MAIN_PARENTS_COMP = (props: { project_data: any }) => {
   if (isLoading) return <Loading />;
 
   return (
-    <main
-      className="flex min-h-screen w-full flex-col absolute"
-      style={{ top: -150 }}
-    >
-      <PARALLAX_IMAGES_COMP />
-      <AGE_AND_EXPERIENCE_COMP />
-      <PROJECT_TILES_PARENT project_data={props.project_data} />
+    <main className="flex min-h-screen w-full flex-col">
+      <FIRST_PART_INSTRUCTION />
     </main>
   );
 };
 
-export default ALL_MAIN_PARENTS_COMP;
+export default ALL_TIMELINE_PARENTS_COMP;
