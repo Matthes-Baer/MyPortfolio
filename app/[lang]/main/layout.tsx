@@ -1,5 +1,6 @@
 import "../globals.css";
 import type { IRootLayoutProps } from "@/utils/interfaces";
+import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { ResolvingMetadata, Metadata } from "next";
 import { cookies } from "next/headers";
 import Link from "next/link";
@@ -14,32 +15,35 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const lang = props.params.lang;
 
-  if (lang === "en") {
+  if (lang === "de") {
     return {
-      title: "This is the English title",
-      description: "This is the English description.",
+      title: "Portfolio - Startseite",
+      description:
+        "Dies ist die Startseite meines Portfolios, auf der ich meine Softwareentwicklungs-Fähigkeiten vorstelle und einen Überblick über meine bisherigen Projekte gebe.",
     };
   } else {
     return {
-      title: "Dies ist der deutsche Titel",
-      description: "Dies ist die deutsche Beschreibung.",
+      title: "Portfolio - Homepage",
+      description:
+        "This is the homepage of my portfolio, where I present my software development skills and give an overview of my previous projects.",
     };
   }
 }
 
-export default function RootLayout(props: IRootLayoutProps) {
-  let cookies_store = cookies();
-  let language_cookie = cookies_store.get("language_cookie")?.value;
-  let lang = props.params.lang;
+export default function RootLayout(props: IRootLayoutProps): JSX.Element {
+  let cookies_store: ReadonlyRequestCookies = cookies();
+  let language_cookie: string | undefined =
+    cookies_store.get("language_cookie")?.value;
+  let lang: string = props.params.lang;
 
   if (language_cookie != lang) {
     return (
       <Link href={`/${lang}`}>
         <span>
           {" "}
-          {language_cookie === "en"
-            ? "Please use the configured language changer in main when changing the language"
-            : "Bitte verwende den Language Picker zum Ändern der Sprache"}
+          {language_cookie === "de"
+            ? "Bitte verwenden Sie die Sprachauswahl, um die Sprache zu ändern."
+            : "Please use the language selector to change the language."}
         </span>
       </Link>
     );
@@ -49,10 +53,10 @@ export default function RootLayout(props: IRootLayoutProps) {
     <div className="relative">
       <Suspense fallback={<Loading />}>
         <div className="flex justify-between h-32 p-4 text-xl">
-          <div style={{ zIndex: 9001 }}>
+          <div className="z-[9001]">
             <RESET_LANGUAGE_BUTTON_COMP />
           </div>
-          <div style={{ zIndex: 9001 }}>
+          <div className="z-[9001]">
             <div className="flex justify-end">
               <SWITCH_ROUTE_LINK_COMP url={`/${lang}/main`} slug="">
                 <div className="mr-5">

@@ -1,4 +1,4 @@
-const FIRST_LEARNINGSTART = () => {
+const FIRST_LEARNINGSTART: () => JSX.Element = (): JSX.Element => {
   return <div className="">Testing Scrolltrigger</div>;
 };
 

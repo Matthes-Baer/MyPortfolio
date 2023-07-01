@@ -13,7 +13,7 @@ const SINGLE_OPENED_CARD_CONTENT_COMP: (props: {
   mobile: boolean;
 }) => JSX.Element = (props: { card: ICard; mobile: boolean }): JSX.Element => {
   const image_ref: MutableRefObject<null> = useRef<null>(null);
-  const language = useParams().lang;
+  const language: string = useParams().lang;
 
   useEffect(() => {
     const image = image_ref.current;

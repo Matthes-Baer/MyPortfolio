@@ -8,7 +8,7 @@ import { MutableRefObject, useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TIMELINE_PART = () => {
+const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   const first_learningstart_ref: MutableRefObject<null> = useRef(null);
 
   useEffect(() => {
@@ -35,7 +35,6 @@ const TIMELINE_PART = () => {
   return (
     <div className="relative w-full h-min-screen">
       <TIMELINE_PART_BACKGROUND />
-
       <div
         className="bg-[pink] w-full sm:w-6/12 md:w-4/12 lg:w-3/12 h-[200px] opacity-0"
         ref={first_learningstart_ref}

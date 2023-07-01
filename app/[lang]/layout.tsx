@@ -12,13 +12,14 @@ const medievalSharp: NextFont = MedievalSharp({
 });
 
 const german_metadata: IMetadata = {
-  title: "Dies ist der deutsche Titel",
-  description: "Dies ist die deutsche Beschreibung.",
+  title: "Matthes Bär - Portfolio",
+  description:
+    "Diese Website repräsentiert mein Software-Entwicklungs-Portfolio.",
 };
 
 const english_metadata: IMetadata = {
-  title: "This is the English title",
-  description: "This is the English description.",
+  title: "Matthes Bär - Portfolio",
+  description: "This website represents my software development portfolio.",
 };
 
 export async function generateMetadata(

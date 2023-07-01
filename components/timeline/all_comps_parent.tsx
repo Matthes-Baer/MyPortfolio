@@ -1,23 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
 import TIMELINE_PART from "./timeline_part";
 import INFORMATION_PART from "./information_part";
 
-const ALL_TIMELINE_PARENTS_COMP = () => {
-  const [isLoading, setLoading] = useState(false);
+const ALL_TIMELINE_PARENTS_COMP: () => JSX.Element = (): JSX.Element => {
+  const [is_loading, set_loading]: [
+    boolean,
+    Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
 
   useEffect(() => {
-    const images = document.getElementsByTagName("img");
-    const imagesCount = images.length;
-    let loadedCount = 0;
+    const images: HTMLCollectionOf<HTMLImageElement> =
+      document.getElementsByTagName("img");
+    const imagesCount: number = images.length;
+    let loadedCount: number = 0;
 
-    const handleImageLoad = () => {
+    const handleImageLoad: () => void = (): void => {
       loadedCount++;
 
       if (loadedCount === imagesCount) {
-        setLoading(false);
+        set_loading(false);
       }
     };
 
@@ -35,10 +39,10 @@ const ALL_TIMELINE_PARENTS_COMP = () => {
   }, []);
 
   //! Use different loading screen - probably a fullscreen loading screen for this
-  if (isLoading) return <Loading />;
+  if (is_loading) return <Loading />;
 
   return (
-    <main className="">
+    <main>
       <section>
         <INFORMATION_PART />
       </section>

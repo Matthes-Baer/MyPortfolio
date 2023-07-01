@@ -157,9 +157,9 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9000] bg-dark_gray_stone p-5 rounded text-sm text-center"
               ref={start_info_text_ref}
             >
-              {language === "en"
-                ? "Click on the left card to reveal skill cards."
-                : "Klicke auf die linke Karte, um Skill-Karten aufzudecken."}
+              {language === "de"
+                ? "Klicken Sie auf die linke Karte, um die Skill-Karten aufzudecken."
+                : "Click on the left card to reveal the skill cards."}
             </div>
           )
         ) : (
@@ -172,19 +172,25 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
             className="absolute top-[15%] left-1/2 -translate-x-1/2 bg-dark_gray_stone p-5 rounded text-sm"
           >
             <div>
-              {language === "en"
-                ? "Click to reveal a skill. Improved user experience with a desktop screen size."
-                : "Klicke, um eine Fähigkeit aufzudecken. Ich empfehle, ein Gerät mit größerem Bildschirm für diese Website zu nutzen."}
+              {language === "de"
+                ? "Klicken Sie, um eine Fähigkeit aufzudecken. Es ist zu empfehlen, diese Website auf einem Gerät mit größerem Bildschirm zu nutzen."
+                : "Click to reveal a skill. It is recommended to use this website on a device with a larger screen."}
             </div>
-            <div>Cards Left: {cards_amount - current_card_idx_count + 1}</div>
+            <div className="mt-2">
+              {language === "de"
+                ? "Noch verdeckte Fähigkeiten: "
+                : "Skills still hidden: "}{" "}
+              {cards_amount - current_card_idx_count + 1}
+            </div>
           </button>
         )}
 
         <div className="flex justify-evenly items-center">
           {!is_mobile ? (
             <div className="relative">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 text-[red] text-3xl">
-                Cards Left: {cards_amount - current_card_idx_count + 1}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 text-dark_gray_stone text-2xl">
+                {language === "de" ? "Verdeckte Karten: " : "Hidden cards: "}{" "}
+                {cards_amount - current_card_idx_count + 1}
               </div>
               <button
                 className="w-full h-full"

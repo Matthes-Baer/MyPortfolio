@@ -47,7 +47,7 @@ const PROJECT_TILE: (props: {
 
   return (
     <div className="mb-5 mt-5 p-3">
-      <div className="flex items-center">
+      <div className="flex flex-col sm:flex-row items-center text-center">
         <div className="text-[35px] p-1">
           {language === "de" ? "Projekt" : "Project"}:{" "}
           <span className="border-b border-b-card_yellow">
@@ -101,7 +101,7 @@ const PROJECT_TILE: (props: {
       </div>
 
       <div className="flex flex-col mt-3 mb-3">
-        <div className="flex">
+        <div className="flex flex-wrap justify-center sm:justify-start">
           {props.project.techstack.map(
             (techstack_item: string, idx: number) => (
               <Image

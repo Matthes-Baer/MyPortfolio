@@ -23,7 +23,7 @@ const ALL_OPENED_CARDS_COMP: (props: {
 
   useEffect(() => {
     const container = container_ref.current;
-    const handle_screen_resize = () => {
+    const handle_screen_resize: () => void = (): void => {
       set_is_mobile(window.innerWidth <= 1000);
     };
 

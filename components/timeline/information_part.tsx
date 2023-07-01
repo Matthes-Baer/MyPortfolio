@@ -5,8 +5,8 @@ import { useParams } from "next/navigation";
 const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
 
-  const scroll_down = () => {
-    const scrollPosition =
+  const scroll_down: () => void = (): void => {
+    const scrollPosition: number =
       window.scrollY ||
       document.documentElement.scrollTop ||
       document.body.scrollTop;
