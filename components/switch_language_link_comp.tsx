@@ -35,7 +35,7 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
         throw new Error();
       }
     } catch (error) {
-      console.log("error");
+      console.log(error);
     }
 
     router.push(`/${props.language}/main`);

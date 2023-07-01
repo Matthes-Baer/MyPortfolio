@@ -70,13 +70,13 @@ const PROJECT_TILES_PARENT: (props: {
       <div className="mx-auto mt-5 mb-5">
         {language === "de" ? (
           <div className="flex flex-col items-center text-[white]">
-            <h1 className="text-2xl">Projekte</h1>
-            <span>(exkl. der Portfolio-Wesbite)</span>
+            <h1 className="text-[35px] ">Projekte</h1>
+            <span className="text-md">(exkl. der Portfolio-Wesbite)</span>
           </div>
         ) : (
-          <div className="flex flex-col items-center text-[white]">
-            <h1 className="text-[50px]">Projects</h1>
-            <span>(excl. the portfolio website)</span>
+          <div className="flex flex-col items-center text-[white] ">
+            <h1 className="text-[35px] ">Projects</h1>
+            <span className="text-md">(excl. the portfolio website)</span>
           </div>
         )}
       </div>

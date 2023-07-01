@@ -14,7 +14,7 @@ import cake_icon from "public/main_images/cake_icon.png";
 import computer_icon from "public/main_images/computer_icon.png";
 import { useParams } from "next/navigation";
 
-const AGE_AND_EXPERIENCE_COMP = () => {
+const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
   //* Used for the GSAP animations
   const age_slide_ref: MutableRefObject<null> = useRef<null>(null);
   const experience_slide_ref: MutableRefObject<null> = useRef<null>(null);
@@ -159,27 +159,28 @@ const AGE_AND_EXPERIENCE_COMP = () => {
       className="relative w-full bg-dark_gray_stone border-warm_terracotta"
       style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
     >
-      <div className="flex justify-evenly pt-5">
-        <div className="relative w-[10%]">
+      <div className="flex flex-col items-center sm:flex-row sm:justify-evenly pt-5">
+        <div className="relative w-[10%] mb-5 sm:mb-0 min-w-[100px] min-h-[100px]">
           <button
             onClick={() => slide_changer_handler("age")}
             disabled={is_age_button_disabled || current_slide === "age"}
             className="relative w-full p-2 bg-[white] shadow z-20 rounded-[50%] opacity-90"
           >
-            <Image src={cake_icon} height={250} width={250} alt="Test" />
+            <Image
+              src={cake_icon}
+              height={250}
+              width={250}
+              alt="Test"
+              className=""
+            />
             <div
-              className="absolute w-[110%] h-[110%] rounded-[50%] border-2 border-[transparent] border-r-card_yellow bg-[transparent]"
-              style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-              }}
+              className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[transparent] border-r-card_yellow bg-[transparent]"
               ref={circle_from_age_ref}
             ></div>
           </button>
         </div>
 
-        <div className="relative w-[10%]" style={{ borderRadius: "50%" }}>
+        <div className="relative w-[10%] rounded-[50%] min-w-[100px] min-h-[100px]">
           <button
             onClick={() => slide_changer_handler("experience")}
             disabled={
@@ -189,12 +190,7 @@ const AGE_AND_EXPERIENCE_COMP = () => {
           >
             <Image src={computer_icon} height={250} width={250} alt="Test" />
             <div
-              className="absolute w-[110%] h-[110%] rounded-[50%] border-2 border-[transparent] border-l-card_yellow bg-[transparent]"
-              style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-              }}
+              className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[transparent] border-l-card_yellow bg-[transparent]"
               ref={circle_from_experience_ref}
             ></div>
           </button>
@@ -203,7 +199,7 @@ const AGE_AND_EXPERIENCE_COMP = () => {
       <div
         className="flex justify-center p-4 text-center w-9/12 mx-auto"
         style={{
-          fontSize: "calc(8px + 1.75vw)",
+          fontSize: "calc(18px + 1.75vw)",
         }}
       >
         {current_slide === "age" ? (
