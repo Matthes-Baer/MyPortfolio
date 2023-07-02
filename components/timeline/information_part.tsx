@@ -32,8 +32,8 @@ const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
             ? "Scrolle nach unten, um mit der Ansicht zu beginnen."
             : "Scroll down to start viewing."}
         </div>
-        <div
-          className="p-3 border-2 border-[white] rounded-[50%] hover:bg-[rgba(255,255,255,0.25)] cursor-pointer transition"
+        <button
+          className="p-3 border-2 border-[white] rounded-[50%] hover:bg-[rgba(255,255,255,0.25)] cursor-pointer transition focus:border-card_yellow"
           onClick={scroll_down}
         >
           <svg
@@ -50,7 +50,7 @@ const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
               d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
             />
           </svg>
-        </div>
+        </button>
       </div>
     </div>
   );
