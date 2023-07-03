@@ -21,6 +21,11 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             überall anwenden)
           </li>
           <li>
+            Überall nochmal überlegen, ob PNG oder JPG die bessere Image-Wahl
+            ist, da mit JPG Qualitätsverluste einhergehen (besser für kleinere
+            Bilder als für größere)
+          </li>
+          <li>
             Überall einmal durchgehen wegen alts für Images / wegen language
             statt lang bei useParams / wegen genereller Struktur - quasi
             Aufräumdienst
