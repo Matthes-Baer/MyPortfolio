@@ -21,6 +21,17 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             überall anwenden)
           </li>
           <li>
+            Ist bei der Timeline genug Platz in der Höhe vorhanden, dass ALLE
+            Tiles mittels Scroll-Animation aufgedeckt werden? Stand 04.07. war
+            die Höhe noch zu niedrig und es fehlte beispielsweise auch noch
+            mindestens ein Baumstamm-Bild-Element.
+          </li>
+          <li>
+            Überall nochmal überlegen, ob PNG oder JPG die bessere Image-Wahl
+            ist, da mit JPG Qualitätsverluste einhergehen (besser für kleinere
+            Bilder als für größere)
+          </li>
+          <li>
             Überall einmal durchgehen wegen alts für Images / wegen language
             statt lang bei useParams / wegen genereller Struktur - quasi
             Aufräumdienst

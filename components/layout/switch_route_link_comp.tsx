@@ -12,15 +12,26 @@ export default function SWITCH_ROUTE_LINK_COMP(props: {
 }) {
   const segment = useSelectedLayoutSegment() || "";
   let isActive = props.slug === segment;
+  console.log(segment);
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="z-10">
+      <div style={{ marginRight: !props.slug ? "15px" : "0px" }}>
         <Link
           href={props.url}
-          style={{ fontWeight: isActive ? "bold" : "normal" }}
+          style={{
+            fontWeight: isActive ? "bold" : "normal",
+          }}
         >
-          {props.children}
+          <div
+            className="z-10 p-4 rounded shadow"
+            style={{
+              backgroundColor:
+                segment === "timeline" ? "transparent" : "rgba(25,25,25,0.85)",
+            }}
+          >
+            {props.children}
+          </div>
         </Link>
       </div>
     </Suspense>
