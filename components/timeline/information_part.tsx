@@ -20,7 +20,7 @@ const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
   };
 
   return (
-    <div className="flex justify-center w-full pb-[35px] text-2xl border-b-2 border-b-card_yellow">
+    <div className="flex justify-center w-full pb-[35px] text-2xl border-b-2 border-b-card_yellow bg-dark_gray_stone z-10">
       <div className="flex flex-col items-center">
         <div className="p-3">
           {language === "de"

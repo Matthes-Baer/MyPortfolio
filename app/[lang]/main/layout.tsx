@@ -59,16 +59,14 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
           <div className="z-[9001]">
             <div className="flex justify-end">
               <SWITCH_ROUTE_LINK_COMP url={`/${lang}/main`} slug="">
-                <div className="mr-5">
-                  {language_cookie === "de" ? "Startseite" : "Home"}
-                </div>
+                <div>{language_cookie === "de" ? "Startseite" : "Home"}</div>
               </SWITCH_ROUTE_LINK_COMP>
 
               <SWITCH_ROUTE_LINK_COMP
                 url={`/${lang}/main/timeline`}
                 slug="timeline"
               >
-                <div className="mr-2">
+                <div>
                   {language_cookie === "de" ? "Zeitleiste" : "Timeline"}
                 </div>
               </SWITCH_ROUTE_LINK_COMP>

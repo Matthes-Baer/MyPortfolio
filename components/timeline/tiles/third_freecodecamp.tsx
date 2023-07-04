@@ -9,10 +9,12 @@ const THIRD_FREECODECAMP: (props: {
     props.language === "de"
       ? "Um meine Fähigkeiten in der Web-Entwicklung strukturiert auszubauen, habe ich die Lernressourcen von FreeCodeCamp genutzt. Im Rahmen dieser Plattform habe ich mich intensiv mit CSS, JavaScript und Frontend-Frameworks beschäftigt."
       : "To build my web development skills in a structured way, I used the learning resources of FreeCodeCamp. Within the framework of this platform, I have intensively studied CSS, JavaScript and frontend frameworks.";
+  const date =
+    props.language === "de" ? "Feb. 2022 - Mai 2022" : "Feb. 2022 - May 2022";
 
   return (
     <div>
-      <TEMPLATE_INNER_PART title={title} content={content} />
+      <TEMPLATE_INNER_PART title={title} content={content} date={date} />
     </div>
   );
 };
