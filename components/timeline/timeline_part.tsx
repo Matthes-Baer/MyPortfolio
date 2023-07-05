@@ -66,14 +66,14 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
       </div>
 
       <div
-        className="absolute top-[400px] right-0 sm:right-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-b-8 border-b-card_yellow border-l-8 border-l-card_yellow z-20"
+        className="absolute top-[400px] right-0 sm:right-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-l-8 border-l-card_yellow border-r-8 border-r-card_yellow z-20"
         ref={second_bvh_ref}
       >
         <SECOND_BVH language={language} />
       </div>
 
       <div
-        className="absolute top-[700px] left-0 sm:left-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-b-8 border-b-tree_light_green border-r-8 border-r-tree_light_green z-20"
+        className="absolute top-[700px] left-0 sm:left-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-l-8 border-l-card_yellow border-t-8 border-t-card_yellow z-20"
         ref={third_freecodecamp_ref}
       >
         <THIRD_FREECODECAMP language={language} />
@@ -87,21 +87,21 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
       </div>
 
       <div
-        className="absolute top-[1400px] left-0 sm:left-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-b-8 border-b-tree_light_green border-r-8 border-r-tree_light_green z-20"
+        className="absolute top-[1400px] left-0 sm:left-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-t-8 border-t-tree_light_green border-b-8 border-b-tree_light_green z-20"
         ref={fifth_technicalwriter_ref}
       >
         <FIFTH_TECHNICALWRITER language={language} />
       </div>
 
       <div
-        className="absolute top-[1700px] right-0 sm:right-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-b-8 border-b-tree_light_green border-r-8 border-r-tree_light_green z-20"
+        className="absolute top-[1700px] right-0 sm:right-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-l-8 border-l-card_yellow border-b-8 border-b-card_yellow z-20"
         ref={sixth_udemy_ref}
       >
         <SIXTH_UDEMY language={language} />
       </div>
 
       <div
-        className="absolute top-[2000px] left-0 sm:left-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-b-8 border-b-tree_light_green border-r-8 border-r-tree_light_green z-20"
+        className="absolute top-[2000px] left-0 sm:left-[10%] p-5 bg-dark_gray_stone rounded shadow text-[white] text-justify w-full sm:w-6/12 lg:w-4/12 opacity-0 border-l-8 border-l-tree_light_green border-r-8 border-r-tree_light_green z-20"
         ref={seventh_projects_ref}
       >
         <SEVENTH_PROJECTS language={language} />
