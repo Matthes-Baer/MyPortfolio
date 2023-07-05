@@ -20,7 +20,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="min-h-screen">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10">
         <Suspense fallback={<Loading />}>
           <Image
             src={treeOne}
@@ -75,6 +75,19 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
         </Suspense>
         <Suspense fallback={<Loading />}>
           <Image
+            src={treeFive}
+            alt={
+              language === "de"
+                ? "Sechster Baumstamm im Hintergrund"
+                : "Sixth tree trunk in background"
+            }
+            height={650}
+            width={650}
+            className="absolute top-[1950px] left-1/2 -translate-x-1/2 min-w-[650px]"
+          />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
             src={tree_six}
             alt={
               language === "de"
@@ -83,7 +96,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             }
             height={750}
             width={750}
-            className="absolute top-[2000px] left-[48%] -translate-x-[52%] min-w-[750px]"
+            className="absolute top-[2575px] left-[46%] -translate-x-[54%] min-w-[750px] block md:hidden"
           />
         </Suspense>
         <Suspense fallback={<Loading />}>

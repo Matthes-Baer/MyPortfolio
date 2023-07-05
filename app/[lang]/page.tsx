@@ -21,6 +21,16 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             überall anwenden)
           </li>
           <li>
+            Bei Timeline: Eventuell muss noch der richtige scroll trigger für
+            die siebte tile gefunden werden (die letzte reguläre vor den
+            -nächsten Zielen-, ist abhängig vom Rest, der darunter kommt und wie
+            sich das bei kleineren Bildschirmgrößen macht)
+          </li>
+          <li>
+            Timeline background mit den Bäumen richtig anpassen - speziell für
+            kleinere Bildschirmgrößen
+          </li>
+          <li>
             Ist bei der Timeline genug Platz in der Höhe vorhanden, dass ALLE
             Tiles mittels Scroll-Animation aufgedeckt werden? Stand 04.07. war
             die Höhe noch zu niedrig und es fehlte beispielsweise auch noch
