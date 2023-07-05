@@ -15,6 +15,9 @@ import { Suspense } from "react";
 import Loading from "@/app/[lang]/loading";
 import { useParams } from "next/navigation";
 
+//! Wahrscheinlich für smaller screen sizes noch Bäume hinzufügen (insbesondere wenn die next goals tiles mit Inhalt befüllt werden)
+//! Sobald die next goals tiles mit Content befüllt worden sind, sollte nochmal getestet werden, ob die seventh tile nicht doch im forEach function block mit dem scroll trigger ausgestattet werden könnte, anstatt es manuell einzeln im Nachhinein zu machen, um es konsistent zu halten
+
 const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
 
