@@ -5,10 +5,15 @@ import treeTwo from "public/main_images/timeline/treeTwo.png";
 import treeThree from "public/main_images/timeline/treeThree.png";
 import treeFour from "public/main_images/timeline/treeFour.png";
 import treeFive from "public/main_images/timeline/treeFive.png";
-import tree_six from "public/main_images/timeline/tree_six.png";
+import treeSix from "public/main_images/timeline/treeSix.png";
+import treeSeven from "public/main_images/timeline/treeSeven.png";
+import treeEight from "public/main_images/timeline/treeEight.png";
 
 import cloudOne from "public/main_images/timeline/cloudOne.png";
 import cloudTwo from "public/main_images/timeline/cloudTwo.png";
+import cloudThree from "public/main_images/timeline/cloudThree.png";
+import cloudFour from "public/main_images/timeline/cloudFour.png";
+import cloudFive from "public/main_images/timeline/cloudFive.png";
 
 import Image from "next/image";
 import { Suspense } from "react";
@@ -23,7 +28,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10">
+      <div className="">
         <Suspense fallback={<Loading />}>
           <Image
             src={treeOne}
@@ -73,7 +78,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             }
             height={750}
             width={750}
-            className="absolute top-[1550px] left-1/2 -translate-x-1/2 min-w-[750px]"
+            className="absolute top-[1550px] left-1/2 -translate-x-1/2 min-w-[750px] -z-[5]"
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
@@ -81,17 +86,17 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             src={treeFive}
             alt={
               language === "de"
-                ? "Sechster Baumstamm im Hintergrund"
-                : "Sixth tree trunk in background"
+                ? "Fünfiter Baumstamm im Hintergrund"
+                : "Fifth tree trunk in background"
             }
             height={650}
             width={650}
-            className="absolute top-[1950px] left-1/2 -translate-x-1/2 min-w-[650px]"
+            className="absolute top-[1950px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[4]"
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
           <Image
-            src={tree_six}
+            src={treeSix}
             alt={
               language === "de"
                 ? "Sechster Baumstamm im Hintergrund"
@@ -99,9 +104,35 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             }
             height={750}
             width={750}
-            className="absolute top-[2575px] left-[46%] -translate-x-[54%] min-w-[750px] block md:hidden"
+            className="absolute top-[2575px] left-[46%] -translate-x-[54%] min-w-[750px] block sm:hidden -z-[3]"
           />
         </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={treeSeven}
+            alt={
+              language === "de"
+                ? "Siebter Baumstamm im Hintergrund"
+                : "Seventh tree trunk in background"
+            }
+            height={550}
+            width={550}
+            className="absolute top-[3150px] left-1/2 -translate-x-1/2 min-w-[550px] block sm:hidden -z-[2]"
+          />
+        </Suspense>
+        {/* <Suspense fallback={<Loading />}>
+          <Image
+            src={treeEight}
+            alt={
+              language === "de"
+                ? "Achter Baumstamm im Hintergrund"
+                : "Eighth tree trunk in background"
+            }
+            height={550}
+            width={550}
+            className="absolute top-[3550px] left-1/2 -translate-x-1/2 min-w-[550px] block -z-[1]"
+          />
+        </Suspense> */}
         <Suspense fallback={<Loading />}>
           <Image
             src={cloudOne}
@@ -112,7 +143,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             }
             height={350}
             width={350}
-            className="absolute top-[100px] left-[5%] min-w-[350px] opacity-70"
+            className="absolute top-[100px] left-[100px] min-w-[350px] opacity-70"
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
@@ -125,7 +156,46 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             }
             height={350}
             width={350}
-            className="absolute top-[500px] right-[5%] min-w-[350px] opacity-70"
+            className="absolute top-[350px] right-0 min-w-[350px] opacity-70"
+          />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={cloudThree}
+            alt={
+              language === "de"
+                ? "Dritte Wolke im Hintergrund"
+                : "Third cloud in background"
+            }
+            height={350}
+            width={350}
+            className="absolute top-[700px] right-[15%] min-w-[350px] opacity-70"
+          />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={cloudFour}
+            alt={
+              language === "de"
+                ? "Vierte Wolke im Hintergrund"
+                : "Fourth cloud in background"
+            }
+            height={350}
+            width={350}
+            className="absolute top-[1000px] left-[10%] min-w-[350px] opacity-70"
+          />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={cloudFive}
+            alt={
+              language === "de"
+                ? "Fünfte Wolke im Hintergrund"
+                : "Fifth cloud in background"
+            }
+            height={350}
+            width={350}
+            className="absolute top-[1400px] left-[17.5%] min-w-[350px] opacity-70"
           />
         </Suspense>
       </div>
