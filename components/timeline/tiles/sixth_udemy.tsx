@@ -6,8 +6,8 @@ const SIXTH_UDEMY: (props: { language: string }) => JSX.Element = (props: {
   const title = props.language === "de" ? "Udemy-Kurse" : "Udemy courses";
   const content =
     props.language === "de"
-      ? "Ab Juli 2022 habe ich mich intensiv mit verschiedenen Udemy-Kursen in spezifische Bereiche eingearbeitet. Dabei habe ich Kurse zu Themen wie Vue.js, Svelte, Jest, Next.js, MongoDB und anderen Technologien genutzt, um meine Kenntnisse zu vertiefen. Im Laufe der Zeit habe ich regelmäßig von solchen Kursangeboten Gebrauch gemacht, um mich strukturiert in bestimmte Fachgebiete einzufinden."
-      : "As of July 2022, I have been intensively studying specific areas with various Udemy courses. In doing so, I used courses on topics such as Vue.js, Svelte, Jest, Next.js, MongoDB, and other technologies to deepen my knowledge. Over time, I have regularly made use of such course offerings to familiarize myself with specific areas of expertise in a structured manner.";
+      ? "Insbesondere ab Juli 2022 habe ich intensiv verschiedene Udemy-Kurse genutzt, um mich in spezifische Bereiche einzuarbeiten. Ich habe Udemy-Kurse zu Themen wie Vue.js, Svelte, Jest, Next.js, Node.js mit Express.js, MongoDB und anderen Technologien belegt, um meine Kenntnisse zu vertiefen. \n\nIm Laufe der Zeit habe ich regelmäßig von solchen Kursangeboten Gebrauch gemacht, um mich strukturiert in bestimmten Fachgebieten weiterzubilden."
+      : "Especially from July 2022 onwards, I have intensively used various Udemy courses to learn about specific areas. I have taken Udemy courses on topics such as Vue.js, Svelte, Jest, Next.js, Node.js with Express.js, MongoDB and other technologies to deepen my knowledge. \n\nOver the course of time, I have regularly made use of such course offerings in order to further my education in specific subject areas in a structured manner.";
   const date = props.language === "de" ? "Seit Juli 2022" : "Since July 2022";
 
   return (

@@ -9,6 +9,9 @@ import treeSix from "public/main_images/timeline/treeSix.png";
 import treeSeven from "public/main_images/timeline/treeSeven.png";
 import treeEight from "public/main_images/timeline/treeEight.png";
 import treeNine from "public/main_images/timeline/treeNine.png";
+import treeTen from "public/main_images/timeline/treeTen.png";
+import treeEleven from "public/main_images/timeline/treeEleven.png";
+import treeTwelve from "public/main_images/timeline/treeNine.png";
 
 import cloudOne from "public/main_images/timeline/cloudOne.png";
 import cloudTwo from "public/main_images/timeline/cloudTwo.png";
@@ -132,7 +135,6 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             height={750}
             width={750}
             className="absolute top-[2575px] left-[46%] -translate-x-[54%] min-w-[750px] -z-[7]"
-            style={{ display: is_mobile[3] ? "block" : "none" }}
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
@@ -168,8 +170,8 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             src={treeNine}
             alt={
               language === "de"
-                ? "Achter Baumstamm im Hintergrund"
-                : "Eighth tree trunk in background"
+                ? "Neunter Baumstamm im Hintergrund"
+                : "Ninth tree trunk in background"
             }
             height={650}
             width={650}
@@ -177,6 +179,49 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             style={{ display: is_mobile[0] ? "block" : "none" }}
           />
         </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={treeTen}
+            alt={
+              language === "de"
+                ? "Zehnter Baumstamm im Hintergrund"
+                : "Tenth tree trunk in background"
+            }
+            height={650}
+            width={650}
+            className="absolute top-[4500px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[3]"
+            style={{ display: is_mobile[0] ? "block" : "none" }}
+          />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={treeEleven}
+            alt={
+              language === "de"
+                ? "Elfter Baumstamm im Hintergrund"
+                : "Eleventh tree trunk in background"
+            }
+            height={650}
+            width={650}
+            className="absolute top-[5000px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[2]"
+            style={{ display: is_mobile[0] ? "block" : "none" }}
+          />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={treeTwelve}
+            alt={
+              language === "de"
+                ? "Zwölfter Baumstamm im Hintergrund"
+                : "Twelfth tree trunk in background"
+            }
+            height={650}
+            width={650}
+            className="absolute top-[5500px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[1]"
+            style={{ display: is_mobile[0] ? "block" : "none" }}
+          />
+        </Suspense>
+
         <Suspense fallback={<Loading />}>
           <Image
             src={cloudOne}
