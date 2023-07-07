@@ -28,7 +28,8 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           </li>
           <li>
             Timeline background mit den Bäumen richtig anpassen - speziell für
-            kleinere Bildschirmgrößen
+            kleinere Bildschirmgrößen - komplett anpassen, nachdem jeder
+            Tile-Inhalt vervollständigt und formattiert wurde
           </li>
           <li>
             Ist bei der Timeline genug Platz in der Höhe vorhanden, dass ALLE
