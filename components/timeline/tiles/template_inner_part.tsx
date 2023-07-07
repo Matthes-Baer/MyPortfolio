@@ -8,7 +8,7 @@ const TEMPLATE_INNER_PART: (props: {
   date?: string;
 }): JSX.Element => {
   return (
-    <div style={{ whiteSpace: "pre-wrap" }}>
+    <div className="whitespace-pre-wrap">
       <div className="flex justify-between">
         <h2 className="text-3xl border-b border-b-card_yellow text-left">
           {props.title}
