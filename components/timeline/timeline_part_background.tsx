@@ -39,11 +39,13 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
   useEffect(() => {
     const handle_resize: () => void = (): void => {
       set_is_mobile([
+        window.innerWidth <= 325,
         window.innerWidth <= 350,
-        window.innerWidth <= 400,
-        window.innerWidth <= 450,
+        window.innerWidth <= 385,
+        window.innerWidth <= 425,
+        window.innerWidth <= 475,
         window.innerWidth <= 550,
-        window.innerWidth <= 975,
+        window.innerWidth <= 680,
       ]);
     };
 
@@ -148,7 +150,6 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             height={550}
             width={550}
             className="absolute top-[3150px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[6]"
-            style={{ display: is_mobile[2] ? "block" : "none" }}
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
@@ -161,8 +162,8 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             }
             height={550}
             width={550}
-            className="absolute top-[3550px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[5]"
-            style={{ display: is_mobile[1] ? "block" : "none" }}
+            className="absolute top-[3610px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[5]"
+            style={{ display: is_mobile[6] ? "block" : "none" }}
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
@@ -176,7 +177,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             height={650}
             width={650}
             className="absolute top-[4000px] left-[46%] -translate-x-[54%] min-w-[650px] -z-[4]"
-            style={{ display: is_mobile[0] ? "block" : "none" }}
+            style={{ display: is_mobile[5] ? "block" : "none" }}
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
@@ -189,8 +190,8 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             }
             height={650}
             width={650}
-            className="absolute top-[4500px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[3]"
-            style={{ display: is_mobile[0] ? "block" : "none" }}
+            className="absolute top-[4575px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[3]"
+            style={{ display: is_mobile[4] ? "block" : "none" }}
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
@@ -203,8 +204,8 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             }
             height={650}
             width={650}
-            className="absolute top-[5000px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[2]"
-            style={{ display: is_mobile[0] ? "block" : "none" }}
+            className="absolute top-[5100px] left-[55%] -translate-x-[45%] min-w-[650px] -z-[2]"
+            style={{ display: is_mobile[3] ? "block" : "none" }}
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
@@ -217,7 +218,35 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             }
             height={650}
             width={650}
-            className="absolute top-[5500px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[1]"
+            className="absolute top-[5575px] left-[48%] -translate-x-[52%] min-w-[650px] -z-[1]"
+            style={{ display: is_mobile[2] ? "block" : "none" }}
+          />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={treeFour}
+            alt={
+              language === "de"
+                ? "Dreizehnter Baumstamm im Hintergrund"
+                : "Thirteenth tree trunk in background"
+            }
+            height={650}
+            width={650}
+            className="absolute top-[6225px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[1]"
+            style={{ display: is_mobile[1] ? "block" : "none" }}
+          />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={treeTwo}
+            alt={
+              language === "de"
+                ? "Vierzehnter Baumstamm im Hintergrund"
+                : "Fourteenth tree trunk in background"
+            }
+            height={650}
+            width={650}
+            className="absolute top-[6675px] left-[55%] -translate-x-[45%] min-w-[650px] -z-[1]"
             style={{ display: is_mobile[0] ? "block" : "none" }}
           />
         </Suspense>
