@@ -171,10 +171,10 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
             }
             className="absolute top-[15%] left-1/2 -translate-x-1/2 bg-dark_gray_stone p-5 rounded text-sm"
           >
-            <div>
+            <div className="whitespace-pre-wrap">
               {language === "de"
                 ? "Klicken Sie, um eine Fähigkeit aufzudecken. Es ist zu empfehlen, diese Website auf einem Gerät mit größerem Bildschirm zu nutzen."
-                : "Click to reveal a skill. It is recommended to use this website on a device with a larger screen."}
+                : "Click to reveal a skill. \nIt is recommended to use this website on a device with a larger screen."}
             </div>
             <div className="mt-2">
               {language === "de"
@@ -188,7 +188,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
         <div className="flex justify-evenly items-center">
           {!is_mobile ? (
             <div className="relative">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 text-dark_gray_stone text-2xl">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 text-dark_gray_stone text-2xl font-semibold">
                 {language === "de" ? "Verdeckte Karten: " : "Hidden cards: "}{" "}
                 {cards_amount - current_card_idx_count + 1}
               </div>
