@@ -11,9 +11,9 @@ const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
       document.documentElement.scrollTop ||
       document.body.scrollTop;
 
-    if (scrollPosition <= 300) {
+    if (scrollPosition <= 400) {
       window.scrollBy({
-        top: 300 - scrollPosition,
+        top: 400 - scrollPosition,
         behavior: "smooth",
       });
     }
