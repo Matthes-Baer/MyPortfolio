@@ -31,7 +31,7 @@ const SEVENTH_PROJECTS: (props: { language: string }) => JSX.Element = (props: {
             }
             width={40}
             height={40}
-            className="bg-[white] rounded-[50%] shadow"
+            className="rounded-[50%] shadow"
           />
         </Link>
       </div>

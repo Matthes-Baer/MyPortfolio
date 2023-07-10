@@ -1,4 +1,5 @@
 import { ObjectId } from "mongodb";
+import { StaticImageData } from "next/image";
 
 interface ILanguageParams {
   lang: string;
@@ -50,4 +51,10 @@ export interface IProject {
   techstack: string[];
   links: { project: string; github: string };
   description: { en: string; de: string };
+}
+
+export interface IIcon {
+  icon: StaticImageData;
+  link: string;
+  alt: string;
 }

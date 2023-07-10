@@ -92,7 +92,7 @@ const PROJECT_TILE: (props: {
                   }
                   width={25}
                   height={25}
-                  className="bg-[white] rounded-[50%] shadow"
+                  className="rounded-[50%] shadow"
                 />
               </Link>
             </div>

@@ -24,7 +24,7 @@ export default function SWITCH_ROUTE_LINK_COMP(props: {
           }}
         >
           <div
-            className="z-10 p-4 rounded shadow"
+            className="z-10 p-2 rounded shadow"
             style={{
               backgroundColor:
                 segment === "timeline" ? "transparent" : "rgba(25,25,25,0.85)",

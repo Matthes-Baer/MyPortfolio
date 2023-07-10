@@ -1,19 +1,83 @@
-import type { INormalPageProps } from "@/utils/interfaces";
+import type { IIcon, INormalPageProps } from "@/utils/interfaces";
 import { Suspense } from "react";
 import Loading from "./loading";
 import SWITCH_LANGUAGE_LINK_COMP from "@/components/switch_language_link_comp";
 
+import github_icon from "public/main_images/github_icon.png";
+import codingame_icon from "public/main_images/timeline/codingame.png";
+import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
+import linkedin_icon from "public/main_images/linkedin_icon.png";
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Language_Picker(props: INormalPageProps): JSX.Element {
+  const images: IIcon[] = [
+    {
+      icon: linkedin_icon,
+      link: "https://linkedin.com/in/matthes-bär-68199a256",
+      alt: "LinkedIn icon",
+    },
+    {
+      icon: github_icon,
+      link: "https://github.com/Matthes-Baer",
+      alt: "GitHub icon",
+    },
+    {
+      icon: codingame_icon,
+      link: "https://www.codingame.com/profile/a3dbd9f4eb4cd67d9377ec73dd9363e76178174",
+      alt: "CodinGame icon",
+    },
+    {
+      icon: entwicklerheld_icon,
+      link: "https://platform.entwicklerheld.de/publicprofile/fcaa9abbe1f4908ccfa369e97df66992",
+      alt: "EntwicklerHeld icon",
+    },
+  ];
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-evenly">
       <Suspense fallback={<Loading />}>
-        <SWITCH_LANGUAGE_LINK_COMP language="de" cookie_name="language_cookie">
-          <div>Deutsch</div>
-        </SWITCH_LANGUAGE_LINK_COMP>
-        <SWITCH_LANGUAGE_LINK_COMP language="en" cookie_name="language_cookie">
-          <div>English</div>
-        </SWITCH_LANGUAGE_LINK_COMP>
-        <ul>
+        <div className="flex flex-col items-center">
+          <h1 className="text-[50px]">Matthes Bär - Portfolio</h1>
+          <div className="flex flex-col sm:flex-row items-center">
+            {images.map((ele: IIcon) => {
+              return (
+                <Link
+                  key={ele.link}
+                  href={ele.link}
+                  target="_blanket"
+                  className="p-2"
+                >
+                  <Image
+                    src={ele.icon}
+                    alt={ele.alt}
+                    height={50}
+                    width={50}
+                    style={{
+                      borderRadius: ele.link.includes("linkedin") ? "0" : "50%",
+                    }}
+                  />
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+        <div className="flex w-full flex-col md:flex-row items-center justify-evenly">
+          <SWITCH_LANGUAGE_LINK_COMP
+            language="de"
+            cookie_name="language_cookie"
+          >
+            <div>Deutsch</div>
+          </SWITCH_LANGUAGE_LINK_COMP>
+          <SWITCH_LANGUAGE_LINK_COMP
+            language="en"
+            cookie_name="language_cookie"
+          >
+            <div>English</div>
+          </SWITCH_LANGUAGE_LINK_COMP>
+        </div>
+
+        {/* <ul>
           <li>
             Aufräumen (file structure, weitere components für mehr Überblick
             (main page (age & experience part, project tiles part, fetch für
@@ -108,7 +172,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             Native Projekt? Bei React Native Projekt vielleicht noch mehr Bilder
             hinzufügen (die volle Game instruction bspw.)?
           </li>
-        </ul>
+        </ul> */}
       </Suspense>
     </main>
   );

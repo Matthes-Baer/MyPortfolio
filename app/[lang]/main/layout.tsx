@@ -52,7 +52,7 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
   return (
     <div className="relative">
       <Suspense fallback={<Loading />}>
-        <div className="flex justify-between h-32 p-4 text-xl">
+        <div className="flex justify-between h-32 p-1 text-xl">
           <div className="z-[9001]">
             <RESET_LANGUAGE_BUTTON_COMP />
           </div>
