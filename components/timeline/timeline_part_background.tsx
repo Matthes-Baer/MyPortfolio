@@ -47,6 +47,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
         window.innerWidth <= 475,
         window.innerWidth <= 550,
         window.innerWidth <= 680,
+        window.innerWidth <= 760,
       ]);
     };
 
@@ -151,7 +152,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             height={550}
             width={550}
             className="absolute top-[3150px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[6]"
-            style={{ display: is_mobile[6] ? "block" : "none" }}
+            style={{ display: is_mobile[7] ? "block" : "none" }}
           />
         </Suspense>
         <Suspense fallback={<Loading />}>
