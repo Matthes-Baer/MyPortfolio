@@ -1,16 +1,16 @@
 import { IRootLayoutProps } from "@/utils/interfaces";
 import { Metadata, ResolvingMetadata } from "next";
 import { Suspense } from "react";
-import Loading from "../../loading";
 import Link from "next/link";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { cookies } from "next/headers";
+import Loading from "../../loading";
 
 export async function generateMetadata(
   props: IRootLayoutProps,
   parent?: ResolvingMetadata
 ): Promise<Metadata> {
-  const lang = props.params.lang;
+  const lang: string = props.params.lang;
 
   if (lang === "de") {
     return {

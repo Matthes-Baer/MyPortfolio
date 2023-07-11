@@ -1,36 +1,38 @@
+import { SupportedLanguages } from "@/utils/types";
 import type { IIcon, INormalPageProps } from "@/utils/interfaces";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Image from "next/image";
+import Link from "next/link";
+
 import SWITCH_LANGUAGE_LINK_COMP from "@/components/switch_language_link_comp";
+import Loading from "./loading";
 
 import github_icon from "public/main_images/github_icon.png";
 import codingame_icon from "public/main_images/timeline/codingame.png";
 import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
 import linkedin_icon from "public/main_images/linkedin_icon.png";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Language_Picker(props: INormalPageProps): JSX.Element {
   const images: IIcon[] = [
     {
       icon: linkedin_icon,
       link: "https://linkedin.com/in/matthes-bär-68199a256",
-      alt: "LinkedIn icon",
+      alt: { en: "LinkedIn icon", de: "LinkedIn-Icon" },
     },
     {
       icon: github_icon,
       link: "https://github.com/Matthes-Baer",
-      alt: "GitHub icon",
+      alt: { en: "GitHub icon", de: "GitHub-Icon" },
     },
     {
       icon: codingame_icon,
       link: "https://www.codingame.com/profile/a3dbd9f4eb4cd67d9377ec73dd9363e76178174",
-      alt: "CodinGame icon",
+      alt: { en: "CodinGame icon", de: "CodinGame-Icon" },
     },
     {
       icon: entwicklerheld_icon,
       link: "https://platform.entwicklerheld.de/publicprofile/fcaa9abbe1f4908ccfa369e97df66992",
-      alt: "EntwicklerHeld icon",
+      alt: { en: "EntwicklerHeld icon", de: "EntwicklerHeld-Icon" },
     },
   ];
 
@@ -38,8 +40,8 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
     <main className="flex min-h-screen flex-col items-center justify-evenly">
       <Suspense fallback={<Loading />}>
         <div className="flex flex-col items-center">
-          <h1 className="text-[50px]">Matthes Bär - Portfolio</h1>
-          <div className="flex flex-col sm:flex-row items-center">
+          <h1 className="text-[50px] text-center">Matthes Bär - Portfolio</h1>
+          <div className="flex flex-wrap items-center justify-center">
             {images.map((ele: IIcon) => {
               return (
                 <Link
@@ -50,7 +52,10 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
                 >
                   <Image
                     src={ele.icon}
-                    alt={ele.alt}
+                    alt={
+                      ele.alt[props.params.lang as SupportedLanguages] ||
+                      ele.alt.en
+                    }
                     height={50}
                     width={50}
                     style={{
@@ -61,6 +66,13 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
               );
             })}
           </div>
+        </div>
+        <div className="mt-5">
+          <h1 className="text-[40px] text-center">
+            {props.params.lang === "de"
+              ? "Bevorzugte Sprache:"
+              : "Preferred language:"}
+          </h1>
         </div>
         <div className="flex w-full flex-col md:flex-row items-center justify-evenly">
           <SWITCH_LANGUAGE_LINK_COMP

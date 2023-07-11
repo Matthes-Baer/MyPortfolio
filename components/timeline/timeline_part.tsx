@@ -1,11 +1,11 @@
 "use client";
 
-import TIMELINE_PART_BACKGROUND from "./timeline_part_background";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import FIRST_LEARNINGSTART from "./tiles/first_learningstart";
 import { MutableRefObject, useEffect, useRef } from "react";
 import { useParams } from "next/navigation";
+import TIMELINE_PART_BACKGROUND from "./timeline_part_background";
+import FIRST_LEARNINGSTART from "./tiles/first_learningstart";
 import SECOND_BVH from "./tiles/second_bvh";
 import THIRD_FREECODECAMP from "./tiles/third_freecodecamp";
 import FOURTH_CODINGAME from "./tiles/fourth_codingame";

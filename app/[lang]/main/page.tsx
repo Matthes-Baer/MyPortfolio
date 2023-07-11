@@ -1,10 +1,10 @@
 import type { INormalPageProps, IProject } from "@/utils/interfaces";
 import { Suspense } from "react";
+import { Db } from "mongodb";
+
 import Loading from "../loading";
 import ALL_MAIN_PARENTS_COMP from "@/components/main/all_main_comps_parent";
-
 import { connect_to_database } from "@/utils/mongoDB_connect";
-import { Db } from "mongodb";
 
 export async function get_projects(): Promise<IProject[] | undefined> {
   let client;
@@ -27,7 +27,6 @@ export async function get_projects(): Promise<IProject[] | undefined> {
       res_array.push(project_data as IProject);
     });
     client.close();
-
     return res_array;
   } catch (error) {
     client.close();
