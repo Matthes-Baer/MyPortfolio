@@ -94,6 +94,8 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             Gibt es noch etwas aufzuräumen? Unnötige Kommentare irgendwo? Überall einmal durchgehen wegen alts für Images / wegen language
             statt lang bei useParams / wegen genereller Struktur
           </li>
+          <li>Bei Home Page im unteren Bereich bei den Projects vielleicht noch Bilder hinzufügen am Rand? weitere Bäume, Pflanzen etc.?</li>
+          <li>Im Oberen Bereich bei Parallax grünen Baum vielleicht nochmal austauschen?</li>
           <li>
             Bei Timeline vielleicht einige Tiles noch weiter individualisieren? Icons hinzufügen bspw. wenn es zum Thema passt oder ganze Bilder?
           </li>
@@ -112,10 +114,8 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           </li>
           <li>Loading screen überarbeiten (?)</li>
           <li>
-            Bei Vue.js-Projekt Rechtschreibung checken und Texte verbessern per
-            ChatGPT? / Current Nutrition values - nutrition sollte
-            kleingeschrieben werden, das dazugehörige Project Image müsste dann
-            auch neu erstellt werden --- ähnliche Prozedur für Svelte und React
+            Rechtschreibung checken und Texte verbessern dazugehörige Project Images müssten dann
+            auch neu erstellt werden - für Svelte und React
             Native Projekt? Bei React Native Projekt vielleicht noch mehr Bilder
             hinzufügen (die volle Game instruction bspw.)?
           </li>
