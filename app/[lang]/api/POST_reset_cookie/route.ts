@@ -6,7 +6,7 @@ import { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest): Promise<ResponseCookies> {
   const res: IResponse = await request.json();
-  const expiration_date = get_expiration_date();
+  const expiration_date: Date = get_expiration_date();
 
   return cookies().set(res.name, res.value, { expires: expiration_date });
 }

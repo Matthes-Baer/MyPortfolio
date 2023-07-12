@@ -120,7 +120,7 @@ const PROJECT_TILE: (props: {
           )}
         </div>
       </div>
-      <div className="p-1 text-xl" style={{ whiteSpace: "pre-line" }}>
+      <div className="p-1 text-xl whitespace-pre-wrap text-justify">
         {props.project.description[language as "en" | "de"].replaceAll(
           "\\n",
           "\n"

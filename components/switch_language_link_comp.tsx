@@ -1,13 +1,13 @@
 "use client";
 
-import Loading from "@/app/[lang]/loading";
 import { useRouter } from "next/navigation";
 import { Suspense } from "react";
-import Image from "next/image";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 import { FLAG_IMAGES } from "@/utils/import_images";
 import { IImage_Props } from "@/utils/interfaces";
 import { SupportedLanguages } from "@/utils/types";
+import Loading from "@/app/[lang]/loading";
+import Image from "next/image";
 
 export default function SWITCH_LANGUAGE_LINK_COMP(props: {
   children: React.ReactNode;

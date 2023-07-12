@@ -56,5 +56,5 @@ export interface IProject {
 export interface IIcon {
   icon: StaticImageData;
   link: string;
-  alt: string;
+  alt: { en: string; de: string };
 }

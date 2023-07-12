@@ -1,5 +1,10 @@
 "use client";
 
+import { Dispatch, SetStateAction, Suspense, useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import Loading from "@/app/[lang]/loading";
+import Image from "next/image";
+
 import treeOne from "public/main_images/timeline/treeOne.png";
 import treeTwo from "public/main_images/timeline/treeTwo.png";
 import treeThree from "public/main_images/timeline/treeThree.png";
@@ -25,14 +30,6 @@ import birdsFour from "public/main_images/timeline/birdsFour.png";
 
 import moon from "public/main_images/timeline/moon.png";
 
-import Image from "next/image";
-import { Dispatch, SetStateAction, Suspense, useEffect, useState } from "react";
-import Loading from "@/app/[lang]/loading";
-import { useParams } from "next/navigation";
-
-//! Wahrscheinlich für smaller screen sizes noch Bäume hinzufügen (insbesondere wenn die next goals tiles mit Inhalt befüllt werden)
-//! Sobald die next goals tiles mit Content befüllt worden sind, sollte nochmal getestet werden, ob die seventh tile nicht doch im forEach function block mit dem scroll trigger ausgestattet werden könnte, anstatt es manuell einzeln im Nachhinein zu machen, um es konsistent zu halten
-
 const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
   const [is_mobile, set_is_mobile]: [
@@ -50,6 +47,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
         window.innerWidth <= 475,
         window.innerWidth <= 550,
         window.innerWidth <= 680,
+        window.innerWidth <= 760,
       ]);
     };
 
@@ -154,7 +152,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
             height={550}
             width={550}
             className="absolute top-[3150px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[6]"
-            style={{ display: is_mobile[6] ? "block" : "none" }}
+            style={{ display: is_mobile[7] ? "block" : "none" }}
           />
         </Suspense>
         <Suspense fallback={<Loading />}>

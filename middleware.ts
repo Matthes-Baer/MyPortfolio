@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-let locales = ["de", "en"];
+let locales: string[] = ["de", "en"];
 
 function getLocale() {
   let headers = { "accept-language": "en" };
-  let languages = new Negotiator({ headers }).languages();
-  let defaultLocale = "en";
+  let languages: string[] = new Negotiator({ headers }).languages();
+  let defaultLocale: string = "en";
 
   return match(languages, locales, defaultLocale);
 }
@@ -18,8 +18,8 @@ export async function middleware(request: NextRequest) {
   const language_cookie_bool: boolean = request.cookies.has("language_cookie");
   const language_cookie_value: string =
     request.cookies.get("language_cookie")?.value || "";
-  const current_language_path = pathname.substring(1, 3);
-  const response = NextResponse.next();
+  const current_language_path: string = pathname.substring(1, 3);
+  const response: NextResponse<unknown> = NextResponse.next();
 
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
@@ -37,8 +37,8 @@ export async function middleware(request: NextRequest) {
     !language_cookie_bool ||
     (language_cookie_bool && language_cookie_value != current_language_path)
   ) {
-    const oneYearInSeconds = 365 * 24 * 60 * 60;
-    const expirationDate = new Date(Date.now() + oneYearInSeconds * 1000);
+    const oneYearInSeconds: number = 365 * 24 * 60 * 60;
+    const expirationDate: Date = new Date(Date.now() + oneYearInSeconds * 1000);
 
     response.cookies.set("language_cookie", current_language_path, {
       expires: expirationDate,

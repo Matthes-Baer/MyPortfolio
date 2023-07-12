@@ -26,7 +26,6 @@ export async function POST(request: Request, response: NextResponse) {
       .findOne({ card_index: body.card_idx });
 
     client.close();
-
     return NextResponse.json(res);
   } catch (error) {
     client.close();
