@@ -1,22 +1,14 @@
 "use client";
 
-//! Styling weiter anpassen für Project Tile
-//! Aria-Label für project svg link image
-//! ggf. weiter TypeScript/Namen/Struktur dieser file optimieren
-//! Bilder zum ersten Projekt erstellen und einfügen in file
-//! alt texts für alle Bilder anpassen (en und de) und beim Implementieren jeweils beachten (SupportedLanguages casting)
-//! Nächstes Projekt einfügen
-//! Am besten Rechteck-Format - das passt am besten rein - das mit dem Blender-Icon ist mehr ein Quadrat-Format, weshalb es so viel größer erscheint
-//! Für React Native Projekt mit den vielen schmalen Bildern vielleicht am besten mehrere Bilder nebeneinander zu einem Bild machen, damit es ein Rechteck-Format bekommt?
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { MutableRefObject, useEffect, useRef } from "react";
-
 import { IProject } from "@/utils/interfaces";
-import PROJECT_TILE from "./project_tile";
 import { useParams } from "next/navigation";
+
+import PROJECT_TILE from "./project_tile";
+import PROJECT_TILES_BACKGROUND_IMAGES from "./project_tiles_background_images";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,6 +59,7 @@ const PROJECT_TILES_PARENT: (props: {
 
   return (
     <section className="relative bg-dark_gray_stone w-full min-h-screen z-20 border-t-2 border-card_yellow">
+      <PROJECT_TILES_BACKGROUND_IMAGES />
       <div className="mx-auto mt-5 mb-5">
         {language === "de" ? (
           <div className="flex flex-col items-center text-[white]">

@@ -115,10 +115,11 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           <li>Loading screen überarbeiten (?)</li>
           <li>
             Rechtschreibung checken und Texte verbessern dazugehörige Project Images müssten dann
-            auch neu erstellt werden - für Svelte und React
-            Native Projekt? Bei React Native Projekt vielleicht noch mehr Bilder
+            auch neu erstellt werden - React
+            Native Projekt - Bei React Native Projekt vielleicht noch mehr Bilder
             hinzufügen (die volle Game instruction bspw.)?
           </li>
+          <li>Nochmal durchgehen, was die Middleware macht mit den Cookies</li>
         </ul> */}
       </Suspense>
     </main>
