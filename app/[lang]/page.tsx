@@ -61,6 +61,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
                     style={{
                       borderRadius: ele.link.includes("linkedin") ? "0" : "50%",
                     }}
+                    title={ele.alt.en.split(" ").at(0)}
                   />
                 </Link>
               );
@@ -102,7 +103,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           </li>
           <li>
             Bei Parallax lieber mit top property arbeiten statt xPercent und
-            yPercent(?) - Parallax-Effekte genell nochmal anpassen
+            yPercent(?) - Parallax-Effekt-Bereich generell nochmal anpassen
           </li>
           <li>
             ggf. nochmal checken: animation duration times aneinander anpassen wenn sie
@@ -115,6 +116,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             hinzufügen (die volle Game instruction bspw.)?
           </li>
           <li>Nochmal durchgehen, was die Middleware macht mit den Cookies</li>
+          <li>Richtige Domain für Portfolio-Seite kaufen bei Vercel?</li>
         </ul> */}
       </Suspense>
     </main>

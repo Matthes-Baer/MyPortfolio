@@ -35,7 +35,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
   const [is_mobile, set_is_mobile]: [
     boolean[],
     Dispatch<SetStateAction<boolean[]>>
-  ] = useState<boolean[]>([false, false]);
+  ] = useState<boolean[]>([]);
 
   useEffect(() => {
     const handle_resize: () => void = (): void => {

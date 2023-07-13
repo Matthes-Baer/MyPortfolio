@@ -44,6 +44,7 @@ const FIFTH_TECHNICALWRITER: (props: {
             height={60}
             width={60}
             className="rounded-[50%]"
+            title="freeCodeCamp"
           />
         </Link>
       </div>

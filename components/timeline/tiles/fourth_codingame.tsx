@@ -29,7 +29,12 @@ const FOURTH_CODINGAME: (props: { language: string }) => JSX.Element = (props: {
         style={{ transform: "rotateY(180deg)" }}
       />
       <div className="absolute right-0 bottom-0">
-        <Link href={"https://github.com/Matthes-Baer"} target="_blank">
+        <Link
+          href={
+            "https://www.codingame.com/profile/a3dbd9f4eb4cd67d9377ec73dd9363e76178174"
+          }
+          target="_blank"
+        >
           <Image
             src={codingame}
             alt={
@@ -40,6 +45,7 @@ const FOURTH_CODINGAME: (props: { language: string }) => JSX.Element = (props: {
             height={40}
             width={40}
             className="rounded-[50%]"
+            title="CodinGame"
           />
         </Link>
       </div>
