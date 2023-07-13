@@ -96,9 +96,6 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           </li>
           <li>Bei Home Page im unteren Bereich bei den Projects vielleicht noch Bilder hinzufügen am Rand? weitere Bäume, Pflanzen etc.?</li>
           <li>
-            Bei Timeline vielleicht einige Tiles noch weiter individualisieren? Icons hinzufügen bspw. wenn es zum Thema passt oder ganze Bilder?
-          </li>
-          <li>
             Überall nochmal überlegen, ob PNG oder JPG die bessere Image-Wahl
             ist, da mit JPG Qualitätsverluste einhergehen (besser für kleinere
             Bilder als für größere) - und PNG wird natürlich gebraucht, wenn Transparenz im Spiel ist
