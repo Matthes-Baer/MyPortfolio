@@ -11,7 +11,7 @@ const EIGHT_NEXTGOAL: (props: { language: string }) => JSX.Element = (props: {
   const date = props.language === "de" ? "" : "";
 
   return (
-    <div>
+    <div className="relative">
       <TEMPLATE_INNER_PART title={title} content={content} date={date} />
     </div>
   );

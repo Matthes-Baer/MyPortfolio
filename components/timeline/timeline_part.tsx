@@ -63,8 +63,8 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
         duration: 1,
         scrollTrigger: {
           trigger: seventh_projects_ref.current,
-          start: "-=400px top",
-          end: "-=250px top",
+          start: "-=300px top",
+          end: "-=150px top",
           scrub: true,
         },
       }

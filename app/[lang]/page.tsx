@@ -92,10 +92,9 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
         {/* <ul>
           <li>
             Gibt es noch etwas aufzuräumen? Unnötige Kommentare irgendwo? Überall einmal durchgehen wegen alts für Images / wegen language
-            statt lang bei useParams / wegen genereller Struktur
+            statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards)
           </li>
           <li>Bei Home Page im unteren Bereich bei den Projects vielleicht noch Bilder hinzufügen am Rand? weitere Bäume, Pflanzen etc.?</li>
-          <li>Im Oberen Bereich bei Parallax grünen Baum vielleicht nochmal austauschen?</li>
           <li>
             Bei Timeline vielleicht einige Tiles noch weiter individualisieren? Icons hinzufügen bspw. wenn es zum Thema passt oder ganze Bilder?
           </li>
@@ -115,8 +114,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           <li>Loading screen überarbeiten (?)</li>
           <li>
             Rechtschreibung checken und Texte verbessern dazugehörige Project Images müssten dann
-            auch neu erstellt werden - React
-            Native Projekt - Bei React Native Projekt vielleicht noch mehr Bilder
+            auch neu erstellt werden - React Native Projekt - Bei React Native Projekt vielleicht noch mehr Bilder
             hinzufügen (die volle Game instruction bspw.)?
           </li>
           <li>Nochmal durchgehen, was die Middleware macht mit den Cookies</li>
