@@ -16,7 +16,10 @@ export default function SWITCH_ROUTE_LINK_COMP(props: {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div style={{ marginRight: !props.slug ? "15px" : "0px" }}>
+      <div
+        style={{ marginRight: !props.slug ? "15px" : "0px" }}
+        className="hover:text-card_yellow transition"
+      >
         <Link
           href={props.url}
           style={{

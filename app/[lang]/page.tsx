@@ -61,6 +61,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
                     style={{
                       borderRadius: ele.link.includes("linkedin") ? "0" : "50%",
                     }}
+                    title={ele.alt.en.split(" ").at(0)}
                   />
                 </Link>
               );
@@ -92,13 +93,9 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
         {/* <ul>
           <li>
             Gibt es noch etwas aufzuräumen? Unnötige Kommentare irgendwo? Überall einmal durchgehen wegen alts für Images / wegen language
-            statt lang bei useParams / wegen genereller Struktur
+            statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards)
           </li>
           <li>Bei Home Page im unteren Bereich bei den Projects vielleicht noch Bilder hinzufügen am Rand? weitere Bäume, Pflanzen etc.?</li>
-          <li>Im Oberen Bereich bei Parallax grünen Baum vielleicht nochmal austauschen?</li>
-          <li>
-            Bei Timeline vielleicht einige Tiles noch weiter individualisieren? Icons hinzufügen bspw. wenn es zum Thema passt oder ganze Bilder?
-          </li>
           <li>
             Überall nochmal überlegen, ob PNG oder JPG die bessere Image-Wahl
             ist, da mit JPG Qualitätsverluste einhergehen (besser für kleinere
@@ -106,7 +103,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           </li>
           <li>
             Bei Parallax lieber mit top property arbeiten statt xPercent und
-            yPercent(?) - Parallax-Effekte genell nochmal anpassen
+            yPercent(?) - Parallax-Effekt-Bereich generell nochmal anpassen
           </li>
           <li>
             ggf. nochmal checken: animation duration times aneinander anpassen wenn sie
@@ -115,11 +112,11 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           <li>Loading screen überarbeiten (?)</li>
           <li>
             Rechtschreibung checken und Texte verbessern dazugehörige Project Images müssten dann
-            auch neu erstellt werden - React
-            Native Projekt - Bei React Native Projekt vielleicht noch mehr Bilder
+            auch neu erstellt werden - React Native Projekt - Bei React Native Projekt vielleicht noch mehr Bilder
             hinzufügen (die volle Game instruction bspw.)?
           </li>
           <li>Nochmal durchgehen, was die Middleware macht mit den Cookies</li>
+          <li>Richtige Domain für Portfolio-Seite kaufen bei Vercel?</li>
         </ul> */}
       </Suspense>
     </main>

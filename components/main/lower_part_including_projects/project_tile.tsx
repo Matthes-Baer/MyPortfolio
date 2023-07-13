@@ -115,6 +115,7 @@ const PROJECT_TILE: (props: {
                 height={35}
                 width={35}
                 className="m-1 shadow"
+                title={techstack_item}
               />
             )
           )}

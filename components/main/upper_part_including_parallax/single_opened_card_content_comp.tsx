@@ -1,12 +1,13 @@
 "use client";
 
-import { TECHSTACK_IMAGES } from "@/utils/import_images";
-import { ICard } from "@/utils/interfaces";
 import Image from "next/image";
 import { MutableRefObject, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useParams } from "next/navigation";
+
 import { SupportedLanguages } from "@/utils/types";
+import { TECHSTACK_IMAGES } from "@/utils/import_images";
+import { ICard } from "@/utils/interfaces";
 
 const SINGLE_OPENED_CARD_CONTENT_COMP: (props: {
   card: ICard;
@@ -35,6 +36,7 @@ const SINGLE_OPENED_CARD_CONTENT_COMP: (props: {
       width={props.mobile ? 30 : 35}
       ref={image_ref}
       className="m-1 rounded"
+      title={props.card.name}
     />
   );
 };

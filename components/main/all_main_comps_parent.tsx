@@ -1,8 +1,9 @@
 "use client";
 
-import AGE_AND_EXPERIENCE_COMP from "./middle_part_including_age_and_experience/age_and_experience_comp";
 import { useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
+
+import AGE_AND_EXPERIENCE_COMP from "./middle_part_including_age_and_experience/age_and_experience_comp";
 import PARALLAX_IMAGES_COMP from "./upper_part_including_parallax/parallax_images_comp";
 import PROJECT_TILES_PARENT from "./lower_part_including_projects/project_tiles_parent";
 

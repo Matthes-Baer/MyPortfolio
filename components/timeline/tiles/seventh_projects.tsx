@@ -16,12 +16,7 @@ const SEVENTH_PROJECTS: (props: { language: string }) => JSX.Element = (props: {
   return (
     <div className="relative pb-[35px]">
       <div className="absolute right-0 bottom-0">
-        <Link
-          href={
-            "https://www.codingame.com/profile/a3dbd9f4eb4cd67d9377ec73dd9363e76178174"
-          }
-          target="_blank"
-        >
+        <Link href={"https://github.com/Matthes-Baer"} target="_blank">
           <Image
             src={github_icon}
             alt={
@@ -32,6 +27,7 @@ const SEVENTH_PROJECTS: (props: { language: string }) => JSX.Element = (props: {
             width={40}
             height={40}
             className="rounded-[50%] shadow"
+            title="GitHub"
           />
         </Link>
       </div>

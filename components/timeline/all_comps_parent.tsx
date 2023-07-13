@@ -2,6 +2,7 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
+
 import TIMELINE_PART from "./timeline_part";
 import INFORMATION_PART from "./information_part";
 
