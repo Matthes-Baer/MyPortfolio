@@ -97,11 +97,6 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           </li>
           <li>Nochmal mit Shadows rumprobieren, ob man die ggf. besser deutlichen machen kann? Bei Timeline</li>
           <li>
-            Überall nochmal überlegen, ob PNG oder JPG die bessere Image-Wahl
-            ist, da mit JPG Qualitätsverluste einhergehen (besser für kleinere
-            Bilder als für größere) - und PNG wird natürlich gebraucht, wenn Transparenz im Spiel ist
-          </li>
-          <li>
             Bei Parallax lieber mit top property arbeiten statt xPercent und
             yPercent(?) - Parallax-Effekt-Bereich generell nochmal anpassen
           </li>
