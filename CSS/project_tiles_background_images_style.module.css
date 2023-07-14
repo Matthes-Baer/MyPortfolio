@@ -1,0 +1,31 @@
+.line {
+  width: 2px; /* Adjust this value as needed */
+  height: 55%;
+  background-color: #64871c; /* Adjust this color as needed */
+  position: absolute;
+  left: 25%;
+  top: 0;
+  transform-origin: top left;
+  opacity: 0.5;
+}
+
+.line:before,
+.line:after {
+  content: "";
+  position: absolute;
+  background-color: #64871c; /* Adjust this color as needed */
+}
+
+.line:before {
+  width: 200px; /* Adjust this value as needed */
+  height: 2px; /* Adjust this value as needed */
+  top: 100%;
+  left: 0;
+}
+
+.line:after {
+  width: 2px; /* Adjust this value as needed */
+  height: 75%; /* Adjust this value as needed */
+  top: 100%;
+  left: 200px; /* Should match the width of the line-container */
+}

@@ -95,7 +95,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             Gibt es noch etwas aufzuräumen? Unnötige Kommentare irgendwo? Überall einmal durchgehen wegen alts für Images / wegen language
             statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards)
           </li>
-          <li>Bei Home Page im unteren Bereich bei den Projects vielleicht noch Bilder hinzufügen am Rand? weitere Bäume, Pflanzen etc.?</li>
+          <li>Nochmal mit Shadows rumprobieren, ob man die ggf. besser deutlichen machen kann? Bei Timeline</li>
           <li>
             Überall nochmal überlegen, ob PNG oder JPG die bessere Image-Wahl
             ist, da mit JPG Qualitätsverluste einhergehen (besser für kleinere

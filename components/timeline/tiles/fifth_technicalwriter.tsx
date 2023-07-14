@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import TEMPLATE_INNER_PART from "./template_inner_part";
 import freecodecamp from "public/main_images/timeline/freecodecamp.png";
-import pen_and_paper from "public/main_images/timeline/pen_and_paper.png";
+import pen_and_paper from "public/main_images/timeline/pen_and_paper.jpg";
 
 const FIFTH_TECHNICALWRITER: (props: {
   language: string;

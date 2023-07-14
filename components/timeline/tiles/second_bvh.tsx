@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import group_project from "public/main_images/timeline/group_project.png";
+import group_project from "public/main_images/timeline/group_project.jpg";
 import TEMPLATE_INNER_PART from "./template_inner_part";
 
 const SECOND_BVH: (props: { language: string }) => JSX.Element = (props: {
