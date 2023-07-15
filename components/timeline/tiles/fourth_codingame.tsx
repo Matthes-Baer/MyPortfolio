@@ -46,6 +46,7 @@ const FOURTH_CODINGAME: (props: { language: string }) => JSX.Element = (props: {
             width={40}
             className="rounded-[50%]"
             title="CodinGame"
+            style={{ boxShadow: "1px 1px 2.5px 0px rgba(0,0,0,0.5)" }}
           />
         </Link>
       </div>

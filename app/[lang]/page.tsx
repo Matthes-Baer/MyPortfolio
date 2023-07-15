@@ -95,7 +95,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             Gibt es noch etwas aufzuräumen? Unnötige Kommentare irgendwo? Überall einmal durchgehen wegen alts für Images / wegen language
             statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards)
           </li>
-          <li>Nochmal mit Shadows rumprobieren, ob man die ggf. besser deutlichen machen kann? Bei Timeline</li>
+          <li>Nochmal mit Shadows rumprobieren, ob man die ggf. besser deutlichen machen kann? Bei Home page (siehe timeline)</li>
           <li>
             Bei Parallax lieber mit top property arbeiten statt xPercent und
             yPercent(?) - Parallax-Effekt-Bereich generell nochmal anpassen

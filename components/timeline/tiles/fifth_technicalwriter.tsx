@@ -27,7 +27,8 @@ const FIFTH_TECHNICALWRITER: (props: {
         alt={image_alt}
         height={150}
         width={150}
-        className="absolute -bottom-[125px] -left-[50px] hidden lg:block rounded-[50%] shadow"
+        className="absolute -bottom-[125px] -left-[50px] hidden lg:block rounded-[50%]"
+        style={{ boxShadow: "2px 2px 5px 0px black" }}
       />
       <div className="absolute right-0 bottom-0">
         <Link
