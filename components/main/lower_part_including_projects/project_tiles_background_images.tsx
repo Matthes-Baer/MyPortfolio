@@ -7,7 +7,8 @@ import fantasy_tree_green_two from "public/main_images/fantasy_tree_green_two.pn
 const PROJECT_TILES_BACKGROUND_IMAGES = () => {
   return (
     <div>
-      <div className={styles.line}></div>
+      <div className={styles.lineOne}></div>
+      <div className={styles.lineTwo}></div>
       <Image
         className="absolute top-0 -left-[800px] z-50 hidden lg:block"
         src={fantasy_tree_green_two}

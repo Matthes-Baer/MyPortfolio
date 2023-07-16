@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     colors: {
       dark_gray_stone: "#252525",
+      dark_gray_tile: "#404040",
       card_yellow: "#eea842",
       card_blue: "#33546e",
       card_brown: "#41201d",

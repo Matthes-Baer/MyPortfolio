@@ -164,7 +164,8 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
           <button
             onClick={() => slide_changer_handler("age")}
             disabled={is_age_button_disabled || current_slide === "age"}
-            className="relative w-full p-2 bg-[white] shadow z-20 rounded-[50%] opacity-90"
+            className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90"
+            style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
           >
             <Image
               src={cake_icon}
@@ -186,7 +187,8 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
             disabled={
               is_experience_button_disabled || current_slide === "experience"
             }
-            className="relative w-full p-2 bg-[white] shadow z-20 rounded-[50%] opacity-90"
+            className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90"
+            style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
           >
             <Image src={computer_icon} height={250} width={250} alt="Test" />
             <div

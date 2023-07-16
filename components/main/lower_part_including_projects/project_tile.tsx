@@ -92,7 +92,7 @@ const PROJECT_TILE: (props: {
                   }
                   width={25}
                   height={25}
-                  className="rounded-[50%] shadow"
+                  className="rounded-[50%]"
                 />
               </Link>
             </div>
@@ -114,7 +114,7 @@ const PROJECT_TILE: (props: {
                 }
                 height={35}
                 width={35}
-                className="m-1 shadow"
+                className="m-1"
                 title={techstack_item}
               />
             )
@@ -144,6 +144,7 @@ const PROJECT_TILE: (props: {
               ? "w-1/3 h-[400px] mx-auto min-w-[250px]"
               : "w-full h-[165px] sm:h-[200px] md:h-[250px] lg:h-[225px] xl:h-[250px] 2xl:h-[300px]")
           }
+          style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.25)" }}
         />
 
         {current_idx < PROJECT_IMAGES[props.project.project_key].length - 1 && (
