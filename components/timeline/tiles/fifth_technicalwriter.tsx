@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import TEMPLATE_INNER_PART from "./template_inner_part";
 import freecodecamp from "public/main_images/timeline/freecodecamp.png";
-import pen_and_paper from "public/main_images/timeline/pen_and_paper.png";
+import pen_and_paper from "public/main_images/timeline/pen_and_paper.jpg";
 
 const FIFTH_TECHNICALWRITER: (props: {
   language: string;
@@ -27,7 +27,8 @@ const FIFTH_TECHNICALWRITER: (props: {
         alt={image_alt}
         height={150}
         width={150}
-        className="absolute -bottom-[125px] -left-[50px] hidden lg:block rounded-[50%] shadow"
+        className="absolute -bottom-[125px] -left-[50px] hidden lg:block rounded-[50%]"
+        style={{ boxShadow: "2px 2px 5px 0px black" }}
       />
       <div className="absolute right-0 bottom-0">
         <Link

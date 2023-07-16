@@ -1,10 +1,14 @@
 import Image from "next/image";
+
+import styles from "../../../CSS/project_tiles_background_images_style.module.css";
 import fantasy_treeGreen from "public/main_images/fantasy_treeGreen.png";
 import fantasy_tree_green_two from "public/main_images/fantasy_tree_green_two.png";
 
 const PROJECT_TILES_BACKGROUND_IMAGES = () => {
   return (
     <div>
+      <div className={styles.lineOne}></div>
+      <div className={styles.lineTwo}></div>
       <Image
         className="absolute top-0 -left-[800px] z-50 hidden lg:block"
         src={fantasy_tree_green_two}

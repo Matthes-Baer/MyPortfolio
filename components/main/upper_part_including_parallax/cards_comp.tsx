@@ -155,6 +155,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
           !first_fetch && (
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9000] bg-dark_gray_stone p-5 rounded text-sm text-center"
+              style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
               ref={start_info_text_ref}
             >
               {language === "de"
@@ -170,6 +171,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
               fetch_button_disabled
             }
             className="absolute top-[15%] left-1/2 -translate-x-1/2 bg-dark_gray_stone p-5 rounded text-sm"
+            style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
           >
             <div className="whitespace-pre-wrap">
               {language === "de"

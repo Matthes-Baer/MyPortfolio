@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import fantasy_branch from "public/main_images/fantasy_branch.png";
-import fantasy_background from "public/main_images/fantasy_background.png";
+import fantasy_background from "public/main_images/fantasy_background.jpeg";
 import fantasy_tree_green_three from "public/main_images/fantasy_tree_green_three.png";
 import fantasy_treeRed from "public/main_images/fantasy_treeRed.png";
 import three_birds from "public/main_images/three_birds.png";
@@ -116,8 +116,8 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
             ? "Große Hintergrund-Szene"
             : "Large background scene"
         }
-        width={1000}
-        height={1000}
+        width={2500}
+        height={2500}
         className="z-[-1] w-full h-full min-h-[800px] min-w-[1000px]"
       />
 

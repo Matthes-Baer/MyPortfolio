@@ -11,6 +11,7 @@ import github_icon from "public/main_images/github_icon.png";
 import codingame_icon from "public/main_images/timeline/codingame.png";
 import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
 import linkedin_icon from "public/main_images/linkedin_icon.png";
+import BACKGROUND_TILES from "@/components/background_tiles";
 
 export default function Language_Picker(props: INormalPageProps): JSX.Element {
   const images: IIcon[] = [
@@ -37,8 +38,9 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-evenly">
+    <main className="flex min-h-screen flex-col items-center justify-evenly relative">
       <Suspense fallback={<Loading />}>
+        <BACKGROUND_TILES />
         <div className="flex flex-col items-center">
           <h1 className="text-[50px] text-center">Matthes Bär - Portfolio</h1>
           <div className="flex flex-wrap items-center justify-center">
@@ -60,6 +62,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
                     width={50}
                     style={{
                       borderRadius: ele.link.includes("linkedin") ? "0" : "50%",
+                      boxShadow: "1.5px 1.5px 3.5px 0px rgba(0,0,0,0.5)",
                     }}
                     title={ele.alt.en.split(" ").at(0)}
                   />
@@ -77,16 +80,16 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
         </div>
         <div className="flex w-full flex-col md:flex-row items-center justify-evenly">
           <SWITCH_LANGUAGE_LINK_COMP
-            language="de"
-            cookie_name="language_cookie"
-          >
-            <div>Deutsch</div>
-          </SWITCH_LANGUAGE_LINK_COMP>
-          <SWITCH_LANGUAGE_LINK_COMP
             language="en"
             cookie_name="language_cookie"
           >
             <div>English</div>
+          </SWITCH_LANGUAGE_LINK_COMP>
+          <SWITCH_LANGUAGE_LINK_COMP
+            language="de"
+            cookie_name="language_cookie"
+          >
+            <div>Deutsch</div>
           </SWITCH_LANGUAGE_LINK_COMP>
         </div>
 
@@ -94,12 +97,6 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
           <li>
             Gibt es noch etwas aufzuräumen? Unnötige Kommentare irgendwo? Überall einmal durchgehen wegen alts für Images / wegen language
             statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards)
-          </li>
-          <li>Bei Home Page im unteren Bereich bei den Projects vielleicht noch Bilder hinzufügen am Rand? weitere Bäume, Pflanzen etc.?</li>
-          <li>
-            Überall nochmal überlegen, ob PNG oder JPG die bessere Image-Wahl
-            ist, da mit JPG Qualitätsverluste einhergehen (besser für kleinere
-            Bilder als für größere) - und PNG wird natürlich gebraucht, wenn Transparenz im Spiel ist
           </li>
           <li>
             Bei Parallax lieber mit top property arbeiten statt xPercent und
@@ -109,7 +106,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             ggf. nochmal checken: animation duration times aneinander anpassen wenn sie
             zusammengehören
           </li>
-          <li>Loading screen überarbeiten (?)</li>
+          <li>Error Screen / Language Picker Screen überarbeiten (?) speziell im Sinne des Backgrounds; beim Loading screen einen richtigen Spinner einbauen? Passt dieser Square-Fade-In-Background wirklich zum restlichen Projekt?</li>
           <li>
             Rechtschreibung checken und Texte verbessern dazugehörige Project Images müssten dann
             auch neu erstellt werden - React Native Projekt - Bei React Native Projekt vielleicht noch mehr Bilder

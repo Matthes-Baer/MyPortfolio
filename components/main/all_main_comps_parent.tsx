@@ -36,7 +36,6 @@ const ALL_MAIN_PARENTS_COMP = (props: { project_data: any }) => {
     };
   }, []);
 
-  //! Use different loading screen - probably a fullscreen loading screen for this
   if (isLoading) return <Loading />;
 
   return (

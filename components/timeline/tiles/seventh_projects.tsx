@@ -28,6 +28,7 @@ const SEVENTH_PROJECTS: (props: { language: string }) => JSX.Element = (props: {
             height={40}
             className="rounded-[50%] shadow"
             title="GitHub"
+            style={{ boxShadow: "1px 1px 2.5px 0px rgba(0,0,0,0.5)" }}
           />
         </Link>
       </div>

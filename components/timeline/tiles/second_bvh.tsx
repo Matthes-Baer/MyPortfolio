@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import group_project from "public/main_images/timeline/group_project.png";
+import group_project from "public/main_images/timeline/group_project.jpg";
 import TEMPLATE_INNER_PART from "./template_inner_part";
 
 const SECOND_BVH: (props: { language: string }) => JSX.Element = (props: {
@@ -26,6 +26,7 @@ const SECOND_BVH: (props: { language: string }) => JSX.Element = (props: {
         height={150}
         width={150}
         className="absolute -bottom-[125px] -right-[50px] hidden lg:block rounded-[50%] shadow"
+        style={{ boxShadow: "-2px 2px 5px 0px black" }}
       />
       <TEMPLATE_INNER_PART title={title} content={content} date={date} />
     </div>
