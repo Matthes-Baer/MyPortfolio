@@ -1,6 +1,6 @@
 "use client";
 
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, Suspense, useEffect, useState } from "react";
 import Loading from "@/app/[lang]/loading";
 
 import TIMELINE_PART from "./timeline_part";
@@ -44,12 +44,12 @@ const ALL_TIMELINE_PARENTS_COMP: () => JSX.Element = (): JSX.Element => {
 
   return (
     <main>
-      <section>
+      <Suspense fallback={<Loading />}>
         <INFORMATION_PART />
-      </section>
-      <section>
+      </Suspense>
+      <Suspense fallback={<Loading />}>
         <TIMELINE_PART />
-      </section>
+      </Suspense>
     </main>
   );
 };

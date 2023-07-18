@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { cookies } from "next/headers";
 import Loading from "../../loading";
+import LANGUAGE_ERROR_COMP from "@/components/language_error_comp";
 
 export async function generateMetadata(
   props: IRootLayoutProps,
@@ -34,21 +35,12 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
   let lang: string = props.params.lang;
 
   if (language_cookie != lang) {
-    return (
-      <Link href={`/${lang}`}>
-        <span>
-          {" "}
-          {language_cookie === "de"
-            ? "Bitte verwenden Sie die Sprachauswahl, um die Sprache zu ändern."
-            : "Please use the language selector to change the language."}
-        </span>
-      </Link>
-    );
+    return <LANGUAGE_ERROR_COMP language={lang} />;
   }
 
   return (
-    <div>
-      <Suspense fallback={<Loading />}>{props.children}</Suspense>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div>{props.children}</div>
+    </Suspense>
   );
 }
