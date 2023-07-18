@@ -1,17 +1,19 @@
 "use client";
 
-import { ICard } from "@/utils/interfaces";
 import { gsap } from "gsap";
 import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
+  Suspense,
   useEffect,
   useRef,
   useState,
 } from "react";
 
+import { ICard } from "@/utils/interfaces";
 import SINGLE_OPENED_CARD_CONTENT_COMP from "./single_opened_card_content_comp";
+import Loading from "@/app/[lang]/loading";
 
 const ALL_OPENED_CARDS_COMP: (props: {
   all_opened_cards: ICard[];
@@ -22,7 +24,7 @@ const ALL_OPENED_CARDS_COMP: (props: {
     Dispatch<SetStateAction<boolean[]>>
   ] = useState<boolean[]>([false, false, false]);
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const container = container_ref.current;
     const handle_resize: () => void = (): void => {
       set_is_mobile([
@@ -44,25 +46,29 @@ const ALL_OPENED_CARDS_COMP: (props: {
       { opacity: 1, duration: 1, ease: "power2.out" }
     );
 
-    return () => {
+    return (): void => {
       window.removeEventListener("resize", handle_resize);
     };
   }, []);
 
   return (
-    <div
-      className="absolute left-1/2 -bottom-[150px] sm:-bottom-1/4 -translate-x-1/2 max-w-full w-full sm:w-auto sm:max-w-9/12 flex flex-wrap rounded mx-auto justify-center p-5 bg-[rgba(25,25,25,0.4)]"
-      ref={container_ref}
-      style={{ bottom: is_mobile[0] ? "-230px" : is_mobile[1] ? "-200px" : "" }}
-    >
-      {props.all_opened_cards.map((card: ICard) => (
-        <SINGLE_OPENED_CARD_CONTENT_COMP
-          card={card}
-          mobile={is_mobile[is_mobile.length - 1]}
-          key={card.card_index}
-        />
-      ))}
-    </div>
+    <Suspense fallback={<Loading />}>
+      <section
+        className="absolute left-1/2 -bottom-[150px] sm:-bottom-1/4 -translate-x-1/2 max-w-full w-full sm:w-auto sm:max-w-9/12 flex flex-wrap rounded mx-auto justify-center p-5 bg-[rgba(25,25,25,0.4)]"
+        ref={container_ref}
+        style={{
+          bottom: is_mobile[0] ? "-230px" : is_mobile[1] ? "-200px" : "",
+        }}
+      >
+        {props.all_opened_cards.map((card: ICard) => (
+          <SINGLE_OPENED_CARD_CONTENT_COMP
+            card={card}
+            mobile={is_mobile[is_mobile.length - 1]}
+            key={card.card_index}
+          />
+        ))}
+      </section>
+    </Suspense>
   );
 };
 

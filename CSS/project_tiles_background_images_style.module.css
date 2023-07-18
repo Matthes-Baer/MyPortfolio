@@ -1,7 +1,7 @@
 .lineOne {
-  width: 2px; /* Adjust this value as needed */
+  width: 2px;
   height: 55%;
-  background-color: #64871c; /* Adjust this color as needed */
+  background-color: #64871c;
   position: absolute;
   left: 25%;
   top: 0;
@@ -9,31 +9,10 @@
   opacity: 0.25;
 }
 
-.lineOne:before,
-.lineOne:after {
-  content: "";
-  position: absolute;
-  background-color: #64871c; /* Adjust this color as needed */
-}
-
-.lineOne:before {
-  width: 200px; /* Adjust this value as needed */
-  height: 2px; /* Adjust this value as needed */
-  top: 100%;
-  left: 0;
-}
-
-.lineOne:after {
-  width: 2px; /* Adjust this value as needed */
-  height: 75%; /* Adjust this value as needed */
-  top: 100%;
-  left: 200px; /* Should match the width of the line-container */
-}
-
 .lineTwo {
-  width: 2px; /* Adjust this value as needed */
+  width: 2px;
   height: 5%;
-  background-color: #64871c; /* Adjust this color as needed */
+  background-color: #64871c;
   position: absolute;
   right: 25%;
   top: 0;
@@ -41,23 +20,39 @@
   opacity: 0.25;
 }
 
+.lineOne:before,
+.lineOne:after,
 .lineTwo:before,
 .lineTwo:after {
   content: "";
   position: absolute;
-  background-color: #64871c; /* Adjust this color as needed */
+  background-color: #64871c;
+}
+
+.lineOne:before {
+  width: 200px;
+  height: 2px;
+  top: 100%;
+  left: 0;
+}
+
+.lineOne:after {
+  width: 2px;
+  height: 75%;
+  top: 100%;
+  left: 200px;
 }
 
 .lineTwo:before {
-  width: 300px; /* Adjust this value as needed */
-  height: 2px; /* Adjust this value as needed */
+  width: 300px;
+  height: 2px;
   top: 100%;
   right: 0;
 }
 
 .lineTwo:after {
-  width: 2px; /* Adjust this value as needed */
-  height: 1000%; /* Adjust this value as needed */
+  width: 2px;
+  height: 1000%;
   top: 100%;
-  right: 300px; /* Should match the width of the line-container */
+  right: 300px;
 }

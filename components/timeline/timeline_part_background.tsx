@@ -2,8 +2,9 @@
 
 import { Dispatch, SetStateAction, Suspense, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import Loading from "@/app/[lang]/loading";
 import Image from "next/image";
+
+import Loading from "@/app/[lang]/loading";
 
 import treeOne from "public/main_images/timeline/treeOne.png";
 import treeTwo from "public/main_images/timeline/treeTwo.png";
@@ -37,7 +38,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
     Dispatch<SetStateAction<boolean[]>>
   ] = useState<boolean[]>([]);
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const handle_resize: () => void = (): void => {
       set_is_mobile([
         window.innerWidth <= 325,

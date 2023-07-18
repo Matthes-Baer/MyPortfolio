@@ -14,7 +14,6 @@ module.exports = {
       card_brown: "#41201d",
       tree_light_green: "#64871c",
       tree_dark_green: "#174401",
-      sky: { 100: "#a0d8ef", 900: "#2980b9" },
     },
     extend: {
       backgroundImage: {

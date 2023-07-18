@@ -50,7 +50,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
   const start_info_text_ref: MutableRefObject<null> = useRef<null>(null);
   const cards_amount = 27;
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const handle_screen_resize = () => {
       set_is_mobile(window.innerWidth <= 1000);
     };
@@ -64,11 +64,13 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
     };
   }, []);
 
-  const fetch_stuff = useCallback(async () => {
+  const fetch_stuff: () => Promise<() => void> = useCallback(async (): Promise<
+    () => void
+  > => {
     let fetch_button_disable_timeout: NodeJS.Timeout;
     set_fetch_button_disabled(true);
 
-    const animate_card = () => {
+    const animate_card: () => void = (): void => {
       const moving_card = moving_card_ref.current;
       const front_card_image = front_card_image_ref.current;
       const moving_card_timeline = gsap.timeline();
@@ -145,7 +147,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
       console.log(error);
     }
 
-    return () => clearTimeout(fetch_button_disable_timeout);
+    return (): void => clearTimeout(fetch_button_disable_timeout);
   }, [current_card_idx_count, first_fetch]);
 
   return (

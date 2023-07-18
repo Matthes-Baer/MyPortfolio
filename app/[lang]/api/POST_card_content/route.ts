@@ -1,10 +1,8 @@
-import { connect_to_database } from "@/utils/mongoDB_connect";
 import { NextResponse } from "next/server";
 import { Db } from "mongodb";
 
-interface IBody {
-  card_idx: number;
-}
+import { connect_to_database } from "@/utils/server_only_functions";
+import { IRequestBody } from "@/utils/interfaces";
 
 export async function POST(request: Request, response: NextResponse) {
   let client;
@@ -20,7 +18,7 @@ export async function POST(request: Request, response: NextResponse) {
 
   try {
     //? Not request.body to get the body but request.json()
-    const body: IBody = await request.json();
+    const body: IRequestBody = await request.json();
     let res = await db
       .collection("cards")
       .findOne({ card_index: body.card_idx });

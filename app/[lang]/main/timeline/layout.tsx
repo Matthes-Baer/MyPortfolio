@@ -1,9 +1,9 @@
-import { IRootLayoutProps } from "@/utils/interfaces";
 import { Metadata, ResolvingMetadata } from "next";
 import { Suspense } from "react";
-import Link from "next/link";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { cookies } from "next/headers";
+
+import { IRootLayoutProps } from "@/utils/interfaces";
 import Loading from "../../loading";
 import LANGUAGE_ERROR_COMP from "@/components/language_error_comp";
 
@@ -11,9 +11,9 @@ export async function generateMetadata(
   props: IRootLayoutProps,
   parent?: ResolvingMetadata
 ): Promise<Metadata> {
-  const lang: string = props.params.lang;
+  const language: string = props.params.lang;
 
-  if (lang === "de") {
+  if (language === "de") {
     return {
       title: "Portfolio - Zeitleiste",
       description:
@@ -28,14 +28,16 @@ export async function generateMetadata(
   }
 }
 
-export default function RootLayout(props: IRootLayoutProps): JSX.Element {
+const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
+  props: IRootLayoutProps
+): JSX.Element => {
   let cookies_store: ReadonlyRequestCookies = cookies();
   let language_cookie: string | undefined =
     cookies_store.get("language_cookie")?.value;
-  let lang: string = props.params.lang;
+  let language: string = props.params.lang;
 
-  if (language_cookie != lang) {
-    return <LANGUAGE_ERROR_COMP language={lang} />;
+  if (language_cookie != language) {
+    return <LANGUAGE_ERROR_COMP language={language} />;
   }
 
   return (
@@ -43,4 +45,6 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
       <div>{props.children}</div>
     </Suspense>
   );
-}
+};
+
+export default ROOT_LAYOUT;

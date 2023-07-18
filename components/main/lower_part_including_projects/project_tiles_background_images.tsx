@@ -4,7 +4,7 @@ import styles from "../../../CSS/project_tiles_background_images_style.module.cs
 import fantasy_treeGreen from "public/main_images/fantasy_treeGreen.png";
 import fantasy_tree_green_two from "public/main_images/fantasy_tree_green_two.png";
 
-const PROJECT_TILES_BACKGROUND_IMAGES = () => {
+const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
   return (
     <div>
       <div className={styles.lineOne}></div>

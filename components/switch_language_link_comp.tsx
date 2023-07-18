@@ -1,19 +1,24 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Suspense } from "react";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
+import { SupportedLanguages } from "@/utils/types";
+
+import Loading from "@/app/[lang]/loading";
 import { FLAG_IMAGES } from "@/utils/import_images";
 import { IImage_Props } from "@/utils/interfaces";
-import { SupportedLanguages } from "@/utils/types";
-import Loading from "@/app/[lang]/loading";
-import Image from "next/image";
 
-export default function SWITCH_LANGUAGE_LINK_COMP(props: {
+const SWITCH_LANGUAGE_LINK_COMP: (props: {
   children: React.ReactNode;
   cookie_name: string;
   language: string;
-}) {
+}) => JSX.Element = (props: {
+  children: React.ReactNode;
+  cookie_name: string;
+  language: string;
+}): JSX.Element => {
   const router: AppRouterInstance = useRouter();
   const image_props: IImage_Props =
     props.language === "de"
@@ -45,7 +50,7 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
     <Suspense fallback={<Loading />}>
       <button
         onClick={fetch_function}
-        className="move_it flex flex-col items-center p-5 bg-warm_terracotta  rounded-lg hover:bg-burnt_sienna"
+        className="flex flex-col items-center p-5 rounded-lg hover:bg-dark_gray_tile transition"
       >
         <Image
           src={image_props.src}
@@ -57,4 +62,6 @@ export default function SWITCH_LANGUAGE_LINK_COMP(props: {
       </button>
     </Suspense>
   );
-}
+};
+
+export default SWITCH_LANGUAGE_LINK_COMP;

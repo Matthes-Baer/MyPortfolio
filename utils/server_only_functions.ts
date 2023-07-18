@@ -1,7 +1,15 @@
 import "server-only";
-import { connect_to_database } from "./mongoDB_connect";
+
 import { IProject } from "./interfaces";
 import { Db } from "mongodb";
+import { MongoClient } from "mongodb";
+
+export async function connect_to_database(): Promise<MongoClient> {
+  let client: MongoClient = await MongoClient.connect(
+    `${process.env.MONGODBCONNECT}`
+  );
+  return client;
+}
 
 export async function get_projects(): Promise<IProject[] | undefined> {
   let client;

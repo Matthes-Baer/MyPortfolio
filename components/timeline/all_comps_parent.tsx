@@ -1,8 +1,8 @@
 "use client";
 
-import { Dispatch, SetStateAction, Suspense, useEffect, useState } from "react";
-import Loading from "@/app/[lang]/loading";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
+import Loading from "@/app/[lang]/loading";
 import TIMELINE_PART from "./timeline_part";
 import INFORMATION_PART from "./information_part";
 
@@ -12,7 +12,7 @@ const ALL_TIMELINE_PARENTS_COMP: () => JSX.Element = (): JSX.Element => {
     Dispatch<SetStateAction<boolean>>
   ] = useState<boolean>(false);
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const images: HTMLCollectionOf<HTMLImageElement> =
       document.getElementsByTagName("img");
     const imagesCount: number = images.length;
@@ -32,24 +32,19 @@ const ALL_TIMELINE_PARENTS_COMP: () => JSX.Element = (): JSX.Element => {
     });
 
     // Clean up event listeners on component unmount
-    return () => {
+    return (): void => {
       Array.from(images).forEach((img) => {
         img.removeEventListener("load", handleImageLoad);
       });
     };
   }, []);
 
-  //! Use different loading screen - probably a fullscreen loading screen for this
   if (is_loading) return <Loading />;
 
   return (
     <main>
-      <Suspense fallback={<Loading />}>
-        <INFORMATION_PART />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <TIMELINE_PART />
-      </Suspense>
+      <INFORMATION_PART />
+      <TIMELINE_PART />
     </main>
   );
 };

@@ -14,9 +14,9 @@ export async function generateMetadata(
   props: IRootLayoutProps,
   parent?: ResolvingMetadata
 ): Promise<Metadata> {
-  const lang = props.params.lang;
+  const language = props.params.lang;
 
-  if (lang === "de") {
+  if (language === "de") {
     return {
       title: "Portfolio - Startseite",
       description:
@@ -31,14 +31,16 @@ export async function generateMetadata(
   }
 }
 
-export default function RootLayout(props: IRootLayoutProps): JSX.Element {
+const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
+  props: IRootLayoutProps
+): JSX.Element => {
   let cookies_store: ReadonlyRequestCookies = cookies();
   let language_cookie: string | undefined =
     cookies_store.get("language_cookie")?.value;
-  let lang: string = props.params.lang;
+  let language: string = props.params.lang;
 
-  if (language_cookie != lang) {
-    return <LANGUAGE_ERROR_COMP language={lang} />;
+  if (language_cookie != language) {
+    return <LANGUAGE_ERROR_COMP language={language} />;
   }
 
   return (
@@ -50,12 +52,12 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
           </div>
           <div className="z-[9001]">
             <div className="flex justify-end">
-              <SWITCH_ROUTE_LINK_COMP url={`/${lang}/main`} slug="">
+              <SWITCH_ROUTE_LINK_COMP url={`/${language}/main`} slug="">
                 <div>{language_cookie === "de" ? "Startseite" : "Home"}</div>
               </SWITCH_ROUTE_LINK_COMP>
 
               <SWITCH_ROUTE_LINK_COMP
-                url={`/${lang}/main/timeline`}
+                url={`/${language}/main/timeline`}
                 slug="timeline"
               >
                 <div>
@@ -69,4 +71,6 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
       </div>
     </Suspense>
   );
-}
+};
+
+export default ROOT_LAYOUT;

@@ -1,4 +1,7 @@
+import { Suspense } from "react";
+
 import TEMPLATE_INNER_PART from "./template_inner_part";
+import Loading from "@/app/[lang]/loading";
 
 const EIGHT_NEXTGOAL: (props: { language: string }) => JSX.Element = (props: {
   language: string;
@@ -11,9 +14,11 @@ const EIGHT_NEXTGOAL: (props: { language: string }) => JSX.Element = (props: {
   const date = props.language === "de" ? "" : "";
 
   return (
-    <div className="relative">
-      <TEMPLATE_INNER_PART title={title} content={content} date={date} />
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div className="relative">
+        <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+      </div>
+    </Suspense>
   );
 };
 

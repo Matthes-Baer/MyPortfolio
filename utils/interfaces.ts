@@ -1,8 +1,11 @@
-import { ObjectId } from "mongodb";
 import { StaticImageData } from "next/image";
 
 interface ILanguageParams {
   lang: string;
+}
+
+export interface IRequestBody {
+  card_idx: number;
 }
 
 export interface IImage_Props {
