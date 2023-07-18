@@ -94,7 +94,7 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
         {/* <ul>
           <li>
             Gibt es noch etwas aufzuräumen? Unnötige Kommentare irgendwo? Überall einmal durchgehen wegen alts für Images / wegen language
-            statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards) / nav, section, main und sowas hinzufügen, wo es passt / Suspenses da einfügen, wo es Sinn ergibt
+            statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards) / nav, section, main https://www.w3schools.com/html/html5_semantic_elements.asp und sowas hinzufügen, wo es passt / Suspenses da einfügen, wo es Sinn ergibt
           </li>
           <li>Nochmal durchgehen, was die Middleware macht mit den Cookies</li>
           <li>Richtige Domain für Portfolio-Seite kaufen bei Vercel?</li>
