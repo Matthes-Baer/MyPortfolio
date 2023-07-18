@@ -8,6 +8,7 @@ import SWITCH_ROUTE_LINK_COMP from "@/components/layout/switch_route_link_comp";
 import { Suspense } from "react";
 import Loading from "../loading";
 import RESET_LANGUAGE_BUTTON_COMP from "@/components/layout/reset_language_button_comp";
+import LANGUAGE_ERROR_COMP from "@/components/language_error_comp";
 
 export async function generateMetadata(
   props: IRootLayoutProps,
@@ -37,21 +38,12 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
   let lang: string = props.params.lang;
 
   if (language_cookie != lang) {
-    return (
-      <Link href={`/${lang}`}>
-        <span>
-          {" "}
-          {language_cookie === "de"
-            ? "Bitte verwenden Sie die Sprachauswahl, um die Sprache zu ändern."
-            : "Please use the language selector to change the language."}
-        </span>
-      </Link>
-    );
+    return <LANGUAGE_ERROR_COMP language={lang} />;
   }
 
   return (
-    <div className="relative">
-      <Suspense fallback={<Loading />}>
+    <Suspense fallback={<Loading />}>
+      <div className="relative">
         <div className="flex justify-between h-32 p-1 text-xl">
           <div className="z-[9001]">
             <RESET_LANGUAGE_BUTTON_COMP />
@@ -74,7 +66,7 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
           </div>
         </div>
         {props.children}
-      </Suspense>
-    </div>
+      </div>
+    </Suspense>
   );
 }

@@ -11,6 +11,7 @@ import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
+  Suspense,
   useEffect,
   useRef,
   useState,
@@ -18,6 +19,7 @@ import {
 import { useParams } from "next/navigation";
 import { gsap } from "gsap";
 import { SupportedLanguages } from "@/utils/types";
+import Loading from "@/app/[lang]/loading";
 
 const PROJECT_TILE: (props: {
   project: IProject;
@@ -128,24 +130,26 @@ const PROJECT_TILE: (props: {
         )}
       </div>
       <div className="relative bg-[transparent] w-1/2 lg:w-2/3 mx-auto min-w-[250px] mt-5">
-        <Image
-          src={PROJECT_IMAGES[props.project.project_key][current_idx].src}
-          alt={
-            PROJECT_IMAGES[props.project.project_key][current_idx].alt[
-              language as SupportedLanguages
-            ]
-          }
-          height={500}
-          width={500}
-          ref={slider_ref}
-          className={
-            "drop-shadow " +
-            (props.project.project_key === "divid"
-              ? "w-1/3 h-[400px] mx-auto min-w-[250px]"
-              : "w-full h-[165px] sm:h-[200px] md:h-[250px] lg:h-[225px] xl:h-[250px] 2xl:h-[300px]")
-          }
-          style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.25)" }}
-        />
+        <Suspense fallback={<Loading />}>
+          <Image
+            src={PROJECT_IMAGES[props.project.project_key][current_idx].src}
+            alt={
+              PROJECT_IMAGES[props.project.project_key][current_idx].alt[
+                language as SupportedLanguages
+              ]
+            }
+            height={500}
+            width={500}
+            ref={slider_ref}
+            className={
+              "drop-shadow " +
+              (props.project.project_key === "divid"
+                ? "w-1/3 h-[400px] mx-auto min-w-[250px]"
+                : "w-full h-[165px] sm:h-[200px] md:h-[250px] lg:h-[225px] xl:h-[250px] 2xl:h-[300px]")
+            }
+            style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.25)" }}
+          />
+        </Suspense>
 
         {current_idx < PROJECT_IMAGES[props.project.project_key].length - 1 && (
           <button

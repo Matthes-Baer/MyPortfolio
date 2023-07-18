@@ -11,7 +11,6 @@ import github_icon from "public/main_images/github_icon.png";
 import codingame_icon from "public/main_images/timeline/codingame.png";
 import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
 import linkedin_icon from "public/main_images/linkedin_icon.png";
-import BACKGROUND_TILES from "@/components/background_tiles";
 
 export default function Language_Picker(props: INormalPageProps): JSX.Element {
   const images: IIcon[] = [
@@ -38,9 +37,8 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-evenly relative">
-      <Suspense fallback={<Loading />}>
-        <BACKGROUND_TILES />
+    <Suspense fallback={<Loading />}>
+      <main className="flex min-h-screen flex-col items-center justify-evenly relative">
         <div className="flex flex-col items-center">
           <h1 className="text-[50px] text-center">Matthes Bär - Portfolio</h1>
           <div className="flex flex-wrap items-center justify-center">
@@ -96,26 +94,12 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
         {/* <ul>
           <li>
             Gibt es noch etwas aufzuräumen? Unnötige Kommentare irgendwo? Überall einmal durchgehen wegen alts für Images / wegen language
-            statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards)
-          </li>
-          <li>
-            Bei Parallax lieber mit top property arbeiten statt xPercent und
-            yPercent(?) - Parallax-Effekt-Bereich generell nochmal anpassen
-          </li>
-          <li>
-            ggf. nochmal checken: animation duration times aneinander anpassen wenn sie
-            zusammengehören
-          </li>
-          <li>Error Screen / Language Picker Screen überarbeiten (?) speziell im Sinne des Backgrounds; beim Loading screen einen richtigen Spinner einbauen? Passt dieser Square-Fade-In-Background wirklich zum restlichen Projekt?</li>
-          <li>
-            Rechtschreibung checken und Texte verbessern dazugehörige Project Images müssten dann
-            auch neu erstellt werden - React Native Projekt - Bei React Native Projekt vielleicht noch mehr Bilder
-            hinzufügen (die volle Game instruction bspw.)?
+            statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards) / nav, section, main https://www.w3schools.com/html/html5_semantic_elements.asp und sowas hinzufügen, wo es passt / Suspenses da einfügen, wo es Sinn ergibt
           </li>
           <li>Nochmal durchgehen, was die Middleware macht mit den Cookies</li>
           <li>Richtige Domain für Portfolio-Seite kaufen bei Vercel?</li>
         </ul> */}
-      </Suspense>
-    </main>
+      </main>
+    </Suspense>
   );
 }

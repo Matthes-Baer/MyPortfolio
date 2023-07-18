@@ -155,7 +155,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
   }, []);
 
   return (
-    <div
+    <section
       className="relative w-full bg-dark_gray_stone border-warm_terracotta"
       style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
     >
@@ -224,7 +224,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -72,7 +72,7 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="relative w-full h-min-screen">
+    <section className="relative w-full h-min-screen">
       <TIMELINE_PART_BACKGROUND />
       <div
         className="ml-0 lg:ml-[5%] p-5 mb-[40px] bg-dark_gray_stone rounded text-[white] text-justify w-full lg:w-10/12 xl:w-8/12 2xl:w-6/12 opacity-0 border-b-8 border-b-tree_light_green border-r-8 border-r-tree_light_green z-20"
@@ -135,7 +135,7 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
       >
         <EIGHT_NEXTGOAL language={language} />
       </div>
-    </div>
+    </section>
   );
 };
 

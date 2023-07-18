@@ -42,7 +42,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
     ScrollTrigger.matchMedia({
       "(min-width: 768px)": () => {
         gsap.to(fantasy_branch, {
-          top: "25%",
+          yPercent: 55,
           scrollTrigger: {
             trigger: container,
             start: "50",
@@ -52,7 +52,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         });
 
         gsap.to(fantasy_tree_green, {
-          yPercent: 7.5,
+          yPercent: -20,
           scrollTrigger: {
             trigger: container,
             start: "50",
@@ -62,7 +62,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         });
 
         gsap.to(fantasy_tree_red, {
-          yPercent: 10,
+          yPercent: -25,
           scrollTrigger: {
             trigger: container,
             start: "50",
@@ -72,7 +72,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         });
 
         gsap.to(three_birds, {
-          xPercent: 20,
+          xPercent: 25,
           scrollTrigger: {
             trigger: container,
             start: "50",
@@ -82,7 +82,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         });
 
         gsap.to(two_birds, {
-          xPercent: -15,
+          xPercent: -75,
           scrollTrigger: {
             trigger: container,
             start: "50",
@@ -107,7 +107,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   }, []);
 
   return (
-    <div ref={container_ref} className="relative w-full">
+    <section ref={container_ref} className="relative w-full">
       <CARDS_COMP />
       <Image
         src={fantasy_background}
@@ -190,7 +190,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         height={500}
         className="absolute bottom-[15%] right-[25%] w-[4%] h-[8%] opacity-90 hidden lg:block"
       />
-    </div>
+    </section>
   );
 };
 
