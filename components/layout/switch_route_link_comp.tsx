@@ -15,6 +15,7 @@ const SWITCH_ROUTE_LINK_COMP: (props: {
   url: string;
   slug: string;
 }): JSX.Element => {
+  //* Check which route is the active one currently
   const segment: string = useSelectedLayoutSegment() || "";
   const isActive: boolean = props.slug === segment;
 

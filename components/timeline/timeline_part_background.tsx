@@ -39,6 +39,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
   ] = useState<boolean[]>([]);
 
   useEffect((): (() => void) => {
+    //* This is used for responsive adjustments based on specific screen sizes
     const handle_resize: () => void = (): void => {
       set_is_mobile([
         window.innerWidth <= 325,

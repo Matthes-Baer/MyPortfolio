@@ -18,6 +18,7 @@ const ALL_TIMELINE_PARENTS_COMP: () => JSX.Element = (): JSX.Element => {
     const imagesCount: number = images.length;
     let loadedCount: number = 0;
 
+    //* This is supposed to load in the images first before allowing to show the actual page content
     const handleImageLoad: () => void = (): void => {
       loadedCount++;
 
@@ -26,12 +27,12 @@ const ALL_TIMELINE_PARENTS_COMP: () => JSX.Element = (): JSX.Element => {
       }
     };
 
-    // Attach load event listener to all images
+    //* Attach load event listener to all images
     Array.from(images).forEach((img) => {
       img.addEventListener("load", handleImageLoad);
     });
 
-    // Clean up event listeners on component unmount
+    //* Clean up event listeners on component unmount
     return (): void => {
       Array.from(images).forEach((img) => {
         img.removeEventListener("load", handleImageLoad);

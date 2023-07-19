@@ -8,6 +8,7 @@ import ALL_MAIN_PARENTS_COMP from "@/components/main/all_main_comps_parent";
 const Main: (props: INormalPageProps) => Promise<JSX.Element> = async (
   props: INormalPageProps
 ) => {
+  //* Fetching data for projects in the bottom part of the home page
   const project_data: IProject[] | undefined = await get_projects();
 
   return (

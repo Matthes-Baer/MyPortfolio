@@ -51,6 +51,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
   const cards_amount = 27;
 
   useEffect((): (() => void) => {
+    //* This is used for responsive adjustment based on a specific screen size
     const handle_screen_resize = () => {
       set_is_mobile(window.innerWidth <= 1000);
     };
@@ -64,6 +65,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
     };
   }, []);
 
+  //* Includes all the logic for fetching data for the current skill card and activating the corresponding animation
   const fetch_stuff: () => Promise<() => void> = useCallback(async (): Promise<
     () => void
   > => {
@@ -204,13 +206,26 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
                   fetch_button_disabled
                 }
               >
-                <Image src={card_back} height={500} width={500} alt="Test" />
+                <Image
+                  src={card_back}
+                  height={500}
+                  width={500}
+                  alt={
+                    language === "de"
+                      ? "Die Rückseite der Karte"
+                      : "The back of the card"
+                  }
+                />
               </button>
               <Image
                 src={card_back}
                 height={500}
                 width={500}
-                alt="Test"
+                alt={
+                  language === "de"
+                    ? "Die Rückseite der Karte"
+                    : "The back of the card"
+                }
                 className="absolute top-0 left-0 z-[-1]"
                 ref={moving_card_ref}
               />
@@ -231,7 +246,11 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
               src={card_front}
               height={500}
               width={500}
-              alt="Test"
+              alt={
+                language === "de"
+                  ? "Die Vorderseite der Karte"
+                  : "The front of the card"
+              }
               className="opacity-0"
               ref={front_card_image_ref}
             />

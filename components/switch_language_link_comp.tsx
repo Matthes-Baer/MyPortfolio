@@ -25,6 +25,7 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
       ? FLAG_IMAGES.flag_german
       : FLAG_IMAGES.flag_english;
 
+  //* Change language cookie and redirect
   const fetch_function: () => Promise<void> = async (): Promise<void> => {
     try {
       const res = await fetch("/api/POST_change_language_cookie", {

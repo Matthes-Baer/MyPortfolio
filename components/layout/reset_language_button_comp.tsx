@@ -12,6 +12,7 @@ import { SupportedLanguages } from "@/utils/types";
 const RESET_LANGUAGE_BUTTON_COMP: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
 
+  //* Reset the language cookie
   const reset_language_cookie: () => Promise<void> =
     async (): Promise<void> => {
       try {

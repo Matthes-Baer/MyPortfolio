@@ -26,6 +26,7 @@ const ALL_OPENED_CARDS_COMP: (props: {
 
   useEffect((): (() => void) => {
     const container = container_ref.current;
+    //* This is used for responsive adjustments based on specific screen sizes
     const handle_resize: () => void = (): void => {
       set_is_mobile([
         window.innerWidth <= 350,

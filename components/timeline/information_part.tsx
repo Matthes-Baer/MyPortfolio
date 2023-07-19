@@ -7,6 +7,7 @@ import { Suspense } from "react";
 const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
 
+  //* This is used for the button to scroll down to the first project's tile
   const scroll_down: () => void = (): void => {
     const scrollPosition: number =
       window.scrollY ||

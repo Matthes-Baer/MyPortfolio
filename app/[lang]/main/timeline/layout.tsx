@@ -36,6 +36,7 @@ const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
     cookies_store.get("language_cookie")?.value;
   let language: string = props.params.lang;
 
+  //* In case the language parameter in the URL is manually adjusted
   if (language_cookie != language) {
     return <LANGUAGE_ERROR_COMP language={language} />;
   }

@@ -14,6 +14,7 @@ import linkedin_icon from "public/main_images/linkedin_icon.png";
 const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
   props: INormalPageProps
 ): JSX.Element => {
+  //* Data for icons in the upper half of the page
   const images: IIcon[] = [
     {
       icon: linkedin_icon,
@@ -91,13 +92,6 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
             <div>Deutsch</div>
           </SWITCH_LANGUAGE_LINK_COMP>
         </div>
-
-        {/* <ul>
-          <li>
-            alts für Images? / language statt lang / Image titles / semantic elements / Suspenses / Kommentare einfügen für besseren Überblick
-          </li>
-          <li>Richtige Domain für Portfolio-Seite kaufen bei Vercel?</li>
-        </ul> */}
       </main>
     </Suspense>
   );

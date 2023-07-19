@@ -25,14 +25,14 @@ export async function middleware(request: NextRequest) {
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  //? Check if no language_parameter is available in the URL.
+  //* Check if no language_parameter is available in the URL and redirect accordingly
   if (pathnameIsMissingLocale) {
     return NextResponse.redirect(
       new URL(`/${language_cookie_value || locale}/${pathname}`, request.url)
     );
   }
 
-  //? Handling ways which otherwise would break the application.
+  //* Handling ways which otherwise would break the application (for example when the user manually adjusts the language parameter in the URL)
   if (
     !language_cookie_bool ||
     (language_cookie_bool && language_cookie_value != current_language_path)

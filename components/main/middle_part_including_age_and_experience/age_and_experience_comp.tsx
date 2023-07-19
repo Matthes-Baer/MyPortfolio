@@ -18,11 +18,11 @@ import cake_icon from "public/main_images/cake_icon.png";
 import computer_icon from "public/main_images/computer_icon.png";
 
 const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
-  //* Used for the GSAP animations
   const age_slide_ref: MutableRefObject<null> = useRef<null>(null);
   const experience_slide_ref: MutableRefObject<null> = useRef<null>(null);
   const circle_from_experience_ref: MutableRefObject<null> = useRef<null>(null);
   const circle_from_age_ref: MutableRefObject<null> = useRef<null>(null);
+  const language: string = useParams().lang;
 
   //* Required to prevent bugging due to spam-/fast-clicking
   const [is_age_button_disabled, set_is_age_button_disabled]: [
@@ -34,7 +34,6 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
     Dispatch<SetStateAction<boolean>>
   ] = useState<boolean>(false);
 
-  //* States for age & experience
   const [age, set_age]: [number, Dispatch<SetStateAction<number>>] =
     useState<number>(
       (new Date().getTime() - new Date("1998-05-03").getTime()) *
@@ -54,9 +53,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
     Dispatch<SetStateAction<string>>
   ] = useState<string>("age");
 
-  const language: string = useParams().lang;
-
-  //* Adjust the timeout timing to GSAP animation's timing if GSAP animations are edited
+  //! Adjust the timeout timing to GSAP animation's timing if GSAP animations are edited
   const slide_changer_handler: (slide: string) => (() => void) | undefined = (
     slide: string
   ): (() => void) | undefined => {
@@ -81,7 +78,6 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
   };
 
   useEffect((): (() => void) => {
-    //* GSAP animations for age & experience icons and associated elements
     const age_circle_timeline = gsap.timeline({ repeat: -1, paused: true });
     const experience_circle_timeline = gsap.timeline({
       repeat: -1,
@@ -137,7 +133,6 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
   }, [current_slide]);
 
   useEffect((): (() => void) => {
-    //* Updating age and experience states
     const interval: NodeJS.Timer = setInterval(() => {
       set_age(
         (new Date().getTime() - new Date("1998-05-03").getTime()) *
@@ -177,7 +172,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
                 src={cake_icon}
                 height={250}
                 width={250}
-                alt="Test"
+                alt={language === "de" ? "Kuchen-Icon" : "Cake icon"}
                 className=""
               />
               <div
@@ -196,7 +191,12 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
               className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90"
               style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
             >
-              <Image src={computer_icon} height={250} width={250} alt="Test" />
+              <Image
+                src={computer_icon}
+                height={250}
+                width={250}
+                alt={language === "de" ? "Computer-Icon" : "Computer icon"}
+              />
               <div
                 className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[transparent] border-l-card_yellow bg-[transparent]"
                 ref={circle_from_experience_ref}

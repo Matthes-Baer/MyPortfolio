@@ -24,6 +24,7 @@ const ALL_MAIN_PARENTS_COMP: (props: {
     const imagesCount: number = images.length;
     let loadedCount: number = 0;
 
+    //* This is supposed to load in the images first before allowing to show the actual page content
     const handleImageLoad: () => void = (): void => {
       loadedCount++;
 
@@ -32,12 +33,12 @@ const ALL_MAIN_PARENTS_COMP: (props: {
       }
     };
 
-    // Attach load event listener to all images
+    //* Attach load event listener to all images
     Array.from(images).forEach((img) => {
       img.addEventListener("load", handleImageLoad);
     });
 
-    // Clean up event listeners on component unmount
+    //* Clean up event listeners on component unmount
     return () => {
       Array.from(images).forEach((img) => {
         img.removeEventListener("load", handleImageLoad);
