@@ -15,7 +15,6 @@ const TEMPLATE_INNER_PART: (props: {
         </h2>
         {props.date && <div className="text-right">{props.date}</div>}
       </div>
-
       <div className="text-lg pt-2">{props.content}</div>
     </div>
   );

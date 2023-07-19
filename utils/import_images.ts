@@ -209,7 +209,6 @@ export const TECHSTACK_IMAGES: IImages = {
   },
 };
 
-//? For the bigger images
 export const PROJECT_IMAGES: IProjects = {
   blenumentation: [
     {

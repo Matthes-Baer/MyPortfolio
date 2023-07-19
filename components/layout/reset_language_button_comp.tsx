@@ -1,30 +1,33 @@
 "use client";
 
-import Loading from "@/app/[lang]/loading";
 import Link from "next/link";
-import { Suspense } from "react";
 import Image from "next/image";
-import { FLAG_IMAGES } from "@/utils/import_images";
+import { Suspense } from "react";
 import { useParams } from "next/navigation";
+
+import Loading from "@/app/[lang]/loading";
+import { FLAG_IMAGES } from "@/utils/import_images";
 import { SupportedLanguages } from "@/utils/types";
 
-export default function RESET_LANGUAGE_BUTTON_COMP() {
-  const language = useParams().lang;
+const RESET_LANGUAGE_BUTTON_COMP: () => JSX.Element = (): JSX.Element => {
+  const language: string = useParams().lang;
 
-  const reset_language_cookie = async () => {
-    try {
-      const response = await fetch("/api/POST_reset_cookie", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: "language_cookie", value: "en" }),
-      });
-      if (!response.ok) {
-        throw new Error();
+  //* Reset the language cookie
+  const reset_language_cookie: () => Promise<void> =
+    async (): Promise<void> => {
+      try {
+        const response = await fetch("/api/POST_reset_cookie", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name: "language_cookie", value: "en" }),
+        });
+        if (!response.ok) {
+          throw new Error();
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    };
 
   return (
     <Suspense fallback={<Loading />}>
@@ -46,4 +49,6 @@ export default function RESET_LANGUAGE_BUTTON_COMP() {
       </Link>
     </Suspense>
   );
-}
+};
+
+export default RESET_LANGUAGE_BUTTON_COMP;

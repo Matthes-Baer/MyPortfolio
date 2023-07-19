@@ -1,10 +1,12 @@
 import "./globals.css";
+
 import { Quicksand, MedievalSharp, Cinzel } from "next/font/google";
-import type { IMetadata, IRootLayoutProps } from "@/utils/interfaces";
 import { ResolvingMetadata, Metadata } from "next";
 import { cookies } from "next/headers";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { NextFont } from "next/dist/compiled/@next/font";
+
+import type { IMetadata, IRootLayoutProps } from "@/utils/interfaces";
 
 const medievalSharp: NextFont = MedievalSharp({
   subsets: ["latin"],
@@ -26,16 +28,18 @@ export async function generateMetadata(
   props: IRootLayoutProps,
   parent?: ResolvingMetadata
 ): Promise<Metadata> {
-  const lang: string = props.params.lang;
+  const language: string = props.params.lang;
 
-  if (lang === "de") {
+  if (language === "de") {
     return german_metadata;
   } else {
     return english_metadata;
   }
 }
 
-export default function RootLayout(props: IRootLayoutProps): JSX.Element {
+const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
+  props: IRootLayoutProps
+): JSX.Element => {
   let cookies_store: ReadonlyRequestCookies = cookies();
   let language_cookie: string | undefined =
     cookies_store.get("language_cookie")?.value;
@@ -50,4 +54,6 @@ export default function RootLayout(props: IRootLayoutProps): JSX.Element {
       </body>
     </html>
   );
-}
+};
+
+export default ROOT_LAYOUT;

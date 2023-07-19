@@ -1,13 +1,14 @@
 "use client";
 
-import Loading from "@/app/[lang]/loading";
-import { ICard } from "@/utils/interfaces";
-import { Suspense } from "react";
 import Image from "next/image";
-import star from "public/main_images/star.png";
+import { Suspense } from "react";
 import { useParams } from "next/navigation";
+
+import star from "public/main_images/star.png";
 import { TECHSTACK_IMAGES } from "@/utils/import_images";
 import { SupportedLanguages } from "@/utils/types";
+import Loading from "@/app/[lang]/loading";
+import { ICard } from "@/utils/interfaces";
 
 const CARD_CONTENT_COMP: (props: {
   opened_card: ICard;

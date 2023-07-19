@@ -1,18 +1,20 @@
-import { SupportedLanguages } from "@/utils/types";
-import type { IIcon, INormalPageProps } from "@/utils/interfaces";
 import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import SWITCH_LANGUAGE_LINK_COMP from "@/components/switch_language_link_comp";
 import Loading from "./loading";
-
+import { SupportedLanguages } from "@/utils/types";
+import type { IIcon, INormalPageProps } from "@/utils/interfaces";
 import github_icon from "public/main_images/github_icon.png";
 import codingame_icon from "public/main_images/timeline/codingame.png";
 import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
 import linkedin_icon from "public/main_images/linkedin_icon.png";
 
-export default function Language_Picker(props: INormalPageProps): JSX.Element {
+const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
+  props: INormalPageProps
+): JSX.Element => {
+  //* Data for icons in the upper half of the page
   const images: IIcon[] = [
     {
       icon: linkedin_icon,
@@ -90,16 +92,9 @@ export default function Language_Picker(props: INormalPageProps): JSX.Element {
             <div>Deutsch</div>
           </SWITCH_LANGUAGE_LINK_COMP>
         </div>
-
-        {/* <ul>
-          <li>
-            Gibt es noch etwas aufzuräumen? Unnötige Kommentare irgendwo? Überall einmal durchgehen wegen alts für Images / wegen language
-            statt lang bei useParams / wegen genereller Struktur / da wo es Sinn macht, titles für Images hinzufügen (beispielsweise bei den opened cards) / nav, section, main https://www.w3schools.com/html/html5_semantic_elements.asp und sowas hinzufügen, wo es passt / Suspenses da einfügen, wo es Sinn ergibt
-          </li>
-          <li>Nochmal durchgehen, was die Middleware macht mit den Cookies</li>
-          <li>Richtige Domain für Portfolio-Seite kaufen bei Vercel?</li>
-        </ul> */}
       </main>
     </Suspense>
   );
-}
+};
+
+export default LANGUAGE_PICKER;

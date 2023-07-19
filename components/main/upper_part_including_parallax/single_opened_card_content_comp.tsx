@@ -16,7 +16,7 @@ const SINGLE_OPENED_CARD_CONTENT_COMP: (props: {
   const image_ref: MutableRefObject<null> = useRef<null>(null);
   const language: string = useParams().lang;
 
-  useEffect(() => {
+  useEffect((): void => {
     const image = image_ref.current;
 
     gsap.fromTo(

@@ -5,21 +5,24 @@ import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
+  Suspense,
   useEffect,
   useRef,
   useState,
 } from "react";
 import gsap from "gsap";
-import cake_icon from "public/main_images/cake_icon.png";
-import computer_icon from "public/main_images/computer_icon.png";
 import { useParams } from "next/navigation";
 
+import Loading from "@/app/[lang]/loading";
+import cake_icon from "public/main_images/cake_icon.png";
+import computer_icon from "public/main_images/computer_icon.png";
+
 const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
-  //* Used for the GSAP animations
   const age_slide_ref: MutableRefObject<null> = useRef<null>(null);
   const experience_slide_ref: MutableRefObject<null> = useRef<null>(null);
   const circle_from_experience_ref: MutableRefObject<null> = useRef<null>(null);
   const circle_from_age_ref: MutableRefObject<null> = useRef<null>(null);
+  const language: string = useParams().lang;
 
   //* Required to prevent bugging due to spam-/fast-clicking
   const [is_age_button_disabled, set_is_age_button_disabled]: [
@@ -31,7 +34,6 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
     Dispatch<SetStateAction<boolean>>
   ] = useState<boolean>(false);
 
-  //* States for age & experience
   const [age, set_age]: [number, Dispatch<SetStateAction<number>>] =
     useState<number>(
       (new Date().getTime() - new Date("1998-05-03").getTime()) *
@@ -51,10 +53,8 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
     Dispatch<SetStateAction<string>>
   ] = useState<string>("age");
 
-  const language: string = useParams().lang;
-
-  //* Adjust the timeout timing to GSAP animation's timing if GSAP animations are edited
-  const slide_changer_handler: (a: string) => (() => void) | undefined = (
+  //! Adjust the timeout timing to GSAP animation's timing if GSAP animations are edited
+  const slide_changer_handler: (slide: string) => (() => void) | undefined = (
     slide: string
   ): (() => void) | undefined => {
     if (slide === "age" && !is_age_button_disabled) {
@@ -65,7 +65,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
 
       set_current_slide("age");
 
-      return () => clearTimeout(timeout);
+      return (): void => clearTimeout(timeout);
     } else if (slide === "experience" && !is_experience_button_disabled) {
       set_is_age_button_disabled(true);
       const timeout: NodeJS.Timer = setTimeout(() => {
@@ -73,12 +73,11 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
       }, 1000);
 
       set_current_slide("experience");
-      return () => clearTimeout(timeout);
+      return (): void => clearTimeout(timeout);
     }
   };
 
-  useEffect(() => {
-    //* GSAP animations for age & experience icons and associated elements
+  useEffect((): (() => void) => {
     const age_circle_timeline = gsap.timeline({ repeat: -1, paused: true });
     const experience_circle_timeline = gsap.timeline({
       repeat: -1,
@@ -133,8 +132,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
     };
   }, [current_slide]);
 
-  useEffect(() => {
-    //* Updating age and experience states
+  useEffect((): (() => void) => {
     const interval: NodeJS.Timer = setInterval(() => {
       set_age(
         (new Date().getTime() - new Date("1998-05-03").getTime()) *
@@ -149,82 +147,91 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
       );
     }, 10);
 
-    return () => {
+    return (): void => {
       clearInterval(interval);
     };
   }, []);
 
   return (
-    <section
-      className="relative w-full bg-dark_gray_stone border-warm_terracotta"
-      style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
-    >
-      <div className="flex flex-col items-center sm:flex-row sm:justify-evenly pt-5">
-        <div className="relative w-[10%] mb-5 sm:mb-0 min-w-[100px] min-h-[100px]">
-          <button
-            onClick={() => slide_changer_handler("age")}
-            disabled={is_age_button_disabled || current_slide === "age"}
-            className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90"
-            style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
-          >
-            <Image
-              src={cake_icon}
-              height={250}
-              width={250}
-              alt="Test"
-              className=""
-            />
-            <div
-              className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[transparent] border-r-card_yellow bg-[transparent]"
-              ref={circle_from_age_ref}
-            ></div>
-          </button>
-        </div>
-
-        <div className="relative w-[10%] rounded-[50%] min-w-[100px] min-h-[100px]">
-          <button
-            onClick={() => slide_changer_handler("experience")}
-            disabled={
-              is_experience_button_disabled || current_slide === "experience"
-            }
-            className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90"
-            style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
-          >
-            <Image src={computer_icon} height={250} width={250} alt="Test" />
-            <div
-              className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[transparent] border-l-card_yellow bg-[transparent]"
-              ref={circle_from_experience_ref}
-            ></div>
-          </button>
-        </div>
-      </div>
-      <div
-        className="flex justify-center p-4 text-center w-9/12 mx-auto"
-        style={{
-          fontSize: "calc(18px + 1.75vw)",
-        }}
+    <Suspense fallback={<Loading />}>
+      <section
+        className="relative w-full bg-dark_gray_stone border-warm_terracotta"
+        style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
       >
-        {current_slide === "age" ? (
-          <div ref={age_slide_ref}>
-            <div>
-              {language === "de" ? "Alter (in Jahren)" : "Age (in years)"}
-            </div>
-
-            <div className="p-5">{age.toFixed(8)}</div>
+        <div className="flex flex-col items-center sm:flex-row sm:justify-evenly pt-5">
+          <div className="relative w-[10%] mb-5 sm:mb-0 min-w-[100px] min-h-[100px]">
+            <button
+              onClick={(): (() => void) | undefined =>
+                slide_changer_handler("age")
+              }
+              disabled={is_age_button_disabled || current_slide === "age"}
+              className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90"
+              style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
+            >
+              <Image
+                src={cake_icon}
+                height={250}
+                width={250}
+                alt={language === "de" ? "Kuchen-Icon" : "Cake icon"}
+                className=""
+              />
+              <div
+                className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[transparent] border-r-card_yellow bg-[transparent]"
+                ref={circle_from_age_ref}
+              ></div>
+            </button>
           </div>
-        ) : (
-          <div ref={experience_slide_ref}>
-            <div>
-              {language === "de"
-                ? "Software-Entwicklungs-Erfahrung (in Jahren)"
-                : "Software Development Experience (in years)"}
-            </div>
 
-            <div className="p-5">{experience.toFixed(8)}</div>
+          <div className="relative w-[10%] rounded-[50%] min-w-[100px] min-h-[100px]">
+            <button
+              onClick={() => slide_changer_handler("experience")}
+              disabled={
+                is_experience_button_disabled || current_slide === "experience"
+              }
+              className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90"
+              style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
+            >
+              <Image
+                src={computer_icon}
+                height={250}
+                width={250}
+                alt={language === "de" ? "Computer-Icon" : "Computer icon"}
+              />
+              <div
+                className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[transparent] border-l-card_yellow bg-[transparent]"
+                ref={circle_from_experience_ref}
+              ></div>
+            </button>
           </div>
-        )}
-      </div>
-    </section>
+        </div>
+        <div
+          className="flex justify-center p-4 text-center w-9/12 mx-auto"
+          style={{
+            fontSize: "calc(18px + 1.75vw)",
+          }}
+        >
+          {current_slide === "age" ? (
+            <div ref={age_slide_ref}>
+              <div>
+                {language === "de" ? "Alter (in Jahren)" : "Age (in years)"}
+              </div>
+
+              <div className="p-5">{age.toFixed(8)}</div>
+            </div>
+          ) : (
+            <div ref={experience_slide_ref}>
+              <div>
+                {language === "de"
+                  ? "Software-Entwicklungs-Erfahrung (in Jahren)"
+                  : "Software Development Experience (in years)"}
+              </div>
+
+              <div className="p-5">{experience.toFixed(8)}</div>
+            </div>
+          )}
+        </div>
+      </section>
+    </Suspense>
   );
 };
 
