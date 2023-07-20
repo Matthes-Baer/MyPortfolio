@@ -17,13 +17,16 @@ const ALL_TIMELINE_PARENTS_COMP: () => JSX.Element = (): JSX.Element => {
       document.getElementsByTagName("img");
     const imagesCount: number = images.length;
     let loadedCount: number = 0;
+    let timeout: NodeJS.Timeout;
 
     //* This is supposed to load in the images first before allowing to show the actual page content
     const handleImageLoad: () => void = (): void => {
       loadedCount++;
 
       if (loadedCount === imagesCount) {
-        set_loading(false);
+        timeout = setTimeout(() => {
+          set_loading(false);
+        }, 2000);
       }
     };
 
@@ -37,6 +40,7 @@ const ALL_TIMELINE_PARENTS_COMP: () => JSX.Element = (): JSX.Element => {
       Array.from(images).forEach((img) => {
         img.removeEventListener("load", handleImageLoad);
       });
+      clearTimeout(timeout);
     };
   }, []);
 
