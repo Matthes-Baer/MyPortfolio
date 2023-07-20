@@ -23,13 +23,16 @@ const ALL_MAIN_PARENTS_COMP: (props: {
       document.getElementsByTagName("img");
     const imagesCount: number = images.length;
     let loadedCount: number = 0;
+    let timeout: NodeJS.Timeout;
 
     //* This is supposed to load in the images first before allowing to show the actual page content
     const handleImageLoad: () => void = (): void => {
       loadedCount++;
 
       if (loadedCount === imagesCount) {
-        set_is_loading(false);
+        timeout = setTimeout(() => {
+          set_is_loading(false);
+        }, 2000);
       }
     };
 
@@ -43,6 +46,7 @@ const ALL_MAIN_PARENTS_COMP: (props: {
       Array.from(images).forEach((img) => {
         img.removeEventListener("load", handleImageLoad);
       });
+      clearTimeout(timeout);
     };
   }, []);
 
