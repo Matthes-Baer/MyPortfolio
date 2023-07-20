@@ -10,13 +10,13 @@ import PROJECT_TILE from "./project_tile";
 import PROJECT_TILES_BACKGROUND_IMAGES from "./project_tiles_background_images";
 import Loading from "@/app/[lang]/loading";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const PROJECT_TILES_PARENT: (props: {
   project_data: IProject[] | undefined;
 }) => JSX.Element = (props: {
   project_data: IProject[] | undefined;
 }): JSX.Element => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const projects_ref: MutableRefObject<(HTMLElement | null)[]> = useRef<
     (HTMLElement | null)[]
   >([]);
