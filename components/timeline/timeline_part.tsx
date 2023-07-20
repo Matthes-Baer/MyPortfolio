@@ -2,7 +2,15 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MutableRefObject, Suspense, useEffect, useRef } from "react";
+import {
+  MutableRefObject,
+  Suspense,
+  useEffect,
+  useRef,
+  Dispatch,
+  SetStateAction,
+  useState,
+} from "react";
 import { useParams } from "next/navigation";
 
 import TIMELINE_PART_BACKGROUND from "./timeline_part_background";
@@ -27,6 +35,11 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   const sixth_udemy_ref: MutableRefObject<null> = useRef(null);
   const seventh_projects_ref: MutableRefObject<null> = useRef(null);
   const language: string = useParams().lang;
+
+  const [is_loading, set_loading]: [
+    boolean,
+    Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(true);
 
   useEffect((): void => {
     const all_refs = [
@@ -72,6 +85,40 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
       }
     );
   }, []);
+
+  useEffect((): (() => void) => {
+    const images: HTMLCollectionOf<HTMLImageElement> =
+      document.getElementsByTagName("img");
+    const imagesCount: number = images.length;
+    let loadedCount: number = 0;
+    let timeout: NodeJS.Timeout;
+
+    //* This is supposed to load in the images first before allowing to show the actual page content
+    const handleImageLoad: () => void = (): void => {
+      loadedCount++;
+
+      if (loadedCount === imagesCount) {
+        timeout = setTimeout(() => {
+          set_loading(false);
+        }, 2000);
+      }
+    };
+
+    //* Attach load event listener to all images
+    Array.from(images).forEach((img) => {
+      img.addEventListener("load", handleImageLoad);
+    });
+
+    //* Clean up event listeners on component unmount
+    return (): void => {
+      Array.from(images).forEach((img) => {
+        img.removeEventListener("load", handleImageLoad);
+      });
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  if (is_loading) return <Loading />;
 
   return (
     <Suspense fallback={<Loading />}>
