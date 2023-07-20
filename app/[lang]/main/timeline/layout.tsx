@@ -31,16 +31,6 @@ export async function generateMetadata(
 const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
   props: IRootLayoutProps
 ): JSX.Element => {
-  let cookies_store: ReadonlyRequestCookies = cookies();
-  let language_cookie: string | undefined =
-    cookies_store.get("language_cookie")?.value;
-  let language: string = props.params.lang;
-
-  //* In case the language parameter in the URL is manually adjusted
-  if (language_cookie != language) {
-    return <LANGUAGE_ERROR_COMP language={language} />;
-  }
-
   return (
     <Suspense fallback={<Loading />}>
       <div>{props.children}</div>
