@@ -42,7 +42,11 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
     <Suspense fallback={<Loading />}>
       <main className="flex min-h-screen flex-col items-center justify-evenly relative">
         <div className="flex flex-col items-center">
-          <h1 className="text-[50px] text-center">Matthes Bär - Portfolio</h1>
+          <h1 className="text-[50px] text-center">
+            Matthes Bär -{" "}
+            {props.params.lang === "de" ? "Webentwickler" : "Web Developer"}
+          </h1>
+
           <div className="flex flex-wrap items-center justify-center">
             {images.map((ele: IIcon) => {
               return (

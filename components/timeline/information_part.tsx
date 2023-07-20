@@ -25,7 +25,7 @@ const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
   return (
     <Suspense fallback={<Loading />}>
       <section className="flex justify-center w-full pb-[35px] text-2xl border-b-2 border-b-card_yellow bg-dark_gray_stone z-10">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center text-center">
           <div className="p-3">
             {language === "de"
               ? "In dieser Zeitleiste werden einige meiner Meilensteine in der Softwareentwicklung hervorgehoben."

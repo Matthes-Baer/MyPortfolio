@@ -26,31 +26,32 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
       : FLAG_IMAGES.flag_english;
 
   //* Change language cookie and redirect
-  const fetch_function: () => Promise<void> = async (): Promise<void> => {
-    try {
-      const res = await fetch("/api/POST_change_language_cookie", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: props.cookie_name,
-          value: props.language,
-        }),
-      });
+  const change_language_cookie: () => Promise<void> =
+    async (): Promise<void> => {
+      try {
+        const res = await fetch("/api/POST_change_language_cookie", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: props.cookie_name,
+            value: props.language,
+          }),
+        });
 
-      if (!res.ok) {
-        throw new Error();
+        if (!res.ok) {
+          throw new Error();
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
 
-    router.push(`/${props.language}/main`);
-  };
+      router.push(`/${props.language}/main`);
+    };
 
   return (
     <Suspense fallback={<Loading />}>
       <button
-        onClick={fetch_function}
+        onClick={change_language_cookie}
         className="flex flex-col items-center p-5 rounded-lg hover:bg-dark_gray_tile transition"
       >
         <Image

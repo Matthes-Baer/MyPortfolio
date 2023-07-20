@@ -19,7 +19,7 @@ const RESET_LANGUAGE_BUTTON_COMP: () => JSX.Element = (): JSX.Element => {
         const response = await fetch("/api/POST_reset_cookie", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name: "language_cookie", value: "en" }),
+          body: JSON.stringify({ name: "language_cookie", value: language }),
         });
         if (!response.ok) {
           throw new Error();
@@ -31,7 +31,7 @@ const RESET_LANGUAGE_BUTTON_COMP: () => JSX.Element = (): JSX.Element => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <Link href={"/en"} onClick={reset_language_cookie}>
+      <Link href={`/${language}`} onClick={reset_language_cookie}>
         <div className="flex">
           <Image
             src={FLAG_IMAGES.flag_english.src}
