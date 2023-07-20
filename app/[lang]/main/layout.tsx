@@ -3,16 +3,16 @@ import type { IRootLayoutProps } from "@/utils/interfaces";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { ResolvingMetadata, Metadata } from "next";
 import { cookies } from "next/headers";
-import Link from "next/link";
-import SWITCH_ROUTE_LINK_COMP from "@/components/layout/switch_route_link_comp";
 import { Suspense } from "react";
+
+import SWITCH_ROUTE_LINK_COMP from "@/components/layout/switch_route_link_comp";
 import Loading from "../loading";
 import RESET_LANGUAGE_BUTTON_COMP from "@/components/layout/reset_language_button_comp";
 import LANGUAGE_ERROR_COMP from "@/components/language_error_comp";
 
 export async function generateMetadata(
   props: IRootLayoutProps,
-  parent?: ResolvingMetadata
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const language = props.params.lang;
 
