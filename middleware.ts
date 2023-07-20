@@ -2,37 +2,42 @@ import { NextRequest, NextResponse } from "next/server";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-let locales: string[] = ["de", "en"];
+const supportedLocales: string[] = ["de", "en"];
+const defaultLocale: string = "en";
 
-function getLocale() {
-  let headers = { "accept-language": "en" };
-  let languages: string[] = new Negotiator({ headers }).languages();
-  let defaultLocale: string = "en";
-
-  return match(languages, locales, defaultLocale);
+//* Check for language preference in browser settings
+function getLocale(acceptLanguageHeader: string | undefined) {
+  const languages: string[] = new Negotiator({
+    headers: { "accept-language": acceptLanguageHeader },
+  }).languages();
+  const matchedLocale = match(languages, supportedLocales, defaultLocale);
+  return matchedLocale;
 }
 
 export async function middleware(request: NextRequest) {
   const pathname: string = request.nextUrl.pathname;
-  const locale: string = getLocale();
+  const acceptLanguageHeader = request.headers.get("accept-language");
+  const locale: string = getLocale(acceptLanguageHeader || "");
+
   const language_cookie_bool: boolean = request.cookies.has("language_cookie");
   const language_cookie_value: string =
     request.cookies.get("language_cookie")?.value || "";
   const current_language_path: string = pathname.substring(1, 3);
   const response: NextResponse<unknown> = NextResponse.next();
 
-  const pathnameIsMissingLocale = locales.every(
+  //* This basically just serves as a condition to execute the NextResponse.redirect() only once and not on every request.
+  const pathnameIsMissingLocale = supportedLocales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  //* Check if no language_parameter is available in the URL and redirect accordingly
+  //* Redirecting
   if (pathnameIsMissingLocale) {
     return NextResponse.redirect(
       new URL(`/${language_cookie_value || locale}/${pathname}`, request.url)
     );
   }
 
-  //* Handling ways which otherwise would break the application (for example when the user manually adjusts the language parameter in the URL)
+  //* Updating the language_cookie
   if (
     !language_cookie_bool ||
     (language_cookie_bool && language_cookie_value != current_language_path)
