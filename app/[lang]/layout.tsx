@@ -26,7 +26,7 @@ const english_metadata: IMetadata = {
 
 export async function generateMetadata(
   props: IRootLayoutProps,
-  parent?: ResolvingMetadata
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const language: string = props.params.lang;
 
