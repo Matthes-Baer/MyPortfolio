@@ -19,6 +19,7 @@ import github_icon from "public/main_images/github_icon.png";
 import { IProject } from "@/utils/interfaces";
 import { SupportedLanguages } from "@/utils/types";
 import Loading from "@/app/[lang]/loading";
+import CHANGE_PROJECT_IMAGE_BUTTON from "./change_project_image_button";
 
 const PROJECT_TILE: (props: {
   project: IProject;
@@ -153,67 +154,25 @@ const PROJECT_TILE: (props: {
               style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.25)" }}
             />
 
-            <button
-              className="absolute top-1/2 right-0 -translate-y-1/2 p-2 mr-2 bg-dark_gray_stone border border-card_yellow hover:opacity-70 transition-opacity rounded-[50%] shadow-md"
-              onClick={() => set_current_idx((idx: number) => (idx += 1))}
-              aria-label={
-                language === "de"
-                  ? "Button für vorheriges Bild"
-                  : "Button for previous image"
-              }
-              style={{
-                visibility:
-                  current_idx <
-                  PROJECT_IMAGES[props.project.project_key].length - 1
-                    ? "visible"
-                    : "hidden",
-                zIndex: 9000,
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
+            <CHANGE_PROJECT_IMAGE_BUTTON
+              style_direction="left"
+              logic_direction="downwards"
+              language={language}
+              project_key={props.project.project_key}
+              current_idx={current_idx}
+              set_current_idx={set_current_idx}
+              path_d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
 
-            <button
-              className="absolute top-1/2 left-0 -translate-y-1/2 p-2 ml-2 bg-dark_gray_stone border border-card_yellow hover:opacity-70 transition-opacity rounded-[50%] shadow-md"
-              onClick={() => set_current_idx((idx: number) => (idx -= 1))}
-              aria-label={
-                language === "de"
-                  ? "Button für nächstes Bild"
-                  : "Button for next picture"
-              }
-              style={{
-                visibility: current_idx > 0 ? "visible" : "hidden",
-                zIndex: 9000,
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-            </button>
+            <CHANGE_PROJECT_IMAGE_BUTTON
+              style_direction="right"
+              logic_direction="upwards"
+              language={language}
+              project_key={props.project.project_key}
+              current_idx={current_idx}
+              set_current_idx={set_current_idx}
+              path_d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            />
           </Suspense>
         </div>
       </div>
