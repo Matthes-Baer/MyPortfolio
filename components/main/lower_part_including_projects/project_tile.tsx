@@ -149,7 +149,7 @@ const PROJECT_TILE: (props: {
               ref={slider_ref}
               className={
                 "mx-auto " +
-                (props.project.project_key === "divid" ? "w-1/4" : "w-4/5")
+                (props.project.project_key === "divid" ? "w-2/4 " : "w-4/5")
               }
               style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.25)" }}
             />
