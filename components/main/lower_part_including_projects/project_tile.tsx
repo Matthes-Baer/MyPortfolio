@@ -50,7 +50,12 @@ const PROJECT_TILE: (props: {
     <Suspense fallback={<Loading />}>
       <div className="mb-5 mt-5 p-3">
         <div className="flex flex-col sm:flex-row items-center text-center">
-          <div className="text-[35px] p-1">
+          <div
+            className="p-1"
+            style={{
+              fontSize: "calc(18px + 1.75vw)",
+            }}
+          >
             {language === "de" ? "Projekt" : "Project"}:{" "}
             <span className="border-b border-b-card_yellow">
               {props.project.name[language as "en" | "de"]}
@@ -129,7 +134,7 @@ const PROJECT_TILE: (props: {
             "\n"
           )}
         </div>
-        <div className="relative bg-[transparent] w-1/2 lg:w-2/3 mx-auto min-w-[250px] mt-5">
+        <div className="relative bg-[transparent] w-full mx-auto min-w-[250px] mt-5">
           <Suspense fallback={<Loading />}>
             <Image
               src={PROJECT_IMAGES[props.project.project_key][current_idx].src}
@@ -138,24 +143,32 @@ const PROJECT_TILE: (props: {
                   language as SupportedLanguages
                 ]
               }
-              height={500}
-              width={500}
+              height={750}
+              width={750}
               ref={slider_ref}
               className={
-                "drop-shadow " +
-                (props.project.project_key === "divid"
-                  ? "w-1/3 h-[400px] mx-auto min-w-[250px]"
-                  : "w-full h-[165px] sm:h-[200px] md:h-[250px] lg:h-[225px] xl:h-[250px] 2xl:h-[300px]")
+                "mx-auto " +
+                (props.project.project_key === "divid" ? "w-1/4" : "w-4/5")
               }
               style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.25)" }}
             />
-          </Suspense>
 
-          {current_idx <
-            PROJECT_IMAGES[props.project.project_key].length - 1 && (
             <button
-              className="absolute top-1/2 right-0 -translate-y-1/2 z-10 p-2 mr-2 bg-dark_gray_stone border border-card_yellow hover:opacity-70 transition-opacity rounded-[50%] shadow-md"
+              className="absolute top-1/2 right-0 -translate-y-1/2 p-2 mr-2 bg-dark_gray_stone border border-card_yellow hover:opacity-70 transition-opacity rounded-[50%] shadow-md"
               onClick={() => set_current_idx((idx: number) => (idx += 1))}
+              aria-label={
+                language === "de"
+                  ? "Button für vorheriges Bild"
+                  : "Button for previous image"
+              }
+              style={{
+                visibility:
+                  current_idx <
+                  PROJECT_IMAGES[props.project.project_key].length - 1
+                    ? "visible"
+                    : "hidden",
+                zIndex: 9000,
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -172,12 +185,19 @@ const PROJECT_TILE: (props: {
                 />
               </svg>
             </button>
-          )}
 
-          {current_idx > 0 && (
             <button
-              className="absolute top-1/2 left-0 -translate-y-1/2 z-10 p-2 ml-2 bg-dark_gray_stone border border-card_yellow hover:opacity-70 transition-opacity rounded-[50%] shadow-md"
+              className="absolute top-1/2 left-0 -translate-y-1/2 p-2 ml-2 bg-dark_gray_stone border border-card_yellow hover:opacity-70 transition-opacity rounded-[50%] shadow-md"
               onClick={() => set_current_idx((idx: number) => (idx -= 1))}
+              aria-label={
+                language === "de"
+                  ? "Button für nächstes Bild"
+                  : "Button for next picture"
+              }
+              style={{
+                visibility: current_idx > 0 ? "visible" : "hidden",
+                zIndex: 9000,
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +214,7 @@ const PROJECT_TILE: (props: {
                 />
               </svg>
             </button>
-          )}
+          </Suspense>
         </div>
       </div>
     </Suspense>

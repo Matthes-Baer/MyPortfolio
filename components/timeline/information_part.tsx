@@ -40,6 +40,11 @@ const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
             className="p-3 border-2 border-[white] rounded-[50%] hover:bg-[rgba(255,255,255,0.25)] cursor-pointer transition focus:border-card_yellow"
             onClick={scroll_down}
             style={{ boxShadow: "0px 1px 3.5px 0px rgba(0,0,0,0.5)" }}
+            aria-label={
+              language === "de"
+                ? "Button zum Runterscrollen"
+                : "Button to scroll down"
+            }
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
