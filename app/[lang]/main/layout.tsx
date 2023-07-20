@@ -39,7 +39,7 @@ const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
     cookies_store.get("language_cookie")?.value;
   let language: string = props.params.lang;
 
-  //* In case the language parameter in the URL is manually adjusted
+  //* In case the language parameter in the URL is manually adjusted which would lead to an "ugly" reload of the page without the Loading screen (images just blink in)
   if (language_cookie != language) {
     return <LANGUAGE_ERROR_COMP language={language} />;
   }

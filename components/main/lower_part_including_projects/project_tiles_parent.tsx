@@ -39,8 +39,18 @@ const PROJECT_TILES_PARENT: (props: {
                     duration: 1,
                     scrollTrigger: {
                       trigger: element,
-                      start: "-=500px top",
-                      end: "-=250px top",
+                      start:
+                        index === 2
+                          ? "=-1000px top"
+                          : index === 4
+                          ? "=-1250px top"
+                          : "=-750px top",
+                      end:
+                        index === 2
+                          ? "=-600px top"
+                          : index === 4
+                          ? "=-850px top"
+                          : "=-350px top",
                       scrub: true,
                     },
                   }
@@ -68,7 +78,7 @@ const PROJECT_TILES_PARENT: (props: {
             <div className="flex flex-col items-center text-[white]">
               <h1
                 style={{
-                  fontSize: "calc(18px + 1.75vw)",
+                  fontSize: "calc(26px + 1.75vw)",
                 }}
               >
                 Projekte
