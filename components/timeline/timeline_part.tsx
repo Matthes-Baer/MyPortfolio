@@ -39,7 +39,7 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   const [is_loading, set_loading]: [
     boolean,
     Dispatch<SetStateAction<boolean>>
-  ] = useState<boolean>(true);
+  ] = useState<boolean>(false);
 
   useEffect((): void => {
     const all_refs = [

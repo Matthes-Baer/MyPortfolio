@@ -16,7 +16,7 @@ const ALL_MAIN_PARENTS_COMP: (props: {
   const [is_loading, set_is_loading]: [
     boolean,
     Dispatch<SetStateAction<boolean>>
-  ] = useState<boolean>(true);
+  ] = useState<boolean>(false);
 
   useEffect(() => {
     const images: HTMLCollectionOf<HTMLImageElement> =
