@@ -37,13 +37,12 @@ const PROJECT_TILE: (props: {
   const language: string = useParams().lang;
 
   useEffect((): void => {
-    const tl: gsap.core.Timeline = gsap.timeline();
     const slider = slider_ref.current;
 
-    tl.fromTo(
+    gsap.fromTo(
       slider,
       { opacity: 0 },
-      { opacity: 1, duration: 3, ease: "easeInOut" }
+      { opacity: 1, duration: 1.5, ease: "easeInOut" }
     );
   }, [current_idx]);
 
@@ -54,7 +53,7 @@ const PROJECT_TILE: (props: {
           <div
             className="p-1"
             style={{
-              fontSize: "calc(18px + 1.75vw)",
+              fontSize: "calc(22px + 1.75vw)",
             }}
           >
             {language === "de" ? "Projekt" : "Project"}:{" "}
