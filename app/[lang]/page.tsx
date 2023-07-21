@@ -11,8 +11,6 @@ import codingame_icon from "public/main_images/timeline/codingame.png";
 import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
 import linkedin_icon from "public/main_images/linkedin_icon.png";
 
-
-
 const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
   props: INormalPageProps
 ): JSX.Element => {
@@ -41,7 +39,6 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
   ];
 
   return (
-   
     <Suspense fallback={<Loading />}>
       <main className="flex min-h-screen flex-col items-center justify-evenly relative">
         <div className="flex flex-col items-center">
@@ -86,22 +83,22 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
           </h1>
         </div>
         <div className="flex w-full flex-col md:flex-row items-center justify-evenly">
-          <SWITCH_LANGUAGE_LINK_COMP
-            language="en"
-            cookie_name="language_cookie"
+          <Link
+            href={"/en/main"}
+            className="flex flex-col items-center p-5 rounded-lg hover:bg-dark_gray_tile transition"
           >
-            <div>English</div>
-          </SWITCH_LANGUAGE_LINK_COMP>
-          <SWITCH_LANGUAGE_LINK_COMP
-            language="de"
-            cookie_name="language_cookie"
+            <SWITCH_LANGUAGE_LINK_COMP language="en" />
+          </Link>
+
+          <Link
+            href={"/de/main"}
+            className="flex flex-col items-center p-5 rounded-lg hover:bg-dark_gray_tile transition"
           >
-            <div>Deutsch</div>
-          </SWITCH_LANGUAGE_LINK_COMP>
+            <SWITCH_LANGUAGE_LINK_COMP language="de" />
+          </Link>
         </div>
       </main>
     </Suspense>
-  
   );
 };
 
