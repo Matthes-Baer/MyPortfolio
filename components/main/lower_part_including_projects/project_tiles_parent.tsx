@@ -5,10 +5,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MutableRefObject, Suspense, useEffect, useRef } from "react";
 import { useParams } from "next/navigation";
 
-import { IProject } from "@/utils/interfaces";
+import { IProject, IProjects } from "@/utils/interfaces";
 import PROJECT_TILE from "./project_tile";
 import PROJECT_TILES_BACKGROUND_IMAGES from "./project_tiles_background_images";
 import Loading from "@/app/[lang]/loading";
+import { PROJECT_IMAGES } from "@/utils/import_images";
 
 const PROJECT_TILES_PARENT: (props: {
   project_data: IProject[] | undefined;
@@ -21,6 +22,7 @@ const PROJECT_TILES_PARENT: (props: {
     (HTMLElement | null)[]
   >([]);
   const language: string = useParams().lang;
+  const project_images: IProjects = PROJECT_IMAGES;
 
   useEffect((): (() => void) => {
     projects_ref.current = [...projects_ref.current];
@@ -124,7 +126,11 @@ const PROJECT_TILES_PARENT: (props: {
                   (projects_ref.current[idx] = el)
                 }
               >
-                <PROJECT_TILE project={project} idx={idx} />
+                <PROJECT_TILE
+                  project={project}
+                  idx={idx}
+                  project_images={project_images[project.project_key]}
+                />
               </div>
 
               {/* Mit oder ohne .via. */}

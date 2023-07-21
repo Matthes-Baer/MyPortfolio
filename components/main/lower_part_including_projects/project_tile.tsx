@@ -14,9 +14,9 @@ import {
 import { useParams } from "next/navigation";
 import { gsap } from "gsap";
 
-import { PROJECT_IMAGES, TECHSTACK_IMAGES } from "@/utils/import_images";
+import { TECHSTACK_IMAGES } from "@/utils/import_images";
 import github_icon from "public/main_images/github_icon.png";
-import { IProject } from "@/utils/interfaces";
+import { IImage_Props, IProject, IProjects } from "@/utils/interfaces";
 import { SupportedLanguages } from "@/utils/types";
 import Loading from "@/app/[lang]/loading";
 import CHANGE_PROJECT_IMAGE_BUTTON from "./change_project_image_button";
@@ -24,9 +24,11 @@ import CHANGE_PROJECT_IMAGE_BUTTON from "./change_project_image_button";
 const PROJECT_TILE: (props: {
   project: IProject;
   idx: number;
+  project_images: IImage_Props[];
 }) => JSX.Element = (props: {
   project: IProject;
   idx: number;
+  project_images: IImage_Props[];
 }): JSX.Element => {
   const [current_idx, set_current_idx]: [
     number,
@@ -137,9 +139,9 @@ const PROJECT_TILE: (props: {
         <div className="relative bg-[transparent] w-full mx-auto min-w-[250px] mt-5">
           <Suspense fallback={<Loading />}>
             <Image
-              src={PROJECT_IMAGES[props.project.project_key][current_idx].src}
+              src={props.project_images[current_idx].src}
               alt={
-                PROJECT_IMAGES[props.project.project_key][current_idx].alt[
+                props.project_images[current_idx].alt[
                   language as SupportedLanguages
                 ]
               }

@@ -4,7 +4,6 @@ import { get_projects } from "@/utils/server_only_functions";
 import type { INormalPageProps, IProject } from "@/utils/interfaces";
 import Loading from "../loading";
 import ALL_MAIN_PARENTS_COMP from "@/components/main/all_main_comps_parent";
-import { cookies } from "next/headers";
 
 const Main: (props: INormalPageProps) => Promise<JSX.Element> = async (
   props: INormalPageProps

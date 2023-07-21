@@ -29,7 +29,11 @@ const CHANGE_PROJECT_IMAGE_BUTTON: (props: {
         props.set_current_idx((idx: number) =>
           props.logic_direction === "upwards" ? (idx += 1) : (idx -= 1)
         );
-        gsap.to(arrow_ref.current, { rotate: "+=360deg" });
+        gsap.fromTo(
+          arrow_ref.current,
+          { rotate: "0deg" },
+          { rotate: "360deg" }
+        );
       }}
       aria-label={
         props.language === "de"
