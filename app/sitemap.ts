@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const domain = "https://matthesbaer.com";
+  const domain = "https://portfolio-eight-taupe-99.vercel.app";
 
   return [
     {

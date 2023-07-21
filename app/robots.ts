@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://matthesbaer.com/sitemap.xml",
+    sitemap: "https://portfolio-eight-taupe-99.vercel.app/sitemap.xml",
   };
 }
