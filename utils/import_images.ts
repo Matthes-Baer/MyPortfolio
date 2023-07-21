@@ -293,10 +293,31 @@ export const PROJECT_IMAGES: IProjects = {
       },
     },
     {
+      src: require("public/main_images/project_images/divid/Register.jpg"),
+      alt: {
+        en: "Image representing the register screen",
+        de: "Bild, das den Bildschirm zum Registrieren darstellt",
+      },
+    },
+    {
+      src: require("public/main_images/project_images/divid/Login.jpg"),
+      alt: {
+        en: "Image representing the login screen",
+        de: "Bild, das den Bildschirm zum Einloggen darstellt",
+      },
+    },
+    {
       src: require("public/main_images/project_images/divid/Home.jpg"),
       alt: {
         en: "Image representing the home screen with the user's profile",
         de: "Bild, das den Startbildschirm mit dem Profil des Nutzers darstellt",
+      },
+    },
+    {
+      src: require("public/main_images/project_images/divid/ChangePicture.jpg"),
+      alt: {
+        en: "Image representing the home screen with the user's profile and the option to change the profile picture",
+        de: "Bild, das den Startbildschirm mit dem Profil des Nutzers darstellt mit der Option, das Profilbild zu ändern",
       },
     },
     {
@@ -307,10 +328,17 @@ export const PROJECT_IMAGES: IProjects = {
       },
     },
     {
-      src: require("public/main_images/project_images/divid/Instructions.jpg"),
+      src: require("public/main_images/project_images/divid/InstructionsOne.jpg"),
       alt: {
-        en: "Image representing the instructions for the game",
-        de: "Bild, das die Spielanleitung darstellt",
+        en: "Image representing the first part of the instructions for the game",
+        de: "Bild, das den ersten Teil der Spielanleitung darstellt",
+      },
+    },
+    {
+      src: require("public/main_images/project_images/divid/InstructionsTwo.jpg"),
+      alt: {
+        en: "Image representing the second part of the instructions for the game",
+        de: "Bild, das den zweiten Teil der Spielanleitung darstellt",
       },
     },
     {
