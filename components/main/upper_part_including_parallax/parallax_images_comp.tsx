@@ -163,8 +163,9 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
       <Image
         src={three_birds}
         alt={language === "de" ? "Drei Vögel" : "Three birds"}
-        width={500}
-        height={500}
+        width={250}
+        height={250}
+        quality={0.8}
         className="absolute top-[30%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-[10%] h-1/5 opacity-90 hidden lg:block"
         ref={three_birds_ref}
         placeholder="blur"
@@ -173,20 +174,22 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
       <Image
         src={two_birds}
         alt={language === "de" ? "Zwei Vögel" : "Two birds"}
-        width={500}
-        height={500}
+        width={250}
+        height={250}
         className="absolute top-[35%] right-[5%] w-[10%] h-1/5 opacity-90 hidden lg:block"
         ref={two_birds_ref}
+        quality={0.8}
         placeholder="blur"
       />
 
       <Image
         src={fantasy_merchant}
         alt={language === "de" ? "Reisender Händler" : "Travelling salesman"}
-        width={500}
-        height={500}
+        width={250}
+        height={250}
         className="absolute bottom-[15%] right-[32.5%] w-[4%] h-[8%] opacity-90 hidden lg:block"
         ref={fantasy_merchant_ref}
+        quality={0.8}
         placeholder="blur"
       />
 
@@ -197,9 +200,10 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
             ? "Hund des reisenden Händlers"
             : "Dog of the travelling merchant"
         }
-        width={500}
-        height={500}
+        width={250}
+        height={250}
         className="absolute bottom-[15%] right-[25%] w-[4%] h-[8%] opacity-90 hidden lg:block"
+        quality={0.8}
         placeholder="blur"
       />
     </div>
