@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { MutableRefObject, Suspense, useEffect, useRef } from "react";
+import { Suspense } from "react";
 import { SupportedLanguages } from "@/utils/types";
-import { gsap } from "gsap";
 
 import Loading from "@/app/[lang]/loading";
 import { FLAG_IMAGES } from "@/utils/import_images";
@@ -16,7 +15,6 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
     props.language === "de"
       ? FLAG_IMAGES.flag_german
       : FLAG_IMAGES.flag_english;
-  const container_ref: MutableRefObject<null> = useRef(null);
 
   //* Change language cookie
   const change_language_cookie: (
@@ -44,22 +42,13 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
     }
   };
 
-  useEffect(() => {
-    gsap.fromTo(
-      container_ref.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1, ease: "linear" }
-    );
-  }, []);
-
   return (
     <Suspense fallback={<Loading />}>
       <div
         onClick={() =>
           change_language_cookie("language_cookie", props.language)
         }
-        className="w-full h-full opacity-0"
-        ref={container_ref}
+        className="w-full h-full"
       >
         <Image
           src={image_props.src}

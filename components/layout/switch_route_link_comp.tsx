@@ -24,10 +24,10 @@ const SWITCH_ROUTE_LINK_COMP: (props: {
       <div
         style={{
           marginRight: !props.slug ? "15px" : "0px",
-          boxShadow:
-            segment === "timeline"
-              ? "none"
-              : "0px 3px 7.5px 0px rgba(0,0,0,0.25)",
+          // boxShadow:
+          //   segment === "timeline"
+          //     ? "none"
+          //     : "0px 3px 7.5px 0px rgba(0,0,0,0.25)",
         }}
         className="hover:text-card_yellow transition"
       >
