@@ -25,7 +25,12 @@ export async function middleware(request: NextRequest) {
   const current_language_path: string = pathname.substring(1, 3);
   const response: NextResponse<unknown> = NextResponse.next();
 
-  //* This basically just serves as a condition to execute the NextResponse.redirect() only once and not on every request.
+  //* Without this check it would automatically be redirected to "de/robots.txt", for example
+  if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
+    return NextResponse.next();
+  }
+
+  //* This basically just serves as a condition to execute the NextResponse.redirect() only once and not on every request
   const pathnameIsMissingLocale = supportedLocales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
