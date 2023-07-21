@@ -153,70 +153,58 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
   }, [current_card_idx_count, first_fetch]);
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full z-50">
-        {!is_mobile ? (
-          !first_fetch && (
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9000] bg-dark_gray_stone p-5 rounded text-sm text-center"
-              style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
-              ref={start_info_text_ref}
-            >
-              {language === "de"
-                ? "Klicken Sie auf die linke Karte, um die Skill-Karten aufzudecken."
-                : "Click on the left card to reveal the skill cards."}
-            </div>
-          )
-        ) : (
-          <button
-            onClick={fetch_stuff}
-            disabled={
-              (current_card_idx_count > cards_amount ? true : false) ||
-              fetch_button_disabled
-            }
-            className="absolute top-[15%] left-1/2 -translate-x-1/2 bg-dark_gray_stone p-5 rounded text-sm"
+    <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full z-50">
+      {!is_mobile ? (
+        !first_fetch && (
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9000] bg-dark_gray_stone p-5 rounded text-sm text-center"
             style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
+            ref={start_info_text_ref}
           >
-            <div className="whitespace-pre-wrap">
-              {language === "de"
-                ? "Klicken Sie, um eine Fähigkeit aufzudecken. Es ist zu empfehlen, diese Website auf einem Gerät mit größerem Bildschirm zu nutzen."
-                : "Click to reveal a skill. \nIt is recommended to use this website on a device with a larger screen."}
-            </div>
-            <div className="mt-2">
-              {language === "de"
-                ? "Noch verdeckte Fähigkeiten: "
-                : "Skills still hidden: "}{" "}
+            {language === "de"
+              ? "Klicken Sie auf die linke Karte, um die Skill-Karten aufzudecken."
+              : "Click on the left card to reveal the skill cards."}
+          </div>
+        )
+      ) : (
+        <button
+          onClick={fetch_stuff}
+          disabled={
+            (current_card_idx_count > cards_amount ? true : false) ||
+            fetch_button_disabled
+          }
+          className="absolute top-[15%] left-1/2 -translate-x-1/2 bg-dark_gray_stone p-5 rounded text-sm"
+          style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
+        >
+          <div className="whitespace-pre-wrap">
+            {language === "de"
+              ? "Klicken Sie, um eine Fähigkeit aufzudecken. Es ist zu empfehlen, diese Website auf einem Gerät mit größerem Bildschirm zu nutzen."
+              : "Click to reveal a skill. \nIt is recommended to use this website on a device with a larger screen."}
+          </div>
+          <div className="mt-2">
+            {language === "de"
+              ? "Noch verdeckte Fähigkeiten: "
+              : "Skills still hidden: "}{" "}
+            {cards_amount - current_card_idx_count + 1}
+          </div>
+        </button>
+      )}
+
+      <div className="flex justify-evenly items-center">
+        {!is_mobile ? (
+          <div className="relative">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 text-dark_gray_stone text-2xl font-semibold">
+              {language === "de" ? "Verdeckte Karten: " : "Hidden cards: "}{" "}
               {cards_amount - current_card_idx_count + 1}
             </div>
-          </button>
-        )}
-
-        <div className="flex justify-evenly items-center">
-          {!is_mobile ? (
-            <div className="relative">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 text-dark_gray_stone text-2xl font-semibold">
-                {language === "de" ? "Verdeckte Karten: " : "Hidden cards: "}{" "}
-                {cards_amount - current_card_idx_count + 1}
-              </div>
-              <button
-                className="w-full h-full"
-                onClick={fetch_stuff}
-                disabled={
-                  (current_card_idx_count > cards_amount ? true : false) ||
-                  fetch_button_disabled
-                }
-              >
-                <Image
-                  src={card_back}
-                  height={500}
-                  width={500}
-                  alt={
-                    language === "de"
-                      ? "Die Rückseite der Karte"
-                      : "The back of the card"
-                  }
-                />
-              </button>
+            <button
+              className="w-full h-full"
+              onClick={fetch_stuff}
+              disabled={
+                (current_card_idx_count > cards_amount ? true : false) ||
+                fetch_button_disabled
+              }
+            >
               <Image
                 src={card_back}
                 height={500}
@@ -226,42 +214,52 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
                     ? "Die Rückseite der Karte"
                     : "The back of the card"
                 }
-                className="absolute top-0 left-0 z-[-1]"
-                ref={moving_card_ref}
               />
-            </div>
-          ) : null}
-
-          <div
-            className="relative"
-            style={{ visibility: is_mobile ? "hidden" : "visible" }}
-          >
-            <div ref={front_card_text_ref}>
-              {opened_cards.length > 0 ? (
-                <CARD_CONTENT_COMP opened_card={opened_cards.at(-1)!} />
-              ) : null}
-            </div>
-
+            </button>
             <Image
-              src={card_front}
+              src={card_back}
               height={500}
               width={500}
               alt={
                 language === "de"
-                  ? "Die Vorderseite der Karte"
-                  : "The front of the card"
+                  ? "Die Rückseite der Karte"
+                  : "The back of the card"
               }
-              className="opacity-0"
-              ref={front_card_image_ref}
+              className="absolute top-0 left-0 z-[-1]"
+              ref={moving_card_ref}
             />
           </div>
-        </div>
-
-        {opened_cards.length > 0 ? (
-          <ALL_OPENED_CARDS_COMP all_opened_cards={opened_cards} />
         ) : null}
+
+        <div
+          className="relative"
+          style={{ visibility: is_mobile ? "hidden" : "visible" }}
+        >
+          <div ref={front_card_text_ref}>
+            {opened_cards.length > 0 ? (
+              <CARD_CONTENT_COMP opened_card={opened_cards.at(-1)!} />
+            ) : null}
+          </div>
+
+          <Image
+            src={card_front}
+            height={500}
+            width={500}
+            alt={
+              language === "de"
+                ? "Die Vorderseite der Karte"
+                : "The front of the card"
+            }
+            className="opacity-0"
+            ref={front_card_image_ref}
+          />
+        </div>
       </div>
-    </Suspense>
+
+      {opened_cards.length > 0 ? (
+        <ALL_OPENED_CARDS_COMP all_opened_cards={opened_cards} />
+      ) : null}
+    </div>
   );
 };
 
