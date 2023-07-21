@@ -3,8 +3,7 @@
 import { Dispatch, SetStateAction, Suspense, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-
-import Loading from "@/app/[lang]/loading";
+import { useDispatch, useSelector } from "react-redux";
 
 import treeOne from "public/main_images/timeline/treeOne.png";
 import treeTwo from "public/main_images/timeline/treeTwo.png";
@@ -31,12 +30,31 @@ import birdsFour from "public/main_images/timeline/birdsFour.png";
 
 import moon from "public/main_images/timeline/moon.png";
 
+import Loading from "@/app/[lang]/loading";
+import { AppDispatch, RootState } from "@/redux/store";
+import { change_timeline_loading_state } from "@/redux/features/timeline_load_slice";
+
 const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
   const [is_mobile, set_is_mobile]: [
     boolean[],
     Dispatch<SetStateAction<boolean[]>>
   ] = useState<boolean[]>([]);
+  const dispatch: AppDispatch = useDispatch();
+  const loading_state = useSelector(
+    (state: RootState) => state.timeline_load_slice.value
+  );
+
+  useEffect((): (() => void) => {
+    let timeout: NodeJS.Timeout;
+    if (loading_state) {
+      timeout = setTimeout(() => {
+        dispatch(change_timeline_loading_state(false));
+      }, 2000);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [loading_state, dispatch]);
 
   useEffect((): (() => void) => {
     //* This is used for responsive adjustments based on specific screen sizes
@@ -61,6 +79,8 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
       window.removeEventListener("resize", handle_resize);
     };
   }, []);
+
+  if (loading_state) return <Loading />;
 
   return (
     <Suspense fallback={<Loading />}>

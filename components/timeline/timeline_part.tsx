@@ -31,16 +31,11 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   const container_ref: MutableRefObject<null> = useRef(null);
   const language: string = useParams().lang;
 
-  const dispatch: AppDispatch = useDispatch();
   const loading_state = useSelector(
     (state: RootState) => state.timeline_load_slice.value
   );
 
-  useEffect(() => {
-    let timeout: NodeJS.Timeout = setTimeout(() => {
-      dispatch(change_timeline_loading_state(false));
-    }, 500);
-
+  useEffect((): void => {
     if (!loading_state) {
       gsap.to(container_ref.current, {
         opacity: 1,
@@ -48,11 +43,7 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
         ease: "linear",
       });
     }
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [loading_state, dispatch]);
+  }, [loading_state]);
 
   useEffect((): void => {
     const all_refs = [
@@ -98,8 +89,6 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
       }
     );
   }, []);
-
-  if (loading_state) return <Loading />;
 
   return (
     <section

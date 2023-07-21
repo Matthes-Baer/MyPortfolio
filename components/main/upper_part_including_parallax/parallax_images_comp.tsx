@@ -26,6 +26,7 @@ import Loading from "@/app/[lang]/loading";
 import { change_main_loading_state } from "@/redux/features/main_load_slice";
 import { AppDispatch, RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
+import { clearTimeout } from "timers";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,10 +45,15 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
     (state: RootState) => state.main_load_slice.value
   );
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
+    let timeout: NodeJS.Timeout;
     if (loading_state) {
-      dispatch(change_main_loading_state(false));
+      timeout = setTimeout(() => {
+        dispatch(change_main_loading_state(false));
+      }, 2000);
     }
+
+    return () => clearTimeout(timeout);
   }, [dispatch, loading_state]);
 
   useEffect(() => {
