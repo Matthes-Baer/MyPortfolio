@@ -42,53 +42,51 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
         duration: 1,
         ease: "linear",
       });
-    }
-  }, [loading_state]);
 
-  useEffect((): void => {
-    const all_refs = [
-      first_learningstart_ref.current,
-      second_bvh_ref.current,
-      third_freecodecamp_ref.current,
-      fourth_codingame_ref.current,
-      fifth_technicalwriter_ref.current,
-      sixth_udemy_ref.current,
-    ];
+      const all_refs = [
+        first_learningstart_ref.current,
+        second_bvh_ref.current,
+        third_freecodecamp_ref.current,
+        fourth_codingame_ref.current,
+        fifth_technicalwriter_ref.current,
+        sixth_udemy_ref.current,
+      ];
 
-    all_refs.forEach((element) => {
+      all_refs.forEach((element) => {
+        gsap.fromTo(
+          element,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+              trigger: element,
+              start: "-=200px top",
+              end: "top",
+              scrub: true,
+            },
+          }
+        );
+      });
+
       gsap.fromTo(
-        element,
+        seventh_projects_ref.current,
         { opacity: 0 },
         {
           opacity: 1,
           y: 50,
           duration: 1,
           scrollTrigger: {
-            trigger: element,
-            start: "-=200px top",
-            end: "top",
+            trigger: seventh_projects_ref.current,
+            start: "-=300px top",
+            end: "-=150px top",
             scrub: true,
           },
         }
       );
-    });
-
-    gsap.fromTo(
-      seventh_projects_ref.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: seventh_projects_ref.current,
-          start: "-=300px top",
-          end: "-=150px top",
-          scrub: true,
-        },
-      }
-    );
-  }, []);
+    }
+  }, [loading_state]);
 
   return (
     <section
