@@ -26,7 +26,7 @@ const ALL_MAIN_PARENTS_COMP: (props: {
   useEffect(() => {
     let timeout: NodeJS.Timeout = setTimeout(() => {
       dispatch(change_main_loading_state(false));
-    }, 2500);
+    }, 3500);
 
     if (!loading_state) {
       gsap.to(container_ref.current, {

@@ -1,4 +1,7 @@
+import { gsap } from "gsap";
+
 import { PROJECT_IMAGES } from "@/utils/import_images";
+import { MutableRefObject, useRef } from "react";
 
 const CHANGE_PROJECT_IMAGE_BUTTON: (props: {
   style_direction: string;
@@ -17,14 +20,17 @@ const CHANGE_PROJECT_IMAGE_BUTTON: (props: {
   set_current_idx: Function;
   path_d: string;
 }): JSX.Element => {
+  const arrow_ref: MutableRefObject<null> = useRef(null);
+
   return (
     <button
       className="absolute top-1/2 -translate-y-1/2 p-2 mr-2 bg-dark_gray_stone border border-card_yellow hover:opacity-70 transition-opacity rounded-[50%] shadow-md"
-      onClick={() =>
+      onClick={() => {
         props.set_current_idx((idx: number) =>
           props.logic_direction === "upwards" ? (idx += 1) : (idx -= 1)
-        )
-      }
+        );
+        gsap.to(arrow_ref.current, { rotate: "+=360deg" });
+      }}
       aria-label={
         props.language === "de"
           ? "Button für vorheriges Bild"
@@ -50,6 +56,7 @@ const CHANGE_PROJECT_IMAGE_BUTTON: (props: {
         strokeWidth="1.5"
         stroke="currentColor"
         className="w-6 h-6"
+        ref={arrow_ref}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d={props.path_d} />
       </svg>

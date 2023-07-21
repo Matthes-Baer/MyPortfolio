@@ -39,7 +39,7 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   useEffect(() => {
     let timeout: NodeJS.Timeout = setTimeout(() => {
       dispatch(change_timeline_loading_state(false));
-    }, 2500);
+    }, 3500);
 
     if (!loading_state) {
       gsap.to(container_ref.current, {
