@@ -2,13 +2,7 @@
 
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import {
-  MutableRefObject,
-  Suspense,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-} from "react";
+import { MutableRefObject, Suspense, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -23,14 +17,12 @@ import fantasy_dog from "public/main_images/fantasy_dog.png";
 
 import CARDS_COMP from "./cards_comp";
 import Loading from "@/app/[lang]/loading";
-import { change_main_loading_state } from "@/redux/features/main_load_slice";
-import { AppDispatch, RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
-import { clearTimeout } from "timers";
-
-gsap.registerPlugin(ScrollTrigger);
+import { AppDispatch, RootState } from "@/redux/store";
+import { change_main_loading_state } from "@/redux/features/main_load_slice";
 
 const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
+  gsap.registerPlugin(ScrollTrigger);
   const container_ref: MutableRefObject<null> = useRef<null>(null);
   const fantasy_tree_green_ref: MutableRefObject<null> = useRef<null>(null);
   const fantasy_tree_red_ref: MutableRefObject<null> = useRef<null>(null);
@@ -39,22 +31,6 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   const two_birds_ref: MutableRefObject<null> = useRef<null>(null);
   const fantasy_merchant_ref: MutableRefObject<null> = useRef<null>(null);
   const language = useParams().lang;
-
-  const dispatch: AppDispatch = useDispatch();
-  const loading_state = useSelector(
-    (state: RootState) => state.main_load_slice.value
-  );
-
-  useEffect((): (() => void) => {
-    let timeout: NodeJS.Timeout;
-    if (loading_state) {
-      timeout = setTimeout(() => {
-        dispatch(change_main_loading_state(false));
-      }, 2000);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [dispatch, loading_state]);
 
   useEffect(() => {
     const container = container_ref.current;
@@ -131,8 +107,6 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
     });
     ScrollTrigger.refresh();
   }, []);
-
-  if (loading_state) return <Loading />;
 
   return (
     <div ref={container_ref} className="relative w-full">

@@ -30,53 +30,51 @@ const PROJECT_TILES_PARENT: (props: {
   );
 
   useEffect((): (() => void) | undefined => {
-    if (!loading_state) {
-      projects_ref.current = [...projects_ref.current];
+    projects_ref.current = [...projects_ref.current];
 
-      const animate_tiles: () => void = (): void => {
-        ScrollTrigger.matchMedia({
-          "(min-width: 1024px)": () => {
-            projects_ref.current.forEach(
-              (element: HTMLElement | null, index: number) => {
-                if (element) {
-                  gsap.fromTo(
-                    element,
-                    { x: 0 },
-                    {
-                      x: index % 2 === 0 ? "50%" : "-50%",
-                      duration: 1,
-                      scrollTrigger: {
-                        trigger: element,
-                        start:
-                          index === 2
-                            ? "=-1000px top"
-                            : index === 4
-                            ? "=-1250px top"
-                            : "=-750px top",
-                        end:
-                          index === 2
-                            ? "=-600px top"
-                            : index === 4
-                            ? "=-850px top"
-                            : "=-350px top",
-                        scrub: true,
-                      },
-                    }
-                  );
-                }
+    const animate_tiles: () => void = (): void => {
+      ScrollTrigger.matchMedia({
+        "(min-width: 1024px)": () => {
+          projects_ref.current.forEach(
+            (element: HTMLElement | null, index: number) => {
+              if (element) {
+                gsap.fromTo(
+                  element,
+                  { x: 0 },
+                  {
+                    x: index % 2 === 0 ? "50%" : "-50%",
+                    duration: 1,
+                    scrollTrigger: {
+                      trigger: element,
+                      start:
+                        index === 2
+                          ? "=-1000px top"
+                          : index === 4
+                          ? "=-1250px top"
+                          : "=-750px top",
+                      end:
+                        index === 2
+                          ? "=-600px top"
+                          : index === 4
+                          ? "=-850px top"
+                          : "=-350px top",
+                      scrub: true,
+                    },
+                  }
+                );
               }
-            );
-          },
-        });
-      };
+            }
+          );
+        },
+      });
+    };
 
-      const timeout: NodeJS.Timeout = setTimeout((): void => {
-        animate_tiles();
-      }, 500);
+    const timeout: NodeJS.Timeout = setTimeout((): void => {
+      animate_tiles();
+    }, 1500);
 
-      return (): void => clearTimeout(timeout);
-    }
-  }, [loading_state, props.project_data]);
+    return (): void => clearTimeout(timeout);
+  }, [props.project_data]);
 
   return (
     <section className="relative bg-dark_gray_stone w-full min-h-screen z-20 border-t-2 border-card_yellow">

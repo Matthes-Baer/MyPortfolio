@@ -46,17 +46,6 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
   );
 
   useEffect((): (() => void) => {
-    let timeout: NodeJS.Timeout;
-    if (loading_state) {
-      timeout = setTimeout(() => {
-        dispatch(change_timeline_loading_state(false));
-      }, 2000);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [loading_state, dispatch]);
-
-  useEffect((): (() => void) => {
     //* This is used for responsive adjustments based on specific screen sizes
     const handle_resize: () => void = (): void => {
       set_is_mobile([
@@ -79,8 +68,6 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
       window.removeEventListener("resize", handle_resize);
     };
   }, []);
-
-  if (loading_state) return <Loading />;
 
   return (
     <Suspense fallback={<Loading />}>

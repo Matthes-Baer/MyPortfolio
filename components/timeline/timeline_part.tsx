@@ -35,23 +35,23 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
     (state: RootState) => state.timeline_load_slice.value
   );
 
-  useEffect((): void => {
-    if (!loading_state) {
-      gsap.to(container_ref.current, {
-        opacity: 1,
-        duration: 1,
-        ease: "linear",
-      });
+  useEffect((): (() => void) => {
+    gsap.to(container_ref.current, {
+      opacity: 1,
+      duration: 1,
+      ease: "linear",
+    });
 
-      const all_refs = [
-        first_learningstart_ref.current,
-        second_bvh_ref.current,
-        third_freecodecamp_ref.current,
-        fourth_codingame_ref.current,
-        fifth_technicalwriter_ref.current,
-        sixth_udemy_ref.current,
-      ];
+    const all_refs = [
+      first_learningstart_ref.current,
+      second_bvh_ref.current,
+      third_freecodecamp_ref.current,
+      fourth_codingame_ref.current,
+      fifth_technicalwriter_ref.current,
+      sixth_udemy_ref.current,
+    ];
 
+    const animate_tiles = () => {
       all_refs.forEach((element) => {
         gsap.fromTo(
           element,
@@ -85,8 +85,14 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
           },
         }
       );
-    }
-  }, [loading_state]);
+    };
+
+    const timeout: NodeJS.Timeout = setTimeout((): void => {
+      animate_tiles();
+    }, 1500);
+
+    return (): void => clearTimeout(timeout);
+  }, []);
 
   return (
     <section
