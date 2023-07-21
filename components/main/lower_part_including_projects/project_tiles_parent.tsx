@@ -71,7 +71,7 @@ const PROJECT_TILES_PARENT: (props: {
 
     const timeout: NodeJS.Timeout = setTimeout((): void => {
       animate_tiles();
-    }, 1500);
+    }, 500);
 
     return (): void => clearTimeout(timeout);
   }, [props.project_data]);

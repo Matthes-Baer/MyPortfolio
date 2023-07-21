@@ -89,7 +89,7 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
 
     const timeout: NodeJS.Timeout = setTimeout((): void => {
       animate_tiles();
-    }, 1500);
+    }, 500);
 
     return (): void => clearTimeout(timeout);
   }, []);
