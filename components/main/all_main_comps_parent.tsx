@@ -32,7 +32,7 @@ const ALL_MAIN_PARENTS_COMP: (props: {
       if (loadedCount === imagesCount) {
         timeout = setTimeout(() => {
           set_is_loading(false);
-        }, 2000);
+        }, 4000);
       }
     };
 

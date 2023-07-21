@@ -54,7 +54,7 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
       if (loadedCount === imagesCount) {
         timeout = setTimeout(() => {
           set_loading(false);
-        }, 2000);
+        }, 4000);
       }
     };
 
