@@ -1,59 +1,53 @@
 "use client";
 
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import Loading from "@/app/[lang]/loading";
+import { MutableRefObject, useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { gsap } from "gsap";
 
 import AGE_AND_EXPERIENCE_COMP from "./middle_part_including_age_and_experience/age_and_experience_comp";
 import PARALLAX_IMAGES_COMP from "./upper_part_including_parallax/parallax_images_comp";
 import PROJECT_TILES_PARENT from "./lower_part_including_projects/project_tiles_parent";
 import { IProject } from "@/utils/interfaces";
+import Loading from "@/app/[lang]/loading";
+import { AppDispatch, RootState } from "@/redux/store";
+import { change_main_loading_state } from "@/redux/features/main_load_slice";
 
 const ALL_MAIN_PARENTS_COMP: (props: {
   project_data: IProject[] | undefined;
 }) => JSX.Element = (props: {
   project_data: IProject[] | undefined;
 }): JSX.Element => {
-  const [is_loading, set_is_loading]: [
-    boolean,
-    Dispatch<SetStateAction<boolean>>
-  ] = useState<boolean>(false);
+  const container_ref: MutableRefObject<null> = useRef(null);
+  const dispatch: AppDispatch = useDispatch();
+  const loading_state = useSelector(
+    (state: RootState) => state.main_load_slice.value
+  );
 
   useEffect(() => {
-    const images: HTMLCollectionOf<HTMLImageElement> =
-      document.getElementsByTagName("img");
-    const imagesCount: number = images.length;
-    let loadedCount: number = 0;
-    let timeout: NodeJS.Timeout;
+    let timeout: NodeJS.Timeout = setTimeout(() => {
+      dispatch(change_main_loading_state(false));
+    }, 2500);
 
-    //* This is supposed to load in the images first before allowing to show the actual page content
-    const handleImageLoad: () => void = (): void => {
-      loadedCount++;
-
-      if (loadedCount === imagesCount) {
-        timeout = setTimeout(() => {
-          set_is_loading(false);
-        }, 4000);
-      }
-    };
-
-    //* Attach load event listener to all images
-    Array.from(images).forEach((img) => {
-      img.addEventListener("load", handleImageLoad);
-    });
-
-    //* Clean up event listeners on component unmount
-    return () => {
-      Array.from(images).forEach((img) => {
-        img.removeEventListener("load", handleImageLoad);
+    if (!loading_state) {
+      gsap.to(container_ref.current, {
+        opacity: 1,
+        duration: 1,
+        ease: "linear",
       });
+    }
+
+    return () => {
       clearTimeout(timeout);
     };
-  }, []);
+  }, [loading_state, dispatch]);
 
-  if (is_loading) return <Loading />;
+  if (loading_state) return <Loading />;
 
   return (
-    <main className="flex min-h-screen w-full flex-col absolute -top-[150px]">
+    <main
+      className="flex min-h-screen w-full flex-col absolute -top-[150px] opacity-0"
+      ref={container_ref}
+    >
       <PARALLAX_IMAGES_COMP />
       <AGE_AND_EXPERIENCE_COMP />
       <PROJECT_TILES_PARENT project_data={props.project_data} />

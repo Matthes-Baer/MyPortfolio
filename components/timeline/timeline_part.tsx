@@ -2,15 +2,7 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  MutableRefObject,
-  Suspense,
-  useEffect,
-  useRef,
-  Dispatch,
-  SetStateAction,
-  useState,
-} from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 import { useParams } from "next/navigation";
 
 import TIMELINE_PART_BACKGROUND from "./timeline_part_background";
@@ -23,6 +15,9 @@ import SIXTH_UDEMY from "./tiles/sixth_udemy";
 import SEVENTH_PROJECTS from "./tiles/seventh_projects";
 import EIGHT_NEXTGOAL from "./tiles/eigth_nextgoal";
 import Loading from "@/app/[lang]/loading";
+import { AppDispatch, RootState } from "@/redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { change_timeline_loading_state } from "@/redux/features/timeline_load_slice";
 
 const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   gsap.registerPlugin(ScrollTrigger);
@@ -33,44 +28,31 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   const fifth_technicalwriter_ref: MutableRefObject<null> = useRef(null);
   const sixth_udemy_ref: MutableRefObject<null> = useRef(null);
   const seventh_projects_ref: MutableRefObject<null> = useRef(null);
+  const container_ref: MutableRefObject<null> = useRef(null);
   const language: string = useParams().lang;
 
-  const [is_loading, set_loading]: [
-    boolean,
-    Dispatch<SetStateAction<boolean>>
-  ] = useState<boolean>(false);
+  const dispatch: AppDispatch = useDispatch();
+  const loading_state = useSelector(
+    (state: RootState) => state.timeline_load_slice.value
+  );
 
-  useEffect((): (() => void) => {
-    const images: HTMLCollectionOf<HTMLImageElement> =
-      document.getElementsByTagName("img");
-    const imagesCount: number = images.length;
-    let loadedCount: number = 0;
-    let timeout: NodeJS.Timeout;
+  useEffect(() => {
+    let timeout: NodeJS.Timeout = setTimeout(() => {
+      dispatch(change_timeline_loading_state(false));
+    }, 2500);
 
-    //* This is supposed to load in the images first before allowing to show the actual page content
-    const handleImageLoad: () => void = (): void => {
-      loadedCount++;
-
-      if (loadedCount === imagesCount) {
-        timeout = setTimeout(() => {
-          set_loading(false);
-        }, 4000);
-      }
-    };
-
-    //* Attach load event listener to all images
-    Array.from(images).forEach((img) => {
-      img.addEventListener("load", handleImageLoad);
-    });
-
-    //* Clean up event listeners on component unmount
-    return (): void => {
-      Array.from(images).forEach((img) => {
-        img.removeEventListener("load", handleImageLoad);
+    if (!loading_state) {
+      gsap.to(container_ref.current, {
+        opacity: 1,
+        duration: 1,
+        ease: "linear",
       });
+    }
+
+    return () => {
       clearTimeout(timeout);
     };
-  }, []);
+  }, [loading_state, dispatch]);
 
   useEffect((): void => {
     const all_refs = [
@@ -117,10 +99,13 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
     );
   }, []);
 
-  if (is_loading) return <Loading />;
+  if (loading_state) return <Loading />;
 
   return (
-    <section className="relative w-full h-min-screen">
+    <section
+      className="relative w-full h-min-screen opacity-0"
+      ref={container_ref}
+    >
       <TIMELINE_PART_BACKGROUND />
       <div
         className="ml-0 lg:ml-[5%] p-5 mb-[40px] bg-dark_gray_stone rounded text-[white] text-justify w-full lg:w-10/12 xl:w-8/12 2xl:w-6/12 opacity-0 border-b-8 border-b-tree_light_green border-r-8 border-r-tree_light_green z-20"

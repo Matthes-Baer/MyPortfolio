@@ -11,6 +11,8 @@ import codingame_icon from "public/main_images/timeline/codingame.png";
 import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
 import linkedin_icon from "public/main_images/linkedin_icon.png";
 
+
+
 const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
   props: INormalPageProps
 ): JSX.Element => {
@@ -39,6 +41,7 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
   ];
 
   return (
+   
     <Suspense fallback={<Loading />}>
       <main className="flex min-h-screen flex-col items-center justify-evenly relative">
         <div className="flex flex-col items-center">
@@ -98,6 +101,7 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
         </div>
       </main>
     </Suspense>
+  
   );
 };
 

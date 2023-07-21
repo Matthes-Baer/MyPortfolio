@@ -8,6 +8,10 @@ import { NextFont } from "next/dist/compiled/@next/font";
 
 import type { IMetadata, IRootLayoutProps } from "@/utils/interfaces";
 
+import { store } from "@/redux/store";
+import { Provider } from "react-redux";
+import ReduxProvider from "@/redux/redux_provider";
+
 const medievalSharp: NextFont = MedievalSharp({
   subsets: ["latin"],
   weight: "400",
@@ -50,7 +54,7 @@ const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
         className={`${medievalSharp.className} text-[white] bg-dark_gray_stone`}
         style={{ overflowX: "hidden" }}
       >
-        {props.children}
+        <ReduxProvider>{props.children}</ReduxProvider>
       </body>
     </html>
   );

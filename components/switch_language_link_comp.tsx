@@ -29,7 +29,7 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
   const change_language_cookie: () => Promise<void> =
     async (): Promise<void> => {
       try {
-        const res = await fetch("/api/POST_change_language_cookie", {
+        const res = await fetch("/api/POST_change_cookie", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
