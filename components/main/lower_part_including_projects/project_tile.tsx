@@ -52,7 +52,7 @@ const PROJECT_TILE: (props: {
     );
   }, [current_idx]);
 
-  useEffect((): void => {
+  useEffect((): (() => void) => {
     ScrollTrigger.matchMedia({
       "(min-width: 1024px)": () => {
         gsap.fromTo(
@@ -71,6 +71,12 @@ const PROJECT_TILE: (props: {
         );
       },
     });
+
+    let timeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 750);
+
+    return () => clearTimeout(timeout);
   }, [props.idx]);
 
   return (
