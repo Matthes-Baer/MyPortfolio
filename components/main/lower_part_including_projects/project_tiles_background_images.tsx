@@ -21,7 +21,7 @@ const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
         quality={50}
       />
       <Image
-        className="absolute top-[1400px] -right-[700px] z-50 hidden lg:block"
+        className="absolute top-[1750px] -right-[800px] z-50 hidden lg:block"
         src={fantasy_treeGreen}
         alt={language === "de" ? "Ein grüner Baum" : "A green tree"}
         height={1000}
@@ -30,7 +30,7 @@ const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
         quality={50}
       />
       <Image
-        className="absolute top-[2500px] -left-[750px] z-50 rotate-[25deg] hidden lg:block"
+        className="absolute top-[3100px] -left-[750px] z-50 rotate-[25deg] hidden lg:block"
         src={fantasy_treeGreen}
         alt={language === "de" ? "Ein grüner Baum" : "A green tree"}
         height={1000}
@@ -38,7 +38,7 @@ const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
         quality={50}
       />
       <Image
-        className="absolute top-[3700px] -right-[795px] z-50 rotate-[255deg] hidden lg:block"
+        className="absolute top-[4200px] -right-[800px] z-50 rotate-[275deg] hidden lg:block"
         src={fantasy_treeGreen}
         alt={language === "de" ? "Ein grüner Baum" : "A green tree"}
         height={1000}

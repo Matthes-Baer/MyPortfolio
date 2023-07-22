@@ -33,6 +33,11 @@ const PROJECT_TILE: (props: {
 }): JSX.Element => {
   gsap.registerPlugin(ScrollTrigger);
 
+  const [load_state, set_load_state]: [
+    boolean,
+    Dispatch<SetStateAction<boolean>>
+  ] = useState<boolean>(false);
+
   const [current_idx, set_current_idx]: [
     number,
     Dispatch<SetStateAction<number>>
@@ -95,6 +100,7 @@ const PROJECT_TILE: (props: {
       });
     };
 
+    //* Fix for reload animation breaking bug
     const timeout: NodeJS.Timeout = setTimeout((): void => {
       animate_tiles();
     }, 500);
@@ -219,6 +225,8 @@ const PROJECT_TILE: (props: {
               set_current_idx={set_current_idx}
               path_d="M15.75 19.5L8.25 12l7.5-7.5"
               image_slide_click_function={image_slide_click_function}
+              load_state={load_state}
+              set_load_state={set_load_state}
             />
 
             <CHANGE_PROJECT_IMAGE_BUTTON
@@ -230,6 +238,8 @@ const PROJECT_TILE: (props: {
               set_current_idx={set_current_idx}
               path_d="M8.25 4.5l7.5 7.5-7.5 7.5"
               image_slide_click_function={image_slide_click_function}
+              load_state={load_state}
+              set_load_state={set_load_state}
             />
           </Suspense>
         </div>
