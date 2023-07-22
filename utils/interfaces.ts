@@ -35,11 +35,6 @@ export interface IResponse {
   value: string;
 }
 
-export interface IMetadata {
-  title: string;
-  description: string;
-}
-
 export interface ICard {
   card_index: number;
   name: string;

@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { NextFont } from "next/dist/compiled/@next/font";
 
-import type { IMetadata, IRootLayoutProps } from "@/utils/interfaces";
+import type { IRootLayoutProps } from "@/utils/interfaces";
 import ReduxProvider from "@/redux/redux_provider";
 
 const medievalSharp: NextFont = MedievalSharp({
@@ -14,13 +14,13 @@ const medievalSharp: NextFont = MedievalSharp({
   weight: "400",
 });
 
-const german_metadata: IMetadata = {
+const german_metadata: Metadata = {
   title: "Matthes Bär - Portfolio",
   description:
     "Diese Website repräsentiert mein Software-Entwicklungs-Portfolio.",
 };
 
-const english_metadata: IMetadata = {
+const english_metadata: Metadata = {
   title: "Matthes Bär - Portfolio",
   description: "This website represents my software development portfolio.",
 };

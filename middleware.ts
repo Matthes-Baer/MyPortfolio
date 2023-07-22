@@ -26,7 +26,11 @@ export async function middleware(request: NextRequest) {
   const response: NextResponse<unknown> = NextResponse.next();
 
   //* Without this check it would automatically be redirected to "de/robots.txt", for example
-  if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
+  if (
+    pathname === "/robots.txt" ||
+    pathname === "/sitemap.xml" ||
+    pathname === "/favicon.ico"
+  ) {
     return NextResponse.next();
   }
 
