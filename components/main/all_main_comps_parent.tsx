@@ -16,17 +16,17 @@ const ALL_MAIN_PARENTS_COMP: (props: {
 }): JSX.Element => {
   const container_ref: MutableRefObject<null> = useRef(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      container_ref.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 2,
-        ease: "linear",
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     container_ref.current,
+  //     { opacity: 0 },
+  //     {
+  //       opacity: 1,
+  //       duration: 2,
+  //       ease: "linear",
+  //     }
+  //   );
+  // }, []);
 
   return (
     <Suspense fallback={<Loading />}>
