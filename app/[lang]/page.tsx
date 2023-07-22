@@ -54,7 +54,7 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
                   key={ele.link}
                   href={ele.link}
                   target="_blanket"
-                  className="p-2"
+                  className="p-2 hover:opacity-80 transition"
                 >
                   <Image
                     src={ele.icon}

@@ -1,7 +1,5 @@
 "use client";
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useParams } from "next/navigation";
 
 import { IProject, IProjects } from "@/utils/interfaces";
@@ -15,8 +13,6 @@ const PROJECT_TILES_PARENT: (props: {
 }) => JSX.Element = (props: {
   project_data: IProject[] | undefined;
 }): JSX.Element => {
-  gsap.registerPlugin(ScrollTrigger);
-
   const language: string = useParams().lang;
   const project_images: IProjects = PROJECT_IMAGES;
 

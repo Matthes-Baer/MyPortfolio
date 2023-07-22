@@ -22,8 +22,6 @@ import Loading from "@/app/[lang]/loading";
 import CHANGE_PROJECT_IMAGE_BUTTON from "./change_project_image_button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const PROJECT_TILE: (props: {
   project: IProject;
   idx: number;
@@ -33,6 +31,8 @@ const PROJECT_TILE: (props: {
   idx: number;
   project_images: IImage_Props[];
 }): JSX.Element => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const [current_idx, set_current_idx]: [
     number,
     Dispatch<SetStateAction<number>>
@@ -47,8 +47,20 @@ const PROJECT_TILE: (props: {
 
     gsap.fromTo(
       slider,
-      { y: "-100%", opacity: 0 },
-      { y: 0, opacity: 1, duration: 2, ease: "Power2.easeIn" }
+      { y: "-200%", opacity: 0.05 },
+      {
+        y: 0,
+        opacity: 0.1,
+        duration: 3.5,
+        ease: "Power1.easeOut",
+        onComplete: () => {
+          gsap.fromTo(
+            slider,
+            { opacity: 0.1 },
+            { opacity: 1, duration: 1, ease: "linear", delay: 0.25 }
+          );
+        },
+      }
     );
   }, [current_idx]);
 
@@ -84,10 +96,10 @@ const PROJECT_TILE: (props: {
 
     let timeout = setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 750);
+    }, 1000);
 
     return () => clearTimeout(timeout);
-  }, [props.idx]);
+  }, [props.idx, props.project.name]);
 
   return (
     <Suspense fallback={<Loading />}>
@@ -143,6 +155,7 @@ const PROJECT_TILE: (props: {
                     width={25}
                     height={25}
                     className="rounded-[50%]"
+                    quality={65}
                   />
                 </Link>
               </div>

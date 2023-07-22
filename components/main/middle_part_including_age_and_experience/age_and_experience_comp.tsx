@@ -5,7 +5,6 @@ import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
-  Suspense,
   useEffect,
   useRef,
   useState,
@@ -13,7 +12,6 @@ import {
 import gsap from "gsap";
 import { useParams } from "next/navigation";
 
-import Loading from "@/app/[lang]/loading";
 import cake_icon from "public/main_images/cake_icon.png";
 import computer_icon from "public/main_images/computer_icon.png";
 

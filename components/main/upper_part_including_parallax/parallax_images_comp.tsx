@@ -105,22 +105,24 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   }, []);
 
   return (
-    <div ref={container_ref} className="relative w-full">
+    <div ref={container_ref} className="relative w-full ">
       <CARDS_COMP />
 
-      <Image
-        src={fantasy_background}
-        alt={
-          language === "de"
-            ? "Große Hintergrund-Szene"
-            : "Large background scene"
-        }
-        width={2500}
-        height={2500}
-        className="z-[-1] w-full h-full min-h-[800px] min-w-[1000px]"
-        priority
-        quality={65}
-      />
+      <div className="w-full h-full overflow-hidden">
+        <Image
+          src={fantasy_background}
+          alt={
+            language === "de"
+              ? "Große Hintergrund-Szene"
+              : "Large background scene"
+          }
+          width={2500}
+          height={2500}
+          className="z-[-1] w-full h-full min-h-[800px] min-w-[1024px] overflow-hidden"
+          priority
+          quality={65}
+        />
+      </div>
 
       <Image
         src={fantasy_branch}
