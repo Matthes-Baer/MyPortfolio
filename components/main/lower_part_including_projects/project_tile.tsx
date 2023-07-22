@@ -103,7 +103,7 @@ const PROJECT_TILE: (props: {
     //* Fix for reload animation breaking bug
     const timeout: NodeJS.Timeout = setTimeout((): void => {
       animate_tiles();
-    }, 500);
+    }, 2500);
 
     return (): void => clearTimeout(timeout);
   }, [props.idx, props.project.name]);
