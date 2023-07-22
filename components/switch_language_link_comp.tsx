@@ -58,7 +58,7 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
           quality={60}
           priority
         />{" "}
-        <div className="text-5xl p-5 text-center">
+        <div className="text-[25px] sm:text-[40px] p-5 text-center">
           {props.language === "de" ? "Deutsch" : "English"}
         </div>
       </div>

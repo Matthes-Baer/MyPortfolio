@@ -41,8 +41,8 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
   return (
     <Suspense fallback={<Loading />}>
       <main className="flex min-h-screen flex-col items-center justify-evenly relative">
-        <div className="flex flex-col items-center">
-          <h1 className="text-[50px] text-center">
+        <div className="flex flex-col items-center rounded-full pr-[50px] pl-[50px] pb-5 sm:pb-0 border-b-4 sm:border-b-0 sm:border-l-4 sm:border-r-4 border-card_yellow">
+          <h1 className="text-[35px] sm:text-[50px] text-center">
             Matthes Bär -{" "}
             {props.params.lang === "de" ? "Webentwickler" : "Web Developer"}
           </h1>
@@ -54,7 +54,7 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
                   key={ele.link}
                   href={ele.link}
                   target="_blanket"
-                  className="p-2 hover:opacity-80 transition"
+                  className="p-2 hover:opacity-70 transition"
                 >
                   <Image
                     src={ele.icon}
@@ -77,13 +77,13 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
           </div>
         </div>
         <div className="mt-5">
-          <h1 className="text-[40px] text-center">
+          <h1 className="text-[25px] sm:text-[40px] text-center">
             {props.params.lang === "de"
-              ? "Bevorzugte Sprache:"
-              : "Preferred language:"}
+              ? "Wählen Sie Ihre bevorzugte Sprache:"
+              : "Select your preferred language:"}
           </h1>
         </div>
-        <div className="flex w-full flex-col md:flex-row items-center justify-evenly">
+        <div className="relative flex w-full flex-col md:flex-row items-center justify-evenly">
           <Link
             href={"/en/main"}
             className="flex flex-col items-center p-5 rounded-lg hover:bg-dark_gray_tile transition"
