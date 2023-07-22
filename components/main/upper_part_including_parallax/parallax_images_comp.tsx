@@ -16,10 +16,6 @@ import fantasy_merchant from "public/main_images/fantasy_merchant.png";
 import fantasy_dog from "public/main_images/fantasy_dog.png";
 
 import CARDS_COMP from "./cards_comp";
-import Loading from "@/app/[lang]/loading";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "@/redux/store";
-import { change_main_loading_state } from "@/redux/features/main_load_slice";
 
 const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   gsap.registerPlugin(ScrollTrigger);
@@ -32,7 +28,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   const fantasy_merchant_ref: MutableRefObject<null> = useRef<null>(null);
   const language = useParams().lang;
 
-  useEffect(() => {
+  useEffect((): void => {
     const container = container_ref.current;
     const fantasy_tree_green = fantasy_tree_green_ref.current;
     const fantasy_tree_red = fantasy_tree_red_ref.current;
@@ -123,7 +119,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         height={2500}
         className="z-[-1] w-full h-full min-h-[800px] min-w-[1000px]"
         priority
-        placeholder="blur"
+        quality={65}
       />
 
       <Image
@@ -135,10 +131,9 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         }
         width={500}
         height={100}
-        quality={80}
+        quality={60}
         className="absolute top-[150px] -left-[75px] opacity-90 w-1/4 h-1/4 rotate-[135deg] min-w-[275px]"
         ref={fantasy_branch_ref}
-        placeholder="blur"
       />
 
       <Image
@@ -146,10 +141,9 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt={language === "de" ? "Grüner Baum" : "Green tree"}
         width={1000}
         height={1000}
-        quality={80}
+        quality={40}
         className="absolute -bottom-[60%] -left-[425px] sm:-left-[525px] md:-left-[600px] lg:-left-[650px] h-full opacity-80 z-10 min-w-[525px] sm:min-w-[600px] rotate-[25deg]"
         ref={fantasy_tree_green_ref}
-        placeholder="blur"
       />
 
       <Image
@@ -157,10 +151,9 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt={language === "de" ? "Roter Baum" : "Red tree"}
         width={1000}
         height={1000}
-        quality={80}
+        quality={40}
         className="absolute -bottom-1/4 -right-[275px] lg:-right-1/4 w-2/5 h-4/5 opacity-80 z-10 min-w-[325px] sm:min-w-[400px] rotate-[-55deg]"
         ref={fantasy_tree_red_ref}
-        placeholder="blur"
       />
 
       <Image
@@ -168,10 +161,9 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt={language === "de" ? "Drei Vögel" : "Three birds"}
         width={250}
         height={250}
-        quality={80}
+        quality={30}
         className="absolute top-[30%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-[10%] h-1/5 opacity-90 hidden lg:block"
         ref={three_birds_ref}
-        placeholder="blur"
       />
 
       <Image
@@ -181,8 +173,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         height={250}
         className="absolute top-[35%] right-[5%] w-[10%] h-1/5 opacity-90 hidden lg:block"
         ref={two_birds_ref}
-        quality={80}
-        placeholder="blur"
+        quality={30}
       />
 
       <Image
@@ -192,8 +183,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         height={250}
         className="absolute bottom-[15%] right-[32.5%] w-[4%] h-[8%] opacity-90 hidden lg:block"
         ref={fantasy_merchant_ref}
-        quality={80}
-        placeholder="blur"
+        quality={30}
       />
 
       <Image
@@ -206,8 +196,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         width={250}
         height={250}
         className="absolute bottom-[15%] right-[25%] w-[4%] h-[8%] opacity-90 hidden lg:block"
-        quality={80}
-        placeholder="blur"
+        quality={30}
       />
     </div>
   );

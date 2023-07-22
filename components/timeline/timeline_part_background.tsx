@@ -82,8 +82,8 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={550}
           width={550}
           className="absolute top-0 left-1/2 -translate-x-1/2 min-w-[550px] -z-[12]"
-          quality={80}
-          placeholder="blur"
+          quality={70}
+          priority
         />
 
         <Image
@@ -96,8 +96,8 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={550}
           width={550}
           className="absolute top-[685px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[11]"
-          quality={80}
-          placeholder="blur"
+          quality={70}
+          priority
         />
 
         <Image
@@ -110,8 +110,8 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={550}
           width={550}
           className="absolute top-[1150px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[10]"
-          quality={80}
-          placeholder="blur"
+          quality={70}
+          priority
         />
 
         <Image
@@ -124,8 +124,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={750}
           width={750}
           className="absolute top-[1550px] left-1/2 -translate-x-1/2 min-w-[750px] -z-[9]"
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -138,8 +137,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={650}
           width={650}
           className="absolute top-[1950px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[8]"
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -152,8 +150,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={750}
           width={750}
           className="absolute top-[2575px] left-[46%] -translate-x-[54%] min-w-[750px] -z-[7]"
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -167,8 +164,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={550}
           className="absolute top-[3150px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[6]"
           style={{ display: is_mobile[7] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -182,8 +178,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={550}
           className="absolute top-[3610px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[5]"
           style={{ display: is_mobile[6] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -197,8 +192,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={650}
           className="absolute top-[4000px] left-[46%] -translate-x-[54%] min-w-[650px] -z-[4]"
           style={{ display: is_mobile[5] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -212,8 +206,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={650}
           className="absolute top-[4575px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[3]"
           style={{ display: is_mobile[4] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -227,8 +220,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={650}
           className="absolute top-[5100px] left-[55%] -translate-x-[45%] min-w-[650px] -z-[2]"
           style={{ display: is_mobile[3] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -242,8 +234,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={650}
           className="absolute top-[5575px] left-[48%] -translate-x-[52%] min-w-[650px] -z-[1]"
           style={{ display: is_mobile[2] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -257,8 +248,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={650}
           className="absolute top-[6225px] left-1/2 -translate-x-1/2 min-w-[650px] -z-[1]"
           style={{ display: is_mobile[1] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -272,8 +262,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={650}
           className="absolute top-[6675px] left-[55%] -translate-x-[45%] min-w-[650px] -z-[1]"
           style={{ display: is_mobile[0] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={70}
         />
 
         <Image
@@ -284,8 +273,8 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={250}
           width={250}
           className="absolute top-0 left-[30%] min-w-[250px] opacity-70 -z-50"
-          quality={80}
-          placeholder="blur"
+          quality={60}
+          priority
         />
 
         <Image
@@ -298,8 +287,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={200}
           width={200}
           className="absolute top-[110px] left-[27.5%] min-w-[200px] opacity-60"
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -312,8 +300,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={300}
           width={300}
           className="absolute top-[350px] right-0 min-w-[300px] opacity-70"
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -326,8 +313,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={200}
           width={200}
           className="absolute top-[700px] right-[15%] min-w-[200px] opacity-70"
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -340,8 +326,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={275}
           width={275}
           className="absolute top-[1000px] left-[10%] min-w-[275px] opacity-70 -z-[8]"
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -354,8 +339,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={300}
           width={300}
           className="absolute top-[1550px] left-[25%] min-w-[300px] opacity-70 -z-[7]"
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -368,8 +352,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={290}
           width={290}
           className="absolute top-[1850px] right-[16%] min-w-[290px] opacity-70 -z-[9]"
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -383,8 +366,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={265}
           className="absolute top-[2400px] right-[25%] min-w-[265px] opacity-70 -z-[3]"
           style={{ display: is_mobile[5] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -398,8 +380,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={295}
           className="absolute top-[3000px] right-[15%] min-w-[295px] opacity-70 -z-[3]"
           style={{ display: is_mobile[4] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -413,8 +394,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={315}
           className="absolute top-[3770px] left-[5%] min-w-[315px] opacity-70 -z-[3]"
           style={{ display: is_mobile[3] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -428,8 +408,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={300}
           className="absolute top-[4500px] right-0 min-w-[300px] opacity-70 -z-[3]"
           style={{ display: is_mobile[2] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -443,8 +422,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={280}
           className="absolute top-[5400px] left-[25%] min-w-[280px] opacity-70 -z-[3]"
           style={{ display: is_mobile[1] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -458,8 +436,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={290}
           className="absolute top-[5900px] left-[10%] min-w-[290px] opacity-70 -z-[3]"
           style={{ display: is_mobile[0] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={50}
         />
 
         <Image
@@ -470,8 +447,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={200}
           width={200}
           className="absolute top-[2500px] left-[20%] min-w-[200px] opacity-70 -z-[3]"
-          quality={80}
-          placeholder="blur"
+          quality={60}
         />
 
         <Image
@@ -482,8 +458,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={75}
           width={75}
           className="absolute top-[3000px] left-[20%] min-w-[75px] opacity-70 -z-[3]"
-          quality={80}
-          placeholder="blur"
+          quality={60}
         />
 
         <Image
@@ -495,8 +470,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={150}
           className="absolute top-[3200px] right-0 min-w-[150px] opacity-70 -z-[3]"
           style={{ display: is_mobile[6] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={60}
         />
 
         <Image
@@ -508,8 +482,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={300}
           className="absolute top-[3800px] right-[5%] min-w-[300px] opacity-70 -z-[3]"
           style={{ display: is_mobile[5] ? "block" : "none" }}
-          quality={80}
-          placeholder="blur"
+          quality={60}
         />
       </div>
     </Suspense>

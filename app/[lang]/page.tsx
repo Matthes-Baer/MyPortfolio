@@ -69,6 +69,7 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
                       boxShadow: "1.5px 1.5px 3.5px 0px rgba(0,0,0,0.5)",
                     }}
                     title={ele.alt.en.split(" ").at(0)}
+                    quality={50}
                   />
                 </Link>
               );

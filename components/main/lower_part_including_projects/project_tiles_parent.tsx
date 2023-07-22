@@ -25,11 +25,8 @@ const PROJECT_TILES_PARENT: (props: {
   >([]);
   const language: string = useParams().lang;
   const project_images: IProjects = PROJECT_IMAGES;
-  const loading_state = useSelector(
-    (state: RootState) => state.timeline_load_slice.value
-  );
 
-  useEffect((): (() => void) | undefined => {
+  useEffect((): (() => void) => {
     projects_ref.current = [...projects_ref.current];
 
     const animate_tiles: () => void = (): void => {
@@ -71,7 +68,7 @@ const PROJECT_TILES_PARENT: (props: {
 
     const timeout: NodeJS.Timeout = setTimeout((): void => {
       animate_tiles();
-    }, 500);
+    }, 750);
 
     return (): void => clearTimeout(timeout);
   }, [props.project_data]);
