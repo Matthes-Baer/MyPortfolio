@@ -42,15 +42,14 @@ const PROJECT_TILE: (props: {
   const slider_ref: MutableRefObject<null> = useRef(null);
   const language: string = useParams().lang;
 
-  useEffect((): void => {
+  const image_slide_click_function = () => {
     const slider = slider_ref.current;
 
     gsap.fromTo(
       slider,
-      { y: "-200%", opacity: 0.05 },
+      { y: "-200%", opacity: 0.1 },
       {
         y: 0,
-        opacity: 0.1,
         duration: 3.5,
         ease: "Power1.easeOut",
         onComplete: () => {
@@ -62,7 +61,7 @@ const PROJECT_TILE: (props: {
         },
       }
     );
-  }, [current_idx]);
+  };
 
   useEffect((): (() => void) => {
     ScrollTrigger.matchMedia({
@@ -217,6 +216,7 @@ const PROJECT_TILE: (props: {
               current_idx={current_idx}
               set_current_idx={set_current_idx}
               path_d="M15.75 19.5L8.25 12l7.5-7.5"
+              image_slide_click_function={image_slide_click_function}
             />
 
             <CHANGE_PROJECT_IMAGE_BUTTON
@@ -227,6 +227,7 @@ const PROJECT_TILE: (props: {
               current_idx={current_idx}
               set_current_idx={set_current_idx}
               path_d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              image_slide_click_function={image_slide_click_function}
             />
           </Suspense>
         </div>

@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { MAIN_LOAD_SLICE } from "./features/main_load_slice";
+import { PROJECT_TILE_SLICE } from "./features/project_tile_slice";
 import { TIMELINE_LOAD_SLICE } from "./features/timeline_load_slice";
 
 export const store = configureStore({
   reducer: {
-    main_load_slice: MAIN_LOAD_SLICE.reducer,
+    project_tile_slice: PROJECT_TILE_SLICE.reducer,
     timeline_load_slice: TIMELINE_LOAD_SLICE.reducer,
   },
 });
