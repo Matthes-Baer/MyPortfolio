@@ -192,7 +192,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
 
       <div className="flex justify-evenly items-center">
         {!is_mobile ? (
-          <div className="relative">
+          <div className="relative flex items-center">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 text-dark_gray_stone text-2xl font-semibold">
               {language === "de" ? "Verdeckte Karten: " : "Hidden cards: "}{" "}
               {cards_amount - current_card_idx_count + 1}
