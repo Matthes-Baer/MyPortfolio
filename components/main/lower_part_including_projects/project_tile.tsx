@@ -43,8 +43,8 @@ const PROJECT_TILE: (props: {
 
     gsap.fromTo(
       slider,
-      { y: "-100%" },
-      { y: 0, duration: 2, ease: "Power2.easeIn" }
+      { y: "-100%", opacity: 0 },
+      { y: 0, opacity: 1, duration: 2, ease: "Power2.easeIn" }
     );
   }, [current_idx]);
 
