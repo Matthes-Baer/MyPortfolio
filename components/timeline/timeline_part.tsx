@@ -14,10 +14,6 @@ import FIFTH_TECHNICALWRITER from "./tiles/fifth_technicalwriter";
 import SIXTH_UDEMY from "./tiles/sixth_udemy";
 import SEVENTH_PROJECTS from "./tiles/seventh_projects";
 import EIGHT_NEXTGOAL from "./tiles/eigth_nextgoal";
-import Loading from "@/app/[lang]/loading";
-import { AppDispatch, RootState } from "@/redux/store";
-import { useDispatch, useSelector } from "react-redux";
-import { change_timeline_loading_state } from "@/redux/features/timeline_load_slice";
 
 const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   gsap.registerPlugin(ScrollTrigger);
@@ -30,10 +26,6 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
   const seventh_projects_ref: MutableRefObject<null> = useRef(null);
   const container_ref: MutableRefObject<null> = useRef(null);
   const language: string = useParams().lang;
-
-  const loading_state = useSelector(
-    (state: RootState) => state.timeline_load_slice.value
-  );
 
   useEffect((): (() => void) => {
     gsap.to(container_ref.current, {
@@ -51,7 +43,7 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
       sixth_udemy_ref.current,
     ];
 
-    const animate_tiles = () => {
+    const animate_tiles = (): void => {
       all_refs.forEach((element) => {
         gsap.fromTo(
           element,

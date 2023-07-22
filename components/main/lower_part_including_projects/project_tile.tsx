@@ -42,7 +42,7 @@ const PROJECT_TILE: (props: {
   const slider_ref: MutableRefObject<null> = useRef(null);
   const language: string = useParams().lang;
 
-  const image_slide_click_function = () => {
+  const image_slide_click_function = (): void => {
     const slider = slider_ref.current;
 
     gsap.fromTo(
@@ -64,40 +64,42 @@ const PROJECT_TILE: (props: {
   };
 
   useEffect((): (() => void) => {
-    ScrollTrigger.matchMedia({
-      "(min-width: 1024px)": () => {
-        gsap.fromTo(
-          container_ref.current,
-          { x: 0 },
-          {
-            x: props.idx % 2 === 0 ? "50%" : "-50%",
-            duration: 1,
-            scrollTrigger: {
-              trigger: container_ref.current,
-              start:
-                props.project.name.en === "No Framework"
-                  ? "-=900px top"
-                  : props.project.name.en === "Divid"
-                  ? "-=1000px top"
-                  : "-=600px top",
-              end:
-                props.project.name.en === "No Framework"
-                  ? "-=600px top"
-                  : props.project.name.en === "Divid"
-                  ? "-=700px top"
-                  : "-=300px top",
-              scrub: true,
-            },
-          }
-        );
-      },
-    });
+    const animate_tiles = (): void => {
+      ScrollTrigger.matchMedia({
+        "(min-width: 1024px)": () => {
+          gsap.fromTo(
+            container_ref.current,
+            { x: 0 },
+            {
+              x: props.idx % 2 === 0 ? "50%" : "-50%",
+              duration: 1,
+              scrollTrigger: {
+                trigger: container_ref.current,
+                start:
+                  props.project.name.en === "No Framework"
+                    ? "-=900px top"
+                    : props.project.name.en === "Divid"
+                    ? "-=1000px top"
+                    : "-=600px top",
+                end:
+                  props.project.name.en === "No Framework"
+                    ? "-=600px top"
+                    : props.project.name.en === "Divid"
+                    ? "-=700px top"
+                    : "-=300px top",
+                scrub: true,
+              },
+            }
+          );
+        },
+      });
+    };
 
-    let timeout = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 1000);
+    const timeout: NodeJS.Timeout = setTimeout((): void => {
+      animate_tiles();
+    }, 500);
 
-    return () => clearTimeout(timeout);
+    return (): void => clearTimeout(timeout);
   }, [props.idx, props.project.name]);
 
   return (
