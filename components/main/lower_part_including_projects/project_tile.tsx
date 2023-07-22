@@ -20,6 +20,9 @@ import { IImage_Props, IProject } from "@/utils/interfaces";
 import { SupportedLanguages } from "@/utils/types";
 import Loading from "@/app/[lang]/loading";
 import CHANGE_PROJECT_IMAGE_BUTTON from "./change_project_image_button";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const PROJECT_TILE: (props: {
   project: IProject;
@@ -35,6 +38,7 @@ const PROJECT_TILE: (props: {
     Dispatch<SetStateAction<number>>
   ] = useState<number>(0);
 
+  const container_ref: MutableRefObject<null> = useRef(null);
   const slider_ref: MutableRefObject<null> = useRef(null);
   const language: string = useParams().lang;
 
@@ -48,9 +52,30 @@ const PROJECT_TILE: (props: {
     );
   }, [current_idx]);
 
+  useEffect((): void => {
+    ScrollTrigger.matchMedia({
+      "(min-width: 1024px)": () => {
+        gsap.fromTo(
+          container_ref.current,
+          { x: 0 },
+          {
+            x: props.idx % 2 === 0 ? "50%" : "-50%",
+            duration: 1,
+            scrollTrigger: {
+              trigger: container_ref.current,
+              start: "-=500px top",
+              end: "top",
+              scrub: true,
+            },
+          }
+        );
+      },
+    });
+  }, [props.idx]);
+
   return (
     <Suspense fallback={<Loading />}>
-      <div className="mb-5 mt-5 p-3">
+      <div className="mb-5 mt-5 p-3" ref={container_ref}>
         <div className="flex flex-col sm:flex-row items-center text-center">
           <div
             className="p-1"
