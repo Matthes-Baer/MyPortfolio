@@ -152,7 +152,7 @@ const PROJECT_TILE: (props: {
                 "mx-auto " +
                 (props.project.project_key === "divid" ? "w-2/5" : "w-4/5")
               }
-              quality={40}
+              quality={65}
               placeholder="blur"
             />
 
