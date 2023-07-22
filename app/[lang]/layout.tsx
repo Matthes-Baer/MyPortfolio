@@ -7,9 +7,6 @@ import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adap
 import { NextFont } from "next/dist/compiled/@next/font";
 
 import type { IMetadata, IRootLayoutProps } from "@/utils/interfaces";
-
-import { store } from "@/redux/store";
-import { Provider } from "react-redux";
 import ReduxProvider from "@/redux/redux_provider";
 
 const medievalSharp: NextFont = MedievalSharp({

@@ -45,16 +45,16 @@ const PROJECT_TILES_PARENT: (props: {
                       trigger: element,
                       start:
                         index === 2
-                          ? "=-1000px top"
+                          ? "=-1100px top"
                           : index === 4
-                          ? "=-1250px top"
-                          : "=-750px top",
+                          ? "=-1450px top"
+                          : "=-950px top",
                       end:
                         index === 2
-                          ? "=-600px top"
+                          ? "=-700px top"
                           : index === 4
-                          ? "=-850px top"
-                          : "=-350px top",
+                          ? "=-1050px top"
+                          : "=-550px top",
                       scrub: true,
                     },
                   }
