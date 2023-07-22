@@ -63,8 +63,18 @@ const PROJECT_TILE: (props: {
             duration: 1,
             scrollTrigger: {
               trigger: container_ref.current,
-              start: "-=900px top",
-              end: "-=600px top",
+              start:
+                props.project.name.en === "No Framework"
+                  ? "-=900px top"
+                  : props.project.name.en === "Divid"
+                  ? "-=1000px top"
+                  : "-=600px top",
+              end:
+                props.project.name.en === "No Framework"
+                  ? "-=600px top"
+                  : props.project.name.en === "Divid"
+                  ? "-=700px top"
+                  : "-=300px top",
               scrub: true,
             },
           }
