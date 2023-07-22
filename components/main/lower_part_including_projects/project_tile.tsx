@@ -154,6 +154,8 @@ const PROJECT_TILE: (props: {
               }
               style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.25)" }}
               quality={40}
+              placeholder="blur"
+              priority
             />
 
             <CHANGE_PROJECT_IMAGE_BUTTON
