@@ -56,6 +56,7 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
           height={250}
           alt={image_props.alt[props.language as SupportedLanguages]}
           quality={60}
+          priority
         />{" "}
         <div className="text-5xl p-5 text-center">
           {props.language === "de" ? "Deutsch" : "English"}

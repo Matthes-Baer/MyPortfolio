@@ -18,6 +18,7 @@ const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
         alt={language === "de" ? "Ein grüner Baum" : "A green tree"}
         height={1000}
         width={1000}
+        quality={50}
       />
       <Image
         className="absolute top-[1400px] -right-[700px] z-50 hidden lg:block"
@@ -26,6 +27,7 @@ const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
         height={1000}
         width={1000}
         style={{ transform: "rotateY(180deg)" }}
+        quality={50}
       />
       <Image
         className="absolute top-[2500px] -left-[750px] z-50 rotate-[25deg] hidden lg:block"
@@ -33,6 +35,7 @@ const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
         alt={language === "de" ? "Ein grüner Baum" : "A green tree"}
         height={1000}
         width={1000}
+        quality={50}
       />
       <Image
         className="absolute top-[3700px] -right-[795px] z-50 rotate-[255deg] hidden lg:block"
@@ -40,6 +43,7 @@ const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
         alt={language === "de" ? "Ein grüner Baum" : "A green tree"}
         height={1000}
         width={1000}
+        quality={50}
       />
     </div>
   );

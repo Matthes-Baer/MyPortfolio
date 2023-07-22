@@ -44,7 +44,7 @@ const PROJECT_TILE: (props: {
     gsap.fromTo(
       slider,
       { opacity: 0 },
-      { opacity: 1, duration: 1.5, ease: "easeInOut" }
+      { opacity: 1, duration: 2, ease: "easeInOut" }
     );
   }, [current_idx]);
 
@@ -155,7 +155,6 @@ const PROJECT_TILE: (props: {
               style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.25)" }}
               quality={40}
               placeholder="blur"
-              priority
             />
 
             <CHANGE_PROJECT_IMAGE_BUTTON

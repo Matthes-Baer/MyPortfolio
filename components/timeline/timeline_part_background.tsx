@@ -97,7 +97,6 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={550}
           className="absolute top-[685px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[11]"
           quality={70}
-          priority
         />
 
         <Image
@@ -111,7 +110,6 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={550}
           className="absolute top-[1150px] left-1/2 -translate-x-1/2 min-w-[550px] -z-[10]"
           quality={70}
-          priority
         />
 
         <Image
@@ -288,6 +286,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={200}
           className="absolute top-[110px] left-[27.5%] min-w-[200px] opacity-60"
           quality={50}
+          priority
         />
 
         <Image
@@ -301,6 +300,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           width={300}
           className="absolute top-[350px] right-0 min-w-[300px] opacity-70"
           quality={50}
+          priority
         />
 
         <Image
