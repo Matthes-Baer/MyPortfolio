@@ -43,8 +43,8 @@ const PROJECT_TILE: (props: {
 
     gsap.fromTo(
       slider,
-      { opacity: 0 },
-      { opacity: 1, duration: 2, ease: "easeInOut" }
+      { y: "-100%" },
+      { y: 0, duration: 2, ease: "Power2.easeIn" }
     );
   }, [current_idx]);
 
@@ -136,7 +136,7 @@ const PROJECT_TILE: (props: {
             "\n"
           )}
         </div>
-        <div className="relative bg-[transparent] w-full mx-auto min-w-[250px] mt-5">
+        <div className="relative bg-[transparent] w-full mx-auto min-w-[250px] mt-5 overflow-hidden rounded-full">
           <Suspense fallback={<Loading />}>
             <Image
               src={props.project_images[current_idx].src}
