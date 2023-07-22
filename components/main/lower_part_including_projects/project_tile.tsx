@@ -64,7 +64,7 @@ const PROJECT_TILE: (props: {
             scrollTrigger: {
               trigger: container_ref.current,
               start: "-=900px top",
-              end: "-=400px top",
+              end: "-=600px top",
               scrub: true,
             },
           }
