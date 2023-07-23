@@ -7,20 +7,18 @@ import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
-  Suspense,
   useCallback,
   useEffect,
   useRef,
   useState,
 } from "react";
 import type { ICard } from "@/utils/interfaces";
-import ALL_OPENED_CARDS_COMP from "./all_opened_cards_comp";
+import ALL_OPENED_CARDS from "./all_opened_cards";
 import { gsap } from "gsap";
-import CARD_CONTENT_COMP from "./card_content_comp";
-import Loading from "@/app/[lang]/loading";
+import CARD_CONTENT from "./card_content";
 import { useParams } from "next/navigation";
 
-const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
+const CARDS: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
 
   const [current_card_idx_count, set_current_card_idx_count]: [
@@ -237,7 +235,7 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
         >
           <div ref={front_card_text_ref}>
             {opened_cards.length > 0 ? (
-              <CARD_CONTENT_COMP opened_card={opened_cards.at(-1)!} />
+              <CARD_CONTENT opened_card={opened_cards.at(-1)!} />
             ) : null}
           </div>
 
@@ -257,10 +255,10 @@ const CARDS_COMP: () => JSX.Element = (): JSX.Element => {
       </div>
 
       {opened_cards.length > 0 ? (
-        <ALL_OPENED_CARDS_COMP all_opened_cards={opened_cards} />
+        <ALL_OPENED_CARDS all_opened_cards={opened_cards} />
       ) : null}
     </div>
   );
 };
 
-export default CARDS_COMP;
+export default CARDS;

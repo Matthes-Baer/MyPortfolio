@@ -9,7 +9,7 @@ import { SupportedLanguages } from "@/utils/types";
 import { TECHSTACK_IMAGES } from "@/utils/import_images";
 import { ICard } from "@/utils/interfaces";
 
-const SINGLE_OPENED_CARD_CONTENT_COMP: (props: {
+const SINGLE_OPENED_CARD_CONTENT: (props: {
   card: ICard;
   mobile: boolean;
 }) => JSX.Element = (props: { card: ICard; mobile: boolean }): JSX.Element => {
@@ -41,4 +41,4 @@ const SINGLE_OPENED_CARD_CONTENT_COMP: (props: {
   );
 };
 
-export default SINGLE_OPENED_CARD_CONTENT_COMP;
+export default SINGLE_OPENED_CARD_CONTENT;

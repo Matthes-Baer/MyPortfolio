@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { MutableRefObject, Suspense, useEffect, useRef } from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,9 +15,9 @@ import two_birds from "public/main_images/two_birds.png";
 import fantasy_merchant from "public/main_images/fantasy_merchant.png";
 import fantasy_dog from "public/main_images/fantasy_dog.png";
 
-import CARDS_COMP from "./cards_comp";
+import CARDS from "./cards";
 
-const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
+const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
   gsap.registerPlugin(ScrollTrigger);
   const container_ref: MutableRefObject<null> = useRef<null>(null);
   const fantasy_tree_green_ref: MutableRefObject<null> = useRef<null>(null);
@@ -106,7 +106,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
 
   return (
     <div ref={container_ref} className="relative w-full ">
-      <CARDS_COMP />
+      <CARDS />
 
       <div className="w-full h-full overflow-hidden">
         <Image
@@ -208,4 +208,4 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
   );
 };
 
-export default PARALLAX_IMAGES_COMP;
+export default PARALLAX_IMAGES;

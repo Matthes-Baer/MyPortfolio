@@ -10,9 +10,9 @@ import { SupportedLanguages } from "@/utils/types";
 import Loading from "@/app/[lang]/loading";
 import { ICard } from "@/utils/interfaces";
 
-const CARD_CONTENT_COMP: (props: {
+const CARD_CONTENT: (props: { opened_card: ICard }) => JSX.Element = (props: {
   opened_card: ICard;
-}) => JSX.Element = (props: { opened_card: ICard }): JSX.Element => {
+}): JSX.Element => {
   const language: string = useParams().lang;
 
   return (
@@ -61,4 +61,4 @@ const CARD_CONTENT_COMP: (props: {
   );
 };
 
-export default CARD_CONTENT_COMP;
+export default CARD_CONTENT;

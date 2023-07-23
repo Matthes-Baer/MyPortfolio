@@ -5,17 +5,15 @@ import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
-  Suspense,
   useEffect,
   useRef,
   useState,
 } from "react";
 
 import { ICard } from "@/utils/interfaces";
-import SINGLE_OPENED_CARD_CONTENT_COMP from "./single_opened_card_content_comp";
-import Loading from "@/app/[lang]/loading";
+import SINGLE_OPENED_CARD_CONTENT from "./single_opened_card_content";
 
-const ALL_OPENED_CARDS_COMP: (props: {
+const ALL_OPENED_CARDS: (props: {
   all_opened_cards: ICard[];
 }) => JSX.Element = (props: { all_opened_cards: ICard[] }): JSX.Element => {
   const container_ref: MutableRefObject<null> = useRef<null>(null);
@@ -61,7 +59,7 @@ const ALL_OPENED_CARDS_COMP: (props: {
       }}
     >
       {props.all_opened_cards.map((card: ICard) => (
-        <SINGLE_OPENED_CARD_CONTENT_COMP
+        <SINGLE_OPENED_CARD_CONTENT
           card={card}
           mobile={is_mobile[is_mobile.length - 1]}
           key={card.card_index}
@@ -71,4 +69,4 @@ const ALL_OPENED_CARDS_COMP: (props: {
   );
 };
 
-export default ALL_OPENED_CARDS_COMP;
+export default ALL_OPENED_CARDS;
