@@ -89,7 +89,7 @@ const PROJECT_TILE: (props: {
                     : "-=900px top",
                 end:
                   props.project.name.en === "No Framework"
-                    ? "-=50px top"
+                    ? "-=100px top"
                     : props.project.name.en === "Divid"
                     ? "-=50px top"
                     : "-=50px top",
