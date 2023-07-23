@@ -12,13 +12,15 @@ const ALL_MAIN_PARENTS_COMP: (props: {
   project_data: IProject[] | undefined;
 }): JSX.Element => {
   return (
-    <Suspense fallback={<Loading />}>
-      <main className="flex min-h-screen w-full flex-col absolute -top-[150px] ">
-        <PARALLAX_IMAGES />
+    <main className="flex min-h-screen w-full flex-col absolute -top-[150px] ">
+      <PARALLAX_IMAGES />
+      <Suspense fallback={<Loading />}>
         <AGE_AND_EXPERIENCE />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
         <PROJECT_TILES_PARENT project_data={props.project_data} />
-      </main>
-    </Suspense>
+      </Suspense>
+    </main>
   );
 };
 

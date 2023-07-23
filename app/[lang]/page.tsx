@@ -40,9 +40,9 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
   ];
 
   return (
-    <Suspense fallback={<Loading />}>
-      <main className="relative flex min-h-screen flex-col items-center justify-evenly overflow-hidden">
-        <START_BACKGROUND />
+    <main className="relative flex min-h-screen flex-col items-center justify-evenly overflow-hidden">
+      <START_BACKGROUND />
+      <Suspense fallback={<Loading />}>
         <div className="flex flex-col items-center rounded-full">
           <h1 className="text-[35px] sm:text-[50px] text-center">
             Matthes Bär -{" "}
@@ -78,6 +78,8 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
             })}
           </div>
         </div>
+      </Suspense>
+      <Suspense fallback={<Loading />}>
         <div className="mt-5">
           <h1 className="text-[25px] sm:text-[40px] text-center">
             {props.params.lang === "de"
@@ -100,8 +102,8 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
             <SWITCH_LANGUAGE_LINK language="de" />
           </Link>
         </div>
-      </main>
-    </Suspense>
+      </Suspense>
+    </main>
   );
 };
 

@@ -11,11 +11,7 @@ const Main: (props: INormalPageProps) => Promise<JSX.Element> = async (
   //* Fetching data for projects in the bottom part of the home page
   const project_data: IProject[] | undefined = await get_projects();
 
-  return (
-    <Suspense fallback={<Loading />}>
-      <ALL_MAIN_PARENTS_COMP project_data={project_data} />
-    </Suspense>
-  );
+  return <ALL_MAIN_PARENTS_COMP project_data={project_data} />;
 };
 
 export default Main;

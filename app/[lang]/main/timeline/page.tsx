@@ -7,11 +7,7 @@ import Loading from "../../loading";
 const Timeline: (props: INormalPageProps) => JSX.Element = (
   props: INormalPageProps
 ): JSX.Element => {
-  return (
-    <Suspense fallback={<Loading />}>
-      <ALL_TIMELINE_PARENTS_COMP />
-    </Suspense>
-  );
+  return <ALL_TIMELINE_PARENTS_COMP />;
 };
 
 export default Timeline;
