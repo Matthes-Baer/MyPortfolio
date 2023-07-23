@@ -93,7 +93,7 @@ const PROJECT_TILE: (props: {
     //* Fix for reload animation breaking bug
     const timeout: NodeJS.Timeout = setInterval((): void => {
       ScrollTrigger.refresh();
-    }, 1000);
+    }, 250);
 
     return (): void => clearTimeout(timeout);
   }, [props.idx, props.project.name]);
