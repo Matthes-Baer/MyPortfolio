@@ -70,43 +70,30 @@ const PROJECT_TILE: (props: {
   };
 
   useEffect((): (() => void) => {
-    const animate_tiles = (): void => {
-      ScrollTrigger.refresh();
-      ScrollTrigger.matchMedia({
-        "(min-width: 1024px)": () => {
-          gsap.fromTo(
-            container_ref.current,
-            { x: 0 },
-            {
-              x: props.idx % 2 === 0 ? "50%" : "-50%",
-              duration: 1,
-              scrollTrigger: {
-                trigger: container_ref.current,
-                start: "-=75% top",
-                // props.project.name.en === "No Framework"
-                //   ? "-=15% top"
-                //   : props.project.name.en === "Divid"
-                //   ? "-=900px top"
-                //   : "-=900px top",
-                end: "-=100px top",
-                // props.project.name.en === "No Framework"
-                //   ? "-=100px top"
-                //   : props.project.name.en === "Divid"
-                //   ? "-=50px top"
-                //   : "-=50px top",
-                scrub: true,
-                markers: true,
-              },
-            }
-          );
-        },
-      });
-    };
+    ScrollTrigger.matchMedia({
+      "(min-width: 1024px)": () => {
+        gsap.fromTo(
+          container_ref.current,
+          { x: 0 },
+          {
+            x: props.idx % 2 === 0 ? "50%" : "-50%",
+            duration: 1,
+            scrollTrigger: {
+              trigger: container_ref.current,
+              start: "-=75% top",
+              end: "-=100px top",
+              scrub: true,
+              markers: true,
+            },
+          }
+        );
+      },
+    });
 
     //* Fix for reload animation breaking bug
-    const timeout: NodeJS.Timeout = setTimeout((): void => {
-      animate_tiles();
-    }, 500);
+    const timeout: NodeJS.Timeout = setInterval((): void => {
+      ScrollTrigger.refresh();
+    }, 1000);
 
     return (): void => clearTimeout(timeout);
   }, [props.idx, props.project.name]);
@@ -213,7 +200,7 @@ const PROJECT_TILE: (props: {
             width={750}
             ref={slider_ref}
             className={
-              "mx-auto object-contain " +
+              "mx-auto " +
               (props.project.project_key === "divid" ? "w-1/3" : "w-4/5")
             }
             placeholder="blur"
