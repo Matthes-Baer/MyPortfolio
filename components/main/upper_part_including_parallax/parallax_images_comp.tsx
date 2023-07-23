@@ -118,7 +118,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
           }
           width={2500}
           height={2500}
-          className="z-[-1] w-full h-full min-h-[800px] min-w-[1024px] overflow-hidden"
+          className="z-[-1] w-full h-full min-h-[1250px] overflow-hidden object-none object-bottom"
           priority
           quality={65}
         />
@@ -131,10 +131,10 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
             ? "Ast an der linken Seite"
             : "Branch on the left side"
         }
-        width={500}
-        height={100}
+        width={375}
+        height={375}
         quality={60}
-        className="absolute top-[150px] -left-[75px] opacity-90 w-1/4 h-1/4 rotate-[135deg] min-w-[275px]"
+        className="absolute top-[125px] -left-[50px] opacity-90 rotate-[135deg] object-none overflow-visible"
         ref={fantasy_branch_ref}
         placeholder="blur"
       />
@@ -145,7 +145,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         width={1000}
         height={1000}
         quality={40}
-        className="absolute -bottom-[60%] -left-[425px] sm:-left-[525px] md:-left-[600px] lg:-left-[650px] h-full opacity-80 z-10 min-w-[525px] sm:min-w-[600px] rotate-[25deg]"
+        className="absolute -bottom-[60%] -left-[500px] sm:-left-[650px] h-full opacity-90 z-10 rotate-[25deg] object-none overflow-visible"
         ref={fantasy_tree_green_ref}
         placeholder="blur"
       />
@@ -153,10 +153,10 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
       <Image
         src={fantasy_treeRed}
         alt={language === "de" ? "Roter Baum" : "Red tree"}
-        width={1000}
-        height={1000}
+        width={750}
+        height={750}
         quality={40}
-        className="absolute -bottom-1/4 -right-[275px] lg:-right-1/4 w-2/5 h-4/5 opacity-80 z-10 min-w-[325px] sm:min-w-[400px] rotate-[-55deg]"
+        className="absolute -bottom-1/4 -right-[375px] sm:-right-[425px] opacity-90 z-10 rotate-[-55deg] object-none overflow-visible"
         ref={fantasy_tree_red_ref}
         placeholder="blur"
       />
@@ -167,7 +167,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         width={250}
         height={250}
         quality={30}
-        className="absolute top-[30%] left-[45%] -translate-x-1/2 -translate-y-1/2 w-[10%] h-1/5 opacity-90 hidden lg:block"
+        className="absolute top-[30%] left-[45%] -translate-x-1/2 -translate-y-1/2 opacity-90 object-none overflow-visible"
         ref={three_birds_ref}
         placeholder="blur"
       />
@@ -177,7 +177,7 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
         alt={language === "de" ? "Zwei Vögel" : "Two birds"}
         width={250}
         height={250}
-        className="absolute top-[35%] right-[5%] w-[10%] h-1/5 opacity-90 hidden lg:block"
+        className="absolute top-[35%] right-[5%] opacity-90 object-none overflow-visible"
         ref={two_birds_ref}
         quality={30}
       />
@@ -185,9 +185,9 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
       <Image
         src={fantasy_merchant}
         alt={language === "de" ? "Reisender Händler" : "Travelling salesman"}
-        width={250}
-        height={250}
-        className="absolute bottom-[15%] right-[32.5%] w-[4%] h-[8%] opacity-90 hidden lg:block"
+        width={60}
+        height={60}
+        className="absolute bottom-[12.5%] right-[30%] opacity-90 object-none overflow-visible"
         ref={fantasy_merchant_ref}
         quality={30}
       />
@@ -199,9 +199,9 @@ const PARALLAX_IMAGES_COMP: () => JSX.Element = (): JSX.Element => {
             ? "Hund des reisenden Händlers"
             : "Dog of the travelling merchant"
         }
-        width={250}
-        height={250}
-        className="absolute bottom-[15%] right-[25%] w-[4%] h-[8%] opacity-90 hidden lg:block"
+        width={60}
+        height={60}
+        className="absolute bottom-[15%] right-[25%] opacity-90 object-none overflow-visible"
         quality={30}
       />
     </div>

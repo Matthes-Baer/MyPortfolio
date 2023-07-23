@@ -21,6 +21,7 @@ import { SupportedLanguages } from "@/utils/types";
 import Loading from "@/app/[lang]/loading";
 import CHANGE_PROJECT_IMAGE_BUTTON from "./change_project_image_button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import IMAGE_BACKGROUND_DOTS from "./image_background_dots";
 
 const PROJECT_TILE: (props: {
   project: IProject;
@@ -84,14 +85,14 @@ const PROJECT_TILE: (props: {
                   props.project.name.en === "No Framework"
                     ? "-=900px top"
                     : props.project.name.en === "Divid"
-                    ? "-=1000px top"
-                    : "-=600px top",
+                    ? "-=1200px top"
+                    : "-=900px top",
                 end:
                   props.project.name.en === "No Framework"
-                    ? "-=600px top"
+                    ? "-=200px top"
                     : props.project.name.en === "Divid"
-                    ? "-=700px top"
-                    : "-=300px top",
+                    ? "-=200px top"
+                    : "-=200px top",
                 scrub: true,
               },
             }
@@ -197,8 +198,9 @@ const PROJECT_TILE: (props: {
             "\n"
           )}
         </div>
-        <div className="relative bg-[transparent] w-full mx-auto min-w-[250px] mt-5 overflow-hidden rounded-full">
+        <div className="relative bg-[transparent] w-full mx-auto min-w-[250px] mt-5 overflow-hidden">
           <Suspense fallback={<Loading />}>
+            <IMAGE_BACKGROUND_DOTS />
             <Image
               src={props.project_images[current_idx].src}
               alt={

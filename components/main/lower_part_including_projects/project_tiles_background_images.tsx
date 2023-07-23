@@ -30,7 +30,7 @@ const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
         quality={50}
       />
       <Image
-        className="absolute top-[3100px] -left-[750px] z-50 rotate-[25deg] hidden lg:block"
+        className="absolute top-[3100px] -left-[750px] z-50 rotate-[25deg] hidden lg:block bg-[transparent]"
         src={fantasy_treeGreen}
         alt={language === "de" ? "Ein grüner Baum" : "A green tree"}
         height={1000}
@@ -38,7 +38,7 @@ const PROJECT_TILES_BACKGROUND_IMAGES: () => JSX.Element = (): JSX.Element => {
         quality={50}
       />
       <Image
-        className="absolute top-[4200px] -right-[800px] z-50 rotate-[275deg] hidden lg:block"
+        className="absolute top-[4200px] -right-[800px] z-50 rotate-[275deg] hidden lg:block bg-[transparent]"
         src={fantasy_treeGreen}
         alt={language === "de" ? "Ein grüner Baum" : "A green tree"}
         height={1000}
