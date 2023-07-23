@@ -69,38 +69,46 @@ const PROJECT_TILE: (props: {
     );
   };
 
-  useEffect((): void => {
-    // ScrollTrigger.matchMedia({
-    //   "(min-width: 1024px)": () => {
-    gsap.fromTo(
-      container_ref.current,
-      { x: 0 },
-      {
-        x: props.idx % 2 === 0 ? "50%" : "-50%",
-        duration: 1,
-        scrollTrigger: {
-          trigger: container_ref.current,
-          start: "-=75% top",
-          // props.project.name.en === "No Framework"
-          //   ? "-=15% top"
-          //   : props.project.name.en === "Divid"
-          //   ? "-=900px top"
-          //   : "-=900px top",
-          end: "-=100px top",
-          // props.project.name.en === "No Framework"
-          //   ? "-=100px top"
-          //   : props.project.name.en === "Divid"
-          //   ? "-=50px top"
-          //   : "-=50px top",
-          scrub: true,
-          markers: true,
+  useEffect((): (() => void) => {
+    const animate_tiles = (): void => {
+      ScrollTrigger.refresh();
+      ScrollTrigger.matchMedia({
+        "(min-width: 1024px)": () => {
+          gsap.fromTo(
+            container_ref.current,
+            { x: 0 },
+            {
+              x: props.idx % 2 === 0 ? "50%" : "-50%",
+              duration: 1,
+              scrollTrigger: {
+                trigger: container_ref.current,
+                start: "-=75% top",
+                // props.project.name.en === "No Framework"
+                //   ? "-=15% top"
+                //   : props.project.name.en === "Divid"
+                //   ? "-=900px top"
+                //   : "-=900px top",
+                end: "-=100px top",
+                // props.project.name.en === "No Framework"
+                //   ? "-=100px top"
+                //   : props.project.name.en === "Divid"
+                //   ? "-=50px top"
+                //   : "-=50px top",
+                scrub: true,
+                markers: true,
+              },
+            }
+          );
         },
-      }
-    );
-    // },
-    // });
+      });
+    };
 
-    ScrollTrigger.refresh();
+    //* Fix for reload animation breaking bug
+    const timeout: NodeJS.Timeout = setTimeout((): void => {
+      animate_tiles();
+    }, 500);
+
+    return (): void => clearTimeout(timeout);
   }, [props.idx, props.project.name]);
 
   return (
@@ -192,52 +200,50 @@ const PROJECT_TILE: (props: {
             "\n"
           )}
         </div>
-        <div className="relative bg-[transparent] w-full mx-auto min-w-[250px] mt-5 overflow-hidden">
-          <Suspense fallback={<Loading />}>
-            <IMAGE_BACKGROUND_DOTS />
-            <Image
-              src={props.project_images[current_idx].src}
-              alt={
-                props.project_images[current_idx].alt[
-                  language as SupportedLanguages
-                ]
-              }
-              height={750}
-              width={750}
-              ref={slider_ref}
-              className={
-                "mx-auto " +
-                (props.project.project_key === "divid" ? "w-1/3" : "w-4/5")
-              }
-              placeholder="blur"
-            />
+        <div className="relative bg-[transparent] w-full h-full mx-auto mt-5 overflow-hidden">
+          <IMAGE_BACKGROUND_DOTS />
+          <Image
+            src={props.project_images[current_idx].src}
+            alt={
+              props.project_images[current_idx].alt[
+                language as SupportedLanguages
+              ]
+            }
+            height={750}
+            width={750}
+            ref={slider_ref}
+            className={
+              "mx-auto object-contain " +
+              (props.project.project_key === "divid" ? "w-1/3" : "w-4/5")
+            }
+            placeholder="blur"
+          />
 
-            <CHANGE_PROJECT_IMAGE_BUTTON
-              style_direction="left"
-              logic_direction="downwards"
-              language={language}
-              project_key={props.project.project_key}
-              current_idx={current_idx}
-              set_current_idx={set_current_idx}
-              path_d="M15.75 19.5L8.25 12l7.5-7.5"
-              image_slide_click_function={image_slide_click_function}
-              load_state={load_state}
-              set_load_state={set_load_state}
-            />
+          <CHANGE_PROJECT_IMAGE_BUTTON
+            style_direction="left"
+            logic_direction="downwards"
+            language={language}
+            project_key={props.project.project_key}
+            current_idx={current_idx}
+            set_current_idx={set_current_idx}
+            path_d="M15.75 19.5L8.25 12l7.5-7.5"
+            image_slide_click_function={image_slide_click_function}
+            load_state={load_state}
+            set_load_state={set_load_state}
+          />
 
-            <CHANGE_PROJECT_IMAGE_BUTTON
-              style_direction="right"
-              logic_direction="upwards"
-              language={language}
-              project_key={props.project.project_key}
-              current_idx={current_idx}
-              set_current_idx={set_current_idx}
-              path_d="M8.25 4.5l7.5 7.5-7.5 7.5"
-              image_slide_click_function={image_slide_click_function}
-              load_state={load_state}
-              set_load_state={set_load_state}
-            />
-          </Suspense>
+          <CHANGE_PROJECT_IMAGE_BUTTON
+            style_direction="right"
+            logic_direction="upwards"
+            language={language}
+            project_key={props.project.project_key}
+            current_idx={current_idx}
+            set_current_idx={set_current_idx}
+            path_d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            image_slide_click_function={image_slide_click_function}
+            load_state={load_state}
+            set_load_state={set_load_state}
+          />
         </div>
       </div>
     </Suspense>
