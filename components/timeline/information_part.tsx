@@ -3,6 +3,7 @@
 import Loading from "@/app/[lang]/loading";
 import { useParams } from "next/navigation";
 import { Suspense } from "react";
+import INFORMATION_PART_BACKGROUND from "./information_part_background";
 
 const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
@@ -24,7 +25,8 @@ const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <section className="flex justify-center w-full pb-[35px] text-2xl border-b-2 border-b-card_yellow bg-dark_gray_stone z-10">
+      <section className="relative flex justify-center w-full pb-[35px] text-2xl border-b-2 border-b-card_yellow bg-dark_gray_stone z-10">
+        <INFORMATION_PART_BACKGROUND />
         <div className="flex flex-col items-center text-center">
           <div className="p-3">
             {language === "de"

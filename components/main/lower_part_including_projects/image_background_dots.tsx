@@ -17,7 +17,7 @@ const IMAGE_BACKGROUND_DOTS = () => {
 
   return (
     <div
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/4 h-1/2 rounded-full -z-10 bg-[transparent]"
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] rounded-full -z-10 bg-[transparent]"
       ref={container_ref}
     >
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-3/4 w-[35px] h-[35px] opacity-60 rounded-full border-2 border-card_yellow shadow"></div>

@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import SWITCH_LANGUAGE_LINK_COMP from "@/components/switch_language_link_comp";
+import SWITCH_LANGUAGE_LINK from "@/components/switch_language_link";
 import Loading from "./loading";
 import { SupportedLanguages } from "@/utils/types";
 import type { IIcon, INormalPageProps } from "@/utils/interfaces";
@@ -10,6 +10,7 @@ import github_icon from "public/main_images/github_icon.png";
 import codingame_icon from "public/main_images/timeline/codingame.png";
 import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
 import linkedin_icon from "public/main_images/linkedin_icon.png";
+import START_BACKGROUND from "@/components/start_background";
 
 const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
   props: INormalPageProps
@@ -40,8 +41,9 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
 
   return (
     <Suspense fallback={<Loading />}>
-      <main className="flex min-h-screen flex-col items-center justify-evenly relative">
-        <div className="flex flex-col items-center rounded-full pr-[50px] pl-[50px] pb-5 sm:pb-0 border-b-4 sm:border-b-0 sm:border-l-4 sm:border-r-4 border-card_yellow">
+      <main className="relative flex min-h-screen flex-col items-center justify-evenly overflow-hidden">
+        <START_BACKGROUND />
+        <div className="flex flex-col items-center rounded-full">
           <h1 className="text-[35px] sm:text-[50px] text-center">
             Matthes Bär -{" "}
             {props.params.lang === "de" ? "Webentwickler" : "Web Developer"}
@@ -88,14 +90,14 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
             href={"/en/main"}
             className="flex flex-col items-center p-5 rounded-lg hover:bg-dark_gray_tile transition"
           >
-            <SWITCH_LANGUAGE_LINK_COMP language="en" />
+            <SWITCH_LANGUAGE_LINK language="en" />
           </Link>
 
           <Link
             href={"/de/main"}
             className="flex flex-col items-center p-5 rounded-lg hover:bg-dark_gray_tile transition"
           >
-            <SWITCH_LANGUAGE_LINK_COMP language="de" />
+            <SWITCH_LANGUAGE_LINK language="de" />
           </Link>
         </div>
       </main>

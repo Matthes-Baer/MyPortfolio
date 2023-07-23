@@ -85,14 +85,14 @@ const PROJECT_TILE: (props: {
                   props.project.name.en === "No Framework"
                     ? "-=900px top"
                     : props.project.name.en === "Divid"
-                    ? "-=1200px top"
+                    ? "-=900px top"
                     : "-=900px top",
                 end:
                   props.project.name.en === "No Framework"
-                    ? "-=200px top"
+                    ? "-=50px top"
                     : props.project.name.en === "Divid"
-                    ? "-=200px top"
-                    : "-=200px top",
+                    ? "-=50px top"
+                    : "-=50px top",
                 scrub: true,
               },
             }
