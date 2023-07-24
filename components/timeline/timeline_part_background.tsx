@@ -74,7 +74,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={550}
           width={550}
-          className="absolute top-0 left-1/2 -translate-x-1/2 -z-[12] object-none hidden sm:block"
+          className="absolute top-0 left-1/2 -translate-x-1/2 -z-[12] object-none hidden md:block"
           quality={70}
           priority
         />
@@ -88,7 +88,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={550}
           width={550}
-          className="absolute top-[600px] left-1/2 -translate-x-1/2 -z-[11] object-none overflow-visible hidden sm:block"
+          className="absolute top-[600px] left-1/2 -translate-x-1/2 -z-[11] object-none overflow-visible hidden md:block"
           quality={70}
         />
 
@@ -101,7 +101,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={550}
           width={550}
-          className="absolute top-[1150px] left-1/2 -translate-x-1/2 -z-[10] object-none overflow-visible hidden sm:block"
+          className="absolute top-[1150px] left-1/2 -translate-x-1/2 -z-[10] object-none overflow-visible hidden md:block"
           quality={70}
         />
 
@@ -114,7 +114,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={750}
           width={750}
-          className="absolute top-[1550px] left-1/2 -translate-x-1/2 -z-[9] object-none overflow-visible hidden sm:block"
+          className="absolute top-[1550px] left-1/2 -translate-x-1/2 -z-[9] object-none overflow-visible hidden md:block"
           quality={70}
         />
 
@@ -127,7 +127,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={650}
           width={650}
-          className="absolute top-[1950px] left-1/2 -translate-x-1/2 -z-[8] object-none overflow-visible hidden sm:block"
+          className="absolute top-[1950px] left-1/2 -translate-x-1/2 -z-[8] object-none overflow-visible hidden md:block"
           quality={70}
         />
 
@@ -140,7 +140,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={750}
           width={750}
-          className="absolute top-[2575px] left-[46%] -translate-x-[54%] -z-[7] object-none overflow-visible hidden sm:block"
+          className="absolute top-[2575px] left-[46%] -translate-x-[54%] -z-[7] object-none overflow-visible hidden md:block"
           quality={70}
         />
 
@@ -153,7 +153,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={550}
           width={550}
-          className="absolute top-[3150px] left-1/2 -translate-x-1/2 -z-[6] object-none overflow-visible hidden sm:block"
+          className="absolute top-[3150px] left-1/2 -translate-x-1/2 -z-[6] object-none overflow-visible hidden md:block"
           style={{ display: is_mobile[7] ? "block" : "none" }}
           quality={70}
         />
@@ -167,7 +167,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={550}
           width={550}
-          className="absolute top-[3610px] left-1/2 -translate-x-1/2 -z-[5] object-none overflow-visible hidden sm:block"
+          className="absolute top-[3610px] left-1/2 -translate-x-1/2 -z-[5] object-none overflow-visible hidden md:block"
           style={{ display: is_mobile[6] ? "block" : "none" }}
           quality={70}
         />
@@ -181,7 +181,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={650}
           width={650}
-          className="absolute top-[4000px] left-[46%] -translate-x-[54%] -z-[4] object-none overflow-visible hidden sm:block"
+          className="absolute top-[4000px] left-[46%] -translate-x-[54%] -z-[4] object-none overflow-visible hidden md:block"
           style={{ display: is_mobile[5] ? "block" : "none" }}
           quality={70}
         />
@@ -195,7 +195,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={650}
           width={650}
-          className="absolute top-[4575px] left-1/2 -translate-x-1/2 -z-[3] object-none overflow-visible hidden sm:block"
+          className="absolute top-[4575px] left-1/2 -translate-x-1/2 -z-[3] object-none overflow-visible hidden md:block"
           style={{ display: is_mobile[4] ? "block" : "none" }}
           quality={70}
         />
@@ -209,7 +209,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={650}
           width={650}
-          className="absolute top-[5100px] left-[55%] -translate-x-[45%] -z-[2] object-none overflow-visible hidden sm:block"
+          className="absolute top-[5100px] left-[55%] -translate-x-[45%] -z-[2] object-none overflow-visible hidden md:block"
           style={{ display: is_mobile[3] ? "block" : "none" }}
           quality={70}
         />
@@ -223,7 +223,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={650}
           width={650}
-          className="absolute top-[5575px] left-[48%] -translate-x-[52%] -z-[1] object-none overflow-visible hidden sm:block"
+          className="absolute top-[5575px] left-[48%] -translate-x-[52%] -z-[1] object-none overflow-visible hidden md:block"
           style={{ display: is_mobile[2] ? "block" : "none" }}
           quality={70}
         />
@@ -237,7 +237,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={650}
           width={650}
-          className="absolute top-[6225px] left-1/2 -translate-x-1/2 -z-[1] object-none overflow-visible hidden sm:block"
+          className="absolute top-[6225px] left-1/2 -translate-x-1/2 -z-[1] object-none overflow-visible hidden md:block"
           style={{ display: is_mobile[1] ? "block" : "none" }}
           quality={70}
         />
@@ -251,7 +251,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={650}
           width={650}
-          className="absolute top-[6675px] left-[55%] -translate-x-[45%] -z-[1] object-none overflow-visible hidden sm:block"
+          className="absolute top-[6675px] left-[55%] -translate-x-[45%] -z-[1] object-none overflow-visible hidden md:block"
           style={{ display: is_mobile[0] ? "block" : "none" }}
           quality={70}
         />
