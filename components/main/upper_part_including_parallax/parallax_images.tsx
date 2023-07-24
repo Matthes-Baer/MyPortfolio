@@ -145,7 +145,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         width={1000}
         height={1000}
         quality={40}
-        className="absolute -bottom-[60%] -left-[500px] sm:-left-[650px] h-full opacity-90 z-10 rotate-[25deg] object-none overflow-visible"
+        className="absolute -bottom-[60%] -left-[650px] h-full opacity-90 z-10 rotate-[25deg] object-none overflow-visible hidden sm:block"
         ref={fantasy_tree_green_ref}
         placeholder="blur"
       />
@@ -156,7 +156,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         width={750}
         height={750}
         quality={40}
-        className="absolute -bottom-1/4 -right-[375px] sm:-right-[425px] opacity-90 z-10 rotate-[-55deg] object-none overflow-visible"
+        className="absolute -bottom-1/4 -right-[425px] opacity-90 z-10 rotate-[-55deg] object-none overflow-visible hidden sm:block"
         ref={fantasy_tree_red_ref}
         placeholder="blur"
       />

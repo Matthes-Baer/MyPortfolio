@@ -18,11 +18,21 @@ const german_metadata: Metadata = {
   title: "Matthes Bär - Portfolio",
   description:
     "Diese Website repräsentiert mein Software-Entwicklungs-Portfolio.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 const english_metadata: Metadata = {
   title: "Matthes Bär - Portfolio",
   description: "This website represents my software development portfolio.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export async function generateMetadata(
