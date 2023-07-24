@@ -150,7 +150,7 @@ const PROJECT_TILE: (props: {
                     }
                     width={25}
                     height={25}
-                    className="rounded-[50%]"
+                    className="rounded-[50%] object-none"
                     quality={65}
                   />
                 </Link>
