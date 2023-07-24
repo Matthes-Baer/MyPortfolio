@@ -48,9 +48,9 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
             Matthes Bär -{" "}
             {props.params.lang === "de" ? "Webentwickler" : "Web Developer"}
           </h1>
-          <h2 className="sm:hidden text-center">
+          <h2 className="block md:hidden text-center p-2">
             {props.params.lang === "de"
-              ? "Es wird dringend empfohlen, diese Website auf größeren Bildschirmen (Notebooks und größer) zu nutzen, um ein optimales Seherlebnis zu erhalten."
+              ? "Es wird empfohlen, diese Website auf größeren Bildschirmen (Notebooks und größer) zu nutzen, um ein optimales Seherlebnis zu erhalten."
               : "It is highly recommended to view this website on larger screens (notebooks and larger) for the optimal viewing experience."}
           </h2>
 
