@@ -48,6 +48,11 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
             Matthes Bär -{" "}
             {props.params.lang === "de" ? "Webentwickler" : "Web Developer"}
           </h1>
+          <h2 className="block md:hidden text-center p-2">
+            {props.params.lang === "de"
+              ? "Es wird empfohlen, diese Website auf größeren Bildschirmen (Notebooks und größer) zu nutzen, um ein optimales Seherlebnis zu erhalten."
+              : "It is highly recommended to view this website on larger screens (notebooks and larger) for the optimal viewing experience."}
+          </h2>
 
           <div className="flex flex-wrap items-center justify-center">
             {images.map((ele: IIcon) => {
