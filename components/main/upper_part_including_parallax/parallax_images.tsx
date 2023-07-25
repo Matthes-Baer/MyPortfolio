@@ -164,7 +164,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         width={250}
         height={250}
         quality={30}
-        className="absolute top-[30%] left-[45%] -translate-x-1/2 -translate-y-1/2 opacity-90 object-none overflow-visible"
+        className="absolute top-[35%] md:top-[30%] left-0 md:left-[45%] -translate-x-1/2 -translate-y-1/2 opacity-90 object-none overflow-visible"
         ref={three_birds_ref}
         placeholder="blur"
       />
@@ -184,7 +184,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         alt={language === "de" ? "Reisender Händler" : "Travelling salesman"}
         width={60}
         height={60}
-        className="absolute bottom-[12.5%] right-[30%] opacity-90 object-none overflow-visible"
+        className="absolute bottom-[12.5%] right-[30%] opacity-90 object-none overflow-visible z-[2]"
         ref={fantasy_merchant_ref}
         quality={30}
       />
@@ -198,7 +198,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         }
         width={60}
         height={60}
-        className="absolute bottom-[15%] right-[25%] opacity-90 object-none overflow-visible"
+        className="absolute bottom-[15%] right-[25%] opacity-90 object-none overflow-visible z-[1]"
         quality={30}
       />
     </div>
