@@ -38,29 +38,30 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
     Dispatch<SetStateAction<boolean[]>>
   ] = useState<boolean[]>([]);
 
-  useEffect((): (() => void) => {
-    //* This is used for responsive adjustments based on specific screen sizes
-    const handle_resize: () => void = (): void => {
-      set_is_mobile([
-        window.innerWidth <= 325,
-        window.innerWidth <= 350,
-        window.innerWidth <= 385,
-        window.innerWidth <= 425,
-        window.innerWidth <= 475,
-        window.innerWidth <= 550,
-        window.innerWidth <= 680,
-        window.innerWidth <= 760,
-      ]);
-    };
+  //* This is used for responsive adjustments based on specific screen sizes
+  //* Currently deactivated
+  // useEffect((): (() => void) => {
+  //   const handle_resize: () => void = (): void => {
+  //     set_is_mobile([
+  //       window.innerWidth <= 325,
+  //       window.innerWidth <= 350,
+  //       window.innerWidth <= 385,
+  //       window.innerWidth <= 425,
+  //       window.innerWidth <= 475,
+  //       window.innerWidth <= 550,
+  //       window.innerWidth <= 680,
+  //       window.innerWidth <= 760,
+  //     ]);
+  //   };
 
-    window.addEventListener("resize", handle_resize);
+  //   window.addEventListener("resize", handle_resize);
 
-    handle_resize();
+  //   handle_resize();
 
-    return (): void => {
-      window.removeEventListener("resize", handle_resize);
-    };
-  }, []);
+  //   return (): void => {
+  //     window.removeEventListener("resize", handle_resize);
+  //   };
+  // }, []);
 
   return (
     <Suspense fallback={<Loading />}>
@@ -154,105 +155,6 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           height={550}
           width={550}
           className="absolute top-[3150px] left-1/2 -translate-x-1/2 -z-[6] object-none overflow-visible hidden md:block"
-          style={{ display: is_mobile[7] ? "block" : "none" }}
-          quality={70}
-        />
-
-        <Image
-          src={treeEight}
-          alt={
-            language === "de"
-              ? "Achter Baumstamm im Hintergrund"
-              : "Eighth tree trunk in background"
-          }
-          height={550}
-          width={550}
-          className="absolute top-[3610px] left-1/2 -translate-x-1/2 -z-[5] object-none overflow-visible hidden md:block"
-          style={{ display: is_mobile[6] ? "block" : "none" }}
-          quality={70}
-        />
-
-        <Image
-          src={treeNine}
-          alt={
-            language === "de"
-              ? "Neunter Baumstamm im Hintergrund"
-              : "Ninth tree trunk in background"
-          }
-          height={650}
-          width={650}
-          className="absolute top-[4000px] left-[46%] -translate-x-[54%] -z-[4] object-none overflow-visible hidden md:block"
-          style={{ display: is_mobile[5] ? "block" : "none" }}
-          quality={70}
-        />
-
-        <Image
-          src={treeTen}
-          alt={
-            language === "de"
-              ? "Zehnter Baumstamm im Hintergrund"
-              : "Tenth tree trunk in background"
-          }
-          height={650}
-          width={650}
-          className="absolute top-[4575px] left-1/2 -translate-x-1/2 -z-[3] object-none overflow-visible hidden md:block"
-          style={{ display: is_mobile[4] ? "block" : "none" }}
-          quality={70}
-        />
-
-        <Image
-          src={treeEleven}
-          alt={
-            language === "de"
-              ? "Elfter Baumstamm im Hintergrund"
-              : "Eleventh tree trunk in background"
-          }
-          height={650}
-          width={650}
-          className="absolute top-[5100px] left-[55%] -translate-x-[45%] -z-[2] object-none overflow-visible hidden md:block"
-          style={{ display: is_mobile[3] ? "block" : "none" }}
-          quality={70}
-        />
-
-        <Image
-          src={treeTwelve}
-          alt={
-            language === "de"
-              ? "Zwölfter Baumstamm im Hintergrund"
-              : "Twelfth tree trunk in background"
-          }
-          height={650}
-          width={650}
-          className="absolute top-[5575px] left-[48%] -translate-x-[52%] -z-[1] object-none overflow-visible hidden md:block"
-          style={{ display: is_mobile[2] ? "block" : "none" }}
-          quality={70}
-        />
-
-        <Image
-          src={treeFour}
-          alt={
-            language === "de"
-              ? "Dreizehnter Baumstamm im Hintergrund"
-              : "Thirteenth tree trunk in background"
-          }
-          height={650}
-          width={650}
-          className="absolute top-[6225px] left-1/2 -translate-x-1/2 -z-[1] object-none overflow-visible hidden md:block"
-          style={{ display: is_mobile[1] ? "block" : "none" }}
-          quality={70}
-        />
-
-        <Image
-          src={treeTwo}
-          alt={
-            language === "de"
-              ? "Vierzehnter Baumstamm im Hintergrund"
-              : "Fourteenth tree trunk in background"
-          }
-          height={650}
-          width={650}
-          className="absolute top-[6675px] left-[55%] -translate-x-[45%] -z-[1] object-none overflow-visible hidden md:block"
-          style={{ display: is_mobile[0] ? "block" : "none" }}
           quality={70}
         />
 
@@ -291,7 +193,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={300}
           width={300}
-          className="absolute top-[350px] right-0 opacity-70 object-none overflow-visible"
+          className="absolute top-[350px] right-[1%] opacity-70 object-none overflow-visible"
           quality={50}
           priority
         />

@@ -174,7 +174,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         alt={language === "de" ? "Zwei Vögel" : "Two birds"}
         width={250}
         height={250}
-        className="absolute top-[35%] right-[5%] opacity-90 object-none overflow-visible"
+        className="absolute top-[45%] lg:top-[35%] right-[5%] opacity-90 object-none overflow-visible"
         ref={two_birds_ref}
         quality={30}
       />
