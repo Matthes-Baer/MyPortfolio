@@ -37,70 +37,67 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     const two_birds = two_birds_ref.current;
     const fantasy_merchant = fantasy_merchant_ref.current;
 
-    ScrollTrigger.matchMedia({
-      "(min-width: 768px)": (): void => {
-        gsap.to(fantasy_branch, {
-          yPercent: 55,
-          scrollTrigger: {
-            trigger: container,
-            start: "50",
-            end: "bottom",
-            scrub: true,
-          },
-        });
-
-        gsap.to(fantasy_tree_green, {
-          yPercent: -20,
-          scrollTrigger: {
-            trigger: container,
-            start: "50",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-
-        gsap.to(fantasy_tree_red, {
-          yPercent: -25,
-          scrollTrigger: {
-            trigger: container,
-            start: "50",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-
-        gsap.to(three_birds, {
-          xPercent: 25,
-          scrollTrigger: {
-            trigger: container,
-            start: "50",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-
-        gsap.to(two_birds, {
-          xPercent: -75,
-          scrollTrigger: {
-            trigger: container,
-            start: "50",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-
-        gsap.to(fantasy_merchant, {
-          xPercent: 50,
-          yPercent: -40,
-          scrollTrigger: {
-            trigger: container,
-            start: "50",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
+    gsap.to(fantasy_branch, {
+      yPercent: 55,
+      scrollTrigger: {
+        trigger: container,
+        start: "50",
+        end: "bottom",
+        scrub: true,
       },
     });
+
+    gsap.to(fantasy_tree_green, {
+      yPercent: -20,
+      scrollTrigger: {
+        trigger: container,
+        start: "50",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    gsap.to(fantasy_tree_red, {
+      yPercent: -25,
+      scrollTrigger: {
+        trigger: container,
+        start: "50",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    gsap.to(three_birds, {
+      xPercent: 25,
+      scrollTrigger: {
+        trigger: container,
+        start: "50",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    gsap.to(two_birds, {
+      xPercent: -75,
+      scrollTrigger: {
+        trigger: container,
+        start: "50",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    gsap.to(fantasy_merchant, {
+      xPercent: 50,
+      yPercent: -40,
+      scrollTrigger: {
+        trigger: container,
+        start: "50",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
     ScrollTrigger.refresh();
   }, []);
 
