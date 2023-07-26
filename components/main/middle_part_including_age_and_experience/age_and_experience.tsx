@@ -14,6 +14,7 @@ import { useParams } from "next/navigation";
 
 import cake_icon from "public/main_images/cake_icon.png";
 import computer_icon from "public/main_images/computer_icon.png";
+import AGE_AND_EXPERIENCE_BACKGROUND from "./age_and_experience_background";
 
 const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
   const age_slide_ref: MutableRefObject<null> = useRef<null>(null);
@@ -155,6 +156,8 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
       className="relative w-full bg-dark_gray_stone border-warm_terracotta"
       style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
     >
+      <AGE_AND_EXPERIENCE_BACKGROUND top={"50%"} left={"-70px"} />
+      <AGE_AND_EXPERIENCE_BACKGROUND top={"5%"} left={"94%"} />
       <div className="flex flex-col items-center sm:flex-row sm:justify-evenly pt-5">
         <div className="relative w-[10%] mb-5 sm:mb-0 min-w-[100px] min-h-[100px]">
           <button
