@@ -1,12 +1,6 @@
-const AGE_AND_EXPERIENCE_BACKGROUND: (props: {
-  top: string;
-  left: string;
-}) => JSX.Element = (props: { top: string; left: string }): JSX.Element => {
+const AGE_AND_EXPERIENCE_BACKGROUND: () => JSX.Element = (): JSX.Element => {
   return (
-    <div
-      className="absolute flex flex-col items-center overflow-hidden opacity-60"
-      style={{ top: props.top, left: props.left }}
-    >
+    <div className="flex flex-col items-center overflow-hidden opacity-60">
       {Array.from({ length: 8 }, (_, idx: number) => {
         return (
           <div

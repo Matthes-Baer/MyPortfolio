@@ -156,8 +156,13 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
       className="relative w-full bg-dark_gray_stone border-warm_terracotta"
       style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
     >
-      <AGE_AND_EXPERIENCE_BACKGROUND top={"50%"} left={"-70px"} />
-      <AGE_AND_EXPERIENCE_BACKGROUND top={"5%"} left={"94%"} />
+      <div className="absolute top-1/2 -left-[70px]">
+        <AGE_AND_EXPERIENCE_BACKGROUND />
+      </div>
+      <div className="hidden lg:block absolute top-1/6 -right-[70px]">
+        <AGE_AND_EXPERIENCE_BACKGROUND />
+      </div>
+
       <div className="flex flex-col items-center sm:flex-row sm:justify-evenly pt-5">
         <div className="relative w-[10%] mb-5 sm:mb-0 min-w-[100px] min-h-[100px]">
           <button
