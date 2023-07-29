@@ -115,7 +115,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
           }
           width={2500}
           height={2500}
-          className="z-[-1] w-full h-full min-h-[1250px] overflow-hidden object-none object-bottom transition-all"
+          className="z-[-1] w-full h-full min-h-[1250px] overflow-hidden object-none object-bottom"
           priority
           quality={65}
         />
