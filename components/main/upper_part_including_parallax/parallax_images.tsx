@@ -115,7 +115,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
           }
           width={2500}
           height={2500}
-          className="z-[-1] w-full h-full min-h-[1250px] overflow-hidden object-none object-bottom"
+          className="z-[-1] w-full h-full min-h-[1250px] overflow-hidden object-none object-bottom transition-all"
           priority
           quality={65}
         />
@@ -133,7 +133,6 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         quality={60}
         className="absolute top-[125px] -left-[50px] opacity-90 rotate-[135deg] object-none overflow-visible"
         ref={fantasy_branch_ref}
-        placeholder="blur"
       />
 
       <Image
@@ -144,7 +143,6 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         quality={40}
         className="absolute -bottom-[60%] -left-[510px] sm:-left-[650px] h-full opacity-90 z-10 rotate-[25deg] object-none overflow-visible"
         ref={fantasy_tree_green_ref}
-        placeholder="blur"
       />
 
       <Image
@@ -155,7 +153,6 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         quality={40}
         className="absolute -bottom-1/4 -right-[425px] opacity-90 z-10 rotate-[-55deg] object-none overflow-visible hidden lg:block"
         ref={fantasy_tree_red_ref}
-        placeholder="blur"
       />
 
       <Image
@@ -166,7 +163,6 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         quality={30}
         className="absolute top-[35%] md:top-[30%] left-0 md:left-[45%] -translate-x-1/2 -translate-y-1/2 opacity-90 object-none overflow-visible"
         ref={three_birds_ref}
-        placeholder="blur"
       />
 
       <Image
