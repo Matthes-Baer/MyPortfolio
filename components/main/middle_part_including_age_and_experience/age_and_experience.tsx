@@ -153,7 +153,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
 
   return (
     <section
-      className="relative w-full bg-dark_gray_stone border-warm_terracotta"
+      className="relative w-full bg-dark_gray_stone"
       style={{ boxShadow: "inset 0 0 40px rgba(0, 0, 0, 0.5)" }}
     >
       <div className="absolute top-1/2 -left-[70px]">
@@ -181,7 +181,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
               className=""
             />
             <div
-              className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[transparent] border-r-card_yellow bg-[transparent]"
+              className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-8 border-[transparent] border-r-card_yellow bg-[transparent]"
               ref={circle_from_age_ref}
             ></div>
           </button>
@@ -203,7 +203,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
               alt={language === "de" ? "Computer-Icon" : "Computer icon"}
             />
             <div
-              className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[transparent] border-l-card_yellow bg-[transparent]"
+              className="absolute w-[110%] h-[110%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-8 border-[transparent] border-l-card_yellow bg-[transparent]"
               ref={circle_from_experience_ref}
             ></div>
           </button>
