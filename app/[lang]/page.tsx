@@ -10,6 +10,8 @@ import github_icon from "public/main_images/github_icon.png";
 import codingame_icon from "public/main_images/timeline/codingame.png";
 import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
 import linkedin_icon from "public/main_images/linkedin_icon.png";
+import leetcode_icon from "public/main_images/leetcode_icon.png";
+import codewars_icon from "public/main_images/codewars_icon.png";
 import START_BACKGROUND from "@/components/start_background";
 
 const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
@@ -36,6 +38,16 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
       icon: entwicklerheld_icon,
       link: "https://platform.entwicklerheld.de/publicprofile/fcaa9abbe1f4908ccfa369e97df66992",
       alt: { en: "EntwicklerHeld icon", de: "EntwicklerHeld-Icon" },
+    },
+    {
+      icon: leetcode_icon,
+      link: "https://leetcode.com/DeerFutureMe/",
+      alt: { en: "LeetCode icon", de: "LeetCode-Icon" },
+    },
+    {
+      icon: codewars_icon,
+      link: "https://www.codewars.com/users/DeerFutureMe",
+      alt: { en: "CodeWars icon", de: "CodeWars-Icon" },
     },
   ];
 
@@ -70,10 +82,13 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
                       ele.alt.en
                     }
                     height={50}
-                    width={50}
+                    width={ele.alt.en === "LeetCode icon" ? 38 : 50}
                     style={{
                       borderRadius: ele.link.includes("linkedin") ? "0" : "50%",
-                      boxShadow: "1.5px 1.5px 3.5px 0px rgba(0,0,0,0.5)",
+                      boxShadow:
+                        ele.alt.en === "LeetCode icon"
+                          ? ""
+                          : "1.5px 1.5px 3.5px 0px rgba(0,0,0,0.5)",
                     }}
                     title={ele.alt.en.split(" ").at(0)}
                     quality={50}
