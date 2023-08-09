@@ -46,6 +46,8 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
   const front_card_image_ref: MutableRefObject<null> = useRef<null>(null);
   const moving_card_ref: MutableRefObject<null> = useRef<null>(null);
   const start_info_text_ref: MutableRefObject<null> = useRef<null>(null);
+
+  //* Adjust if skills get added
   const cards_amount = 27;
 
   useEffect((): (() => void) => {
@@ -97,7 +99,6 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
         ease: "easeInOut",
       });
 
-      // Add the opacity animation at 50% progress of the xPercent animation
       moving_card_timeline.to(
         moving_card,
         {

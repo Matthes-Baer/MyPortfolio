@@ -7,7 +7,6 @@ import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adap
 import { NextFont } from "next/dist/compiled/@next/font";
 
 import type { IRootLayoutProps } from "@/utils/interfaces";
-import ReduxProvider from "@/redux/redux_provider";
 
 const medievalSharp: NextFont = MedievalSharp({
   subsets: ["latin"],
@@ -61,7 +60,7 @@ const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
         className={`${medievalSharp.className} text-[white] bg-dark_gray_stone`}
         style={{ overflowX: "hidden" }}
       >
-        <ReduxProvider>{props.children}</ReduxProvider>
+        {props.children}
       </body>
     </html>
   );

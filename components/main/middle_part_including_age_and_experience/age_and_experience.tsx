@@ -159,7 +159,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
       <div className="absolute top-1/2 -left-[70px]">
         <AGE_AND_EXPERIENCE_BACKGROUND />
       </div>
-      <div className="hidden lg:block absolute top-1/6 -right-[70px]">
+      <div className="hidden lg:block absolute top-1/4 -right-[70px]">
         <AGE_AND_EXPERIENCE_BACKGROUND />
       </div>
 

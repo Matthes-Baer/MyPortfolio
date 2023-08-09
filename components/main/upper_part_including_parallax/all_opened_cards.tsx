@@ -5,6 +5,7 @@ import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
+  Suspense,
   useEffect,
   useRef,
   useState,
@@ -12,6 +13,7 @@ import {
 
 import { ICard } from "@/utils/interfaces";
 import SINGLE_OPENED_CARD_CONTENT from "./single_opened_card_content";
+import Loading from "@/app/[lang]/loading";
 
 const ALL_OPENED_CARDS: (props: {
   all_opened_cards: ICard[];
@@ -51,21 +53,23 @@ const ALL_OPENED_CARDS: (props: {
   }, []);
 
   return (
-    <section
-      className="absolute left-1/2 -bottom-[150px] sm:-bottom-1/4 -translate-x-1/2 max-w-full w-full sm:w-auto sm:max-w-9/12 flex flex-wrap rounded mx-auto justify-center p-5 bg-[rgba(25,25,25,0.4)]"
-      ref={container_ref}
-      style={{
-        bottom: is_mobile[0] ? "-230px" : is_mobile[1] ? "-200px" : "",
-      }}
-    >
-      {props.all_opened_cards.map((card: ICard) => (
-        <SINGLE_OPENED_CARD_CONTENT
-          card={card}
-          mobile={is_mobile[is_mobile.length - 1]}
-          key={card.card_index}
-        />
-      ))}
-    </section>
+    <Suspense fallback={<Loading />}>
+      <section
+        className="absolute left-1/2 -bottom-[150px] sm:-bottom-1/4 -translate-x-1/2 max-w-full w-full sm:w-auto sm:max-w-9/12 flex flex-wrap rounded mx-auto justify-center p-5 bg-[rgba(25,25,25,0.4)]"
+        ref={container_ref}
+        style={{
+          bottom: is_mobile[0] ? "-230px" : is_mobile[1] ? "-200px" : "",
+        }}
+      >
+        {props.all_opened_cards.map((card: ICard) => (
+          <SINGLE_OPENED_CARD_CONTENT
+            card={card}
+            mobile={is_mobile[is_mobile.length - 1]}
+            key={card.card_index}
+          />
+        ))}
+      </section>
+    </Suspense>
   );
 };
 

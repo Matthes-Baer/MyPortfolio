@@ -38,7 +38,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     const fantasy_merchant = fantasy_merchant_ref.current;
 
     gsap.to(fantasy_branch, {
-      yPercent: 55,
+      yPercent: 75,
       scrollTrigger: {
         trigger: container,
         start: "50",
@@ -48,7 +48,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     });
 
     gsap.to(fantasy_tree_green, {
-      yPercent: -20,
+      yPercent: -25,
       scrollTrigger: {
         trigger: container,
         start: "50",
@@ -58,7 +58,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     });
 
     gsap.to(fantasy_tree_red, {
-      yPercent: -25,
+      yPercent: -20,
       scrollTrigger: {
         trigger: container,
         start: "50",
@@ -78,7 +78,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     });
 
     gsap.to(two_birds, {
-      xPercent: -75,
+      xPercent: -60,
       scrollTrigger: {
         trigger: container,
         start: "50",
@@ -88,7 +88,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     });
 
     gsap.to(fantasy_merchant, {
-      xPercent: 50,
+      xPercent: 55,
       yPercent: -40,
       scrollTrigger: {
         trigger: container,
@@ -151,7 +151,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
         width={750}
         height={750}
         quality={40}
-        className="absolute -bottom-1/4 -right-[425px] opacity-90 z-10 rotate-[-55deg] object-none overflow-visible hidden lg:block"
+        className="absolute -bottom-1/4 -right-[500px] opacity-90 z-10 rotate-[-55deg] object-none overflow-visible hidden lg:block"
         ref={fantasy_tree_red_ref}
       />
 

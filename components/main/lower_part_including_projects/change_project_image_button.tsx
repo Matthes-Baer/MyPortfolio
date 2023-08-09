@@ -2,17 +2,7 @@ import { gsap } from "gsap";
 import { clearTimeout } from "timers";
 
 import { PROJECT_IMAGES } from "@/utils/import_images";
-import {
-  Dispatch,
-  MutableRefObject,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "@/redux/store";
-import { change_project_tile_state } from "@/redux/features/project_tile_slice";
+import { MutableRefObject, useRef } from "react";
 
 const CHANGE_PROJECT_IMAGE_BUTTON: (props: {
   style_direction: string;

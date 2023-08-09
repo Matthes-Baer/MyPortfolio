@@ -127,7 +127,7 @@ const PROJECT_TILE: (props: {
                     width={35}
                     height={35}
                     className="object-contain rounded-full bg-[white] shadow"
-                    quality={65}
+                    quality={80}
                   />
                 </Link>
               </div>

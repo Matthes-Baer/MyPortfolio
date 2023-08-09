@@ -30,8 +30,8 @@ const INFORMATION_PART: () => JSX.Element = (): JSX.Element => {
         <div className="flex flex-col items-center text-center">
           <div className="p-3">
             {language === "de"
-              ? "In dieser Zeitleiste werden einige meiner Meilensteine in der Softwareentwicklung hervorgehoben."
-              : "This timeline highlights some of my software development milestones."}
+              ? "In dieser Zeitleiste werden einige meiner Eckpunkte in der Softwareentwicklung hervorgehoben."
+              : "This timeline highlights some of my software development key points."}
           </div>
           <div className="p-3 pb-[35px]">
             {language === "de"
