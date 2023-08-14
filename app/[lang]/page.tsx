@@ -12,6 +12,7 @@ import entwicklerheld_icon from "public/main_images/entwicklerheld_icon.png";
 import linkedin_icon from "public/main_images/linkedin_icon.png";
 import leetcode_icon from "public/main_images/leetcode_icon.png";
 import codewars_icon from "public/main_images/codewars_icon.png";
+import freecodecamp_icon from "public/main_images/timeline/freecodecamp.png";
 import START_BACKGROUND from "@/components/start_background";
 
 const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
@@ -49,6 +50,11 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
       link: "https://www.codewars.com/users/DeerFutureMe",
       alt: { en: "CodeWars icon", de: "CodeWars-Icon" },
     },
+    {
+      icon: freecodecamp_icon,
+      link: "https://www.freecodecamp.org/news/author/matthes-bar/",
+      alt: { en: "freeCodeCamp icon", de: "freeCodeCamp-Icon" },
+    },
   ];
 
   return (
@@ -82,11 +88,18 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
                       ele.alt.en
                     }
                     height={50}
-                    width={ele.alt.en === "LeetCode icon" ? 38 : 50}
+                    width={
+                      ele.alt.en === "LeetCode icon"
+                        ? 38
+                        : ele.alt.en === "freeCodeCamp icon"
+                        ? "65"
+                        : 50
+                    }
                     style={{
                       borderRadius: ele.link.includes("linkedin") ? "0" : "50%",
                       boxShadow:
-                        ele.alt.en === "LeetCode icon"
+                        ele.alt.en === "LeetCode icon" ||
+                        ele.alt.en === "freeCodeCamp icon"
                           ? ""
                           : "1.5px 1.5px 3.5px 0px rgba(0,0,0,0.5)",
                     }}
