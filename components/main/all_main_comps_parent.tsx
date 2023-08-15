@@ -13,11 +13,9 @@ const ALL_MAIN_PARENTS_COMP: (props: {
 }): JSX.Element => {
   return (
     <main className="flex min-h-screen w-full flex-col absolute -top-[150px] ">
-      <PARALLAX_IMAGES />
       <Suspense fallback={<Loading />}>
+        <PARALLAX_IMAGES />
         <AGE_AND_EXPERIENCE />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
         <PROJECT_TILES_PARENT project_data={props.project_data} />
       </Suspense>
     </main>

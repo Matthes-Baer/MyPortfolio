@@ -34,7 +34,7 @@ const PROJECT_TILES_PARENT: (props: {
                 fontSize: "calc(14px + 0.35vw)",
               }}
             >
-              (exkl. der Portfolio-Wesbite)
+              (exkl. der Portfolio-Website)
             </span>
           </div>
         ) : (
