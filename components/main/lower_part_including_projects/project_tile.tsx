@@ -6,7 +6,6 @@ import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
-  Suspense,
   useEffect,
   useRef,
   useState,
@@ -19,7 +18,6 @@ import github_icon from "public/main_images/github_icon.png";
 import website_icon from "public/main_images/website_icon.png";
 import { IImage_Props, IProject } from "@/utils/interfaces";
 import { SupportedLanguages } from "@/utils/types";
-import Loading from "@/app/[lang]/loading";
 import CHANGE_PROJECT_IMAGE_BUTTON from "./change_project_image_button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import IMAGE_BACKGROUND_DOTS from "./image_background_dots";
@@ -114,7 +112,7 @@ const PROJECT_TILE: (props: {
         </div>
         <div className="flex items-center">
           {props.project.links.project && (
-            <div className="ml-5 hover:opacity-80 transition">
+            <div className="ml-5 hover:opacity-70 transition">
               <Link href={props.project.links.project} target="_blank">
                 <Image
                   src={website_icon}
@@ -131,7 +129,7 @@ const PROJECT_TILE: (props: {
             </div>
           )}
           {props.project.links.github && (
-            <div className="ml-5 hover:opacity-80 transition">
+            <div className="ml-5 hover:opacity-70 transition">
               <Link href={props.project.links.github} target="_blank">
                 <Image
                   src={github_icon}

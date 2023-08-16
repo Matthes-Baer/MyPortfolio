@@ -37,7 +37,7 @@ const MAIN_NAVBAR: (props: { language: string }) => JSX.Element = (props: {
       className="sticky top-0 flex flex-col sm:flex-row justify-between items-center p-2 text-xl z-[9000] bg-[rgba(25,25,25,0.80)] border-b-2 border-b-[rgba(238,168,66,0.50)] transition-all"
       style={{ height: `${navbarHeight}px` }}
     >
-      <div className="hover:opacity-80 transition">
+      <div className="hover:opacity-70 transition">
         <RESET_LANGUAGE_BUTTON />{" "}
       </div>
       <div>

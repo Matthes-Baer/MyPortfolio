@@ -12,7 +12,7 @@ const SEVENTH_PROJECTS: (props: { language: string }) => JSX.Element = (props: {
   const title: string = props.language === "de" ? "Projekte" : "Projects";
   const content: string =
     props.language === "de"
-      ? "Obwohl ich zuvor bereits kontinuierlich an praxisbezogenen Projekten gearbeitet habe, habe ich ab 2023 einen besonderen Fokus darauf gelegt, verschiedene Projekte abzuschließen, um ein aussagekräftiges Portfolio aufzubauen. Im Laufe des Jahres 2023 habe ich auch diese Portfolio-Website konzipiert, bearbeitet und abgeschlossen."
+      ? "Obwohl ich zuvor bereits kontinuierlich an praxisbezogenen Projekten gearbeitet hatte, legte ich ab 2023 einen besonderen Fokus darauf, verschiedene Projekte abzuschließen, um ein aussagekräftiges Portfolio aufzubauen. Im Laufe des Jahres 2023 habe ich auch diese Portfolio-Website konzipiert, bearbeitet und abgeschlossen."
       : "Although I have worked continuously on practice-based projects before, from 2023 onwards I have put a special focus on completing various projects in order to build a meaningful portfolio. During 2023, I also designed, edited and completed this portfolio website.";
   const date: string = props.language === "de" ? "Seit 2023" : "Since 2023";
 
@@ -30,7 +30,7 @@ const SEVENTH_PROJECTS: (props: { language: string }) => JSX.Element = (props: {
               }
               width={40}
               height={40}
-              className="rounded-[50%] shadow"
+              className="rounded-[50%] shadow hover:opacity-70 transition"
               title="GitHub"
               style={{ boxShadow: "1px 1px 2.5px 0px rgba(0,0,0,0.5)" }}
             />

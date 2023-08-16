@@ -170,7 +170,7 @@ const AGE_AND_EXPERIENCE: () => JSX.Element = (): JSX.Element => {
               slide_changer_handler("age")
             }
             disabled={is_age_button_disabled || current_slide === "age"}
-            className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90"
+            className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90 hover:opacity-70 transition"
             style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
           >
             <Image
@@ -193,7 +193,7 @@ const AGE_AND_EXPERIENCE: () => JSX.Element = (): JSX.Element => {
             disabled={
               is_experience_button_disabled || current_slide === "experience"
             }
-            className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90"
+            className="relative w-full p-2 bg-[white] z-20 rounded-[50%] opacity-90 hover:opacity-70 transition"
             style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
           >
             <Image
