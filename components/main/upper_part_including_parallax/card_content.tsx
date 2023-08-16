@@ -29,6 +29,7 @@ const CARD_CONTENT: (props: { opened_card: ICard }) => JSX.Element = (props: {
               }
               height={45}
               width={45}
+              placeholder="blur"
             />
           </div>
           <div className="flex items-end h-full w-8/12 flex-col">
