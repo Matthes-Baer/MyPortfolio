@@ -23,29 +23,19 @@ const SWITCH_ROUTE_LINK_COMP: (props: {
     <Suspense fallback={<Loading />}>
       <div
         style={{
-          marginRight: !props.slug ? "15px" : "0px",
-          // boxShadow:
-          //   segment === "timeline"
-          //     ? "none"
-          //     : "0px 3px 7.5px 0px rgba(0,0,0,0.25)",
+          // borderBottom: isActive ? "2px solid #eea842" : "none",
+          marginRight: props.slug === "" ? "15px" : "0px",
         }}
-        className="hover:text-card_yellow transition"
+        className={isActive ? "" : "hover:opacity-70 transition"}
       >
         <Link
           href={props.url}
           style={{
             fontWeight: isActive ? "bold" : "normal",
+            color: isActive ? "#eea842" : "white",
           }}
         >
-          <div
-            className="z-10 p-2 rounded shadow"
-            style={{
-              backgroundColor:
-                segment === "timeline" ? "transparent" : "rgba(25,25,25,0.85)",
-            }}
-          >
-            {props.children}
-          </div>
+          <div className="z-10">{props.children}</div>
         </Link>
       </div>
     </Suspense>

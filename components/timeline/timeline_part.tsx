@@ -54,7 +54,7 @@ const TIMELINE_PART: () => JSX.Element = (): JSX.Element => {
             duration: 1,
             scrollTrigger: {
               trigger: element,
-              start: "-=200px top",
+              start: "-=400px top",
               end: "top",
               scrub: true,
             },

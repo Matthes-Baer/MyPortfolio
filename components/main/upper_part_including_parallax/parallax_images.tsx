@@ -102,7 +102,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
   }, []);
 
   return (
-    <div ref={container_ref} className="relative w-full ">
+    <div ref={container_ref} className="relative w-full">
       <CARDS />
 
       <div className="w-full h-full overflow-hidden">

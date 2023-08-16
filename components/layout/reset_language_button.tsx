@@ -36,14 +36,15 @@ const RESET_LANGUAGE_BUTTON_COMP: () => JSX.Element = (): JSX.Element => {
           <Image
             src={FLAG_IMAGES.flag_english.src}
             alt={FLAG_IMAGES.flag_english.alt[language as SupportedLanguages]}
-            width={25}
-            height={25}
+            width={27}
+            height={27}
+            className="ml-2 mr-2"
           />
           <Image
             src={FLAG_IMAGES.flag_german.src}
             alt={FLAG_IMAGES.flag_german.alt[language as SupportedLanguages]}
-            width={25}
-            height={25}
+            width={27}
+            height={27}
           />
         </div>
       </Link>

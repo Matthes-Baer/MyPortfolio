@@ -1,13 +1,16 @@
-import { Suspense } from "react";
-
-import ALL_TIMELINE_PARENTS_COMP from "@/components/timeline/all_comps_parent";
 import { INormalPageProps } from "@/utils/interfaces";
-import Loading from "../../loading";
+import INFORMATION_PART from "@/components/timeline/information_part";
+import TIMELINE_PART from "@/components/timeline/timeline_part";
 
 const Timeline: (props: INormalPageProps) => JSX.Element = (
   props: INormalPageProps
 ): JSX.Element => {
-  return <ALL_TIMELINE_PARENTS_COMP />;
+  return (
+    <main>
+      <INFORMATION_PART />
+      <TIMELINE_PART />
+    </main>
+  );
 };
 
 export default Timeline;

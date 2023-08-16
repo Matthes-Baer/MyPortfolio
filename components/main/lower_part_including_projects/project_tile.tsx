@@ -114,7 +114,7 @@ const PROJECT_TILE: (props: {
         </div>
         <div className="flex items-center">
           {props.project.links.project && (
-            <div className="ml-0 sm:ml-2">
+            <div className="ml-5 hover:opacity-80 transition">
               <Link href={props.project.links.project} target="_blank">
                 <Image
                   src={website_icon}
@@ -123,16 +123,15 @@ const PROJECT_TILE: (props: {
                       ? `Website-Link für ${props.project.name.de}`
                       : `Website link for ${props.project.name.en}`
                   }
-                  width={35}
-                  height={35}
+                  width={45}
+                  height={45}
                   className="object-contain rounded-full bg-[white] shadow"
-                  quality={80}
                 />
               </Link>
             </div>
           )}
           {props.project.links.github && (
-            <div className="ml-2">
+            <div className="ml-5 hover:opacity-80 transition">
               <Link href={props.project.links.github} target="_blank">
                 <Image
                   src={github_icon}
@@ -141,10 +140,9 @@ const PROJECT_TILE: (props: {
                       ? `GitHub-Link für ${props.project.name.de}`
                       : `GitHub link for ${props.project.name.en}`
                   }
-                  width={35}
-                  height={35}
+                  width={45}
+                  height={45}
                   className="object-contain shadow"
-                  quality={65}
                 />
               </Link>
             </div>

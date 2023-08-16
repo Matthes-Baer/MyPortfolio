@@ -7,8 +7,9 @@ import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adap
 import { NextFont } from "next/dist/compiled/@next/font";
 
 import type { IRootLayoutProps } from "@/utils/interfaces";
+import MAIN_NAVBAR from "@/components/layout/main_navbar";
 
-const medievalSharp: NextFont = MedievalSharp({
+const quicksand: NextFont = Quicksand({
   subsets: ["latin"],
   weight: "400",
 });
@@ -57,7 +58,7 @@ const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
   return (
     <html lang={language_cookie || props.params.lang}>
       <body
-        className={`${medievalSharp.className} text-[white] bg-dark_gray_stone`}
+        className={`${quicksand.className} text-[white] bg-dark_gray_stone`}
         style={{ overflowX: "hidden" }}
       >
         {props.children}

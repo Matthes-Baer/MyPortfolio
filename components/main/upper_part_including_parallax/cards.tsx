@@ -57,7 +57,6 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
     };
 
     window.addEventListener("resize", handle_screen_resize);
-
     handle_screen_resize();
 
     return () => {
@@ -161,8 +160,8 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
             ref={start_info_text_ref}
           >
             {language === "de"
-              ? "Klicken Sie auf die linke Karte, um die Skill-Karten aufzudecken."
-              : "Click on the left card to reveal the skill cards."}
+              ? "Klicken Sie auf die linke Karte, um meine Skill-Karten aufzudecken."
+              : "Click on the left card to reveal my skill cards."}
           </div>
         )
       ) : (

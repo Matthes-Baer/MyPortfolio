@@ -12,15 +12,15 @@ export async function generateMetadata(
 
   if (language === "de") {
     return {
-      title: "Portfolio - Zeitleiste",
+      title: "Portfolio - Lernpfad",
       description:
-        "Dies ist eine Zeitleiste, die einen Überblick über einige meiner Stationen in der Softwareentwicklung auflistet.",
+        "Dies ist mein Lernpfad, der einen Überblick über einige meiner Eckpunkte in der Softwareentwicklung auflistet.",
     };
   } else {
     return {
-      title: "Portfolio - Timeline",
+      title: "Portfolio - Learning Journey",
       description:
-        "This is a timeline listing an overview of some of my stages in software development.",
+        "This is my learning journey listing an overview of some of my stages in software development.",
     };
   }
 }

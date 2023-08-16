@@ -16,7 +16,7 @@ import cake_icon from "public/main_images/cake_icon.png";
 import computer_icon from "public/main_images/computer_icon.png";
 import AGE_AND_EXPERIENCE_BACKGROUND from "./age_and_experience_background";
 
-const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
+const AGE_AND_EXPERIENCE: () => JSX.Element = (): JSX.Element => {
   const age_slide_ref: MutableRefObject<null> = useRef<null>(null);
   const experience_slide_ref: MutableRefObject<null> = useRef<null>(null);
   const circle_from_experience_ref: MutableRefObject<null> = useRef<null>(null);
@@ -50,7 +50,7 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
   const [current_slide, set_current_slide]: [
     string,
     Dispatch<SetStateAction<string>>
-  ] = useState<string>("age");
+  ] = useState<string>("experience");
 
   //! Adjust the timeout timing to GSAP animation's timing if GSAP animations are edited
   const slide_changer_handler: (slide: string) => (() => void) | undefined = (
@@ -239,4 +239,4 @@ const AGE_AND_EXPERIENCE_COMP: () => JSX.Element = (): JSX.Element => {
   );
 };
 
-export default AGE_AND_EXPERIENCE_COMP;
+export default AGE_AND_EXPERIENCE;
