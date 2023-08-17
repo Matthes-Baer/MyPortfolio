@@ -62,16 +62,25 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
       <START_BACKGROUND />
       <Suspense fallback={<Loading />}>
         <div className="flex flex-col items-center rounded-full">
-          <h1 className="text-[35px] sm:text-[50px] text-center">
+          <h1 className="text-[35px] sm:text-[50px] text-center border-b-2 border-b-card_yellow">
             Matthes Bär -{" "}
             {props.params.lang === "de" ? "Webentwickler" : "Web Developer"}
           </h1>
-          <h2 className="block md:hidden text-center p-2">
+          <p className="text-center p-2 text-2xl w-4/5 lg:w-1/2">
             {props.params.lang === "de"
-              ? "Es wird empfohlen, diese Website auf größeren Bildschirmen (Notebooks und größer) zu nutzen, um ein optimales Seherlebnis zu erhalten."
-              : "It is highly recommended to view this website on larger screens (notebooks and larger) for the optimal viewing experience."}
+              ? "Auf dieser Website erfahren Sie mehr über meine technischen Fähigkeiten, vergangenen Projekte und meinen Lernfortschritt im Bereich der Softwareentwicklung."
+              : "On this website you can learn more about my technical skills, past projects and my learning progress in the field of software development."}
+          </p>
+          <h2 className="block md:hidden text-center p-2 w-4/5">
+            {props.params.lang === "de"
+              ? "Es wird empfohlen, diese Website auf größeren Bildschirmen (Notebooks und größer) zu verwenden, um ein optimales Seherlebnis zu gewährleisten."
+              : "It is recommended to use this website on larger screens (notebooks and larger) to ensure an optimal viewing experience."}
           </h2>
-
+          <h2 className="text-center p-2 text-2xl mt-5 w-4/5">
+            {props.params.lang === "de"
+              ? "Sie können mich auch auf anderen Plattformen finden:"
+              : "You can also find me on other platforms:"}
+          </h2>
           <div className="flex flex-wrap items-center justify-center">
             {images.map((ele: IIcon) => {
               return (
@@ -114,7 +123,7 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
       </Suspense>
       <Suspense fallback={<Loading />}>
         <div className="mt-5">
-          <h1 className="text-[25px] sm:text-[40px] text-center">
+          <h1 className="text-[25px] sm:text-[40px] text-center border-b-2 border-b-card_yellow">
             {props.params.lang === "de"
               ? "Wählen Sie Ihre bevorzugte Sprache:"
               : "Select your preferred language:"}
