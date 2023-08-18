@@ -40,7 +40,7 @@ export async function middleware(request: NextRequest) {
 
   //* This basically just serves as a condition to execute the NextResponse.redirect() only once and not on every request
   const pathnameIsMissingLocale = supportedLocales.every(
-    (locale) => !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
   //* Redirecting
