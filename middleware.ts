@@ -3,7 +3,7 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 const supportedLocales: string[] = ["de", "en"];
-const defaultLocale: string = "de";
+const defaultLocale: string = "en";
 
 //* Check for language preference in browser settings
 function getLocale(acceptLanguageHeader: string | undefined) {
@@ -58,7 +58,7 @@ export async function middleware(request: NextRequest) {
     const oneYearInSeconds: number = 365 * 24 * 60 * 60;
     const expirationDate: Date = new Date(Date.now() + oneYearInSeconds * 1000);
 
-    response.cookies.set("language_cookie", current_language_path, {
+    response.cookies.set("language_cookie", locale, {
       expires: expirationDate,
     });
 
