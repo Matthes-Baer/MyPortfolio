@@ -3,7 +3,7 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 const supportedLocales: string[] = ["de", "en"];
-const defaultLocale: string = "en";
+const defaultLocale: string = "de";
 
 //* Check for language preference in browser settings
 function getLocale(acceptLanguageHeader: string | undefined) {
@@ -26,6 +26,8 @@ export async function middleware(request: NextRequest) {
 
   const current_language_path: string = pathname.substring(1, 3);
   const response: NextResponse<unknown> = NextResponse.next();
+
+  console.log(locale);
 
   //* Without this check it would automatically be redirected to "de/robots.txt", for example
   if (
