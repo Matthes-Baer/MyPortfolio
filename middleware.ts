@@ -27,8 +27,6 @@ export async function middleware(request: NextRequest) {
   const current_language_path: string = pathname.substring(1, 3);
   const response: NextResponse<unknown> = NextResponse.next();
 
-  console.log(locale);
-
   //* Without this check it would automatically be redirected to "de/robots.txt", for example
   if (
     pathname === "/robots.txt" ||
