@@ -46,7 +46,7 @@ export async function middleware(request: NextRequest) {
   //* Redirecting
   if (pathnameIsMissingLocale) {
     return NextResponse.redirect(
-      new URL(`/${language_cookie_value || locale}/${pathname}`, request.url)
+      new URL(`/${locale}/${pathname}`, request.url)
     );
   }
 
