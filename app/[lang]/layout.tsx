@@ -56,7 +56,7 @@ const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
     cookies_store.get("language_cookie")?.value;
 
   return (
-    <html lang={language_cookie || props.params.lang}>
+    <html lang={props.params.lang || language_cookie}>
       <body
         className={`${quicksand.className} text-[white] bg-dark_gray_stone`}
         style={{ overflowX: "hidden" }}

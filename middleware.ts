@@ -40,11 +40,11 @@ export async function middleware(request: NextRequest) {
 
   //* This basically just serves as a condition to execute the NextResponse.redirect() only once and not on every request
   const pathnameIsMissingLocale = supportedLocales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    (locale) => !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`
   );
 
   //* Redirecting
-  if (pathnameIsMissingLocale || current_language_path === "") {
+  if (pathnameIsMissingLocale) {
     return NextResponse.redirect(
       new URL(`/${language_cookie_value || locale}/${pathname}`, request.url)
     );
@@ -55,8 +55,8 @@ export async function middleware(request: NextRequest) {
     !language_cookie_bool ||
     (language_cookie_bool && language_cookie_value != current_language_path)
   ) {
-    const oneYearInSeconds: number = 365 * 24 * 60 * 60;
-    const expirationDate: Date = new Date(Date.now() + oneYearInSeconds * 1000);
+    const oneDayInSeconds: number = 24 * 60 * 60;
+    const expirationDate: Date = new Date(Date.now() + oneDayInSeconds);
 
     response.cookies.set("language_cookie", locale, {
       expires: expirationDate,
