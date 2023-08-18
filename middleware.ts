@@ -42,7 +42,7 @@ export async function middleware(request: NextRequest) {
   );
 
   //* Redirecting
-  if (pathnameIsMissingLocale) {
+  if (pathnameIsMissingLocale || current_language_path === "") {
     return NextResponse.redirect(
       new URL(`/${language_cookie_value || locale}/${pathname}`, request.url)
     );
