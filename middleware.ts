@@ -22,7 +22,7 @@ export async function middleware(request: NextRequest) {
   //* For revisiting (takes precedence over locale browser settings preference), and for html lang attribute in overall layout
   const language_cookie_bool: boolean = request.cookies.has("language_cookie");
   const language_cookie_value: string =
-    request.cookies.get("language_cookie")?.value || "";
+    request.cookies.get("language_cookie")?.value || locale;
 
   const current_language_path: string = pathname.substring(1, 3);
   const response: NextResponse<unknown> = NextResponse.next();
