@@ -98,7 +98,7 @@ const PROJECT_TILE: (props: {
 
   return (
     <div className="mb-5 mt-5 p-3" ref={container_ref}>
-      <div className="flex flex-col sm:flex-row items-center text-center">
+      <div className="flex flex-col 2xl:flex-row items-center text-center">
         <div
           className="p-1"
           style={{
@@ -149,7 +149,7 @@ const PROJECT_TILE: (props: {
       </div>
 
       <div className="flex flex-col mt-3 mb-3">
-        <div className="flex flex-wrap justify-center sm:justify-start">
+        <div className="flex flex-wrap justify-center 2xl:justify-start">
           {props.project.techstack.map(
             (techstack_item: string, idx: number) => (
               <Image
