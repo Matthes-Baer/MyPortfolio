@@ -1,6 +1,6 @@
 "use client";
 
-import { Dispatch, SetStateAction, Suspense, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, Suspense, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 
@@ -11,11 +11,6 @@ import treeFour from "public/main_images/timeline/treeFour.png";
 import treeFive from "public/main_images/timeline/treeFive.png";
 import treeSix from "public/main_images/timeline/treeSix.png";
 import treeSeven from "public/main_images/timeline/treeSeven.png";
-import treeEight from "public/main_images/timeline/treeEight.png";
-import treeNine from "public/main_images/timeline/treeNine.png";
-import treeTen from "public/main_images/timeline/treeTen.png";
-import treeEleven from "public/main_images/timeline/treeEleven.png";
-import treeTwelve from "public/main_images/timeline/treeNine.png";
 
 import cloudOne from "public/main_images/timeline/cloudOne.png";
 import cloudTwo from "public/main_images/timeline/cloudTwo.png";
@@ -179,7 +174,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={200}
           width={200}
-          className="absolute top-[110px] left-[27.5%] opacity-60 object-none overflow-visible"
+          className="absolute top-[110px] left-[27.5%] opacity-50 object-none overflow-visible"
           quality={50}
           priority
         />
@@ -193,7 +188,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={300}
           width={300}
-          className="absolute top-[350px] right-[1%] opacity-70 object-none overflow-visible"
+          className="absolute top-[350px] right-[1%] opacity-50 object-none overflow-visible"
           quality={50}
           priority
         />
@@ -207,7 +202,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={200}
           width={200}
-          className="absolute top-[700px] right-[15%] opacity-70 object-none overflow-visible"
+          className="absolute top-[700px] right-[15%] opacity-60 object-none overflow-visible"
           quality={50}
         />
 
@@ -220,7 +215,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={275}
           width={275}
-          className="absolute top-[1000px] left-[10%] opacity-70 -z-[8] object-none overflow-visible"
+          className="absolute top-[1000px] left-[10%] opacity-60 -z-[8] object-none overflow-visible"
           quality={50}
         />
 
@@ -233,7 +228,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={300}
           width={300}
-          className="absolute top-[1550px] left-[25%] opacity-70 -z-[7] object-none overflow-visible"
+          className="absolute top-[1550px] left-[25%] opacity-60 -z-[7] object-none overflow-visible"
           quality={50}
         />
 
@@ -246,7 +241,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={290}
           width={290}
-          className="absolute top-[1850px] right-[16%] opacity-70 -z-[9] object-none overflow-visible"
+          className="absolute top-[1850px] right-[16%] opacity-60 -z-[9] object-none overflow-visible"
           quality={50}
         />
 
@@ -259,7 +254,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={265}
           width={265}
-          className="absolute top-[2400px] right-[25%] opacity-70 -z-[3] object-none overflow-visible"
+          className="absolute top-[2400px] right-[25%] opacity-60 -z-[3] object-none overflow-visible"
           style={{ display: is_mobile[5] ? "block" : "none" }}
           quality={50}
         />
@@ -273,7 +268,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={295}
           width={295}
-          className="absolute top-[3000px] right-[15%] opacity-70 -z-[3] object-none overflow-visible"
+          className="absolute top-[3000px] right-[15%] opacity-60 -z-[3] object-none overflow-visible"
           style={{ display: is_mobile[4] ? "block" : "none" }}
           quality={50}
         />
@@ -287,7 +282,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={315}
           width={315}
-          className="absolute top-[3770px] left-[5%] opacity-70 -z-[3] object-none overflow-visible"
+          className="absolute top-[3770px] left-[5%] opacity-50 -z-[3] object-none overflow-visible"
           style={{ display: is_mobile[3] ? "block" : "none" }}
           quality={50}
         />
@@ -301,7 +296,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={300}
           width={300}
-          className="absolute top-[4500px] right-0 opacity-70 -z-[3] object-none overflow-visible"
+          className="absolute top-[4500px] right-0 opacity-50 -z-[3] object-none overflow-visible"
           style={{ display: is_mobile[2] ? "block" : "none" }}
           quality={50}
         />
@@ -315,7 +310,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={280}
           width={280}
-          className="absolute top-[5400px] left-[25%] opacity-70 -z-[3] object-none overflow-visible"
+          className="absolute top-[5400px] left-[25%] opacity-50 -z-[3] object-none overflow-visible"
           style={{ display: is_mobile[1] ? "block" : "none" }}
           quality={50}
         />
@@ -329,7 +324,7 @@ const TIMELINE_PART_BACKGROUND: () => JSX.Element = (): JSX.Element => {
           }
           height={290}
           width={290}
-          className="absolute top-[5900px] left-[10%] opacity-70 -z-[3] object-none overflow-visible"
+          className="absolute top-[5900px] left-[10%] opacity-60 -z-[3] object-none overflow-visible"
           style={{ display: is_mobile[0] ? "block" : "none" }}
           quality={50}
         />

@@ -1,13 +1,12 @@
 import "./globals.css";
 
-import { Quicksand, MedievalSharp, Cinzel } from "next/font/google";
+import { Quicksand, Cinzel } from "next/font/google";
 import { ResolvingMetadata, Metadata } from "next";
 import { cookies } from "next/headers";
 import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { NextFont } from "next/dist/compiled/@next/font";
 
 import type { IRootLayoutProps } from "@/utils/interfaces";
-import MAIN_NAVBAR from "@/components/layout/main_navbar";
 
 const quicksand: NextFont = Quicksand({
   subsets: ["latin"],

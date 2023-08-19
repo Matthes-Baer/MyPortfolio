@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
+import { get_expiration_date } from "./utils/util_functions";
 
 const supportedLocales: string[] = ["de", "en"];
 const defaultLocale: string = "en";
@@ -53,8 +54,7 @@ export async function middleware(request: NextRequest) {
     !language_cookie_bool ||
     (language_cookie_bool && language_cookie_value != current_language_path)
   ) {
-    const oneDayInSeconds: number = 24 * 60 * 60;
-    const expirationDate: Date = new Date(Date.now() + oneDayInSeconds);
+    const expirationDate: Date = get_expiration_date();
 
     response.cookies.set("language_cookie", locale, {
       expires: expirationDate,
