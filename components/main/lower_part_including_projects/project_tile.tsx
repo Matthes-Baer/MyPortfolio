@@ -98,7 +98,7 @@ const PROJECT_TILE: (props: {
 
   return (
     <div className="mb-5 mt-5 p-3" ref={container_ref}>
-      <div className="flex flex-col 2xl:flex-row items-center text-center">
+      <div className="flex flex-col items-center text-center">
         <div
           className="p-1"
           style={{
@@ -110,38 +110,40 @@ const PROJECT_TILE: (props: {
             {props.project.name[language as "en" | "de"]}
           </span>
         </div>
-        <div className="flex items-center">
+
+        <div className="flex text-2xl items-center justify-center w-full">
           {props.project.links.project && (
-            <div className="ml-5 hover:opacity-70 transition">
-              <Link href={props.project.links.project} target="_blank">
-                <Image
-                  src={website_icon}
-                  alt={
-                    language === "de"
-                      ? `Website-Link für ${props.project.name.de}`
-                      : `Website link for ${props.project.name.en}`
-                  }
-                  width={45}
-                  height={45}
-                  className="object-contain rounded-full bg-[white] shadow"
-                />
+            <div
+              style={{
+                fontSize: "calc(16px + 0.5vw)",
+              }}
+            >
+              <Link
+                href={props.project.links.project}
+                target="_blank"
+                className="hover:text-card_yellow transition-all"
+              >
+                {language === "de" ? "Website aufrufen" : "Visit the website"}
               </Link>
             </div>
           )}
+          {props.project.links.project && (
+            <div className="w-4 h-4 ml-5 mr-5 bg-card_yellow rounded-full shadow"></div>
+          )}
           {props.project.links.github && (
-            <div className="ml-5 hover:opacity-70 transition">
-              <Link href={props.project.links.github} target="_blank">
-                <Image
-                  src={github_icon}
-                  alt={
-                    language === "de"
-                      ? `GitHub-Link für ${props.project.name.de}`
-                      : `GitHub link for ${props.project.name.en}`
-                  }
-                  width={45}
-                  height={45}
-                  className="object-contain shadow"
-                />
+            <div
+              style={{
+                fontSize: "calc(16px + 0.5vw)",
+              }}
+            >
+              <Link
+                href={props.project.links.github}
+                target="_blank"
+                className="hover:text-card_yellow transition-all"
+              >
+                {language === "de"
+                  ? "Code auf GitHub anschauen"
+                  : "View on GitHub"}
               </Link>
             </div>
           )}
