@@ -8,6 +8,7 @@ import PROJECT_TILES_BACKGROUND_IMAGES from "./project_tiles_background_images";
 import Loading from "@/app/[lang]/loading";
 import { PROJECT_IMAGES } from "@/utils/import_images";
 import { Suspense } from "react";
+import NEXTPAGE_INFORMATION from "./nextpage_information";
 
 const PROJECT_TILES_PARENT: (props: {
   project_data: IProject[] | undefined;
@@ -58,7 +59,7 @@ const PROJECT_TILES_PARENT: (props: {
             </div>
           )}
         </div>
-        <div className="flex flex-col mb-[50px]">
+        <div className="flex flex-col mb-[75px]">
           {props.project_data ? (
             props.project_data.map((project: IProject, idx: number) => (
               <div key={project.project_key} className="relative mb-10">
@@ -89,6 +90,7 @@ const PROJECT_TILES_PARENT: (props: {
             <Loading />
           )}
         </div>
+        <NEXTPAGE_INFORMATION />
       </section>
     </Suspense>
   );

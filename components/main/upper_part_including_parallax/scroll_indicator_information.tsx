@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-const SCROLL_INDICATOR_INFORMATION = () => {
+const SCROLL_INDICATOR_INFORMATION: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
 
   const information: string =

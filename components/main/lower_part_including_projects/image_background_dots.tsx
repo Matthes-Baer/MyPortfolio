@@ -1,10 +1,10 @@
 import { gsap } from "gsap";
 import { MutableRefObject, useEffect, useRef } from "react";
 
-const IMAGE_BACKGROUND_DOTS = () => {
+const IMAGE_BACKGROUND_DOTS: () => JSX.Element = (): JSX.Element => {
   const container_ref: MutableRefObject<null> = useRef(null);
 
-  useEffect(() => {
+  useEffect((): void => {
     const timeline = gsap.timeline({ repeat: -1 });
     timeline.add(
       gsap.to(container_ref.current, {
