@@ -43,6 +43,7 @@ const PROJECT_TILE: (props: {
 
   const container_ref: MutableRefObject<any> = useRef();
   const slider_ref: MutableRefObject<any> = useRef();
+
   const language: string = useParams().lang;
 
   const image_slide_click_function = (): void => {
@@ -109,47 +110,41 @@ const PROJECT_TILE: (props: {
           </span>
         </div>
 
-        <div className="flex text-2xl items-center justify-center w-full">
+        <div className="flex flex-col md:flex-row text-2xl items-center justify-center w-full mt-4 mb-4">
           {props.project.links.project && (
-            <div
+            <Link
+              href={props.project.links.project}
+              target="_blank"
+              className="transition-all p-2 border-b border-card_yellow hover:text-card_yellow hover:border-b-[white] shadow"
               style={{
                 fontSize: "calc(16px + 0.5vw)",
               }}
             >
-              <Link
-                href={props.project.links.project}
-                target="_blank"
-                className="hover:text-card_yellow transition-all"
-              >
-                {language === "de" ? "Website aufrufen" : "Visit the website"}
-              </Link>
-            </div>
+              {language === "de" ? "Website aufrufen" : "Visit the website"}
+            </Link>
           )}
           {props.project.links.project && (
-            <div className="w-4 h-4 ml-5 mr-5 bg-card_yellow rounded-full shadow"></div>
+            <div className="w-4 h-4 ml-5 mr-5 mt-1 bg-card_yellow rounded-full shadow hidden md:block"></div>
           )}
           {props.project.links.github && (
-            <div
+            <Link
+              href={props.project.links.github}
+              target="_blank"
+              className="transition-all p-2 border-b border-card_yellow hover:text-card_yellow hover:border-b-[white] shadow"
               style={{
                 fontSize: "calc(16px + 0.5vw)",
               }}
             >
-              <Link
-                href={props.project.links.github}
-                target="_blank"
-                className="hover:text-card_yellow transition-all"
-              >
-                {language === "de"
-                  ? "Code auf GitHub anschauen"
-                  : "View on GitHub"}
-              </Link>
-            </div>
+              {language === "de"
+                ? "Code auf GitHub anschauen"
+                : "View on GitHub"}
+            </Link>
           )}
         </div>
       </div>
 
       <div className="flex flex-col mt-3 mb-3">
-        <div className="flex flex-wrap justify-center 2xl:justify-start">
+        <div className="flex flex-wrap justify-center">
           {props.project.techstack.map(
             (techstack_item: string, idx: number) => (
               <Image
@@ -160,8 +155,8 @@ const PROJECT_TILE: (props: {
                     language as SupportedLanguages
                   ]
                 }
-                height={35}
-                width={35}
+                height={50}
+                width={50}
                 className="m-1"
                 title={techstack_item}
               />

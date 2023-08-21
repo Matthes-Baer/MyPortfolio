@@ -21,9 +21,9 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
   //* Data for icons in the upper half of the page
   const images: IIcon[] = [
     {
-      icon: linkedin_icon,
-      link: "https://linkedin.com/in/matthes-bär-68199a256",
-      alt: { en: "LinkedIn icon", de: "LinkedIn-Icon" },
+      icon: freecodecamp_icon,
+      link: "https://www.freecodecamp.org/news/author/matthes-bar/",
+      alt: { en: "freeCodeCamp icon", de: "freeCodeCamp-Icon" },
     },
     {
       icon: github_icon,
@@ -51,9 +51,9 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
       alt: { en: "CodeWars icon", de: "CodeWars-Icon" },
     },
     {
-      icon: freecodecamp_icon,
-      link: "https://www.freecodecamp.org/news/author/matthes-bar/",
-      alt: { en: "freeCodeCamp icon", de: "freeCodeCamp-Icon" },
+      icon: linkedin_icon,
+      link: "https://linkedin.com/in/matthes-bär-68199a256",
+      alt: { en: "LinkedIn icon", de: "LinkedIn-Icon" },
     },
   ];
 
@@ -68,8 +68,8 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
           </h1>
           <p className="text-center p-2 text-2xl w-4/5 lg:w-1/2">
             {props.params.lang === "de"
-              ? "Auf dieser Website erfahren Sie mehr über meine technischen Fähigkeiten, vergangenen Projekte und meinen Lernfortschritt im Bereich der Softwareentwicklung."
-              : "On this website you can learn more about my technical skills, past projects and my learning progress in the field of software development."}
+              ? "Auf dieser Website erfahren Sie mehr über meine technischen Fähigkeiten, abgeschlossenen Projekte und meinen Lernfortschritt im Bereich der Softwareentwicklung."
+              : "On this website you can learn more about my technical skills, finished projects and my learning progress in the field of software development."}
           </p>
           <h2 className="block md:hidden text-center p-2 w-4/5">
             {props.params.lang === "de"

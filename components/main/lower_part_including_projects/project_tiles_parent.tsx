@@ -29,7 +29,7 @@ const PROJECT_TILES_PARENT: (props: {
                   fontSize: "calc(26px + 1.75vw)",
                 }}
               >
-                Projekte
+                Meine Projekte
               </h1>
               <span
                 style={{
@@ -43,10 +43,10 @@ const PROJECT_TILES_PARENT: (props: {
             <div className="flex flex-col items-center text-[white] ">
               <h1
                 style={{
-                  fontSize: "calc(18px + 1.75vw)",
+                  fontSize: "calc(26px + 1.75vw)",
                 }}
               >
-                Projects
+                My Projects
               </h1>
               <span
                 style={{

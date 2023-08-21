@@ -33,7 +33,10 @@ const SCROLL_INDICATOR_INFORMATION = () => {
   return (
     <div
       className="absolute top-[7.5%] lg:top-auto lg:bottom-[1%] left-1/2 -translate-x-1/2 w-full w-full sm:w-2/3 lg:w-1/3 bg-dark_gray_stone rounded text-center p-3 text-sm sm:text-xl transition"
-      style={{ opacity: scroll_down_indicator ? 1 : 0 }}
+      style={{
+        opacity: scroll_down_indicator ? 1 : 0,
+        boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)",
+      }}
     >
       {information}
     </div>
