@@ -2,17 +2,34 @@
 
 import Image from "next/image";
 import { Suspense } from "react";
-import { SupportedLanguages } from "@/utils/types";
+import { useParams } from "next/navigation";
 
+import { SupportedLanguages } from "@/utils/types";
 import Loading from "@/app/[lang]/loading";
 import { FLAG_IMAGES } from "@/utils/import_images";
 import { IImage_Props } from "@/utils/interfaces";
 
 const SWITCH_LANGUAGE_LINK_COMP: (props: {
-  language: string;
-}) => JSX.Element = (props: { language: string }): JSX.Element => {
+  flag_language: string;
+}) => JSX.Element = (props: { flag_language: string }): JSX.Element => {
+  const current_content_language: string = useParams().lang;
+  const flag_text = () => {
+    if (props.flag_language === "de") {
+      if (current_content_language === "de") {
+        return "Deutsch";
+      } else {
+        return "German";
+      }
+    } else {
+      if (current_content_language === "de") {
+        return "Englisch";
+      } else {
+        return "English";
+      }
+    }
+  };
   const image_props: IImage_Props =
-    props.language === "de"
+    props.flag_language === "de"
       ? FLAG_IMAGES.flag_german
       : FLAG_IMAGES.flag_english;
 
@@ -46,7 +63,7 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
     <Suspense fallback={<Loading />}>
       <div
         onClick={() =>
-          change_language_cookie("language_cookie", props.language)
+          change_language_cookie("language_cookie", props.flag_language)
         }
         className="w-full h-full"
       >
@@ -54,12 +71,12 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
           src={image_props.src}
           width={250}
           height={250}
-          alt={image_props.alt[props.language as SupportedLanguages]}
+          alt={image_props.alt[props.flag_language as SupportedLanguages]}
           quality={60}
           priority
         />{" "}
         <div className="text-[25px] sm:text-[40px] p-5 text-center">
-          {props.language === "de" ? "Deutsch" : "English"}
+          {flag_text()}
         </div>
       </div>
     </Suspense>

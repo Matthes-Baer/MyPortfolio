@@ -134,14 +134,14 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
             href={"/en/main"}
             className="flex flex-col items-center p-5 rounded-lg hover:bg-dark_gray_tile transition"
           >
-            <SWITCH_LANGUAGE_LINK language="en" />
+            <SWITCH_LANGUAGE_LINK flag_language="en" />
           </Link>
 
           <Link
             href={"/de/main"}
             className="flex flex-col items-center p-5 rounded-lg hover:bg-dark_gray_tile transition"
           >
-            <SWITCH_LANGUAGE_LINK language="de" />
+            <SWITCH_LANGUAGE_LINK flag_language="de" />
           </Link>
         </div>
       </Suspense>
