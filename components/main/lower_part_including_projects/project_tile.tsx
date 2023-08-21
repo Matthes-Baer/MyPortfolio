@@ -14,8 +14,6 @@ import { useParams } from "next/navigation";
 import { gsap } from "gsap";
 
 import { TECHSTACK_IMAGES } from "@/utils/import_images";
-import github_icon from "public/main_images/github_icon.png";
-import website_icon from "public/main_images/website_icon.png";
 import { IImage_Props, IProject } from "@/utils/interfaces";
 import { SupportedLanguages } from "@/utils/types";
 import CHANGE_PROJECT_IMAGE_BUTTON from "./change_project_image_button";
