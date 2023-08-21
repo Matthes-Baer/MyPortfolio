@@ -16,7 +16,7 @@ const MAIN_NAVBAR: (props: { language: string }) => JSX.Element = (props: {
   const scrollThreshold = 639;
 
   const handleScroll = () => {
-    if (window.scrollY > 50 && window.innerWidth > scrollThreshold) {
+    if (window.scrollY > 150 && window.innerWidth > scrollThreshold) {
       setNavbarHeight(targetNavbarHeight);
     } else {
       setNavbarHeight(65);

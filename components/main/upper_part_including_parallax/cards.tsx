@@ -53,7 +53,7 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
   useEffect((): (() => void) => {
     //* This is used for responsive adjustment based on a specific screen size
     const handle_screen_resize = () => {
-      set_is_mobile(window.innerWidth <= 1000);
+      set_is_mobile(window.innerWidth < 1024);
     };
 
     window.addEventListener("resize", handle_screen_resize);
@@ -155,8 +155,10 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
       {!is_mobile ? (
         !first_fetch && (
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9000] bg-dark_gray_stone p-5 rounded text-sm text-center"
-            style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
+            className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-3/4 z-[9000] bg-dark_gray_stone p-5 rounded text-xl text-center w-1/4"
+            style={{
+              boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)",
+            }}
             ref={start_info_text_ref}
           >
             {language === "de"
@@ -171,18 +173,18 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
             (current_card_idx_count > cards_amount ? true : false) ||
             fetch_button_disabled
           }
-          className="absolute top-[15%] left-1/2 -translate-x-1/2 bg-dark_gray_stone p-5 rounded text-sm"
+          className="absolute bottom-0 bg-dark_gray_stone p-5 rounded text-md sm:text-xl w-full"
           style={{ boxShadow: "0px 3px 7.5px 0px rgba(0,0,0,0.5)" }}
         >
           <div className="whitespace-pre-wrap">
             {language === "de"
-              ? "Klicken Sie, um eine Fähigkeit aufzudecken. Es ist zu empfehlen, diese Website auf einem Gerät mit größerem Bildschirm zu nutzen."
-              : "Click to reveal a skill. \nIt is recommended to use this website on a device with a larger screen."}
+              ? "Klicken Sie, um eine Fähigkeit aufzudecken.\nEs ist zu empfehlen, diese Website auf einem Gerät mit größerem Bildschirm zu nutzen."
+              : "Click to reveal a skill.\nIt is recommended to use this website on a device with a larger screen."}
           </div>
-          <div className="mt-2">
+          <div className="mt-5">
             {language === "de"
               ? "Noch verdeckte Fähigkeiten: "
-              : "Skills still hidden: "}{" "}
+              : "Skills still covered: "}{" "}
             {cards_amount - current_card_idx_count + 1}
           </div>
         </button>
@@ -192,7 +194,7 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
         {!is_mobile ? (
           <div className="relative flex items-center">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 text-dark_gray_stone text-2xl font-semibold">
-              {language === "de" ? "Verdeckte Karten: " : "Hidden cards: "}{" "}
+              {language === "de" ? "Verdeckte Karten: " : "Covered cards: "}{" "}
               {cards_amount - current_card_idx_count + 1}
             </div>
             <button
@@ -254,9 +256,11 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
         </div>
       </div>
 
-      {opened_cards.length > 0 ? (
-        <ALL_OPENED_CARDS all_opened_cards={opened_cards} />
-      ) : null}
+      <div className="absolute -top-1/3 left-1/2 -translate-x-1/2 w-full sm:w-auto sm:max-w-9/12">
+        {opened_cards.length > 0 ? (
+          <ALL_OPENED_CARDS all_opened_cards={opened_cards} />
+        ) : null}
+      </div>
     </div>
   );
 };

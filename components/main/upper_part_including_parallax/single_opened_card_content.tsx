@@ -11,8 +11,7 @@ import { ICard } from "@/utils/interfaces";
 
 const SINGLE_OPENED_CARD_CONTENT: (props: {
   card: ICard;
-  mobile: boolean;
-}) => JSX.Element = (props: { card: ICard; mobile: boolean }): JSX.Element => {
+}) => JSX.Element = (props: { card: ICard }): JSX.Element => {
   const image_ref: MutableRefObject<null> = useRef<null>(null);
   const language: string = useParams().lang;
 
@@ -32,10 +31,10 @@ const SINGLE_OPENED_CARD_CONTENT: (props: {
       alt={
         TECHSTACK_IMAGES[props.card.name].alt[language as SupportedLanguages]
       }
-      height={props.mobile ? 30 : 35}
-      width={props.mobile ? 30 : 35}
+      height={35}
+      width={35}
       ref={image_ref}
-      className="m-1 rounded"
+      className="m-1 rounded w-[25px] sm:w-[35px] h-[25px] sm:h-[35px]"
       title={props.card.name}
     />
   );
