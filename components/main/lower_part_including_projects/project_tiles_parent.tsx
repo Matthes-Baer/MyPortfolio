@@ -1,13 +1,14 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import Link from "next/link";
+import { Suspense } from "react";
 
 import { IProject, IProjects } from "@/utils/interfaces";
 import PROJECT_TILE from "./project_tile";
 import PROJECT_TILES_BACKGROUND_IMAGES from "./project_tiles_background_images";
 import Loading from "@/app/[lang]/loading";
 import { PROJECT_IMAGES } from "@/utils/import_images";
-import { Suspense } from "react";
 import NEXTPAGE_INFORMATION from "./nextpage_information";
 
 const PROJECT_TILES_PARENT: (props: {
@@ -23,41 +24,39 @@ const PROJECT_TILES_PARENT: (props: {
       <section className="relative bg-dark_gray_stone w-full min-h-screen z-20 border-t-2 border-card_yellow">
         <PROJECT_TILES_BACKGROUND_IMAGES />
         <div className="mx-auto mt-5 mb-5">
-          {language === "de" ? (
-            <div className="flex flex-col items-center text-[white]">
-              <h1
-                style={{
-                  fontSize: "calc(26px + 1.75vw)",
-                }}
-              >
-                Meine Projekte
-              </h1>
-              <span
-                style={{
-                  fontSize: "calc(14px + 0.35vw)",
-                }}
-              >
-                (exkl. der Portfolio-Website)
-              </span>
-            </div>
-          ) : (
-            <div className="flex flex-col items-center text-[white] ">
-              <h1
-                style={{
-                  fontSize: "calc(26px + 1.75vw)",
-                }}
-              >
-                My Projects
-              </h1>
-              <span
-                style={{
-                  fontSize: "calc(14px + 0.35vw)",
-                }}
-              >
-                (excl. the portfolio website)
-              </span>
-            </div>
-          )}
+          <div className="flex flex-col items-center text-[white] text-center">
+            <h1
+              style={{
+                fontSize: "calc(26px + 1.75vw)",
+              }}
+            >
+              {language === "de" ? "Meine Projekte" : "My Projects"}
+            </h1>
+            <span
+              style={{
+                fontSize: "calc(14px + 0.35vw)",
+              }}
+            >
+              {language === "de"
+                ? "exkl. der Portfolio-Website"
+                : "excl. the portfolio website"}
+            </span>
+
+            <Link
+              href="https://github.com/Matthes-Baer/Portfolio"
+              target="_blanket"
+              className="transition-all border-b border-card_yellow hover:text-card_yellow hover:border-b-[white]"
+              style={{
+                fontSize: "calc(12px + 0.35vw)",
+              }}
+            >
+              (
+              {language === "de"
+                ? "Code auf GitHub anschauen"
+                : "View on GitHub"}
+              )
+            </Link>
+          </div>
         </div>
         <div className="flex flex-col mb-[75px]">
           {props.project_data ? (

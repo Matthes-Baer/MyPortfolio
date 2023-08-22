@@ -115,7 +115,7 @@ const PROJECT_TILE: (props: {
             <Link
               href={props.project.links.project}
               target="_blank"
-              className="transition-all p-2 border-b border-card_yellow hover:text-card_yellow hover:border-b-[white] shadow"
+              className="transition-all p-2 border-b border-card_yellow hover:text-card_yellow hover:border-b-[white]"
               style={{
                 fontSize: "calc(16px + 0.5vw)",
               }}
@@ -130,7 +130,7 @@ const PROJECT_TILE: (props: {
             <Link
               href={props.project.links.github}
               target="_blank"
-              className="transition-all p-2 border-b border-card_yellow hover:text-card_yellow hover:border-b-[white] shadow"
+              className="transition-all p-2 border-b border-card_yellow hover:text-card_yellow hover:border-b-[white]"
               style={{
                 fontSize: "calc(16px + 0.5vw)",
               }}
