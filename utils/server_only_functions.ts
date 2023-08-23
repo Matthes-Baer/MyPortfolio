@@ -17,7 +17,7 @@ export async function get_projects(): Promise<IProject[] | undefined> {
   try {
     client = await connect_to_database();
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return;
   }
 
@@ -35,7 +35,7 @@ export async function get_projects(): Promise<IProject[] | undefined> {
     return res_array;
   } catch (error) {
     client.close();
-    console.log(error);
+    // console.log(error);
     return;
   }
 }
