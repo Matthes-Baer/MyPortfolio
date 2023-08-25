@@ -51,7 +51,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     const fantasy_merchant = fantasy_merchant_ref.current;
 
     gsap.to(fantasy_branch, {
-      yPercent: 75,
+      yPercent: 100,
       scrollTrigger: {
         trigger: container,
         start: "50",
@@ -71,7 +71,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     });
 
     gsap.to(fantasy_tree_red, {
-      yPercent: -20,
+      yPercent: -27.5,
       scrollTrigger: {
         trigger: container,
         start: "50",
@@ -81,7 +81,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     });
 
     gsap.to(three_birds, {
-      xPercent: 25,
+      xPercent: 30,
       scrollTrigger: {
         trigger: container,
         start: "50",
@@ -91,7 +91,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     });
 
     gsap.to(two_birds, {
-      xPercent: -60,
+      xPercent: -65,
       scrollTrigger: {
         trigger: container,
         start: "50",
@@ -101,7 +101,7 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     });
 
     gsap.to(fantasy_merchant, {
-      xPercent: 55,
+      xPercent: 60,
       yPercent: -40,
       scrollTrigger: {
         trigger: container,
