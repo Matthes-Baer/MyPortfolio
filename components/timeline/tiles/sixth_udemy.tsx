@@ -7,7 +7,7 @@ const SIXTH_UDEMY: (props: { language: string }) => JSX.Element = (props: {
   language: string;
 }): JSX.Element => {
   const title: string =
-    props.language === "de" ? "Udemy-Kurse" : "Udemy courses";
+    props.language === "de" ? "Udemy-Kurse" : "Udemy Courses";
   const content: string =
     props.language === "de"
       ? "Insbesondere ab Juli 2022 habe ich intensiv verschiedene Udemy-Kurse genutzt, um mich in spezifische Bereiche einzuarbeiten. Ich habe Udemy-Kurse zu Themen wie Vue.js, Svelte, Jest, Next.js, Node.js mit Express.js, MongoDB und anderen Technologien belegt, um meine Kenntnisse zu vertiefen. \n\nIm Laufe der Zeit habe ich regelmäßig von solchen Kursangeboten Gebrauch gemacht, um mich strukturiert in bestimmten Fachgebieten weiterzubilden."
@@ -16,11 +16,9 @@ const SIXTH_UDEMY: (props: { language: string }) => JSX.Element = (props: {
     props.language === "de" ? "Seit Juli 2022" : "Since July 2022";
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div>
-        <TEMPLATE_INNER_PART title={title} content={content} date={date} />
-      </div>
-    </Suspense>
+    <div>
+      <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+    </div>
   );
 };
 

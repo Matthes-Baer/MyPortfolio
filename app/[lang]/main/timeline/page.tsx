@@ -6,7 +6,7 @@ const Timeline: (props: INormalPageProps) => JSX.Element = (
   props: INormalPageProps
 ): JSX.Element => {
   return (
-    <main>
+    <main className="overflow-hidden">
       <INFORMATION_PART />
       <TIMELINE_PART />
     </main>

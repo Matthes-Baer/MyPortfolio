@@ -17,28 +17,26 @@ const SEVENTH_PROJECTS: (props: { language: string }) => JSX.Element = (props: {
   const date: string = props.language === "de" ? "Seit 2023" : "Since 2023";
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div className="relative pb-[35px]">
-        <div className="absolute right-0 bottom-0">
-          <Link href={"https://github.com/Matthes-Baer"} target="_blank">
-            <Image
-              src={github_icon}
-              alt={
-                props.language === "de"
-                  ? `GitHub-Link für mein Profil`
-                  : `GitHub link for my profile`
-              }
-              width={40}
-              height={40}
-              className="rounded-[50%] shadow hover:opacity-70 transition"
-              title="GitHub"
-              style={{ boxShadow: "1px 1px 2.5px 0px rgba(0,0,0,0.5)" }}
-            />
-          </Link>
-        </div>
-        <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+    <div className="relative pb-[35px]">
+      <div className="absolute right-0 bottom-0">
+        <Link href={"https://github.com/Matthes-Baer"} target="_blank">
+          <Image
+            src={github_icon}
+            alt={
+              props.language === "de"
+                ? `GitHub-Link für mein Profil`
+                : `GitHub link for my profile`
+            }
+            width={40}
+            height={40}
+            className="rounded-[50%] shadow hover:opacity-70 transition"
+            title="GitHub"
+            style={{ boxShadow: "1px 1px 2.5px 0px rgba(0,0,0,0.5)" }}
+          />
+        </Link>
       </div>
-    </Suspense>
+      <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+    </div>
   );
 };
 

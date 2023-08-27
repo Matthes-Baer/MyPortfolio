@@ -18,18 +18,16 @@ const FIRST_LEARNINGSTART: (props: {
     props.language === "de" ? "Ein Vogel im Flug" : "A bird flying";
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div className="relative">
-        <Image
-          src={bird}
-          alt={image_alt}
-          height={250}
-          width={250}
-          className="absolute -bottom-[75px] -right-[175px] opacity-90 hidden lg:block"
-        />
-        <TEMPLATE_INNER_PART title={title} content={content} date={date} />
-      </div>
-    </Suspense>
+    <div className="relative">
+      <Image
+        src={bird}
+        alt={image_alt}
+        height={250}
+        width={250}
+        className="absolute -bottom-[75px] -right-[175px] opacity-90 hidden lg:block"
+      />
+      <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+    </div>
   );
 };
 

@@ -21,41 +21,39 @@ const FOURTH_CODINGAME: (props: { language: string }) => JSX.Element = (props: {
     props.language === "de" ? "Ein Vogel im Flug" : "A bird flying";
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div className="relative pb-[35px]">
-        <Image
-          src={bird}
-          alt={image_alt}
-          height={175}
-          width={175}
-          className="absolute -top-[50px] -left-[140px] hidden lg:block opacity-90"
-          style={{ transform: "rotateY(180deg)" }}
-        />
-        <div className="absolute right-0 bottom-0">
-          <Link
-            href={
-              "https://www.codingame.com/profile/a3dbd9f4eb4cd67d9377ec73dd9363e76178174"
+    <div className="relative pb-[35px]">
+      <Image
+        src={bird}
+        alt={image_alt}
+        height={175}
+        width={175}
+        className="absolute -top-[50px] -left-[140px] hidden lg:block opacity-90"
+        style={{ transform: "rotateY(180deg)" }}
+      />
+      <div className="absolute right-0 bottom-0">
+        <Link
+          href={
+            "https://www.codingame.com/profile/a3dbd9f4eb4cd67d9377ec73dd9363e76178174"
+          }
+          target="_blank"
+        >
+          <Image
+            src={codingame}
+            alt={
+              props.language === "de"
+                ? `CodinGame-Link für mein Profil`
+                : `CodinGame link for my profile`
             }
-            target="_blank"
-          >
-            <Image
-              src={codingame}
-              alt={
-                props.language === "de"
-                  ? `CodinGame-Link für mein Profil`
-                  : `CodinGame link for my profile`
-              }
-              height={40}
-              width={40}
-              className="rounded-[50%] hover:opacity-70 transition"
-              title="CodinGame"
-              style={{ boxShadow: "1px 1px 2.5px 0px rgba(0,0,0,0.5)" }}
-            />
-          </Link>
-        </div>
-        <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+            height={40}
+            width={40}
+            className="rounded-[50%] hover:opacity-70 transition"
+            title="CodinGame"
+            style={{ boxShadow: "1px 1px 2.5px 0px rgba(0,0,0,0.5)" }}
+          />
+        </Link>
       </div>
-    </Suspense>
+      <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+    </div>
   );
 };
 

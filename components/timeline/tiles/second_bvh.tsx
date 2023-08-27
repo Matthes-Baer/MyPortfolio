@@ -21,19 +21,17 @@ const SECOND_BVH: (props: { language: string }) => JSX.Element = (props: {
       : "A group of learning students";
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div>
-        <Image
-          src={group_project}
-          alt={image_alt}
-          height={150}
-          width={150}
-          className="absolute -bottom-[125px] -right-[50px] hidden lg:block rounded-[50%] shadow"
-          style={{ boxShadow: "-2px 2px 5px 0px black" }}
-        />
-        <TEMPLATE_INNER_PART title={title} content={content} date={date} />
-      </div>
-    </Suspense>
+    <div>
+      <Image
+        src={group_project}
+        alt={image_alt}
+        height={150}
+        width={150}
+        className="absolute -bottom-[125px] -right-[50px] hidden lg:block rounded-[50%] shadow"
+        style={{ boxShadow: "-2px 2px 5px 0px black" }}
+      />
+      <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+    </div>
   );
 };
 

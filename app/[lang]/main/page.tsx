@@ -12,7 +12,7 @@ const Main: (props: INormalPageProps) => Promise<JSX.Element> = async (
   const project_data: IProject[] | undefined = await get_projects();
 
   return (
-    <main className="-mt-[150px]">
+    <main className="-mt-[150px] overflow-hidden">
       <PARALLAX_IMAGES />
       <AGE_AND_EXPERIENCE />
       <PROJECT_TILES_PARENT project_data={project_data} />

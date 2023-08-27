@@ -7,7 +7,7 @@ const THIRD_FREECODECAMP: (props: {
   language: string;
 }) => JSX.Element = (props: { language: string }): JSX.Element => {
   const title: string =
-    props.language === "de" ? "freeCodeCamp-Kurse" : "freeCodeCamp courses";
+    props.language === "de" ? "freeCodeCamp-Kurse" : "freeCodeCamp Courses";
   const content: string =
     props.language === "de"
       ? "Um meine Fähigkeiten in der Web-Entwicklung gezielt auszubauen, habe ich die Lernressourcen von freeCodeCamp genutzt. \n\nDurch den Kurs „Responsive Web Design“ konnte ich meine CSS-Fähigkeiten entwickeln. Der Kurs „JavaScript Algorithms and Data Structures“ ermöglichte es mir, mein JavaScript-Wissen zu vertiefen. Anschließend habe ich mit dem Kurs „Front End Development Libraries“ gezielt meine Fähigkeiten für die Web-Entwicklung erweitert. \n\nInsgesamt hat freeCodeCamp mir die Möglichkeit geboten, eine solide Grundlage zu schaffen, auf der ich mich daraufhin weiterentwickeln konnte."
@@ -16,11 +16,9 @@ const THIRD_FREECODECAMP: (props: {
     props.language === "de" ? "Feb. 2022 - Mai 2022" : "Feb. 2022 - May 2022";
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div>
-        <TEMPLATE_INNER_PART title={title} content={content} date={date} />
-      </div>
-    </Suspense>
+    <div>
+      <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+    </div>
   );
 };
 

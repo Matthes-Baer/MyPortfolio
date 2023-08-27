@@ -13,7 +13,7 @@ const FIFTH_TECHNICALWRITER: (props: {
   const title: string =
     props.language === "de"
       ? "freeCodeCamp-Engagement"
-      : "freeCodeCamp commitment";
+      : "freeCodeCamp Commitment";
   const content: string =
     props.language === "de"
       ? "Im Juli 2022 habe ich die Möglichkeit ergriffen, mich als freiwilliger technischer Autor bei freeCodeCamp zu bewerben - und wurde ausgewählt. \n\nIm Rahmen dieser Zusammenarbeit widme ich einen Teil meiner Freizeit dem Planen, Konzipieren und Verfassen von technischen Artikeln zu Themen, die meiner Meinung nach mehr Aufmerksamkeit verdienen. Mein Schwerpunkt liegt dabei besonders auf ausführlichen Artikeln, die einen erklärenden und anleitenden Charakter aufweisen, um bestimmte Konzepte näher zu erläutern. \n\nZusätzlich arbeite ich als Übersetzer und Korrekturleser für den deutschen freeCodeCamp-Bereich. Hierbei bin ich neben anderen Übersetzern dafür zuständig, die umfangreichen Kursinhalte vom Englischen ins Deutsche zu übersetzen und Korrektur zu lesen."
@@ -24,38 +24,36 @@ const FIFTH_TECHNICALWRITER: (props: {
     props.language === "de" ? "Stift mit Paper" : "Pen and paper";
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div className="relative pb-[35px]">
-        <Image
-          src={pen_and_paper}
-          alt={image_alt}
-          height={150}
-          width={150}
-          className="absolute -bottom-[125px] -left-[50px] hidden lg:block rounded-[50%]"
-          style={{ boxShadow: "2px 2px 5px 0px black" }}
-        />
-        <div className="absolute right-0 bottom-0">
-          <Link
-            href={"https://www.freecodecamp.org/news/author/matthes-bar/"}
-            target="_blank"
-          >
-            <Image
-              src={freecodecamp}
-              alt={
-                props.language === "de"
-                  ? `CodinGame-Link für mein freeCodeCamp-Autoren-Profil`
-                  : `CodinGame link for my freeCodeCamp author profile`
-              }
-              height={60}
-              width={60}
-              className="rounded-[50%] hover:opacity-70 transition"
-              title="freeCodeCamp"
-            />
-          </Link>
-        </div>
-        <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+    <div className="relative pb-[35px]">
+      <Image
+        src={pen_and_paper}
+        alt={image_alt}
+        height={150}
+        width={150}
+        className="absolute -bottom-[125px] -left-[50px] hidden lg:block rounded-[50%]"
+        style={{ boxShadow: "2px 2px 5px 0px black" }}
+      />
+      <div className="absolute right-0 bottom-0">
+        <Link
+          href={"https://www.freecodecamp.org/news/author/matthes-bar/"}
+          target="_blank"
+        >
+          <Image
+            src={freecodecamp}
+            alt={
+              props.language === "de"
+                ? `CodinGame-Link für mein freeCodeCamp-Autoren-Profil`
+                : `CodinGame link for my freeCodeCamp author profile`
+            }
+            height={60}
+            width={60}
+            className="rounded-[50%] hover:opacity-70 transition"
+            title="freeCodeCamp"
+          />
+        </Link>
       </div>
-    </Suspense>
+      <TEMPLATE_INNER_PART title={title} content={content} date={date} />
+    </div>
   );
 };
 
