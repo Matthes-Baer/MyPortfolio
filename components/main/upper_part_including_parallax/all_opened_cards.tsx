@@ -1,19 +1,10 @@
 "use client";
 
 import { gsap } from "gsap";
-import {
-  Dispatch,
-  MutableRefObject,
-  SetStateAction,
-  Suspense,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 
 import { ICard } from "@/utils/interfaces";
 import SINGLE_OPENED_CARD_CONTENT from "./single_opened_card_content";
-import Loading from "@/app/[lang]/loading";
 
 const ALL_OPENED_CARDS: (props: {
   all_opened_cards: ICard[];
@@ -32,16 +23,14 @@ const ALL_OPENED_CARDS: (props: {
   }, []);
 
   return (
-    <Suspense fallback={<Loading />}>
-      <section
-        className="flex flex-wrap rounded mx-auto justify-center p-5 bg-[rgba(25,25,25,0.4)]"
-        ref={container_ref}
-      >
-        {props.all_opened_cards.map((card: ICard) => (
-          <SINGLE_OPENED_CARD_CONTENT card={card} key={card.card_index} />
-        ))}
-      </section>
-    </Suspense>
+    <section
+      className="flex flex-wrap rounded mx-auto justify-center p-5 bg-[rgba(25,25,25,0.4)]"
+      ref={container_ref}
+    >
+      {props.all_opened_cards.map((card: ICard) => (
+        <SINGLE_OPENED_CARD_CONTENT card={card} key={card.card_index} />
+      ))}
+    </section>
   );
 };
 

@@ -1,11 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Suspense } from "react";
 
 import TEMPLATE_INNER_PART from "./template_inner_part";
 import freecodecamp from "public/main_images/timeline/freecodecamp.png";
 import pen_and_paper from "public/main_images/timeline/pen_and_paper.jpg";
-import Loading from "@/app/[lang]/loading";
 
 const FIFTH_TECHNICALWRITER: (props: {
   language: string;

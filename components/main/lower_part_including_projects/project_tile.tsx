@@ -6,7 +6,6 @@ import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
-  Suspense,
   useEffect,
   useRef,
   useState,
@@ -20,7 +19,6 @@ import { SupportedLanguages } from "@/utils/types";
 import CHANGE_PROJECT_IMAGE_BUTTON from "./change_project_image_button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import IMAGE_BACKGROUND_DOTS from "./image_background_dots";
-import Loading from "@/app/[lang]/loading";
 
 const PROJECT_TILE: (props: {
   project: IProject;

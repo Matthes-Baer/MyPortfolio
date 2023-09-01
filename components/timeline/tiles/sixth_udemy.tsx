@@ -1,7 +1,4 @@
-import { Suspense } from "react";
-
 import TEMPLATE_INNER_PART from "./template_inner_part";
-import Loading from "@/app/[lang]/loading";
 
 const SIXTH_UDEMY: (props: { language: string }) => JSX.Element = (props: {
   language: string;

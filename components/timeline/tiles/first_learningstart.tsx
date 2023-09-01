@@ -1,9 +1,7 @@
 import Image from "next/image";
-import { Suspense } from "react";
 
 import bird from "public/main_images/timeline/birdsFour.png";
 import TEMPLATE_INNER_PART from "./template_inner_part";
-import Loading from "@/app/[lang]/loading";
 
 const FIRST_LEARNINGSTART: (props: {
   language: string;

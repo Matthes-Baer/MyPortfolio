@@ -1,22 +1,25 @@
 "use client";
 
-import Image from "next/image";
-import card_front from "public/main_images/card_front.png";
-import card_back from "public/main_images/card_back.png";
 import {
   Dispatch,
   MutableRefObject,
   SetStateAction,
+  Suspense,
   useCallback,
   useEffect,
   useRef,
   useState,
 } from "react";
+import { gsap } from "gsap";
+import { useParams } from "next/navigation";
+import Image from "next/image";
+
+import card_front from "public/main_images/card_front.png";
+import card_back from "public/main_images/card_back.png";
 import type { ICard } from "@/utils/interfaces";
 import ALL_OPENED_CARDS from "./all_opened_cards";
-import { gsap } from "gsap";
+import Loading from "@/app/[lang]/loading";
 import CARD_CONTENT from "./card_content";
-import { useParams } from "next/navigation";
 
 const CARDS: () => JSX.Element = (): JSX.Element => {
   const language: string = useParams().lang;
@@ -178,8 +181,8 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
         >
           <div className="whitespace-pre-wrap">
             {language === "de"
-              ? "Klicken Sie, um eine Fähigkeit aufzudecken.\nEs ist zu empfehlen, diese Website auf einem Gerät mit größerem Bildschirm zu nutzen."
-              : "Click to reveal a skill.\nIt is recommended to use this website on a device with a larger screen."}
+              ? "Klicken Sie, um oben eine Fähigkeit aufzudecken.\nEs ist zu empfehlen, diese Website auf einem Gerät mit größerem Bildschirm zu nutzen."
+              : "Click to reveal a skill above.\nIt is recommended to use this website on a device with a larger screen."}
           </div>
           <div className="mt-5">
             {language === "de"
@@ -236,9 +239,11 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
           style={{ visibility: is_mobile ? "hidden" : "visible" }}
         >
           <div ref={front_card_text_ref}>
-            {opened_cards.length > 0 ? (
-              <CARD_CONTENT opened_card={opened_cards.at(-1)!} />
-            ) : null}
+            <Suspense fallback={<Loading />}>
+              {opened_cards.length > 0 ? (
+                <CARD_CONTENT opened_card={opened_cards.at(-1)!} />
+              ) : null}
+            </Suspense>
           </div>
 
           <Image
@@ -257,9 +262,11 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
       </div>
 
       <div className="absolute -top-1/3 left-1/2 -translate-x-1/2 w-full sm:w-auto sm:max-w-9/12">
-        {opened_cards.length > 0 ? (
-          <ALL_OPENED_CARDS all_opened_cards={opened_cards} />
-        ) : null}
+        <Suspense fallback={<Loading />}>
+          {opened_cards.length > 0 ? (
+            <ALL_OPENED_CARDS all_opened_cards={opened_cards} />
+          ) : null}
+        </Suspense>
       </div>
     </div>
   );

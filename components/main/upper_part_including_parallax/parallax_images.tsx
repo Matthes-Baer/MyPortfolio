@@ -2,14 +2,7 @@
 
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import {
-  Dispatch,
-  MutableRefObject,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -35,11 +28,6 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
   const three_birds_ref: MutableRefObject<null> = useRef<null>(null);
   const two_birds_ref: MutableRefObject<null> = useRef<null>(null);
   const fantasy_merchant_ref: MutableRefObject<null> = useRef<null>(null);
-
-  //! For scroll down indicator; currently deactivated
-  // const first_arrow_indicator_ref: MutableRefObject<null> = useRef<null>(null);
-  // const second_arrow_indicator_ref: MutableRefObject<null> = useRef<null>(null);
-  // const third_arrow_indicator_ref: MutableRefObject<null> = useRef<null>(null);
 
   useEffect((): void => {
     const container = container_ref.current;
@@ -114,41 +102,6 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
     ScrollTrigger.refresh();
   }, []);
 
-  //! For scroll down indicator; currently deactivated
-  // useEffect((): void => {
-  //   const first_arrow_indicator = first_arrow_indicator_ref.current;
-  //   const second_arrow_indicator = second_arrow_indicator_ref.current;
-  //   const third_arrow_indicator = third_arrow_indicator_ref.current;
-
-  //   const arrow_indicator_timeline = gsap.timeline({ repeat: -1, yoyo: true });
-
-  //   arrow_indicator_timeline
-  //     .to(first_arrow_indicator, 0.75, {
-  //       y: "+=25",
-  //       ease: "easeInOut",
-  //     })
-  //     .to(second_arrow_indicator, 0.75, {
-  //       y: "+=25",
-  //       ease: "easeInOut",
-  //     })
-  //     .to(third_arrow_indicator, 0.75, {
-  //       y: "+=25",
-  //       ease: "easeInOut",
-  //     })
-  //     .to(first_arrow_indicator, 0.75, {
-  //       y: "-=25",
-  //       ease: "easeInOut",
-  //     })
-  //     .to(second_arrow_indicator, 0.75, {
-  //       y: "-=25",
-  //       ease: "easeInOut",
-  //     })
-  //     .to(third_arrow_indicator, 0.75, {
-  //       y: "-=25",
-  //       ease: "easeInOut",
-  //     });
-  // }, []);
-
   return (
     <div ref={container_ref} className="relative w-full">
       <CARDS />
@@ -167,61 +120,6 @@ const PARALLAX_IMAGES: () => JSX.Element = (): JSX.Element => {
           priority
           quality={65}
         />
-
-        {/* scroll down indicator; currently deactivated */
-        /* <div
-          className="absolute right-0 bottom-[28%] transition hidden lg:block"
-          style={{ opacity: scroll_down_indicator ? "1" : "0" }}
-        >
-          <div ref={first_arrow_indicator_ref}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="#252525"
-              className="w-20 h-20"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </div>
-          <div ref={second_arrow_indicator_ref}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="#252525"
-              className="w-20 h-20"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </div>
-          <div ref={third_arrow_indicator_ref}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="#252525"
-              className="w-20 h-20"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </div>
-        </div> */}
       </div>
 
       <Image

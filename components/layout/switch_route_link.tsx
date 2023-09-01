@@ -2,9 +2,6 @@
 
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
-import { Suspense } from "react";
-
-import Loading from "@/app/[lang]/loading";
 
 const SWITCH_ROUTE_LINK_COMP: (props: {
   children: React.ReactNode;
@@ -20,25 +17,23 @@ const SWITCH_ROUTE_LINK_COMP: (props: {
   const isActive: boolean = props.slug === segment;
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div
+    <div
+      style={{
+        // borderBottom: isActive ? "2px solid #eea842" : "none",
+        marginRight: props.slug === "" ? "15px" : "0px",
+      }}
+      className={isActive ? "" : "hover:opacity-70 transition"}
+    >
+      <Link
+        href={props.url}
         style={{
-          // borderBottom: isActive ? "2px solid #eea842" : "none",
-          marginRight: props.slug === "" ? "15px" : "0px",
+          fontWeight: isActive ? "bold" : "normal",
+          color: isActive ? "#eea842" : "white",
         }}
-        className={isActive ? "" : "hover:opacity-70 transition"}
       >
-        <Link
-          href={props.url}
-          style={{
-            fontWeight: isActive ? "bold" : "normal",
-            color: isActive ? "#eea842" : "white",
-          }}
-        >
-          <div className="z-10">{props.children}</div>
-        </Link>
-      </div>
-    </Suspense>
+        <div className="z-10">{props.children}</div>
+      </Link>
+    </div>
   );
 };
 

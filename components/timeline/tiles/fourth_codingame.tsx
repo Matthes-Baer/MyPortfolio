@@ -1,11 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Suspense } from "react";
 
 import TEMPLATE_INNER_PART from "./template_inner_part";
 import codingame from "public/main_images/timeline/codingame.png";
 import bird from "public/main_images/timeline/birdsThree.png";
-import Loading from "@/app/[lang]/loading";
 
 const FOURTH_CODINGAME: (props: { language: string }) => JSX.Element = (props: {
   language: string;

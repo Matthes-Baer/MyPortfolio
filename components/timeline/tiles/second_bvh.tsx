@@ -1,9 +1,7 @@
 import Image from "next/image";
-import { Suspense } from "react";
 
 import group_project from "public/main_images/timeline/group_project.jpg";
 import TEMPLATE_INNER_PART from "./template_inner_part";
-import Loading from "@/app/[lang]/loading";
 
 const SECOND_BVH: (props: { language: string }) => JSX.Element = (props: {
   language: string;

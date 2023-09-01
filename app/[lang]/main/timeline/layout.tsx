@@ -1,8 +1,5 @@
 import { Metadata, ResolvingMetadata } from "next";
-import { Suspense } from "react";
-
 import { IRootLayoutProps } from "@/utils/interfaces";
-import Loading from "../../loading";
 
 export async function generateMetadata(
   props: IRootLayoutProps,
@@ -28,11 +25,7 @@ export async function generateMetadata(
 const ROOT_LAYOUT: (props: IRootLayoutProps) => JSX.Element = (
   props: IRootLayoutProps
 ): JSX.Element => {
-  return (
-    <Suspense fallback={<Loading />}>
-      <div>{props.children}</div>
-    </Suspense>
-  );
+  return <div>{props.children}</div>;
 };
 
 export default ROOT_LAYOUT;

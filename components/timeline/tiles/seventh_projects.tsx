@@ -1,10 +1,8 @@
 import Link from "next/link";
 import TEMPLATE_INNER_PART from "./template_inner_part";
 import Image from "next/image";
-import { Suspense } from "react";
 
 import github_icon from "public/main_images/github_icon.png";
-import Loading from "@/app/[lang]/loading";
 
 const SEVENTH_PROJECTS: (props: { language: string }) => JSX.Element = (props: {
   language: string;

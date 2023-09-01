@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { Suspense } from "react";
 import { useParams } from "next/navigation";
 
 import { SupportedLanguages } from "@/utils/types";
-import Loading from "@/app/[lang]/loading";
 import { FLAG_IMAGES } from "@/utils/import_images";
 import { IImage_Props } from "@/utils/interfaces";
 
@@ -60,26 +58,24 @@ const SWITCH_LANGUAGE_LINK_COMP: (props: {
   };
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div
-        onClick={() =>
-          change_language_cookie("language_cookie", props.flag_language)
-        }
-        className="w-full h-full"
-      >
-        <Image
-          src={image_props.src}
-          width={250}
-          height={250}
-          alt={image_props.alt[props.flag_language as SupportedLanguages]}
-          quality={60}
-          priority
-        />{" "}
-        <div className="text-[25px] sm:text-[40px] p-5 text-center">
-          {flag_text()}
-        </div>
+    <div
+      onClick={() =>
+        change_language_cookie("language_cookie", props.flag_language)
+      }
+      className="w-full h-full"
+    >
+      <Image
+        src={image_props.src}
+        width={250}
+        height={250}
+        alt={image_props.alt[props.flag_language as SupportedLanguages]}
+        quality={60}
+        priority
+      />{" "}
+      <div className="text-[25px] sm:text-[40px] p-5 text-center">
+        {flag_text()}
       </div>
-    </Suspense>
+    </div>
   );
 };
 

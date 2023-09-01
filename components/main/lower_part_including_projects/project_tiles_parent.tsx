@@ -2,7 +2,6 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { Suspense } from "react";
 
 import { IProject, IProjects } from "@/utils/interfaces";
 import PROJECT_TILE from "./project_tile";
