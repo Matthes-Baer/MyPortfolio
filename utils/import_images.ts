@@ -207,9 +207,39 @@ export const TECHSTACK_IMAGES: IImages = {
       de: "Ein Symbol, das Blender repräsentiert",
     },
   },
+  Angular: {
+    src: require("public/main_images/card_icons/icon_angular.png"),
+    alt: {
+      en: "An icon representing Angular",
+      de: "Ein Symbol, das Angular repräsentiert",
+    },
+  },
 };
 
 export const PROJECT_IMAGES: IProjects = {
+  baer_blog: [
+    {
+      src: require("public/main_images/project_images/baer_blog/posts.jpg"),
+      alt: {
+        en: "Image representing the posts page",
+        de: "Bild, das die Posts-Seite darstellt",
+      },
+    },
+    {
+      src: require("public/main_images/project_images/baer_blog/post.jpg"),
+      alt: {
+        en: "Image representing one post page",
+        de: "Bild, das eine Post-Seite darstellt",
+      },
+    },
+    {
+      src: require("public/main_images/project_images/baer_blog/about.jpg"),
+      alt: {
+        en: "Image representing the about page",
+        de: "Bild, das die About-Seite darstellt",
+      },
+    },
+  ],
   blenumentation: [
     {
       src: require("public/main_images/project_images/blenumentation/home_firstpic.jpg"),
