@@ -51,7 +51,7 @@ const CARDS: () => JSX.Element = (): JSX.Element => {
   const start_info_text_ref: MutableRefObject<null> = useRef<null>(null);
 
   //* Adjust if skills get added
-  const cards_amount = 27;
+  const cards_amount = 26;
 
   useEffect((): (() => void) => {
     //* This is used for responsive adjustment based on a specific screen size

@@ -214,6 +214,13 @@ export const TECHSTACK_IMAGES: IImages = {
       de: "Ein Symbol, das Angular repräsentiert",
     },
   },
+  PostgreSQL: {
+    src: require("public/main_images/card_icons/icon_postgresql.png"),
+    alt: {
+      en: "An icon representing PostgreSQL",
+      de: "Ein Symbol, das PostgreSQL repräsentiert",
+    },
+  },
 };
 
 export const PROJECT_IMAGES: IProjects = {
