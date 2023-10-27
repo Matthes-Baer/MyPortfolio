@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import SWITCH_LANGUAGE_LINK from "@/components/switch_language_link";
-import Loading from "./loading";
+import Loading from "./main/loading";
 import { SupportedLanguages } from "@/utils/types";
 import type { IIcon, INormalPageProps } from "@/utils/interfaces";
 import github_icon from "public/main_images/github_icon.png";

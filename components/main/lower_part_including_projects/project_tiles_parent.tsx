@@ -6,7 +6,7 @@ import Link from "next/link";
 import { IProject, IProjects } from "@/utils/interfaces";
 import PROJECT_TILE from "./project_tile";
 import PROJECT_TILES_BACKGROUND_IMAGES from "./project_tiles_background_images";
-import Loading from "@/app/[lang]/loading";
+import Loading from "@/app/[lang]/main/loading";
 import { PROJECT_IMAGES } from "@/utils/import_images";
 import NEXTPAGE_INFORMATION from "./nextpage_information";
 
