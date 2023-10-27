@@ -18,7 +18,7 @@ import card_front from "public/main_images/card_front.png";
 import card_back from "public/main_images/card_back.png";
 import type { ICard } from "@/utils/interfaces";
 import ALL_OPENED_CARDS from "./all_opened_cards";
-import Loading from "@/app/[lang]/loading";
+import Loading from "@/components/loading";
 import CARD_CONTENT from "./card_content";
 
 const CARDS: () => JSX.Element = (): JSX.Element => {

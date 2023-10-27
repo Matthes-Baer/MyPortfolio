@@ -29,13 +29,13 @@ export async function middleware(request: NextRequest) {
   const response: NextResponse<unknown> = NextResponse.next();
 
   //* Without this check it would automatically be redirected to "de/robots.txt", for example
-  // if (
-  //   pathname === "/robots.txt" ||
-  //   pathname === "/sitemap.xml" ||
-  //   pathname === "/favicon.ico"
-  // ) {
-  //   return NextResponse.next();
-  // }
+  if (
+    pathname === "/robots.txt" ||
+    pathname === "/sitemap.xml" ||
+    pathname === "/favicon.ico"
+  ) {
+    return NextResponse.next();
+  }
 
   //* This basically just serves as a condition to execute the NextResponse.redirect() only once and not on every request
   const pathnameIsMissingLocale = supportedLocales.every(
