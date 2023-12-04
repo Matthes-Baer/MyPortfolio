@@ -42,12 +42,12 @@ const LANGUAGE_PICKER: (props: INormalPageProps) => JSX.Element = (
     },
     {
       icon: leetcode_icon,
-      link: "https://leetcode.com/DeerFutureMe/",
+      link: "https://leetcode.com/DearFutureMe/",
       alt: { en: "LeetCode icon", de: "LeetCode-Icon" },
     },
     {
       icon: codewars_icon,
-      link: "https://www.codewars.com/users/DeerFutureMe",
+      link: "https://www.codewars.com/users/DearFutureMe",
       alt: { en: "CodeWars icon", de: "CodeWars-Icon" },
     },
     {
